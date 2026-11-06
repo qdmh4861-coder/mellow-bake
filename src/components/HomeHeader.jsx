@@ -30,7 +30,7 @@ export default function HomeHeader() {
         </nav>
         <div className="home-header__actions">
           <button className="home-header__icon" type="button" disabled aria-label="검색 (준비 중)" title="검색 기능 준비 중"><HeaderIcon type="search" /></button>
-          <button className="home-header__icon" type="button" disabled aria-label="마이페이지 (준비 중)" title="마이페이지 준비 중"><HeaderIcon type="user" /></button>
+          <a className="home-header__icon" href="/login" aria-label="로그인" title="로그인"><HeaderIcon type="user" /></a>
           <details className="home-header__menu">
             <summary className="home-header__icon" aria-label="전체 메뉴"><HeaderIcon type="menu" /></summary>
             <nav className="home-header__dropdown" aria-label="전체 메뉴">
