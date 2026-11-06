@@ -3,10 +3,11 @@ import { useLayoutEffect } from 'react'
 import Home from './pages/Home'
 import OurMenu from './pages/OurMenu'
 import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
-  const page = pathname === '/menu' ? <OurMenu /> : pathname === '/login' ? <Login /> : <Home />
+  const page = pathname === '/menu' ? <OurMenu /> : pathname === '/login' ? <Login /> : pathname === '/signup' ? <Signup /> : <Home />
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
