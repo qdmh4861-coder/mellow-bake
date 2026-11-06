@@ -1,0 +1,214 @@
+.our-menu-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  background: #fff8ef;
+  color: #594037;
+  font-family: 'Trebuchet MS', 'Malgun Gothic', sans-serif;
+  line-height: 1.5;
+}
+.our-menu-page *, .our-menu-page *::before, .our-menu-page *::after { box-sizing: border-box; }
+.our-menu-page :is(h1, h2, h3, p) { margin: 0; }
+.our-menu-page a { color: inherit; text-decoration: none; }
+.our-menu-page img { display: block; max-width: 100%; }
+.our-menu-page main { width: 100%; min-width: 0; }
+.our-menu-banner-section { display: flow-root; width: 100%; background: #ffe63e; padding-bottom: 76px; }
+.our-menu-banner {
+  position: relative;
+  width: min(1440px, calc(100% - 96px));
+  aspect-ratio: 3.6;
+  margin: 42px auto 0;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.our-menu-banner-media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.our-menu-banner-media img { width: 100%; height: 100%; object-fit: cover; }
+.our-menu-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: #f6e9de; color: #a08476; font-size: 12px; }
+.our-menu-placeholder svg { width: 36px; height: 36px; stroke: currentColor; stroke-width: 1.5; }
+.our-menu-placeholder--banner { background: #ffe63e; justify-content: flex-end; padding-bottom: 20px; }
+.our-menu-placeholder--banner svg { width: 25px; height: 25px; }
+.our-menu-banner-copy { padding: 28px; text-align: center; }
+.our-menu-banner h1 { font-size: clamp(28px, 2.7vw, 42px); line-height: 1.2; font-weight: 800; }
+.our-menu-banner-copy p { margin-top: 12px; font-size: clamp(13px, 1.2vw, 18px); }
+.our-menu-categories { width: 100%; }
+.our-menu-category { width: 100%; min-width: 0; }
+.our-menu-category-inner { width: min(1100px, calc(100% - 96px)); margin-inline: auto; padding: 48px 0 64px; }
+.our-menu-wave { width: 100%; max-width: 100%; }
+.our-menu-wave > .wave-divider { position: relative; bottom: 0; }
+.our-menu-category-heading { text-align: center; margin-bottom: 60px; }
+.our-menu-category-heading h2 { font-size: clamp(27px, 2.2vw, 36px); line-height: 1.25; font-weight: 800; }
+.our-menu-category-heading p { margin-top: 12px; color: #93786d; font-size: 15px; }
+.our-menu-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 60px 20px; }
+#menu-bread .our-menu-grid { position: relative; }
+.our-menu-bread-row-decorations {
+  position: absolute;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  left: 0;
+  right: 0;
+  bottom: -46px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  pointer-events: none;
+  opacity: .7;
+}
+.our-menu-bread-row-decorations svg { display: block; width: 28px; height: 28px; overflow: hidden; }
+.our-menu-bread-row-decorations svg:nth-child(-n + 2) { mask-image: radial-gradient(ellipse, #000 50%, transparent 73%); }
+@media (max-width: 1000px) {
+  .our-menu-bread-row-decorations { bottom: -30px; height: 24px; gap: 24px; }
+  .our-menu-bread-row-decorations svg { width: 22px; height: 22px; }
+}
+@media (max-width: 540px) {
+  .our-menu-bread-row-decorations { bottom: -23px; height: 20px; gap: 20px; }
+  .our-menu-bread-row-decorations svg { width: 18px; height: 18px; }
+}
+.our-menu-product { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border-radius: 18px; background: #fff; }
+.our-menu-product-link { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.our-menu-product-link:focus-visible { outline: 3px solid #b47591; outline-offset: -3px; border-radius: inherit; }
+.our-menu-product-media { width: 100%; aspect-ratio: 1.04; flex-shrink: 0; overflow: hidden; border-radius: 18px; }
+.our-menu-product-media img { width: 100%; height: 100%; object-fit: contain; }
+.our-menu-product-copy { display: flex; flex-direction: column; flex: 1; min-width: 0; padding: 22px 18px 20px; }
+.our-menu-product-copy h3 { min-height: 2.6em; font-size: 18px; line-height: 1.3; font-weight: 800; overflow-wrap: anywhere; }
+.our-menu-korean { margin-top: 14px !important; color: #93786d; font-size: 14px; }
+.our-menu-description { margin: 8px 0 16px !important; color: #918a86; font-size: 12px; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
+.our-menu-price { margin-top: auto !important; font-size: 17px; }
+.our-menu-temporary { align-self: flex-start; margin-bottom: 8px; border-radius: 10px; padding: 2px 8px; background: #fff0e8; color: #8c5a46; font-size: 10px; }
+/* Common components are reused; these overrides apply exclusively to OUR MENU. */
+.our-menu-page .mellow-footer { background: #604236; }
+.our-menu-page .mellow-footer-title, .our-menu-page .mellow-footer-column h2 { margin-bottom: 26px; }
+.our-menu-page .mellow-footer-column h2 { margin-bottom: 0; }
+/* Rect.png decorations belong only to the OUR MENU footer. */
+.our-menu-footer { position: relative; isolation: isolate; background: #604236; }
+.our-menu-footer-artwork { position: absolute; inset: 12px 0; overflow: hidden; pointer-events: none; }
+.our-menu-footer-edge { position: absolute; bottom: 0; width: min(24%, 300px); height: 100%; }
+.our-menu-footer-edge--left { left: 0; mask-image: linear-gradient(to right, #000 65%, transparent), linear-gradient(to bottom, transparent, #000 28%); mask-composite: intersect; }
+.our-menu-footer-edge--right { right: 0; mask-image: linear-gradient(to left, #000 65%, transparent), linear-gradient(to bottom, transparent, #000 28%); mask-composite: intersect; }
+.our-menu-page .our-menu-footer .mellow-footer { position: relative; background: transparent; padding-top: 0; }
+.our-menu-footer .mellow-footer-main { position: relative; isolation: isolate; padding-top: 62px; }
+.our-menu-footer .mellow-footer-top { position: relative; width: min(1100px, 68%); gap: 28px; }
+.our-menu-footer .mellow-footer-title,
+.our-menu-footer .mellow-footer-column h2 { font-size: clamp(14px, 1.2vw, 20px); }
+.our-menu-footer .mellow-footer-brand { padding-top: 0; }
+.our-menu-footer .mellow-footer-column { gap: 20px; }
+.our-menu-footer .mellow-footer-brand p { font-size: 11px; }
+.our-menu-footer .mellow-footer-bottom { position: relative; background: #604236; }
+@media (max-width: 1000px) {
+  .our-menu-footer .mellow-footer-top { width: 76%; gap: 24px 16px; }
+  .our-menu-footer-edge { width: 18%; }
+}
+@media (max-width: 680px) {
+  .our-menu-footer .mellow-footer-main { padding-top: 36px; }
+  .our-menu-footer .mellow-footer-top { width: calc(100% - 64px); padding-bottom: 100px; }
+  .our-menu-footer-edge { width: 30%; height: 160px; bottom: 0; }
+}
+@media (max-width: 1000px) {
+  .our-menu-banner { width: calc(100% - 64px); min-height: 230px; }
+  .our-menu-banner-section { padding-bottom: 60px; }
+  .our-menu-category-inner { width: calc(100% - 64px); }
+  .our-menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; }
+  .our-menu-category-heading { margin-bottom: 36px; }
+}
+@media (max-width: 540px) {
+  .our-menu-banner { width: calc(100% - 40px); margin-top: 32px; min-height: 240px; }
+  .our-menu-banner-copy { padding: 24px 16px 60px; }
+  .our-menu-banner-copy p { max-width: 240px; }
+  .our-menu-placeholder--banner { padding-bottom: 12px; gap: 4px; font-size: 10px; }
+  .our-menu-banner-section { padding-bottom: 48px; }
+  .our-menu-category-inner { width: calc(100% - 48px); padding: 32px 0 44px; }
+  .our-menu-category-heading p { font-size: 13px; }
+  .our-menu-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; max-width: 360px; margin-inline: auto; }
+  .our-menu-product-copy h3 { min-height: 0; }
+}   
+/* OUR MENU reference palette and protected side rails. */
+.our-menu-banner-section { position: relative; isolation: isolate; background: #ff535f; padding-bottom: 0; }
+.our-menu-banner { z-index: 1; width: 100%; min-height: clamp(300px, 35vw, 620px); aspect-ratio: auto; margin: 0 auto; }
+.our-menu-banner-copy { position: relative; z-index: 2; max-width: 68%; padding: 28px; text-align: center; }
+.our-menu-category { position: relative; isolation: isolate; }
+/* Expand only the plain center; keep original corner artwork proportional. */
+#menu-bread { container-type: inline-size; }
+.our-menu-bread-artwork { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; container-type: size; }
+.our-menu-bread-edge {
+  position: absolute; top: 0; bottom: 0;
+  /* Match the source's 490/1635 side ratio, bounded by its 490/1382 height ratio. */
+  width: min(29.9694cqw, 35.4559cqh);
+  display: flex; flex-direction: column; justify-content: space-between;
+  mask-image: linear-gradient(to right, #000 85%, transparent);
+}
+.our-menu-bread-edge--left { left: 0; }
+.our-menu-bread-edge--right { right: 0; mask-image: linear-gradient(to left, #000 85%, transparent); }
+.our-menu-bread-corner { display: block; width: 100%; height: auto; flex: 0 0 auto; overflow: hidden; }
+.our-menu-bread-corner--top { mask-image: linear-gradient(to bottom, transparent, #000 12px, #000 calc(100% - 28px), transparent); }
+.our-menu-bread-corner--bottom { mask-image: linear-gradient(to bottom, transparent, #000 28px, #000 calc(100% - 12px), transparent); }
+/* SANDWICH mirrors the final BREAD corner layout, using its own source ratio. */
+#menu-sandwich { container-type: inline-size; }
+.our-menu-sandwich-artwork { position: absolute; inset: calc(100cqw * 105 / 1632 - 2px) 0 0; z-index: 0; pointer-events: none; overflow: hidden; container-type: size; }
+.our-menu-sandwich-edge {
+  position: absolute; top: 0; bottom: 0;
+  width: min(29.9694cqw, 35.4559cqh);
+  display: flex; flex-direction: column; justify-content: space-between;
+  mask-image: linear-gradient(to right, #000 85%, transparent);
+}
+.our-menu-sandwich-edge--left { left: 0; }
+.our-menu-sandwich-edge--right { right: 0; mask-image: linear-gradient(to left, #000 85%, transparent); }
+.our-menu-sandwich-corner { display: block; width: 100%; height: auto; flex: 0 0 auto; overflow: hidden; }
+.our-menu-sandwich-corner--top { mask-image: linear-gradient(to bottom, transparent, #000 12px, #000 calc(100% - 28px), transparent); }
+.our-menu-sandwich-corner--bottom { mask-image: linear-gradient(to bottom, transparent, #000 28px, #000 calc(100% - 12px), transparent); }
+/* CAKE uses the same corner sizing and stacking as the finished sections. */
+#menu-cake { container-type: inline-size; }
+.our-menu-cake-artwork { position: absolute; inset: calc(100cqw * 105 / 1632 - 2px) 0 0; z-index: 0; pointer-events: none; overflow: hidden; container-type: size; }
+.our-menu-cake-edge { position: absolute; top: 0; bottom: 0; width: min(29.9694cqw, 35.4559cqh); display: flex; flex-direction: column; justify-content: space-between; mask-image: linear-gradient(to right, #000 85%, transparent); }
+.our-menu-cake-edge--left { left: 0; }
+.our-menu-cake-edge--right { right: 0; mask-image: linear-gradient(to left, #000 85%, transparent); }
+.our-menu-cake-corner { display: block; width: 100%; height: auto; flex: 0 0 auto; overflow: hidden; }
+.our-menu-cake-corner--top { mask-image: linear-gradient(to bottom, transparent, #000 12px, #000 calc(100% - 28px), transparent); }
+.our-menu-cake-corner--bottom { mask-image: linear-gradient(to bottom, transparent, #000 28px, #000 calc(100% - 12px), transparent); }
+/* DRINK uses the same decoration areas as SANDWICH and CAKE. */
+#menu-drink { container-type: inline-size; }
+.our-menu-drink-artwork { position: absolute; inset: calc(100cqw * 105 / 1632 - 2px) 0 0; z-index: 0; pointer-events: none; overflow: hidden; container-type: size; }
+.our-menu-drink-edge { position: absolute; top: 0; bottom: 0; width: min(29.9694cqw, 35.4559cqh); display: flex; flex-direction: column; justify-content: space-between; mask-image: linear-gradient(to right, #000 85%, transparent); }
+.our-menu-drink-edge--left { left: 0; }
+.our-menu-drink-edge--right { right: 0; mask-image: linear-gradient(to left, #000 85%, transparent); }
+.our-menu-drink-corner { display: block; width: 100%; height: auto; flex: 0 0 auto; overflow: hidden; }
+.our-menu-drink-corner--top { mask-image: linear-gradient(to bottom, transparent, #000 12px, #000 calc(100% - 28px), transparent); }
+.our-menu-drink-corner--bottom { mask-image: linear-gradient(to bottom, transparent, #000 28px, #000 calc(100% - 12px), transparent); }
+.our-menu-category-inner { position: relative; z-index: 1; width: min(1100px, 68%); padding-bottom: 96px; }
+.our-menu-wave { position: relative; z-index: 2; line-height: 0; }
+.our-menu-wave > .wave-divider { height: auto; aspect-ratio: 1632 / 105; margin-block: -1px; }
+/* Preserve the previous 24px spacing and wave height inside the image layer. */
+.our-menu-banner-wave { padding-top: 24px; }
+/* Keep the shared curve and sizing; OUR MENU uses one pure-white border. */
+.our-menu-page .our-menu-wave .wave-divider__accent { display: none; }
+.our-menu-page .our-menu-wave .wave-divider__cream { stroke: #FFFFFF; }
+/* Fill the banner without stretching the composition; text stays above it. */
+.our-menu-banner-artwork { position: absolute; inset: 0 0 -1px; z-index: 0; overflow: hidden; pointer-events: none; }
+.our-menu-banner-composition { position: absolute; inset: 0; width: 100%; max-width: 100%; height: 100%; object-fit: cover; object-position: center bottom; pointer-events: none; }
+.our-menu-product { border-radius: 12px; }
+.our-menu-product-media { border-radius: 12px; }
+.our-menu-product-copy { padding: 16px 12px 18px; }
+.our-menu-product-copy h3 { font-size: clamp(12px, 1.1vw, 18px); }
+/* Artwork is clipped to rails which never intersect the product grid. */
+.our-menu-decorations { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.our-menu-decoration { position: absolute; width: 15%; max-width: 255px; top: 22%; }
+.our-menu-decoration--left { left: 0; }
+.our-menu-decoration--right { right: 0; top: auto; bottom: 5%; }
+.our-menu-decoration img { width: 100%; height: auto; object-fit: contain; }
+.our-menu-decoration-loop { display: block; width: 120%; aspect-ratio: 1; border: 2px dashed #fff8ef; border-radius: 43% 57% 61% 39%; background: #ffffff20; transform: translateX(-40%) rotate(-25deg); margin-top: 35px; }
+.our-menu-decoration--right .our-menu-decoration-loop { transform: translateX(30%) rotate(25deg); }
+@media (max-width: 1000px) {
+  .our-menu-category-inner { width: 76%; }
+  .our-menu-decoration { width: 11%; }
+  .our-menu-product-copy h3 { font-size: 16px; }
+}
+@media (max-width: 540px) {
+  .our-menu-banner { min-height: 240px; }
+  .our-menu-category-inner { width: calc(100% - 72px); padding: 32px 0 54px; }
+  .our-menu-decoration { width: 30px; top: 150px; }
+  .our-menu-decoration--right { top: auto; bottom: 50px; }
+  .our-menu-decoration-loop { border-width: 1px; }
+  .our-menu-banner-copy { max-width: 76%; padding: 24px 16px; }
+  .our-menu-banner-copy p { font-size: 12px; }
+}

@@ -6,9 +6,8 @@ function SocialIcon({ type }) {
   </svg>
 }
 
-export default function HomeFooter() {
-  return <footer className="mellow-footer">
-    <div className="mellow-footer-top">
+export default function HomeFooter({ artwork = null }) {
+  const content = <div className="mellow-footer-top">
       <div className="mellow-footer-brand">
         <a className="mellow-footer-title" href="#home">MELLOW BAKE</a>
         <p>일상 속 달콤한 쉼표, 멜로우 베이크</p>
@@ -33,6 +32,8 @@ export default function HomeFooter() {
         <button type="button" disabled><SocialIcon type="chat" />Kakao Talk</button>
       </nav>
     </div>
+  return <footer className="mellow-footer">
+    {artwork ? <div className="mellow-footer-main">{artwork}{content}</div> : content}
     <div className="mellow-footer-bottom">
       <span>© 2026 MELLOW BAKE. All Rights Reserved.</span>
       <nav aria-label="푸터 정책 및 바로가기">

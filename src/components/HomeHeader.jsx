@@ -1,8 +1,8 @@
 ﻿import './HomeHeader.css'
 
 const mainLinks = [
-  ['HOME', '#home'],
-  ['MENU', '#best-menu'],
+  ['HOME', '/'],
+  ['MENU', '/menu'],
   ['ABOUT', '#our-story'],
   ['STORE', '#visit'],
 ]
@@ -21,7 +21,7 @@ export default function HomeHeader() {
   return (
     <header className="home-header">
       <div className="home-header__inner">
-        <a className="home-header__logo" href="#home" aria-label="MELLOW BAKE 홈">
+        <a className="home-header__logo" href="/" aria-label="MELLOW BAKE 홈">
           <svg viewBox="0 0 30 34" fill="none" aria-hidden="true"><path d="M5 11h20l-2 19H7L5 11Z" fill="#ff75a3" /><path d="M5 15h20M6 21h18M7 27h16" stroke="#fff" strokeWidth="2" /><path d="M10 10c-5-2-3-8 1-7 1-4 7-3 7 1 5-2 9 5 3 7" fill="#ffb3cd" /><path d="M14 2v8" stroke="#ff4d92" strokeWidth="2" /></svg>
           <span>MELLOW BAKE</span>
         </a>
