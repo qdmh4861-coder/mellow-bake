@@ -1,0 +1,72 @@
+﻿/* Content only: NEW ARRIVALS keeps its existing #fff4a9 section background. */
+.arrivals-heading { position: relative; margin: 0 auto 58px; text-align: center; }
+.arrivals-title-group { position: relative; display: inline-block; max-width: 100%; }
+.mellow-home .arrivals-title-group h2 {
+  margin: 0; color: #68351f;
+  font-family: 'Arial Rounded MT Bold', 'Arial Black', 'Trebuchet MS', sans-serif;
+  font-size: clamp(30px, 3.65vw, 59.5px); font-weight: 1000; line-height: 1.2; letter-spacing: -.055em;
+  -webkit-text-stroke: 10px #fffdf5; paint-order: stroke fill;
+  text-shadow: 3px 5px #ff79ab, 4px 7px #f45c9b; rotate: -3deg;
+}
+.mellow-home .arrivals-caption { width: fit-content; max-width: 100%; margin: 16px auto 0; padding: 8px 24px; border-radius: 999px; background: #e4c7f7; color: #7740a2; font-size: 17px; font-weight: 900; line-height: 1.5; word-break: keep-all; }
+.arrivals-heart { position: absolute; right: -66px; top: 2px; width: 47px; height: 50px; rotate: 12deg; }
+.arrivals-star { position: absolute; left: -49px; top: 31px; width: 34px; height: 37px; rotate: -12deg; overflow: visible; }
+.arrivals-sparkle { position: absolute; right: -106px; top: 20px; width: 29px; height: 35px; overflow: visible; }
+.arrivals-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 26px; }
+.arrivals-card { position: relative; min-width: 0; display: flex; flex-direction: column; padding: 14px; border: 1.5px solid #c6a2e5; border-radius: 23px; background: #fff; box-shadow: 0 4px 8px #c4a1d020; }
+.arrivals-photo { width: 100%; max-width: 100%; aspect-ratio: 1.1; overflow: hidden; border-radius: 13px; background: #fcf6ff; }
+.arrivals-photo img { display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; }
+.arrivals-photo-missing { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; height: 100%; padding: 10px; border: 1px dashed #d6b8e7; border-radius: inherit; color: #9972ac; text-align: center; }
+.arrivals-photo-missing svg { width: 32px; height: 32px; stroke: #bc97cc; stroke-width: 1.5; }
+.arrivals-photo-missing span { font-size: 11px; }
+.arrivals-photo-missing small { max-width: 100%; font-size: 9px; overflow-wrap: anywhere; }
+.arrivals-badge { --arrivals-badge-edge: #319ed3; position: absolute; z-index: 2; left: -5px; top: -26px; width: 66px; height: 66px; display: grid; place-items: center; color: #d1edff; }
+.arrivals-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.arrivals-badge > span { position: relative; color: #3286b3; font-size: 11px; font-weight: 900; }
+.arrivals-badge--warm { --arrivals-badge-edge: #e3ab27; color: #ffe891; }
+.arrivals-badge--warm > span { color: #a57721; }
+.arrivals-card-copy { flex: 1; display: flex; flex-direction: column; padding: 16px 5px 6px; }
+.mellow-home .arrivals-card-copy h3 { min-height: 2.6em; color: #76469a; font-size: 16px; font-weight: 900; line-height: 1.3; letter-spacing: -.02em; }
+.mellow-home .arrivals-korean { color: #bd6591; margin-top: 6px; font-size: 12px; font-weight: 700; }
+.mellow-home .arrivals-description { color: #78617e; margin: 11px 0 17px; font-size: 12px; line-height: 1.6; word-break: keep-all; }
+.arrivals-price { margin-top: auto; color: #8250a6; font-size: 17px; font-weight: 900; }
+@media (max-width: 1000px) {
+  .arrivals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 26px; }
+  .arrivals-heart { width: 37px; right: -48px; top: -3px; }
+  .arrivals-star { left: -40px; top: 2px; font-size: 28px; }
+  .arrivals-sparkle { right: -79px; top: 10px; font-size: 27px; }
+}
+@media (max-width: 680px) {
+  .mellow-home .arrivals-title-group h2 { font-size: clamp(26px, 5.8vw, 36px); -webkit-text-stroke-width: 5px; }
+  .mellow-home .arrivals-caption { font-size: 12px; padding: 8px 14px; }
+  .arrivals-heading { margin-bottom: 50px; }
+  .arrivals-heart { width: 27px; right: -32px; height: 32px; }
+  .arrivals-star { left: -26px; top: 4px; font-size: 21px; }
+  .arrivals-sparkle { display: none; }
+}
+@media (max-width: 480px) {
+  .arrivals-grid { grid-template-columns: minmax(0, 1fr); max-width: 340px; margin-inline: auto; }
+}
+@media (max-width: 340px) {
+  .mellow-home .arrivals-title-group h2 { font-size: 23px; }
+  .arrivals-heart { width: 23px; right: -25px; }
+  .arrivals-star { left: -22px; font-size: 18px; }
+}
+
+/* Heading-only ornaments; cards and heading flow dimensions stay unchanged. */
+.arrivals-ribbon { position: absolute; left: -161px; top: -6px; width: 112px; height: 55px; rotate: -6deg; overflow: visible; }
+.arrivals-heart { overflow: visible; }
+@media (max-width: 1000px) {
+  .arrivals-ribbon { left: -117px; top: -10px; width: 78px; height: 44px; }
+  .arrivals-star { width: 27px; height: 30px; top: 24px; }
+  .arrivals-sparkle { width: 23px; height: 28px; }
+}
+@media (max-width: 680px) {
+  .arrivals-ribbon { left: -34px; top: -23px; width: 58px; height: 32px; }
+  .arrivals-star { width: 19px; height: 22px; top: 14px; }
+  .mellow-home .arrivals-title-group h2 { -webkit-text-stroke-width: 7px; }
+}
+@media (max-width: 340px) {
+  .arrivals-ribbon { left: -18px; top: -22px; width: 46px; height: 26px; }
+  .arrivals-star { width: 16px; height: 19px; }
+}

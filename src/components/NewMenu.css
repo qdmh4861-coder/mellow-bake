@@ -1,0 +1,69 @@
+﻿/* Content and boundary styling only: preserve every existing section background. */
+.new-menu-heading { position: relative; margin: 0 auto 62px; padding-top: 12px; text-align: center; }
+.new-menu-title-group { position: relative; display: inline-block; }
+.mellow-home .new-menu-title-group h2 {
+  position: relative; z-index: 1; margin: 0; color: #66300d;
+  font-family: 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif;
+  font-size: clamp(36px, 4.3vw, 70px); font-weight: 1000; line-height: 1.15; letter-spacing: -.06em;
+  -webkit-text-stroke: 10px #fffdf5; paint-order: stroke fill;
+  text-shadow: 3px 5px #e94a95; rotate: -3deg;
+}
+.mellow-home .new-menu-caption { position: relative; z-index: 1; width: fit-content; max-width: 100%; margin: 18px auto 0; padding: 9px 28px; border-radius: 999px; background: #dab4f5; color: #63248d; font-size: 20px; font-weight: 900; line-height: 1.5; }
+.new-menu-scribble { position: absolute; left: -195px; top: 0; width: 155px; height: 75px; rotate: -7deg; }
+.new-menu-heart { position: absolute; height: auto; }
+.new-menu-heart--large { width: 78px; top: -5px; right: -87px; rotate: 10deg; }
+.new-menu-heart--small { width: 53px; top: 60px; right: -115px; rotate: -14deg; }
+.new-menu-star, .new-menu-flower, .new-menu-sparkle { position: absolute; line-height: 1; text-shadow: 3px 3px #fff, -3px -3px #fff; }
+.new-menu-star { color: #ffe963; font-size: 48px; left: -115px; top: 61px; rotate: -15deg; }
+.new-menu-flower { color: #8ccdfb; font-size: 58px; right: -180px; top: 40px; }
+.new-menu-sparkle { color: #ffe762; font-size: 65px; right: -250px; top: 21px; }
+.new-menu-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 26px; }
+.new-menu-card { position: relative; min-width: 0; display: flex; flex-direction: column; padding: 14px; border: 1.5px solid #c6a2e5; border-radius: 26px; background: #fff; box-shadow: 0 4px 0 #b785ce55, 0 9px 18px #9d4db51a; }
+.new-menu-photo { width: 100%; aspect-ratio: 1.05; overflow: hidden; background: #fbf4fc; border-radius: 14px; }
+.new-menu-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.new-menu-photo-missing { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 10px; border: 1px dashed #d9b4e7; border-radius: inherit; color: #9560ad; text-align: center; }
+.new-menu-photo-missing svg { width: 34px; height: 34px; stroke: #bc8fce; stroke-width: 1.5; }
+.new-menu-photo-missing span { font-size: 11px; }
+.new-menu-photo-missing small { max-width: 100%; font-size: 9px; overflow-wrap: anywhere; }
+.new-menu-badge { --badge-edge: #f0449c; position: absolute; z-index: 2; top: -30px; left: -6px; width: 76px; height: 76px; display: grid; place-items: center; color: #ffdaee; }
+.new-menu-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.new-menu-badge > span { position: relative; font-size: 13px; font-weight: 900; color: #c51372; }
+.new-menu-badge--blue { --badge-edge: #199bd6; color: #d5f3ff; }
+.new-menu-badge--blue > span { color: #008ec6; }
+.new-menu-card-copy { flex: 1; display: flex; flex-direction: column; padding: 16px 5px 5px; }
+.mellow-home .new-menu-card-copy h3 { min-height: 2.6em; font-size: 18px; line-height: 1.3; font-weight: 900; letter-spacing: -.035em; color: #6b2395; }
+.mellow-home .new-menu-korean { margin-top: 4px; font-size: 13px; font-weight: 700; color: #f13a93; }
+.mellow-home .new-menu-description { margin: 12px 0 17px; font-size: 12px; line-height: 1.6; color: #57416f; word-break: keep-all; }
+.new-menu-price { margin-top: auto; color: #6b2395; font-size: 20px; font-weight: 900; }
+@media (max-width: 1000px) {
+  .new-menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 26px; }
+  .new-menu-scribble { left: -130px; width: 100px; height: 60px; }
+  .new-menu-heart--large { width: 58px; right: -65px; }
+  .new-menu-heart--small { width: 42px; top: 41px; right: -85px; }
+  .new-menu-star { left: -60px; top: 50px; font-size: 32px; }
+  .new-menu-flower { right: -129px; font-size: 40px; }
+  .new-menu-sparkle { right: -173px; top: 29px; font-size: 45px; }
+}
+@media (max-width: 680px) {
+  .new-menu-heading { margin-bottom: 52px; }
+  .mellow-home .new-menu-title-group h2 { font-size: 36px; -webkit-text-stroke-width: 7px; }
+  .mellow-home .new-menu-caption { font-size: 14px; padding: 8px 18px; margin-top: 16px; }
+  .new-menu-scribble { left: -55px; top: -14px; width: 47px; height: 40px; }
+  .new-menu-heart--large { width: 34px; right: -38px; top: -6px; }
+  .new-menu-heart--small { width: 25px; right: -44px; top: 29px; }
+  .new-menu-star { left: -30px; top: 32px; font-size: 25px; }
+  .new-menu-flower, .new-menu-sparkle { display: none; }
+}
+@media (max-width: 480px) {
+  .new-menu-grid { grid-template-columns: 1fr; max-width: 340px; margin-inline: auto; }
+  .new-menu-card { padding: 15px; }
+  .new-menu-photo { aspect-ratio: 1.15; }
+}
+@media (max-width: 340px) {
+  .mellow-home .new-menu-title-group h2 { font-size: 30px; }
+  .new-menu-scribble { width: 35px; left: -38px; }
+  .new-menu-heart--large { width: 28px; right: -30px; }
+  .new-menu-heart--small { width: 22px; right: -33px; }
+}
+
+

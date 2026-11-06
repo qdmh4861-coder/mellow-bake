@@ -1,0 +1,74 @@
+﻿/* BEST MENU content only. Background, section sizing and wave styles are inherited unchanged. */
+.best-menu-content { position: relative; }
+.best-menu-heading { position: relative; margin: 0 auto 48px; text-align: center; }
+.mellow-home .best-menu-eyebrow { margin-bottom: 12px; color: #743d2a; font-size: 11px; font-weight: 800; letter-spacing: .24em; }
+.best-menu-title-group { position: relative; display: inline-flex; align-items: center; justify-content: center; max-width: 100%; }
+.mellow-home .best-menu-title-group h2 {
+  position: relative; z-index: 1; margin: 0; color: #683017;
+  font-family: 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif;
+  font-size: clamp(36px, 4.1vw, 67px); font-weight: 1000; line-height: 1.08; letter-spacing: -.055em;
+  -webkit-text-stroke: 9px #fffaf3; paint-order: stroke fill;
+  text-shadow: 3px 5px 0 #ff79ab; rotate: -3deg;
+}
+.best-menu-crown { position: absolute; width: 72px; height: 65px; left: -78px; top: -9px; rotate: -19deg; }
+.best-menu-title-heart { position: absolute; width: 66px; height: 72px; right: -77px; top: -7px; color: #ff6cab; rotate: 16deg; filter: drop-shadow(3px 0 #fff) drop-shadow(-3px 0 #fff) drop-shadow(0 3px #fff) drop-shadow(0 -3px #fff); }
+.best-menu-title-sparkle { position: absolute; color: #7b3f25; font-size: 44px; right: -125px; top: 0; line-height: 1; text-shadow: 2px 2px #fff, -2px -2px #fff; }
+.best-menu-scribble { position: absolute; left: -190px; top: -12px; width: 110px; height: 50px; }
+.mellow-home .best-menu-caption { position: relative; z-index: 1; width: fit-content; margin: 13px auto 0; padding: 8px 24px; border-radius: 999px; background: #ffedd4; color: #703719; font-size: 17px; font-weight: 900; line-height: 1.45; }
+.best-menu-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; }
+.best-menu-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 14px; background: #fffdf6; border: 1.5px solid #f58f9b; border-radius: 27px; box-shadow: 0 7px 0 #ed819480, 0 12px 22px #f38a9a20; }
+.best-menu-photo { aspect-ratio: 1.2; width: 100%; overflow: hidden; border-radius: 17px; background: #fff0ee; }
+.best-menu-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.best-menu-photo-missing { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; height: 100%; padding: 10px; border: 1px dashed #f6a5b6; border-radius: inherit; color: #b86b7a; text-align: center; }
+.best-menu-photo-missing svg { width: 32px; height: 32px; stroke: #e98da7; stroke-width: 1.5; }
+.best-menu-photo-missing span { font-size: 11px; }
+.best-menu-photo-missing small { max-width: 100%; overflow-wrap: anywhere; font-size: 9px; }
+.best-menu-badge {
+  position: absolute; z-index: 2; left: -8px; top: -27px; width: 76px; height: 76px;
+  --badge-fill: #ffcee6;
+  display: grid; place-items: center; color: #9d3152; font-size: 12px; font-weight: 1000;
+}
+.best-menu-badge > svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.best-menu-badge polygon { fill: var(--badge-fill); stroke: currentColor; stroke-width: 2.5px; stroke-linejoin: miter; vector-effect: non-scaling-stroke; }
+.best-menu-badge > span { position: relative; line-height: 1; text-align: center; }
+.best-menu-badge--new { --badge-fill: #c7edff; color: #248fbf; }
+.best-menu-card-copy { display: flex; flex-direction: column; flex: 1; padding: 15px 7px 2px; }
+.mellow-home .best-menu-card-copy h3 { color: #71371e; font-family: 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif; font-size: 17px; font-weight: 900; line-height: 1.3; letter-spacing: -.035em; min-height: 2.6em; }
+.mellow-home .best-menu-korean-name { color: #f13b84; font-size: 13px; font-weight: 700; margin-top: 4px; }
+.mellow-home .best-menu-description { margin: 12px 0 16px; color: #65504a; font-size: 12px; line-height: 1.6; word-break: keep-all; }
+.best-menu-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; }
+.best-menu-card-bottom strong { color: #db2c73; font-size: 19px; font-weight: 900; }
+.best-menu-card-bottom button { flex-shrink: 0; display: grid; place-items: center; width: 36px; height: 36px; padding: 5px; border: 0; border-radius: 50%; background: transparent; color: #ff3275; cursor: pointer; }
+.best-menu-card-bottom button:hover { background: #ffe7f0; }
+.best-menu-card-bottom button:focus-visible { outline: 2px solid #ef347c; outline-offset: 3px; }
+.best-menu-card-bottom button svg { width: 26px; height: 26px; }
+.best-menu-decorations { position: absolute; inset: 0; overflow: hidden; pointer-events: none; color: #ff539a; }
+.best-menu-float-heart { position: absolute; width: 45px; height: 50px; left: 4%; top: 13%; rotate: -20deg; filter: drop-shadow(2px 2px #fff); }
+.best-menu-float-sparkle { position: absolute; right: 4%; top: 10%; font-size: 57px; line-height: 1; text-shadow: 2px 2px #fff; }
+.best-menu-float-flower { position: absolute; left: 3%; bottom: 23%; font-size: 55px; line-height: 1; text-shadow: 2px 2px #fff, -2px -2px #fff; }
+.best-menu-bottom-heart { position: absolute; width: 43px; height: 50px; right: 3%; bottom: 22%; rotate: 20deg; filter: drop-shadow(2px 2px #fff); }
+@media (max-width: 1000px) {
+  .best-menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 26px; }
+  .best-menu-heading { margin-bottom: 48px; }
+  .best-menu-scribble { left: -140px; width: 70px; }
+  .best-menu-crown { width: 55px; left: -58px; top: -17px; }
+  .best-menu-title-heart { width: 47px; right: -57px; height: 52px; }
+  .best-menu-title-sparkle { right: -90px; font-size: 32px; }
+  .best-menu-float-heart, .best-menu-float-sparkle, .best-menu-float-flower, .best-menu-bottom-heart { opacity: .65; }
+}
+@media (max-width: 680px) {
+  .mellow-home .best-menu-title-group h2 { font-size: 36px; -webkit-text-stroke-width: 6px; }
+  .mellow-home .best-menu-eyebrow { font-size: 8px; }
+  .mellow-home .best-menu-caption { font-size: 12px; padding: 7px 15px; }
+  .best-menu-scribble, .best-menu-title-sparkle { display: none; }
+  .best-menu-crown { width: 38px; left: -40px; top: -18px; }
+  .best-menu-title-heart { width: 33px; right: -37px; top: -6px; }
+  .best-menu-card-copy { padding-inline: 3px; }
+  .best-menu-card-copy h3 { min-height: auto; }
+  .best-menu-decorations { display: none; }
+}
+@media (max-width: 480px) {
+  .best-menu-grid { grid-template-columns: 1fr; gap: 42px; max-width: 340px; margin-inline: auto; }
+  .best-menu-card { padding: 15px; }
+  .best-menu-badge { width: 72px; height: 72px; top: -24px; left: -5px; }
+}

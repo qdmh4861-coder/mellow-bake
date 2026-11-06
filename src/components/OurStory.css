@@ -1,0 +1,80 @@
+﻿/* OUR STORY content only. Keep the existing peach section background. */
+.story-content { position: relative; display: grid; grid-template-columns: 132px minmax(0, 1fr); column-gap: 28px; align-items: center; width: min(1440px, calc(100% - 80px)); padding-right: 180px; }
+.story-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+.story-photo { width: 100%; max-width: 100%; min-width: 0; aspect-ratio: auto; border-radius: 12px; overflow: hidden; }
+.story-photo img { display: block; border-radius: 12px; width: 100%; height: auto; max-width: 100%; object-fit: contain; }
+.mellow-home .story-photo-pending { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; height: 100%; color: #a86f80; font-size: 13px; text-align: center; }
+.story-photo-pending span { font-size: 11px; }
+.story-copy { min-width: 0; padding-right: 0; }
+.story-eyebrow { color: #8b5bb0; font-size: 13px; font-weight: 800; }
+.mellow-home .story-copy h2 { color: #b26891; font-size: clamp(20px, 1.65vw, 27px); line-height: 1.55; font-weight: 700; letter-spacing: -.045em; margin: 20px 0 18px; word-break: keep-all; }
+.mellow-home .story-copy p { color: #947385; font-size: 13px; line-height: 1.8; margin: 12px 0; word-break: keep-all; }
+.story-button { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; margin-top: 20px; background: #8650a6; color: #fff !important; border-radius: 999px; font-size: 11px; font-weight: 700; }
+.story-button:hover { background: #a16abf; }
+.story-mobile-break { display: none; }
+@media (max-width: 1000px) {
+  .story-content { width: calc(100% - 64px); padding-right: 0; grid-template-columns: 80px minmax(0, 1fr); column-gap: 24px; }
+  .story-layout { gap: 28px; }
+  .story-copy { padding-right: 0; }
+  .mellow-home .story-copy p { font-size: 12px; }
+  .story-desktop-break { display: none; }
+}
+@media (max-width: 680px) {
+  .story-content { display: block; width: calc(100% - 48px); }
+  .story-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .story-copy { padding-right: 0; }
+  .mellow-home .story-copy h2 { font-size: 23px; margin: 17px 0 18px; }
+  .story-mobile-break { display: initial; }
+  .story-button { margin-top: 17px; }
+}
+
+/* Original-character cutout, positioned against the section's existing lower wave. */
+.story-bunny-layer { position: absolute; inset: 0; pointer-events: none; }
+.story-bunny {
+  position: absolute;
+  right: max(24px, calc((100% - 1440px) / 2));
+  bottom: calc(clamp(38px, 6.5vw, 105px) - 44px);
+  width: 400px;
+  max-width: calc(100% - 48px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+@media (max-width: 1000px) {
+  .mellow-home .home-story:has(.story-bunny-layer) { padding-bottom: 290px; }
+  .story-bunny { width: 320px; bottom: calc(clamp(38px, 6.5vw, 105px) - 14px); }
+}
+@media (max-width: 680px) {
+  .mellow-home .home-story:has(.story-bunny-layer) { padding-bottom: 345px; }
+  .story-bunny { width: 280px; }
+}
+
+
+.story-left-decorations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; justify-items: center; gap: 22px 12px; min-width: 0; pointer-events: none; }
+.story-left-decorations svg { display: block; width: 100%; max-width: 100%; height: auto; overflow: visible; }
+.story-left-ribbon { grid-column: 1 / -1; }
+.story-left-decorations .story-left-flower { width: 43px; }
+.story-left-decorations .story-left-star { width: 30px; }
+.story-left-decorations .story-left-pink-flower { width: 58px; }
+.story-left-decorations .story-left-tulip { width: 40px; }
+@media (max-width: 1100px) and (min-width: 1001px) {
+  .story-content { grid-template-columns: 95px minmax(0, 1fr); column-gap: 20px; padding-right: 130px; }
+  .story-layout { gap: 28px; }
+}
+@media (max-width: 1000px) and (min-width: 681px) {
+  .story-left-decorations { gap: 20px 8px; }
+  .story-left-decorations .story-left-flower { width: 34px; }
+  .story-left-decorations .story-left-star { width: 24px; }
+  .story-left-decorations .story-left-pink-flower { width: 42px; }
+  .story-left-decorations .story-left-tulip { width: 30px; }
+}
+@media (max-width: 680px) {
+  .story-left-decorations { display: flex; justify-content: flex-start; gap: 12px; margin-bottom: 22px; }
+  .story-left-decorations .story-left-ribbon { width: 92px; }
+  .story-left-decorations .story-left-flower { width: 32px; }
+  .story-left-decorations .story-left-star { width: 22px; }
+  .story-left-decorations .story-left-pink-flower { width: 36px; }
+  .story-left-decorations .story-left-tulip { width: 28px; }
+  .story-left-decorations svg { flex-shrink: 1; min-width: 0; }
+}
+

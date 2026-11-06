@@ -1,0 +1,18 @@
+﻿.mellow-home { --home-wave-height: clamp(38px, 6.5vw, 105px); }
+.wave-divider {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: var(--home-wave-height, clamp(38px, 6.5vw, 105px));
+  overflow: hidden;
+  pointer-events: none;
+}
+.wave-divider__accent, .wave-divider__cream { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+.wave-divider__accent { stroke: #ff83ad; stroke-width: 18; }
+.wave-divider__cream { stroke: #fff8ef; stroke-width: 12; }
+.wave-divider__glints { fill: #fff; stroke: #fff; stroke-linecap: round; }
+.wave-divider__glints path { fill: none; stroke-width: 5; }
