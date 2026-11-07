@@ -1,5 +1,7 @@
 ﻿import './HomeHeader.css'
 
+import { useEffect, useId, useRef, useState } from 'react'
+
 const mainLinks = [
   ['HOME', '/'],
   ['MENU', '/menu'],
@@ -18,6 +20,29 @@ function HeaderIcon({ type }) {
 }
 
 export default function HomeHeader() {
+  const [accountOpen, setAccountOpen] = useState(false)
+  const accountRef = useRef(null)
+  const accountButton = useRef(null)
+  const accountMenuId = useId()
+
+  useEffect(() => {
+    if (!accountOpen) return
+    function outsideClick(event) {
+      if (!accountRef.current?.contains(event.target)) setAccountOpen(false)
+    }
+    function escapeKey(event) {
+      if (event.key !== 'Escape') return
+      setAccountOpen(false)
+      if (accountRef.current?.contains(window.document.activeElement)) accountButton.current?.focus()
+    }
+    window.document.addEventListener('pointerdown', outsideClick)
+    window.document.addEventListener('keydown', escapeKey)
+    return () => {
+      window.document.removeEventListener('pointerdown', outsideClick)
+      window.document.removeEventListener('keydown', escapeKey)
+    }
+  }, [accountOpen])
+
   return (
     <header className="home-header">
       <div className="home-header__inner">
@@ -30,7 +55,16 @@ export default function HomeHeader() {
         </nav>
         <div className="home-header__actions">
           <button className="home-header__icon" type="button" disabled aria-label="검색 (준비 중)" title="검색 기능 준비 중"><HeaderIcon type="search" /></button>
-          <a className="home-header__icon" href="/login" aria-label="로그인" title="로그인"><HeaderIcon type="user" /></a>
+          <div className="home-header__account" ref={accountRef}
+            onPointerEnter={event => { if (event.pointerType === 'mouse') setAccountOpen(true) }}
+            onPointerLeave={event => { if (event.pointerType === 'mouse' && !event.currentTarget.contains(window.document.activeElement)) setAccountOpen(false) }}
+            onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setAccountOpen(false) }}>
+            <button className="home-header__icon" type="button" ref={accountButton} aria-label="회원 메뉴" title="로그인 및 회원가입" aria-expanded={accountOpen} aria-controls={accountMenuId} onClick={() => setAccountOpen(open => !open)}><HeaderIcon type="user" /></button>
+            <nav className="home-header__account-dropdown" id={accountMenuId} aria-label="회원 메뉴" hidden={!accountOpen}>
+              <a href="/login" onClick={() => setAccountOpen(false)}>로그인</a>
+              <a href="/signup" onClick={() => setAccountOpen(false)}>회원가입</a>
+            </nav>
+          </div>
           <details className="home-header__menu">
             <summary className="home-header__icon" aria-label="전체 메뉴"><HeaderIcon type="menu" /></summary>
             <nav className="home-header__dropdown" aria-label="전체 메뉴">

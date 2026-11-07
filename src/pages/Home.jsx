@@ -9,6 +9,12 @@ import SeasonalSpecial from '../components/SeasonalSpecial'
 import NewArrivals from '../components/NewArrivals'
 import OurStory from '../components/OurStory'
 import HomeFooter from '../components/HomeFooter'
+import FindYourSweet from '../components/FindYourSweet'
+import matchaReview from '../assets/reviews/matcha-strawberry-roll.png'
+import chocolateReview from '../assets/best-menu/chocolate-cake.png'
+import strawberryReview from '../assets/reviews/strawberry-shortcake.png'
+import peachReview from '../assets/reviews/peach-yogurt.png'
+import '../components/ReviewCards.css'
 
 
 // Review copy, masked authors and dates are transcribed from the supplied design.
@@ -18,9 +24,15 @@ const customerReviews = [
   { id: 'strawberry-shortcake', product: '딸기 생크림 케이크', text: '생크림이 정말 부드럽고 많이 달지 않아요! 딸기도 신선하고 케이크 시트도 촉촉해서 집에서 커피랑 똑같이 먹었어요!', author: 'min***', date: '2026-10-08' },
   { id: 'peach-yogurt', product: '복숭아 요거트', text: '복숭아가 신선하고 상큼해서 맛있어요! 요거트 소스도 부드럽고 많이 달지 않아 집에서 디저트로 먹기 딱 좋았어요.', author: 'jiye***', date: '2026-10-04' },
 ]
+const reviewImages = {
+  'matcha-strawberry-roll': matchaReview,
+  'chocolate-cake': chocolateReview,
+  'strawberry-shortcake': strawberryReview,
+  'peach-yogurt': peachReview,
+}
 function ReviewPhoto({ review }) {
   const [status, setStatus] = useState('loading')
-  const source = `${import.meta.env.BASE_URL}images/reviews/${review.id}.png`
+  const source = reviewImages[review.id]
 
   return <div className="home-review-photo-area">
     <img className="home-review-photo" src={source} alt={review.product} loading="lazy" style={{ visibility: status === 'loaded' ? 'visible' : 'hidden' }} onLoad={() => setStatus('loaded')} onError={() => setStatus('error')} />
@@ -109,6 +121,7 @@ export default function Home() {
 
       <main>
         <HomeHero />
+        <FindYourSweet />
 
         <ProductSection id="best-menu" title="BEST MENU" eyebrow="OUR SWEET FAVORITES" theme="peach" next="#ff83ad" />
         <ProductSection id="new-menu" title="NEW MENU" eyebrow="SOMETHING NEW, SOMETHING SWEET" theme="pink" next="#a477c4" />
@@ -131,7 +144,7 @@ export default function Home() {
               <div className="home-review-cloud-title">
                 <svg className="home-review-cloud" viewBox="0 0 900 220" preserveAspectRatio="none" aria-hidden="true"><path d="M42 106C12 63 56 38 106 41 149 45 161 9 211 18 252 25 268 41 305 19 354-12 384 8 423 27 466 49 502 31 544 17 601-2 624 33 661 38 710 32 755 31 777 64 835 52 884 78 870 112 907 155 858 192 814 190 767 225 733 182 687 193 634 223 602 188 553 196 506 219 470 205 430 192 380 208 342 223 301 196 259 176 229 212 187 198 145 170 120 207 78 186 27 186 11 143 42 106Z" fill="#fff5ed" stroke="#e9c1f3" strokeWidth="13" strokeLinejoin="round" /><g fill="#fff" stroke="#fff" strokeLinecap="round"><path d="M75 75q12-9 25-8M614 26q13-1 24 7M818 72q12 3 18 12" fill="none" strokeWidth="6" /><circle cx="67" cy="87" r="3" /><circle cx="176" cy="186" r="3" /><circle cx="189" cy="191" r="2" /><circle cx="600" cy="25" r="2.5" /><circle cx="762" cy="191" r="3" /><circle cx="777" cy="196" r="2" /></g></svg>
                 <h2 id="home-review-title" aria-label="CUSTOMER REVIEW">{Array.from('CUSTOMER REVIEW').map((letter, index) => <span key={index} aria-hidden="true" className={letter === ' ' ? 'review-title-space' : 'review-title-letter'} style={{ '--letter-y': `${(((index - 7) / 7) ** 2 * 14 - 7).toFixed(2)}px`, '--letter-r': `${(index - 7) * 1.25}deg` }}>{letter === ' ' ? ' ' : letter}</span>)}</h2>
-                <p className="home-review-subtitle">OUR REAL SKIN CARE REVIEW</p>
+                <p className="home-review-subtitle">SWEET MOMENTS, HAPPY CUSTOMERS</p>
                 <svg className="home-review-small-heart" viewBox="0 0 50 55" fill="none" aria-hidden="true"><path d="M25 48S0 28 6 14C12 1 24 9 25 18 30 4 46 4 46 18 46 31 25 48 25 48Z" fill="#ff92c5" stroke="#fff" strokeWidth="9" /><path d="M25 48S0 28 6 14C12 1 24 9 25 18 30 4 46 4 46 18 46 31 25 48 25 48Z" stroke="#ef4b9b" strokeWidth="3" /></svg>
                 <svg className="home-review-blue-star" viewBox="0 0 55 60" fill="none" aria-hidden="true"><path d="M26 5c9-3 9 14 10 16 18-4 23 11 3 14-2 22-15 21-17 1C0 40 0 23 20 22 20 13 18 7 26 5Z" fill="#e3c8ff" stroke="#7da3e9" strokeWidth="4" strokeLinejoin="round" /></svg>
                 <svg className="home-review-mini-star" viewBox="0 0 36 47" fill="none" aria-hidden="true"><path d="M17 4c1 12-3 16-13 20 10 2 14 6 14 19 3-12 5-17 14-20C23 21 20 16 17 4Z" fill="#ffa5ca" stroke="#3b2421" strokeWidth="3" strokeLinejoin="round" /></svg>

@@ -5,11 +5,12 @@ import WaveDivider from '../components/WaveDivider'
 import CakeCornerArt from '../components/CakeCornerArt'
 import drinkBackground from '../images/Rectangle.png'
 import footerBackground from '../images/Rect.png'
+import saltBreadReference from '../assets/salt-bread-figma-reference.png'
 import './OurMenu.css'
 
 // Text and prices transcribed from the supplied Figma reference, not a live catalog.
 // Set imageSrc to a public URL (for example /images/menu/salt-bread.png) when ready.
-// detailHref remains null until product detail navigation is implemented.
+// Only salt bread has a detail page; other product links remain unassigned.
 const categoryData = [
   { id: 'bread', title: 'BREAD', description: '매일 갓 구워낸 신선하고 맛있는 빵', items: [
     ['Salt Bread', '소금빵', '바삭한 겉면과 촉촉한 속살, 고소한 버터와 은은한 소금의 조화', 3200],
@@ -57,7 +58,7 @@ export const menuCategories = categoryData.map(({ items, ...category }) => ({
   ...category,
   products: items.map(([name, koreanName, description, price], index) => ({
     id: `${category.id}-${index + 1}`, name, koreanName, description, price,
-    imageSrc: null, detailHref: null, isTemporary: false,
+    imageSrc: null, detailHref: category.id === 'bread' && index === 0 ? '/menu/salt-bread' : null, isTemporary: false,
   })),
 }))
 
@@ -171,7 +172,7 @@ function MenuImage({ src, alt, banner = false }) {
 
 function ProductCard({ product }) {
   const content = <>
-    <MenuImage src={product.imageSrc} alt={product.koreanName} />
+    {product.id === 'bread-1' ? <div className="our-menu-product-media"><svg viewBox="315 286 650 610" role="img" aria-label="소금빵" style={{ display:'block', width:'100%', height:'100%' }}><image href={saltBreadReference} width="1632" height="7491" /></svg></div> : <MenuImage src={product.imageSrc} alt={product.koreanName} />}
     <div className="our-menu-product-copy">
       {product.isTemporary && <span className="our-menu-temporary">임시 상품 정보</span>}
       <h3>{product.name}</h3>
@@ -186,6 +187,10 @@ function ProductCard({ product }) {
 }
 
 export default function OurMenu() {
+  const categoryId = new URLSearchParams(window.location.search).get('category')
+  const visibleCategories = menuCategories.filter(category => !menuCategories.some(item => item.id === categoryId) || category.id === categoryId)
+  const firstCategoryColor = categoryColors[menuCategories.indexOf(visibleCategories[0])]
+  const lastCategoryColor = categoryColors[menuCategories.indexOf(visibleCategories[visibleCategories.length - 1])]
   return <div className="our-menu-page">
     <HomeHeader />
     <main>
@@ -196,12 +201,12 @@ export default function OurMenu() {
         <div className="our-menu-banner-copy"><h1 id="our-menu-title">OUR MENU</h1><p>매일의 달콤한 순간을 함께하는 멜로우 베이크</p></div>
       </section>
       <div className="our-menu-wave our-menu-banner-wave">
-        <WaveDivider fromColor={bannerColor} toColor={categoryColors[0]} fillUpperBackground={false} />
+        <WaveDivider fromColor={bannerColor} toColor={firstCategoryColor} fillUpperBackground={false} />
       </div>
       </div>
       <div className="our-menu-categories">
-        {menuCategories.map((category, index) => <section className="our-menu-category" style={{ backgroundColor: categoryColors[index] }} key={category.id} id={`menu-${category.id}`} aria-labelledby={`menu-${category.id}-title`}>
-          {index > 0 && <CategoryWave fromColor={categoryColors[index - 1]} toColor={categoryColors[index]} />}
+        {visibleCategories.map((category, index) => <section className="our-menu-category" style={{ backgroundColor: categoryColors[menuCategories.indexOf(category)] }} key={category.id} id={`menu-${category.id}`} aria-labelledby={`menu-${category.id}-title`}>
+          {index > 0 && <CategoryWave fromColor={categoryColors[menuCategories.indexOf(visibleCategories[index - 1])]} toColor={categoryColors[menuCategories.indexOf(category)]} />}
           {category.id === 'bread' ? <BreadDecorations />
             : category.id === 'sandwich' ? <SandwichDecorations />
             : category.id === 'cake' ? <CakeDecorations />
@@ -215,7 +220,7 @@ export default function OurMenu() {
           </div>
         </section>)}
       </div>
-      <CategoryWave fromColor={categoryColors[3]} toColor="#604236" />
+      <CategoryWave fromColor={lastCategoryColor} toColor="#604236" />
     </main>
     <div className="our-menu-footer">
       <HomeFooter artwork={<MenuFooterArtwork />} />

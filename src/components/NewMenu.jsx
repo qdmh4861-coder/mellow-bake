@@ -1,5 +1,7 @@
 ﻿import './NewMenu.css'
 
+import { useState } from 'react'
+
 const photos = import.meta.glob('../assets/new-menu/*.{png,jpg,jpeg,webp}', {
   eager: true, query: '?url', import: 'default',
 })
@@ -27,7 +29,11 @@ function Heading() {
 }
 
 function Badge({ label }) {
-  return <span className={`new-menu-badge${label === 'NEW' ? ' new-menu-badge--blue' : ''}`}><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,3 62,12 78,8 83,24 97,30 91,47 98,60 83,70 82,87 64,88 51,98 37,89 21,94 17,77 3,69 9,52 3,38 18,27 20,12 37,13" fill="currentColor" stroke="var(--badge-edge)" strokeWidth="3" strokeLinejoin="round" /></svg><span>{label}</span></span>
+  return <span className={`new-menu-badge${label === 'NEW' ? ' new-menu-badge--blue' : ''}`}><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,3 62,12 78,8 83,24 97,30 91,47 98,60 83,70 82,87 64,88 51,98 37,89 21,94 17,77 3,69 9,52 3,38 18,27 20,12 37,13" fill="currentColor" stroke="var(--badge-edge)" strokeWidth="3" strokeLinejoin="round" /></svg><svg className="new-menu-badge-ornament" viewBox="0 0 32 26" aria-hidden="true">{label === 'BEST' ? <><path d="m3 5 7 6 6-9 6 9 7-6-4 17H7Z" fill="#ffbd34" stroke="#ec9025" strokeWidth="1.5" /><path d="M8 18h16" fill="none" stroke="#fff6c7" strokeWidth="2" /></> : <path d="M16 1q1 10 12 12-11 1-12 12Q14 14 4 13 14 11 16 1Z" fill="#06a4d6" stroke="#fff" strokeWidth="1.5" />}</svg><span>{label}</span></span>
+}
+
+function RibbonDivider() {
+  return <div className="new-menu-ribbon-divider" aria-hidden="true"><span /><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M30 17C7-8 0 8 8 18c5 6 14 4 22-1Zm4 0C57-8 64 8 56 18c-5 6-14 4-22-1ZM30 20 18 35m16-15 12 15" /><ellipse cx="32" cy="18" rx="4" ry="5" /></svg><span /></div>
 }
 
 function Photo({ product }) {
@@ -36,9 +42,13 @@ function Photo({ product }) {
 }
 
 export default function NewMenu() {
+  const [favorites, setFavorites] = useState([])
+  function toggleFavorite(id) {
+    setFavorites(current => current.includes(id) ? current.filter(item => item !== id) : [...current, id])
+  }
   return <div className="home-container new-menu-content">
     <Heading />
-    <div className="new-menu-grid">{products.map(product => <article className="new-menu-card" key={product.id}><Badge label={product.badge} /><Photo product={product} /><div className="new-menu-card-copy"><h3>{product.name}</h3><p className="new-menu-korean">{product.korean}</p><p className="new-menu-description">{product.description}</p><strong className="new-menu-price">{product.price}</strong></div></article>)}</div>
+    <div className="new-menu-grid">{products.map(product => <article className="new-menu-card" key={product.id}><Badge label={product.badge} /><Photo product={product} /><div className="new-menu-card-copy"><h3>{product.name}</h3><p className="new-menu-korean">{product.korean}</p><p className="new-menu-description">{product.description}</p><RibbonDivider /><div className="new-menu-card-bottom"><strong className="new-menu-price">{product.price}</strong><button className="new-menu-favorite" type="button" aria-label={`${product.korean} 찜`} aria-pressed={favorites.includes(product.id)} onClick={event => { event.stopPropagation(); toggleFavorite(product.id) }}><svg viewBox="0 0 40 40" fill={favorites.includes(product.id) ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="3" strokeLinejoin="round" aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" /></svg></button></div></div></article>)}</div>
   </div>
 }
 

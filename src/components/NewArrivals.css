@@ -1,4 +1,4 @@
-﻿/* Content only: NEW ARRIVALS keeps its existing #fff4a9 section background. */
+/* Content only: NEW ARRIVALS keeps its existing #fff4a9 section background. */
 .arrivals-heading { position: relative; margin: 0 auto 58px; text-align: center; }
 .arrivals-title-group { position: relative; display: inline-block; max-width: 100%; }
 .mellow-home .arrivals-title-group h2 {
@@ -14,7 +14,7 @@
 .arrivals-sparkle { position: absolute; right: -106px; top: 20px; width: 29px; height: 35px; overflow: visible; }
 .arrivals-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 26px; }
 .arrivals-card { position: relative; min-width: 0; display: flex; flex-direction: column; padding: 14px; border: 1.5px solid #c6a2e5; border-radius: 23px; background: #fff; box-shadow: 0 4px 8px #c4a1d020; }
-.arrivals-photo { width: 100%; max-width: 100%; aspect-ratio: 1.1; overflow: hidden; border-radius: 13px; background: #fcf6ff; }
+.arrivals-photo { width: 100%; max-width: 100%; aspect-ratio: 1.1; overflow: hidden; border-radius: 13px; background:radial-gradient(ellipse,#ffedf2,#ffe0eb); }
 .arrivals-photo img { display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; }
 .arrivals-photo-missing { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; height: 100%; padding: 10px; border: 1px dashed #d6b8e7; border-radius: inherit; color: #9972ac; text-align: center; }
 .arrivals-photo-missing svg { width: 32px; height: 32px; stroke: #bc97cc; stroke-width: 1.5; }
@@ -70,3 +70,15 @@
   .arrivals-ribbon { left: -18px; top: -22px; width: 46px; height: 26px; }
   .arrivals-star { width: 16px; height: 19px; }
 }
+
+/* Card-only ornaments fit within the existing description and price spacing. */
+.mellow-home .arrivals-card-copy .arrivals-description { margin-bottom:3px; }
+.arrivals-card-divider { display:flex; align-items:center; flex-shrink:0; gap:7px; height:14px; color:#ac75d0; }
+.arrivals-card-divider span { flex:1; height:1px; background:#d6b8eb; }
+.arrivals-card-divider svg { flex-shrink:0; width:28px; height:18px; }
+.arrivals-card-bottom { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:auto; font-size:17px; line-height:1.6; }
+.arrivals-card-bottom .arrivals-price { margin:0; }
+.arrivals-favorite { display:grid; place-items:center; flex-shrink:0; width:26px; height:26px; margin:0; padding:2px; border:0; border-radius:50%; background:transparent; color:#8250a6; cursor:pointer; }
+.arrivals-favorite svg { width:22px; height:22px; }
+.arrivals-favorite:hover { background:#f3e8fc; }
+.arrivals-favorite:focus-visible { outline:2px solid #8250a6; outline-offset:3px; }

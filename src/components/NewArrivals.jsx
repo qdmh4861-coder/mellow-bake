@@ -1,5 +1,7 @@
 ﻿import './NewArrivals.css'
 
+import { useState } from 'react'
+
 const originalPhotos = import.meta.glob('../assets/new-arrivals/*.{png,jpg,jpeg,webp}', {
   eager: true, query: '?url', import: 'default',
 })
@@ -20,9 +22,13 @@ function Badge({ warm }) {
 }
 
 export default function NewArrivals() {
+  const [favorites, setFavorites] = useState([])
+  function toggleFavorite(id) {
+    setFavorites(current => current.includes(id) ? current.filter(item => item !== id) : [...current, id])
+  }
   return <div className="home-container arrivals-content">
     <div className="arrivals-heading"><div className="arrivals-title-group"><svg className="arrivals-ribbon" viewBox="0 0 150 70" fill="none" aria-hidden="true"><path d="M4 55C35-5 82 13 57 58 33 92 28 18 83 7c57-8 51 48 23 33-23-15 10-48 41-15" stroke="#fffdf5" strokeWidth="11" strokeLinecap="round" /><path d="M4 55C35-5 82 13 57 58 33 92 28 18 83 7c57-8 51 48 23 33-23-15 10-48 41-15" stroke="#ff4c9a" strokeWidth="5" strokeLinecap="round" /></svg><svg className="arrivals-star" viewBox="0 0 50 50" fill="none" aria-hidden="true"><path d="m25 4 6 13 14 3-10 11 1 14-13-7-13 5 3-14L4 18l15-2Z" fill="#ffe56a" stroke="#fffdf5" strokeWidth="8" strokeLinejoin="round" /><path d="m25 4 6 13 14 3-10 11 1 14-13-7-13 5 3-14L4 18l15-2Z" stroke="#885136" strokeWidth="2.5" strokeLinejoin="round" /></svg><h2 id="new-arrivals-title">NEW ARRIVALS</h2><svg className="arrivals-heart" viewBox="0 0 45 48" fill="none" aria-hidden="true"><path d="M22 41S2 28 4 15C6 3 18 6 22 15 27 4 42 4 41 17 40 28 22 41 22 41Z" fill="#ff8ac0" stroke="#fffdf5" strokeWidth="8" strokeLinejoin="round" /><path d="M22 41S2 28 4 15C6 3 18 6 22 15 27 4 42 4 41 17 40 28 22 41 22 41Z" stroke="#f34b9d" strokeWidth="3" strokeLinejoin="round" /><path d="M11 13q-3 3-2 7" stroke="#fff" strokeWidth="3" strokeLinecap="round" /></svg><svg className="arrivals-sparkle" viewBox="0 0 45 55" fill="none" aria-hidden="true"><path d="M22 5c0 13-4 19-16 23 12 2 16 8 16 21 3-13 6-19 17-21C28 24 25 18 22 5Z" fill="#fff0ce" stroke="#fffdf5" strokeWidth="8" strokeLinejoin="round" /><path d="M22 5c0 13-4 19-16 23 12 2 16 8 16 21 3-13 6-19 17-21C28 24 25 18 22 5Z" stroke="#ef78aa" strokeWidth="2.5" strokeLinejoin="round" /></svg></div><p className="arrivals-caption">새로운 시즌, 디저트를 만나보세요!</p></div>
-    <div className="arrivals-grid">{products.map((product, index) => <article className="arrivals-card" key={product.id}><Badge warm={index === 3} /><Photo product={product} /><div className="arrivals-card-copy"><h3>{product.name}</h3><p className="arrivals-korean">{product.korean}</p><p className="arrivals-description">{product.description}</p><strong className="arrivals-price">{product.price}</strong></div></article>)}</div>
+    <div className="arrivals-grid">{products.map((product, index) => <article className="arrivals-card" key={product.id}><Badge warm={index === 3} /><Photo product={product} /><div className="arrivals-card-copy"><h3>{product.name}</h3><p className="arrivals-korean">{product.korean}</p><p className="arrivals-description">{product.description}</p><div className="arrivals-card-divider" aria-hidden="true"><span /><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M30 17C7-8 0 8 8 18c5 6 14 4 22-1Zm4 0C57-8 64 8 56 18c-5 6-14 4-22-1ZM30 20 18 35m16-15 12 15" /><ellipse cx="32" cy="18" rx="4" ry="5" /></svg><span /></div><div className="arrivals-card-bottom"><strong className="arrivals-price">{product.price}</strong><button className="arrivals-favorite" type="button" aria-label={`${product.korean} 찜`} aria-pressed={favorites.includes(product.id)} onClick={event => { event.stopPropagation(); toggleFavorite(product.id) }}><svg viewBox="0 0 40 40" fill={favorites.includes(product.id) ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="3" strokeLinejoin="round" aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" /></svg></button></div></div></article>)}</div>
   </div>
 }
 
