@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './BestMenu.css'
+import headingImage from '../assets/a5abfc47-762f-43a5-8643-f9f11d61a678.png'
 
 const originalPhotos = import.meta.glob('../assets/best-menu/*.{png,jpg,jpeg,webp}', {
   eager: true, query: '?url', import: 'default',
@@ -15,18 +16,13 @@ function Heart({ filled = false, className = '' }) {
   return <svg className={className} viewBox="0 0 40 40" fill={filled ? 'currentColor' : 'none'} aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /></svg>
 }
 
-function Crown() {
-  return <svg className="best-menu-crown" viewBox="0 0 110 100" fill="none" aria-hidden="true"><path d="m20 79-7-45 30 18L56 15l17 35 28-20-10 50Z" fill="#ff946a" stroke="#fff" strokeWidth="11" strokeLinejoin="round" /><path d="m20 79-7-45 30 18L56 15l17 35 28-20-10 50Z" stroke="#82442b" strokeWidth="4" strokeLinejoin="round" /><g fill="#ffcdb0" stroke="#82442b" strokeWidth="3"><circle cx="12" cy="29" r="6" /><circle cx="56" cy="12" r="6" /><circle cx="103" cy="24" r="6" /></g></svg>
-}
-
 function BestMenuHeading() {
   return <div className="best-menu-heading">
-    <p className="best-menu-eyebrow">OUR SWEET FAVORITES</p>
-    <div className="best-menu-title-group"><Crown /><h2 id="best-menu-title">BEST MENU</h2><Heart className="best-menu-title-heart" filled /><span className="best-menu-title-sparkle" aria-hidden="true">✧</span><svg className="best-menu-scribble" viewBox="0 0 150 65" fill="none" aria-hidden="true"><path d="M3 52C30-5 72 16 58 51 44 78 28 15 83 7c39-8 51 18 34 27-23 9 7-51 30-10" stroke="#ff4c9a" strokeWidth="5" strokeLinecap="round" /></svg></div>
-    <p className="best-menu-caption">지금 가장 사랑받는 메뉴예요!</p>
+    <h2 id="best-menu-title" className="best-menu-heading-art">
+      <img src={headingImage} width="2172" height="724" alt="OUR SWEET FAVORITES — BEST MENU — 지금 가장 사랑받는 메뉴예요!" />
+    </h2>
   </div>
 }
-
 function ProductPhoto({ product }) {
   const photo = Object.entries(originalPhotos).find(([path]) => path.split('/').pop().split('.')[0] === product.id)?.[1]
   return <div className="best-menu-photo">

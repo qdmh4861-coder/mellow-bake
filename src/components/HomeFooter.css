@@ -72,3 +72,14 @@
   .mellow-footer-bottom { flex-direction: column; align-items: flex-start; padding: 16px 24px; }
   .mellow-footer-bottom nav { gap: 12px 18px; }
 }
+
+/* Main-page footer reference only. Other pages retain the existing footer. */
+.mellow-footer-reference { position: relative; width: 100%; min-width: 0; }
+.mellow-footer-reference > svg { display: block; width: 100%; height: auto; overflow: hidden; }
+.footer-reference-link { position: absolute; border-radius: 4px; }
+.footer-reference-link:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+.footer-reference-link:hover { background: #ffffff12; }
+.footer-reference-about { left: 36%; top: 32%; width: 11%; height: 10%; }
+.footer-reference-store { left: 36%; top: 43%; width: 13%; height: 10%; }
+.footer-reference-menu { left: 66%; top: 84%; width: 4%; height: 10%; }
+.footer-reference-top { left: 72%; top: 84%; width: 8%; height: 10%; }

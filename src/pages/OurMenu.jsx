@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { withHomeCategoryProducts } from './homeCategoryProducts'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
 import WaveDivider from '../components/WaveDivider'
@@ -7,6 +8,32 @@ import drinkBackground from '../images/Rectangle.png'
 import footerBackground from '../images/Rect.png'
 import saltBreadReference from '../assets/salt-bread-figma-reference.png'
 import './OurMenu.css'
+import breadHeadingReference from '../assets/bread-heading-yellow.png'
+import sandwichHeadingReference from '../assets/sandwich-heading-pink.png'
+import cakeHeadingReference from '../assets/cake-heading-purple.png'
+import cakeProductReference from '../assets/c81e80db-00ce-4cb3-a309-9221a0f0bbc1.png'
+import cakeProductSecondReference from '../assets/a3605a6a-f29a-43f2-ad35-7661565ea5c8.png'
+import drinkProductReference from '../assets/0c4e427e-ee24-42e9-ac97-e57f1daffef3.png'
+import coffeeProductReference from '../assets/9554fa9b-6384-4282-9137-d7a00ec28266.png'
+import sandwichProductReference from '../assets/9a3db27d-a0ab-4086-be3b-057fe2dfe1da.png'
+import sandwichFirstProductReference from '../assets/9e5d1058-e683-49e6-96ba-6f4be964568c.png'
+import breadProductReference from '../assets/f4aacce8-79fb-49cb-800b-ae084217a1b6.png'
+import breadFirstProductReference from '../assets/cfa249a7-4834-421d-8ffe-13dbc8b41b7a.png'
+import addedBreadProductReference from '../assets/04f5bf62-845e-4f31-ad7e-0df23a56ff88.png'
+import addedBreadSecondReference from '../assets/bea4ff14-2af0-45c5-87a0-71cdbfb6115a.png'
+import drinkHeadingReference from '../assets/ec7f3a07-853a-4023-bf53-ba35bc763b40.png'
+import sandwichFlagOrnament from '../assets/sandwich-flag-ornament.png'
+import breadLoafOrnament from '../assets/bread-loaf-ornament.png'
+import homeBreadBackground from '../assets/home-bread-background-small-ornaments.png'
+import homeCakeBackground from '../assets/home-cake-background-larger-side-treats.png'
+import homeSandwichBackground from '../assets/home-sandwich-background-spaced-ornaments.png'
+import homeDrinkBackground from '../assets/home-drink-background-wheat-header.png'
+import drinkBottomOrnaments from '../assets/a2356f3d-8e45-4be8-abe5-641e9afd1fe7.png'
+import drinkSideOrnaments from '../assets/drink-side-ornaments-transparent.png'
+import sandwichRabbitDrink from '../assets/sandwich-rabbit-drink-transparent.png'
+import sandwichKitten from '../assets/sandwich-kitten-ornament.png'
+import sandwichBottomOrnaments from '../assets/home-sandwich-background-wheat-header.png'
+import cakeBottomOrnaments from '../assets/home-cake-background-wheat-header.png'
 
 // Text and prices transcribed from the supplied Figma reference, not a live catalog.
 // Set imageSrc to a public URL (for example /images/menu/salt-bread.png) when ready.
@@ -123,6 +150,7 @@ function BreadDecorations() {
           <image href="/images/menu/bread/bread-background.png" width="1635" height="1382" />
         </svg>)}
     </div>)}
+    <img className="our-menu-bread-moved-loaf" src={breadLoafOrnament} alt="" />
   </div>
 }
 
@@ -138,6 +166,7 @@ function SandwichDecorations() {
           <image href={sandwichBackgroundSrc} width="1641" height="1292" />
         </svg>)}
     </div>)}
+    <img className="our-menu-sandwich-flag" src={sandwichFlagOrnament} alt="" />
   </div>
 }
 
@@ -171,8 +200,38 @@ function MenuImage({ src, alt, banner = false }) {
 }
 
 function ProductCard({ product }) {
+  const cakePhotoX = { 'cake-1': 50, 'cake-2': 515, 'cake-3': 985, 'cake-4': 1455 }[product.id]
+  const secondCakePhotoX = { 'cake-5': 114, 'cake-6': 545, 'cake-7': 972, 'cake-8': 1406 }[product.id]
+  const drinkPhotoX = { 'drink-5': 55, 'drink-6': 499, 'drink-7': 943, 'drink-8': 1391 }[product.id]
+  const coffeePhotoX = { 'drink-1': 114, 'drink-2': 573, 'drink-3': 1032, 'drink-4': 1494 }[product.id]
+  const sandwichPhotoX = { 'sandwich-5': 102, 'sandwich-6': 500, 'sandwich-7': 898, 'sandwich-8': 1296 }[product.id]
+  const firstSandwichPhotoX = { 'sandwich-1': 54, 'sandwich-2': 523, 'sandwich-3': 993, 'sandwich-4': 1463 }[product.id]
+  const breadPhotoX = { 'bread-5': 41, 'bread-6': 488, 'bread-7': 932, 'bread-8': 1375 }[product.id]
+  const firstBreadPhotoX = { 'bread-1': 31, 'bread-2': 510, 'bread-3': 987, 'bread-4': 1468 }[product.id]
+  const addedBreadPhotoX = { 'bread-9': 33, 'bread-10': 512, 'bread-11': 991, 'bread-12': 1470 }[product.id]
+  const addedBreadSecondPhotoX = { 'bread-13': 30, 'bread-14': 510, 'bread-15': 990, 'bread-16': 1472 }[product.id]
   const content = <>
-    {product.id === 'bread-1' ? <div className="our-menu-product-media"><svg viewBox="315 286 650 610" role="img" aria-label="소금빵" style={{ display:'block', width:'100%', height:'100%' }}><image href={saltBreadReference} width="1632" height="7491" /></svg></div> : <MenuImage src={product.imageSrc} alt={product.koreanName} />}
+    {addedBreadSecondPhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${addedBreadSecondPhotoX} 24 462 406`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={addedBreadSecondReference} width="1957" height="804" /></svg></div>
+      : addedBreadPhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${addedBreadPhotoX} 26 461 407`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={addedBreadProductReference} width="1957" height="804" /></svg></div>
+      : firstBreadPhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${firstBreadPhotoX} 36 469 406`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={breadFirstProductReference} width="1956" height="804" /></svg></div>
+      : breadPhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${breadPhotoX} 66 430 391`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={breadProductReference} width="1848" height="851" /></svg></div>
+      : firstSandwichPhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${firstSandwichPhotoX} 24 446 400`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={sandwichFirstProductReference} width="1960" height="802" /></svg></div>
+      : sandwichPhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${sandwichPhotoX} 70 380 352`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={sandwichProductReference} width="1794" height="877" /></svg></div>
+      : coffeePhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${coffeePhotoX} 27 435 407`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={coffeeProductReference} width="1991" height="790" /></svg></div>
+      : drinkPhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${drinkPhotoX} 41 418 414`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={drinkProductReference} width="1858" height="846" /></svg></div>
+      : secondCakePhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${secondCakePhotoX} 45 407 391`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={cakeProductSecondReference} width="1883" height="835" /></svg></div>
+      : cakePhotoX !== undefined
+      ? <div className="our-menu-product-media"><svg viewBox={`${cakePhotoX} 55 435 396`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={cakeProductReference} width="1938" height="812" /></svg></div>
+      : product.id === 'bread-1' ? <div className="our-menu-product-media"><svg viewBox="315 286 650 610" role="img" aria-label="소금빵" style={{ display:'block', width:'100%', height:'100%' }}><image href={saltBreadReference} width="1632" height="7491" /></svg></div> : <MenuImage src={product.imageSrc} alt={product.koreanName} />}
     <div className="our-menu-product-copy">
       {product.isTemporary && <span className="our-menu-temporary">임시 상품 정보</span>}
       <h3>{product.name}</h3>
@@ -186,38 +245,59 @@ function ProductCard({ product }) {
   </article>
 }
 
-export default function OurMenu() {
-  const categoryId = new URLSearchParams(window.location.search).get('category')
-  const visibleCategories = menuCategories.filter(category => !menuCategories.some(item => item.id === categoryId) || category.id === categoryId)
-  const firstCategoryColor = categoryColors[menuCategories.indexOf(visibleCategories[0])]
-  const lastCategoryColor = categoryColors[menuCategories.indexOf(visibleCategories[visibleCategories.length - 1])]
+export default function OurMenu({ categoryId: routeCategoryId } = {}) {
+  const categoryId = routeCategoryId ?? new URLSearchParams(window.location.search).get('category')
+  const listingCategories = routeCategoryId ? withHomeCategoryProducts(menuCategories) : menuCategories
+  const visibleCategories = listingCategories.filter(category => !listingCategories.some(item => item.id === categoryId) || category.id === categoryId)
+  const firstCategoryColor = categoryColors[listingCategories.indexOf(visibleCategories[0])]
+  const lastCategory = visibleCategories[visibleCategories.length - 1]
+  const listingColor = category => routeCategoryId && category.id === 'bread' ? '#fff0bc' : routeCategoryId && category.id === 'cake' ? '#f2e5fc' : routeCategoryId && category.id === 'sandwich' ? '#ffe2ee' : routeCategoryId && category.id === 'drink' ? '#d9faf1' : categoryColors[listingCategories.indexOf(category)]
+  const lastCategoryColor = listingColor(lastCategory)
   return <div className="our-menu-page">
     <HomeHeader />
     <main>
-      <div className="our-menu-banner-section">
-      <BannerDecorations />
-      <section className="our-menu-banner" aria-labelledby="our-menu-title">
-        {bannerImageSrc && <MenuImage src={bannerImageSrc} alt="멜로우 베이크의 디저트" banner />}
-        <div className="our-menu-banner-copy"><h1 id="our-menu-title">OUR MENU</h1><p>매일의 달콤한 순간을 함께하는 멜로우 베이크</p></div>
-      </section>
-      <div className="our-menu-wave our-menu-banner-wave">
-        <WaveDivider fromColor={bannerColor} toColor={firstCategoryColor} fillUpperBackground={false} />
-      </div>
-      </div>
       <div className="our-menu-categories">
-        {visibleCategories.map((category, index) => <section className="our-menu-category" style={{ backgroundColor: categoryColors[menuCategories.indexOf(category)] }} key={category.id} id={`menu-${category.id}`} aria-labelledby={`menu-${category.id}-title`}>
-          {index > 0 && <CategoryWave fromColor={categoryColors[menuCategories.indexOf(visibleCategories[index - 1])]} toColor={categoryColors[menuCategories.indexOf(category)]} />}
-          {category.id === 'bread' ? <BreadDecorations />
-            : category.id === 'sandwich' ? <SandwichDecorations />
-            : category.id === 'cake' ? <CakeDecorations />
-            : <DrinkDecorations />}
+        {visibleCategories.map((category, index) => <section className={`our-menu-category${routeCategoryId && category.id === 'bread' ? ' our-menu-home-bread-list' : routeCategoryId && category.id === 'cake' ? ' our-menu-home-cake-list' : routeCategoryId && category.id === 'sandwich' ? ' our-menu-home-sandwich-list' : routeCategoryId && category.id === 'drink' ? ' our-menu-home-drink-list' : ''}`} style={{ backgroundColor: listingColor(category), ...(routeCategoryId && category.id === 'bread' ? { '--home-bread-background': `url("${homeBreadBackground}")` } : routeCategoryId && category.id === 'cake' ? { '--home-cake-background': `url("${homeCakeBackground}")` } : routeCategoryId && category.id === 'sandwich' ? { '--home-sandwich-background': `url("${homeSandwichBackground}")` } : routeCategoryId && category.id === 'drink' ? { '--home-drink-background': `url("${homeDrinkBackground}")` } : {}) }} key={category.id} id={`menu-${category.id}`} aria-labelledby={`menu-${category.id}-title`}>
+          {index > 0 && <CategoryWave fromColor={listingColor(visibleCategories[index - 1])} toColor={listingColor(category)} />}
+          {category.id === 'bread' ? (routeCategoryId ? null : <BreadDecorations />)
+            : category.id === 'sandwich' ? (routeCategoryId ? null : <SandwichDecorations />)
+            : category.id === 'cake' ? (routeCategoryId ? null : <CakeDecorations />)
+            : (routeCategoryId ? null : <DrinkDecorations />)}
           <div className="our-menu-category-inner">
-          <div className="our-menu-category-heading"><h2 id={`menu-${category.id}-title`}>{category.title}</h2><p>{category.description}</p></div>
+          {category.id === 'bread'
+            ? <div className="our-menu-bread-heading"><h2 id="menu-bread-title"><img src={breadHeadingReference} width="2206" height="713" alt="BREAD — 매일 갓 구워낸 신선하고 맛있는 빵" /></h2></div>
+            : category.id === 'sandwich'
+              ? <div className="our-menu-sandwich-heading"><h2 id="menu-sandwich-title"><img src={sandwichHeadingReference} width="1908" height="824" alt="SANDWICH — 신선한 재료로 만든 든든한 샌드위치" /></h2></div>
+              : category.id === 'cake'
+                ? <div className="our-menu-cake-heading"><h2 id="menu-cake-title"><img src={cakeHeadingReference} width="2172" height="724" alt="CAKE — 달콤한 순간을 더욱 특별하게 만드는 멜로우 베이크의 케이크" /></h2></div>
+                : category.id === 'drink'
+                  ? <div className="our-menu-drink-heading"><h2 id="menu-drink-title"><img src={drinkHeadingReference} width="1997" height="788" alt="DRINK — 달콤한 디저트와 함께 즐기는 멜로우 베이크의 특별한 음료" /></h2></div>
+                  : <div className="our-menu-category-heading"><h2 id={`menu-${category.id}-title`}>{category.title}</h2><p>{category.description}</p></div>}
           <div className="our-menu-grid">
             {category.products.map(product => <ProductCard key={product.id} product={product} />)}
             {category.id === 'bread' && <BreadRowDecorations />}
           </div>
           </div>
+          {routeCategoryId && category.id === 'drink' && <div className="our-menu-drink-extra-ornaments" aria-hidden="true">
+            {[['lemon', '130 55 380 535'], ['coffee', '750 50 370 540'], ['berry', '120 680 410 510']].map(([name, viewBox]) => <svg key={name} className={`drink-extra-ornament drink-extra-ornament--${name}`} viewBox={viewBox}><image href={drinkSideOrnaments} width="1254" height="1254" /></svg>)}
+          </div>}
+          {routeCategoryId && category.id === 'drink' && <div className="our-menu-drink-bottom-ornaments" aria-hidden="true">
+            <svg className="our-menu-drink-bottom-ornament our-menu-drink-bottom-ornament--left" viewBox="0 980 360 480"><image href={drinkBottomOrnaments} width="1024" height="1536" /></svg>
+            <svg className="our-menu-drink-bottom-ornament our-menu-drink-bottom-ornament--right" viewBox="735 1000 289 470"><image href={drinkBottomOrnaments} width="1024" height="1536" /></svg>
+          </div>}
+          {routeCategoryId && category.id === 'sandwich' && <div className="our-menu-sandwich-extra-ornaments" aria-hidden="true">
+            <svg className="sandwich-extra-ornament sandwich-extra-ornament--bear" viewBox="790 770 230 190"><image href={sandwichBottomOrnaments} width="1024" height="1536" /></svg>
+            <svg className="sandwich-extra-ornament sandwich-extra-ornament--rabbit" viewBox="65 55 755 785"><image href={sandwichKitten} width="1774" height="887" /></svg>
+            <svg className="sandwich-extra-ornament sandwich-extra-ornament--drink" viewBox="1100 95 460 710"><image href={sandwichRabbitDrink} width="1774" height="887" /></svg>
+          </div>}
+          {routeCategoryId && category.id === 'sandwich' && <div className="our-menu-sandwich-bottom-ornaments" aria-hidden="true">
+            <svg className="our-menu-sandwich-bottom-ornament our-menu-sandwich-bottom-ornament--left" viewBox="0 1150 380 300"><image href={sandwichBottomOrnaments} width="1024" height="1536" /></svg>
+            <svg className="our-menu-sandwich-bottom-ornament our-menu-sandwich-bottom-ornament--right" viewBox="580 1200 444 270"><image href={sandwichBottomOrnaments} width="1024" height="1536" /></svg>
+          </div>}
+          {routeCategoryId && category.id === 'cake' && <div className="our-menu-cake-bottom-ornaments" aria-hidden="true">
+            <svg className="our-menu-cake-bottom-ornament our-menu-cake-bottom-ornament--left" viewBox="15 1090 175 235"><image href={cakeBottomOrnaments} width="1024" height="1536" /></svg>
+            <svg className="our-menu-cake-bottom-ornament our-menu-cake-bottom-ornament--right" viewBox="775 1120 235 215"><image href={cakeBottomOrnaments} width="1024" height="1536" /></svg>
+          </div>}
         </section>)}
       </div>
       <CategoryWave fromColor={lastCategoryColor} toColor="#604236" />

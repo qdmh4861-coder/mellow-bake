@@ -87,3 +87,16 @@
   .new-menu-card { transition:none; }
   .new-menu-card:hover { transform:none; }
 }
+
+/* Transparent title artwork only; product cards and section background are unchanged. */
+.mellow-home .new-menu-heading-art {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 0;
+  line-height: 0;
+}
+.new-menu-heading-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

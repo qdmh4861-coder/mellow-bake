@@ -1,4 +1,4 @@
-﻿.mellow-home {
+.mellow-home {
   --pink: #ff4d92;
   --ink: #623b50;
   --cream: #fffaf0;
@@ -228,7 +228,7 @@ body:has(.mellow-home) { min-width: 0; }
 /* VISIT OUR STORE only; inherit the existing sky-blue section background. */
 .visit-store-layout { width: min(1440px, calc(100% - 80px)); margin-inline: auto; display: grid; grid-template-columns: 80px minmax(0, 520px) minmax(0, 460px) 80px; gap: 32px; justify-content: center; align-items: center; }
 .visit-store-photo { position: relative; width: 100%; max-width: 520px; min-width: 0; aspect-ratio: 13 / 10; overflow: hidden; border-radius: 12px; background: #fff9ee; display: grid; place-items: center; }
-.visit-store-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: 100%; object-fit: contain; }
+.visit-store-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: 100%; object-fit: cover; }
 .visit-store-photo > span { color: #9d8b91; font-size: 14px; }
 .visit-store-copy { min-width: 0; }
 .visit-store-eyebrow { color: #f15d91; font-size: 14px; font-weight: 800; }
@@ -277,4 +277,44 @@ body:has(.mellow-home) { min-width: 0; }
 @media (min-width: 1200px) {
   .visit-store-layout > .visit-store-photo,
   .visit-store-layout > .visit-store-copy { translate: 60px 0; }
+}
+
+/* Store reference artwork only; keep all other sections unchanged. */
+.visit-store-reference {
+  position: relative;
+  width: min(1200px, calc(100% - 112px));
+  margin-inline: auto;
+}
+.mellow-home .visit-store-reference-title {
+  margin: 0;
+  line-height: 0;
+  aspect-ratio: 1711 / 850;
+  overflow: hidden;
+}
+.visit-store-reference-title img { display: block; width: 100%; height: auto; }
+.mellow-home .home-visit {
+  background: linear-gradient(to bottom, #a2edec, #adf3ef 16%);
+}
+.visit-store-reference-title img {
+  /* Blend the artwork's mint texture into the surrounding section. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 2%, #000 98%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 2%, #000 98%, transparent);
+}
+.visit-store-reference-map {
+  position: absolute;
+  left: 58.8%;
+  top: 89.2%;
+  width: 22.7%;
+  height: 8.65%;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+}
+.visit-store-reference-map:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+@media (max-width: 1000px) {
+  .visit-store-reference { width: calc(100% - 72px); }
+}
+@media (max-width: 600px) {
+  .visit-store-reference { width: calc(100% - 24px); }
 }

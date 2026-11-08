@@ -1,4 +1,5 @@
-﻿import './NewMenu.css'
+import './NewMenu.css'
+import headingImage from '../assets/d8b8cd4a-65eb-4e3a-b50e-66912d8dcbcf.png'
 
 import { useState } from 'react'
 
@@ -12,22 +13,13 @@ const products = [
   { id: 'fruit-tart', badge: 'NEW', name: 'Fruit Tart', korean: '생과일 타르트', description: '신선한 제철 과일과 부드러운 크림을 가득 올린 상큼한 타르트', price: '7,200원' },
 ]
 
-function Heart({ className }) {
-  return <svg className={className} viewBox="0 0 85 90" fill="none" aria-hidden="true"><path d="M40 78S-1 42 11 20C22 0 38 18 40 26c9-21 29-24 33-5 7 25-33 57-33 57Z" fill="#ff7cbb" stroke="#fff" strokeWidth="13" strokeLinejoin="round" /><path d="M40 78S-1 42 11 20C22 0 38 18 40 26c9-21 29-24 33-5 7 25-33 57-33 57Z" stroke="#f03999" strokeWidth="5" strokeLinejoin="round" /><path d="M20 24q-5 5-3 10" stroke="#fff" strokeWidth="5" strokeLinecap="round" /></svg>
-}
-
 function Heading() {
   return <div className="new-menu-heading">
-    <div className="new-menu-title-group">
-      <svg className="new-menu-scribble" viewBox="0 0 150 70" fill="none" aria-hidden="true"><path d="M4 55C35-5 82 13 57 58 33 92 28 18 83 7c57-8 51 48 23 33-23-15 10-48 41-15" stroke="#fff" strokeWidth="12" strokeLinecap="round" /><path d="M4 55C35-5 82 13 57 58 33 92 28 18 83 7c57-8 51 48 23 33-23-15 10-48 41-15" stroke="#f449a5" strokeWidth="5" strokeLinecap="round" /></svg>
-      <h2 id="new-menu-title">NEW MENU</h2>
-      <Heart className="new-menu-heart new-menu-heart--large" /><Heart className="new-menu-heart new-menu-heart--small" />
-      <span className="new-menu-star" aria-hidden="true">✦</span><span className="new-menu-flower" aria-hidden="true">✿</span><span className="new-menu-sparkle" aria-hidden="true">✧</span>
-    </div>
-    <p className="new-menu-caption">새롭게 업데이트 되었어요!</p>
+    <h2 id="new-menu-title" className="new-menu-heading-art">
+      <img src={headingImage} width="2172" height="724" alt="NEW MENU — 오늘의 달콤한 신메뉴를 만나보세요!" />
+    </h2>
   </div>
 }
-
 function Badge({ label }) {
   return <span className={`new-menu-badge${label === 'NEW' ? ' new-menu-badge--blue' : ''}`}><svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,3 62,12 78,8 83,24 97,30 91,47 98,60 83,70 82,87 64,88 51,98 37,89 21,94 17,77 3,69 9,52 3,38 18,27 20,12 37,13" fill="currentColor" stroke="var(--badge-edge)" strokeWidth="3" strokeLinejoin="round" /></svg><svg className="new-menu-badge-ornament" viewBox="0 0 32 26" aria-hidden="true">{label === 'BEST' ? <><path d="m3 5 7 6 6-9 6 9 7-6-4 17H7Z" fill="#ffbd34" stroke="#ec9025" strokeWidth="1.5" /><path d="M8 18h16" fill="none" stroke="#fff6c7" strokeWidth="2" /></> : <path d="M16 1q1 10 12 12-11 1-12 12Q14 14 4 13 14 11 16 1Z" fill="#06a4d6" stroke="#fff" strokeWidth="1.5" />}</svg><span>{label}</span></span>
 }

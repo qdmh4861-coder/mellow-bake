@@ -28,3 +28,16 @@
   .mellow-home .home-reviews .home-review-body { padding:14px 8px 8px; }
   .mellow-home .home-reviews .home-review-card h3 { font-size:23px; }
 }
+
+/* Transparent review heading only; preserve the review cards and section background. */
+.mellow-home .home-reviews .home-review-heading-art {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 0;
+  line-height: 0;
+}
+.home-review-heading-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

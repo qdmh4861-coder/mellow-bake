@@ -8,7 +8,8 @@ import SaltBreadDetail from './pages/SaltBreadDetail'
 
 function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
-  const page = pathname === '/menu/salt-bread' ? <SaltBreadDetail /> : pathname === '/menu' ? <OurMenu /> : pathname === '/login' ? <Login /> : pathname === '/signup' ? <Signup /> : <Home />
+  const menuCategory = pathname.match(/^\/menu\/(bread|cake|sandwich|drink|all)$/)?.[1]
+  const page = pathname === '/menu/salt-bread' ? <SaltBreadDetail /> : menuCategory ? <OurMenu categoryId={menuCategory} /> : pathname === '/menu' ? <OurMenu /> : pathname === '/login' ? <Login /> : pathname === '/signup' ? <Signup /> : <Home />
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })

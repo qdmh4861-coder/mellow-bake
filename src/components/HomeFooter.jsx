@@ -6,7 +6,20 @@ function SocialIcon({ type }) {
   </svg>
 }
 
-export default function HomeFooter({ artwork = null }) {
+export default function HomeFooter({ artwork = null, referenceImage = null }) {
+  if (referenceImage) {
+    return <footer className="mellow-footer-reference" aria-label="MELLOW BAKE 푸터">
+      <svg viewBox="0 135 2172 589" role="img" aria-label="MELLOW BAKE — 일상 속 달콤한 쉼표, 멜로우 베이크. 좋은 재료와 정성을 담아 달콤한 순간을 전합니다. INFORMATION, CUSTOMER, FOLLOW US. © 2026 MELLOW BAKE. All Rights Reserved.">
+        <image href={referenceImage} width="2172" height="724" />
+      </svg>
+      <nav aria-label="푸터 바로가기">
+        <a className="footer-reference-link footer-reference-about" href="#our-story" aria-label="About Us" />
+        <a className="footer-reference-link footer-reference-store" href="#visit" aria-label="Store Location" />
+        <a className="footer-reference-link footer-reference-menu" href="#best-menu" aria-label="MENU" />
+        <a className="footer-reference-link footer-reference-top" href="#home" aria-label="BACK TO TOP" />
+      </nav>
+    </footer>
+  }
   const content = <div className="mellow-footer-top">
       <div className="mellow-footer-brand">
         <a className="mellow-footer-title" href="#home">MELLOW BAKE</a>

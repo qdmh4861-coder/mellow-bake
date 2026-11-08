@@ -141,8 +141,10 @@
 .our-menu-bread-edge--left { left: 0; }
 .our-menu-bread-edge--right { right: 0; mask-image: linear-gradient(to left, #000 85%, transparent); }
 .our-menu-bread-corner { display: block; width: 100%; height: auto; flex: 0 0 auto; overflow: hidden; }
-.our-menu-bread-corner--top { mask-image: linear-gradient(to bottom, transparent, #000 12px, #000 calc(100% - 28px), transparent); }
+.our-menu-bread-corner--top { mask-image: linear-gradient(to bottom, transparent, #000 80px, #000 calc(100% - 28px), transparent); }
+.our-menu-bread-edge--left > .our-menu-bread-corner--top { width: 80%; }
 .our-menu-bread-corner--bottom { mask-image: linear-gradient(to bottom, transparent, #000 28px, #000 calc(100% - 12px), transparent); }
+.our-menu-bread-edge--right > .our-menu-bread-corner--bottom { translate: clamp(-36px, -2vw, -12px) 0; }
 /* SANDWICH mirrors the final BREAD corner layout, using its own source ratio. */
 #menu-sandwich { container-type: inline-size; }
 .our-menu-sandwich-artwork { position: absolute; inset: calc(100cqw * 105 / 1632 - 2px) 0 0; z-index: 0; pointer-events: none; overflow: hidden; container-type: size; }
@@ -212,3 +214,153 @@
   .our-menu-banner-copy { max-width: 76%; padding: 24px 16px; }
   .our-menu-banner-copy p { font-size: 12px; }
 }
+
+/* Supplied OUR MENU banner only; keep the header and product sections intact. */
+.our-menu-reference-banner { width: 100%; min-width: 0; background: #ffe580; }
+.our-menu-page .our-menu-reference-title { margin: 0; padding: 0; line-height: 0; }
+.our-menu-reference-title img {
+  display: block;
+  width: 100%;
+  height: auto;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent);
+}
+/* BREAD title reference only; preserve existing product cards and layout. */
+.our-menu-bread-heading { width: min(100%, 900px); margin: 0 auto 36px; }
+.our-menu-page .our-menu-bread-heading h2 { margin: 0; padding: 0; line-height: 0; }
+.our-menu-bread-heading img { display: block; width: 100%; height: auto; }
+
+/* Move the heading's loaf ornament into the protected right decoration rail. */
+.our-menu-bread-moved-loaf {
+  position: absolute;
+  top: clamp(65px, 6vw, 110px);
+  right: 3%;
+  width: 13%;
+  height: auto;
+}
+/* SANDWICH heading artwork only. */
+.our-menu-sandwich-heading { width: min(85%, 760px); margin: 0 auto 36px; }
+.our-menu-page .our-menu-sandwich-heading h2 { margin: 0; padding: 0; line-height: 0; }
+.our-menu-sandwich-heading img { display: block; width: 100%; height: auto; }
+
+/* Requested sandwich side ornaments only. */
+.our-menu-sandwich-edge--left > .our-menu-sandwich-corner--top { width: 80%; }
+.our-menu-sandwich-flag {
+  position: absolute;
+  top: clamp(85px, 7vw, 140px);
+  right: 2%;
+  width: 14%;
+  height: auto;
+}
+/* CAKE heading artwork only. */
+.our-menu-cake-heading { width: min(85%, 760px); margin: 0 auto 36px; }
+.our-menu-page .our-menu-cake-heading h2 { margin: 0; padding: 0; line-height: 0; }
+.our-menu-cake-heading img { display: block; width: 100%; height: auto; }
+/* DRINK heading artwork only. */
+.our-menu-drink-heading { width: min(85%, 760px); margin: 0 auto 36px; }
+.our-menu-page .our-menu-drink-heading h2 { margin: 0; padding: 0; line-height: 0; }
+.our-menu-drink-heading img { display: block; width: 100%; height: auto; }
+/* New backdrop is limited to the home category BREAD listings. */
+.our-menu-page .our-menu-home-bread-list {
+  background-color: #fff0bc !important;
+}
+.our-menu-home-bread-list::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--home-bread-background);
+  background-position: center top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  mask-image: linear-gradient(to bottom, #000 92%, transparent 96%);
+}
+.our-menu-home-bread-list > .our-menu-category-inner {
+  padding-top: clamp(125px, 23vw, 400px);
+}
+
+/* Home category cake backdrop; retain the full canvas with smaller side artwork. */
+.our-menu-home-cake-list::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  aspect-ratio: 1024 / 1536;
+  pointer-events: none;
+  background-image: var(--home-cake-background);
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  mask-image: linear-gradient(to bottom, #000 92%, transparent 98%);
+}
+.our-menu-home-cake-list > .our-menu-category-inner {
+  padding-top: calc(30vw + 12px);
+}
+
+/* Anchor the moved cake and shopping bag beside the end of the cake listing. */
+.our-menu-cake-bottom-ornaments { position: absolute; inset: auto 0 24px; height: 0; pointer-events: none; }
+.our-menu-cake-bottom-ornament { position: absolute; bottom: 0; display: block; width: min(20%, 300px); height: auto; overflow: hidden; mask-image: radial-gradient(ellipse, #000 58%, transparent 73%); }
+.our-menu-cake-bottom-ornament--left { left: 1%; }
+.our-menu-cake-bottom-ornament--right { right: 1%; }
+
+/* Home sandwich listing background only; keep its header separate from the title. */
+.our-menu-home-sandwich-list::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  aspect-ratio: 1024 / 1536;
+  pointer-events: none;
+  background-image: var(--home-sandwich-background);
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  mask-image: linear-gradient(to bottom, #000 90%, transparent 94%);
+}
+.our-menu-home-sandwich-list > .our-menu-category-inner {
+  padding-top: calc(29vw + 4px);
+}
+/* Requested sandwich ornaments follow the end of the listing, above the footer. */
+.our-menu-sandwich-bottom-ornaments { position: absolute; inset: auto 0 24px; height: 0; pointer-events: none; }
+.our-menu-sandwich-bottom-ornament { position: absolute; bottom: 0; display: block; width: min(20%, 300px); height: auto; overflow: hidden; mask-image: radial-gradient(ellipse, #000 65%, transparent 85%); }
+.our-menu-sandwich-bottom-ornament--left { left: 0; }
+.our-menu-sandwich-bottom-ornament--right { right: 0; }
+
+/* Fill only the empty lower side rails of the home sandwich listing. */
+.our-menu-sandwich-extra-ornaments { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.sandwich-extra-ornament { position: absolute; display: block; width: min(14%, 220px); height: auto; }
+.sandwich-extra-ornament--sandwich { top: 62%; left: 1%; }
+.sandwich-extra-ornament--bear { top: 64%; right: 1%; mask-image: radial-gradient(ellipse, #000 65%, transparent 88%); }
+.sandwich-extra-ornament--rabbit { top: 78%; left: 1%; width: min(16%, 250px); }
+.sandwich-extra-ornament--drink { top: 80%; right: 2%; width: min(11.5%, 175px); }
+
+/* Home drink listing only; ornaments remain above its footer boundary. */
+.our-menu-home-drink-list::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  aspect-ratio: 1024 / 1536;
+  pointer-events: none;
+  background-image: var(--home-drink-background);
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 98%);
+}
+.our-menu-home-drink-list > .our-menu-category-inner { padding-top: calc(33vw + 12px); }
+.our-menu-drink-bottom-ornaments { position: absolute; inset: auto 0 24px; height: 0; pointer-events: none; }
+.our-menu-drink-bottom-ornament { position: absolute; bottom: 0; display: block; width: min(18%, 280px); height: auto; overflow: hidden; mask-image: radial-gradient(ellipse, #000 65%, transparent 90%); }
+.our-menu-drink-bottom-ornament--left { left: 0; }
+.our-menu-drink-bottom-ornament--right {
+  right: 0;
+  bottom: clamp(24px, 3vw, 56px);
+  mask-image: radial-gradient(ellipse, #000 50%, transparent 78%);
+}
+/* Transparent drink ornaments occupy only the empty lower side rails. */
+.our-menu-drink-extra-ornaments { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.drink-extra-ornament { position: absolute; display: block; width: min(12%, 190px); height: auto; overflow: hidden; }
+.drink-extra-ornament--lemon { top: 62%; left: 1%; }
+.drink-extra-ornament--coffee { top: 65%; right: 1%; }
+.drink-extra-ornament--berry { top: 79%; left: 1%; }
+.drink-extra-ornament--matcha { top: 80%; right: 1%; }

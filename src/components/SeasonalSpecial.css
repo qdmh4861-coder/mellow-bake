@@ -1,79 +1,61 @@
-﻿/* Only the promo's internal spacing changes. Its background and both existing waves are inherited. */
+/* Keep the existing promo section spacing, background and waves. */
 .mellow-home .home-promo.seasonal-special {
   min-height: 0;
   padding-top: 80px;
   padding-bottom: calc(80px + var(--home-wave-height, clamp(38px, 6.5vw, 105px)) - 1px);
 }
-.seasonal-special-banner {
-  position: relative;
-  isolation: isolate;
-  container-type: inline-size;
+@media (max-width: 600px) {
+  .mellow-home .home-promo.seasonal-special {
+    padding-top: 40px;
+    padding-bottom: calc(40px + var(--home-wave-height, clamp(38px, 6.5vw, 105px)) - 1px);
+  }
+}
+/* Preserve the reference artwork while excluding its duplicate section waves. */
+.seasonal-special-neon-banner {
   width: min(1200px, calc(100% - 112px));
-  aspect-ratio: 1200 / 380;
+  aspect-ratio: 1905 / 710;
   margin-inline: auto;
   display: grid;
-  grid-template-columns: .44fr .56fr;
-  align-items: center;
+  place-items: center;
+}
+.seasonal-special-neon-artwork {
+  position: relative;
+  width: 100%;
+}
+.seasonal-special-neon-artwork svg {
+  display: block;
+  width: 100%;
+  height: auto;
   overflow: hidden;
-  border-radius: 24px;
-  background: linear-gradient(115deg, #f5e7ff, #e4c9fa 70%, #f9e7f1);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent), linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+  mask-composite: intersect;
 }
-.seasonal-special-cloud { position: absolute; z-index: -1; left: 1%; top: 4%; width: 53%; height: 100%; }
-.seasonal-special-copy { position: relative; z-index: 2; padding: 3cqw 0 3cqw 7cqw; }
-.seasonal-special-brand { display: block; color: #f45b9c; font-size: 1cqw; font-weight: 900; letter-spacing: .04em; margin-bottom: 1cqw; }
-.mellow-home .seasonal-special-copy h2 {
-  color: #6b3925;
-  font-family: 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif;
-  font-size: 5cqw; font-weight: 1000; line-height: 1.04; letter-spacing: -.045em; rotate: -3deg;
+.seasonal-special-neon-link {
+  position: absolute;
+  left: 21.36%;
+  top: 75.77%;
+  width: 18.9%;
+  height: 11%;
+  border-radius: 999px;
+  transition: box-shadow .2s ease, background-color .2s ease;
 }
-.mellow-home .seasonal-special-subtitle { color: #8450a0; font-size: 1.8cqw; font-weight: 800; margin-top: 1.45cqw; line-height: 1.5; word-break: keep-all; }
-.seasonal-special-button { display: inline-flex; align-items: center; justify-content: center; margin-top: 1.6cqw; padding: .8cqw 1.8cqw; border-radius: 999px; background: #f44998; color: #fff !important; font-size: 1.05cqw; font-weight: 800; line-height: 1.5; transition: background-color .2s; }
-.seasonal-special-button:hover { background: #ff70af; }
-.seasonal-special-art { position: relative; z-index: 1; height: 100%; min-width: 0; padding: 1.6cqw 2cqw 1.6cqw 0; }
-.seasonal-special-art img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
-.seasonal-special-ornaments { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
-.seasonal-special-rays { position: absolute; left: 38%; top: 10%; width: 5%; height: auto; }
-.seasonal-special-underline { display: block; width: 90%; height: 1.1cqw; margin-top: .6cqw; overflow: visible; }
-.seasonal-special-heart { position: absolute; left: 40%; top: 44%; color: #ff78b1; font-size: 3.2cqw; line-height: 1; rotate: -15deg; }
-.seasonal-special-sparkle { position: absolute; right: 3%; top: 7%; color: #fff6ad; font-size: 4cqw; line-height: 1; }
-.seasonal-special-flower { position: absolute; width: 5%; height: auto; }
-.seasonal-special-flower--top { top: 8%; left: 48%; rotate: 12deg; }
-.seasonal-special-flower--bottom { bottom: 6%; left: 3%; width: 4%; rotate: -12deg; }
+.seasonal-special-neon-link:hover,
+.seasonal-special-neon-link:focus-visible {
+  background-color: #ffffff12;
+  box-shadow: 0 0 12px #f3c0ff, 0 0 22px #b54aff;
+}
+.seasonal-special-neon-link:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
 @media (max-width: 1000px) {
-  .seasonal-special-banner { width: calc(100% - 72px); border-radius: 18px; }
+  .seasonal-special-neon-banner { width: calc(100% - 72px); }
 }
 @media (max-width: 600px) {
-  .mellow-home .home-promo.seasonal-special { padding-top: 40px; padding-bottom: calc(40px + var(--home-wave-height, clamp(38px, 6.5vw, 105px)) - 1px); }
-  .seasonal-special-banner { width: calc(100% - 48px); aspect-ratio: auto; grid-template-columns: 1fr; border-radius: 20px; }
-  .seasonal-special-cloud { width: 115%; height: 62%; left: -10%; top: 0; }
-  .seasonal-special-copy { padding: 30px 32px 18px; }
-  .seasonal-special-underline { height: 10px; margin-top: 6px; }
-  .seasonal-special-rays { left: auto; right: 8%; top: 6%; width: 10%; }
-  .seasonal-special-brand { font-size: 11px; margin-bottom: 10px; }
-  .mellow-home .seasonal-special-copy h2 { font-size: clamp(28px, 10cqw, 36px); }
-  .mellow-home .seasonal-special-subtitle { font-size: 15px; margin-top: 15px; }
-  .seasonal-special-button { font-size: 12px; margin-top: 18px; padding: 10px 18px; }
-  .seasonal-special-art { height: 190px; padding: 10px 20px 20px; }
-  .seasonal-special-heart { left: auto; right: 8%; top: 28%; font-size: 30px; }
-  .seasonal-special-sparkle { top: auto; bottom: 8%; font-size: 36px; }
-  .seasonal-special-flower--top { left: auto; right: 10%; top: 43%; width: 12%; }
-  .seasonal-special-flower--bottom { width: 10%; bottom: 6%; left: 8%; }
+  .seasonal-special-neon-banner { width: calc(100% - 48px); aspect-ratio: auto; }
+  .seasonal-special-neon-artwork { width: 100%; }
+
 }
-@media (prefers-reduced-motion: reduce) { .seasonal-special-button { transition: none; } }
-
-
-
-/* Optional original composite: only the central banner is shown on desktop. */
-.seasonal-special-reference { display: none; }
-.seasonal-reference-desserts { display: block; width: 100%; height: 100%; }
-@media (min-width: 601px) {
-  .seasonal-special-banner--reference { display: block; background: transparent; }
-  .seasonal-special-banner--reference > :not(.seasonal-special-reference) { display: none; }
-  .seasonal-special-banner--reference > .seasonal-special-reference { position: absolute; inset: 0; display: grid; place-items: center; }
-  .seasonal-special-reference > svg { display: block; width: 100%; height: 100%; }
-  .seasonal-reference-link { transition: fill .18s ease; }
-  .seasonal-special-reference a:hover .seasonal-reference-link { fill: #ffffff20; }
-  .seasonal-special-reference a:focus-visible { outline: none; }
-  .seasonal-special-reference a:focus-visible .seasonal-reference-link { stroke: #782a9d; stroke-width: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .seasonal-special-neon-link { transition: none; }
 }
-

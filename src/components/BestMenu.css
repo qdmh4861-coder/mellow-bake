@@ -1,4 +1,4 @@
-﻿/* BEST MENU content only. Background, section sizing and wave styles are inherited unchanged. */
+/* BEST MENU content only. Background, section sizing and wave styles are inherited unchanged. */
 .best-menu-content { position: relative; }
 .best-menu-heading { position: relative; margin: 0 auto 48px; text-align: center; }
 .mellow-home .best-menu-eyebrow { margin-bottom: 12px; color: #743d2a; font-size: 11px; font-weight: 800; letter-spacing: .24em; }
@@ -71,4 +71,17 @@
   .best-menu-grid { grid-template-columns: 1fr; gap: 42px; max-width: 340px; margin-inline: auto; }
   .best-menu-card { padding: 15px; }
   .best-menu-badge { width: 72px; height: 72px; top: -24px; left: -5px; }
+}
+
+/* Transparent heading artwork only; keep the product cards and section styling. */
+.mellow-home .best-menu-heading-art {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 0;
+  line-height: 0;
+}
+.best-menu-heading-art img {
+  display: block;
+  width: 100%;
+  height: auto;
 }

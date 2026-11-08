@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import './Home.css'
 import HomeHeader from '../components/HomeHeader'
 import HomeHero from '../components/HomeHero'
@@ -9,12 +9,16 @@ import SeasonalSpecial from '../components/SeasonalSpecial'
 import NewArrivals from '../components/NewArrivals'
 import OurStory from '../components/OurStory'
 import HomeFooter from '../components/HomeFooter'
+import footerReference from '../assets/6f75bae9-33f5-4119-96db-8ed342966903.png'
 import FindYourSweet from '../components/FindYourSweet'
 import matchaReview from '../assets/reviews/matcha-strawberry-roll.png'
 import chocolateReview from '../assets/best-menu/chocolate-cake.png'
 import strawberryReview from '../assets/reviews/strawberry-shortcake.png'
 import peachReview from '../assets/reviews/peach-yogurt.png'
+import storePhoto from '../assets/33d8952e-332b-433a-b667-64e49cd48144.png'
+import storeReference from '../assets/a7e6ce60-d89a-43a1-ad52-723d90f7a14d.png'
 import '../components/ReviewCards.css'
+import reviewHeadingImage from '../assets/9025c738-0a99-4405-9733-74f6b116486c.png'
 
 
 // Review copy, masked authors and dates are transcribed from the supplied design.
@@ -39,8 +43,7 @@ function ReviewPhoto({ review }) {
     {status !== 'loaded' && <div className="home-review-photo-placeholder" role="img" aria-label={`${review.product} 리뷰 사진 준비 중`}><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="6" /><circle cx="17" cy="18" r="4" /><path d="m6 35 12-11 8 8 7-7 9 10" /></svg><span>리뷰 사진 준비 중</span></div>}
   </div>
 }
-// Set photoSrc to `${import.meta.env.BASE_URL}images/visit-store.png` when the photo is ready.
-const storeDetails = { photoSrc: null, mapUrl: null, address: '정보 준비 중', hours: '정보 준비 중', phone: '정보 준비 중' }
+const storeDetails = { photoSrc: storePhoto, mapUrl: null, address: '서울특별시 관악구 남부순환로 1820', addressDetail: '101동 203호', hours: '매일 10:00 ~ 21:00', lastOrder: '20:30', closedDays: '연중무휴', phone: '010-1234-5678' }
 
 function StorePhoto() {
   const [status, setStatus] = useState('loading')
@@ -141,20 +144,9 @@ export default function Home() {
         <section id="reviews" className="home-section home-reviews" aria-labelledby="home-review-title">
           <div className="home-container">
             <div className="home-review-heading">
-              <div className="home-review-cloud-title">
-                <svg className="home-review-cloud" viewBox="0 0 900 220" preserveAspectRatio="none" aria-hidden="true"><path d="M42 106C12 63 56 38 106 41 149 45 161 9 211 18 252 25 268 41 305 19 354-12 384 8 423 27 466 49 502 31 544 17 601-2 624 33 661 38 710 32 755 31 777 64 835 52 884 78 870 112 907 155 858 192 814 190 767 225 733 182 687 193 634 223 602 188 553 196 506 219 470 205 430 192 380 208 342 223 301 196 259 176 229 212 187 198 145 170 120 207 78 186 27 186 11 143 42 106Z" fill="#fff5ed" stroke="#e9c1f3" strokeWidth="13" strokeLinejoin="round" /><g fill="#fff" stroke="#fff" strokeLinecap="round"><path d="M75 75q12-9 25-8M614 26q13-1 24 7M818 72q12 3 18 12" fill="none" strokeWidth="6" /><circle cx="67" cy="87" r="3" /><circle cx="176" cy="186" r="3" /><circle cx="189" cy="191" r="2" /><circle cx="600" cy="25" r="2.5" /><circle cx="762" cy="191" r="3" /><circle cx="777" cy="196" r="2" /></g></svg>
-                <h2 id="home-review-title" aria-label="CUSTOMER REVIEW">{Array.from('CUSTOMER REVIEW').map((letter, index) => <span key={index} aria-hidden="true" className={letter === ' ' ? 'review-title-space' : 'review-title-letter'} style={{ '--letter-y': `${(((index - 7) / 7) ** 2 * 14 - 7).toFixed(2)}px`, '--letter-r': `${(index - 7) * 1.25}deg` }}>{letter === ' ' ? ' ' : letter}</span>)}</h2>
-                <p className="home-review-subtitle">SWEET MOMENTS, HAPPY CUSTOMERS</p>
-                <svg className="home-review-small-heart" viewBox="0 0 50 55" fill="none" aria-hidden="true"><path d="M25 48S0 28 6 14C12 1 24 9 25 18 30 4 46 4 46 18 46 31 25 48 25 48Z" fill="#ff92c5" stroke="#fff" strokeWidth="9" /><path d="M25 48S0 28 6 14C12 1 24 9 25 18 30 4 46 4 46 18 46 31 25 48 25 48Z" stroke="#ef4b9b" strokeWidth="3" /></svg>
-                <svg className="home-review-blue-star" viewBox="0 0 55 60" fill="none" aria-hidden="true"><path d="M26 5c9-3 9 14 10 16 18-4 23 11 3 14-2 22-15 21-17 1C0 40 0 23 20 22 20 13 18 7 26 5Z" fill="#e3c8ff" stroke="#7da3e9" strokeWidth="4" strokeLinejoin="round" /></svg>
-                <svg className="home-review-mini-star" viewBox="0 0 36 47" fill="none" aria-hidden="true"><path d="M17 4c1 12-3 16-13 20 10 2 14 6 14 19 3-12 5-17 14-20C23 21 20 16 17 4Z" fill="#ffa5ca" stroke="#3b2421" strokeWidth="3" strokeLinejoin="round" /></svg>
-                <svg className="home-review-pink-rays home-review-pink-rays--left" viewBox="0 0 55 45" fill="none" aria-hidden="true"><path d="m9 20 3-15m14 21 8-13m3 24 13-6" stroke="#f6569b" strokeWidth="4" strokeLinecap="round" /></svg>
-                <svg className="home-review-pink-rays home-review-pink-rays--right" viewBox="0 0 55 45" fill="none" aria-hidden="true"><path d="m9 20 3-15m14 21 8-13m3 24 13-6" stroke="#f6569b" strokeWidth="4" strokeLinecap="round" /></svg>
-                <svg className="home-review-ribbon" viewBox="0 0 150 70" fill="none" aria-hidden="true"><path d="M4 55C35-5 82 13 57 58 33 92 28 18 83 7c57-8 51 48 23 33-23-15 10-48 41-15" stroke="#f8539e" strokeWidth="5" strokeLinecap="round" /></svg>
-                <svg className="home-review-heart" viewBox="0 0 50 55" fill="none" aria-hidden="true"><path d="M25 48S0 28 6 14C12 1 24 9 25 18 30 4 46 4 46 18 46 31 25 48 25 48Z" fill="#ff9ac9" stroke="#fff" strokeWidth="9" /><path d="M25 48S0 28 6 14C12 1 24 9 25 18 30 4 46 4 46 18 46 31 25 48 25 48Z" stroke="#f9539c" strokeWidth="3" /></svg>
-                <svg className="home-review-flower" viewBox="0 0 60 60" fill="none" aria-hidden="true"><path d="M26 19C7 0 4 25 19 28-4 40 18 54 27 40c-2 24 25 20 17 1 22 7 24-20 4-20C60 2 32-5 26 19Z" fill="#ffe66b" stroke="#623722" strokeWidth="3" /></svg>
-                <svg className="home-review-sparkle" viewBox="0 0 45 55" fill="none" aria-hidden="true"><path d="M22 5c0 13-4 19-16 23 12 2 16 8 16 21 3-13 6-19 17-21C28 24 25 18 22 5Z" fill="#fff1a8" stroke="#fff" strokeWidth="7" /><path d="M22 5c0 13-4 19-16 23 12 2 16 8 16 21 3-13 6-19 17-21C28 24 25 18 22 5Z" stroke="#ffe24d" strokeWidth="3" /></svg>
-              </div>
+              <h2 id="home-review-title" className="home-review-heading-art">
+                <img src={reviewHeadingImage} width="2172" height="724" alt="CUSTOMER REVIEW — SWEET MOMENTS, HAPPY CUSTOMERS" />
+              </h2>
             </div>
             <div className="home-review-grid">{customerReviews.map(review => {
               return <article className="home-review-card" key={review.id}>
@@ -167,23 +159,20 @@ export default function Home() {
         </section>
 
         <section id="visit" className="home-section home-visit" aria-labelledby="home-visit-title">
-          <div className="visit-store-layout">
-            <StoreDecorations side="left" />
-            <StorePhoto />
-            <div className="visit-store-copy">
-              <span className="visit-store-eyebrow">VISIT OUR STORE</span>
-              <h2 id="home-visit-title">달콤한 쉼표가 있는 공간</h2>
-              <p>향긋한 커피와 갓 구운 디저트가 있는 곳,<br />멜로우 베이크에서 달콤한 여유를 즐겨보세요.</p>
-              <dl className="visit-store-details"><div><dt><StoreIcon type="pin" /><span className="visit-store-sr-only">매장 주소</span></dt><dd>{storeDetails.address}</dd></div><div><dt><StoreIcon type="clock" /><span className="visit-store-sr-only">영업시간</span></dt><dd>{storeDetails.hours}</dd></div><div><dt><StoreIcon type="phone" /><span className="visit-store-sr-only">연락처</span></dt><dd>{storeDetails.phone}</dd></div></dl>
-              {storeDetails.mapUrl ? <a className="visit-store-map" href={storeDetails.mapUrl}>VIEW MAP &gt;</a> : <button className="visit-store-map" type="button" disabled title="지도 정보 준비 중">VIEW MAP &gt;</button>}
-            </div>
-            <StoreDecorations side="right" />
+          <div className="visit-store-reference">
+            <h2 id="home-visit-title" className="visit-store-reference-title">
+              <img src={storeReference} width="1711" height="919" alt="VISIT OUR STORE — MELLOW BAKE. 달콤한 쉼표가 있는 공간. 향긋한 커피와 갓 구운 디저트가 있는 곳, 멜로우 베이크에서 달콤한 여유를 즐겨보세요." />
+            </h2>
+            <p className="visit-store-sr-only">{storeDetails.address}, {storeDetails.addressDetail}. 영업시간: {storeDetails.hours}. 라스트 오더: {storeDetails.lastOrder}. 휴무일: {storeDetails.closedDays}. 전화번호: {storeDetails.phone}.</p>
+            {storeDetails.mapUrl
+              ? <a className="visit-store-reference-map" href={storeDetails.mapUrl} aria-label="VIEW MAP — 지도 보기" />
+              : <button className="visit-store-reference-map" type="button" disabled aria-label="VIEW MAP — 지도 정보 준비 중" />}
           </div>
-          <WaveDivider fromColor="#a2edec" toColor="#9273cd" />
+          <WaveDivider fromColor="#adf3ef" toColor="#9a76c8" />
         </section>
       </main>
 
-      <HomeFooter />
+      <HomeFooter referenceImage={footerReference} />
     </div>
   )
 }

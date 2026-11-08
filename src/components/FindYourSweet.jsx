@@ -36,7 +36,7 @@ export default function FindYourSweet() {
         <div className="find-sweet-character find-sweet-character--cat"><Illustration col={1} row={0} /><span className="find-sweet-floating-heart"><Heart /></span></div>
       </div>
       <nav className="find-sweet-cards" aria-label="디저트 카테고리">
-        {categories.map(category => <a className="find-sweet-card" key={category.id} href={category.id === 'all' ? '/menu' : `/menu?category=${category.id}`}>
+        {categories.map(category => <a className="find-sweet-card" key={category.id} href={`/menu/${category.id}`}>
           <Illustration col={category.col} row={category.row} />
           <span className="find-sweet-card-label">{category.label}</span>
           <span className="find-sweet-card-rays" aria-hidden="true"><i /><i /><i /></span>
