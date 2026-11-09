@@ -1,0 +1,10 @@
+.review-success-dialog { position: fixed; inset: 0; margin: auto; width: min(480px, calc(100% - 40px)); max-height: calc(100svh - 40px); box-sizing: border-box; overflow: auto; padding: 42px 32px 44px; border: 1px solid #efded5; border-radius: 14px; background: white; color: #754c3c; text-align: center; }
+.review-success-dialog::backdrop { background: #0006; }
+.review-success-close { position: absolute; top: 14px; right: 18px; display: grid; place-items: center; width: 28px; height: 28px; padding: 4px; border: 0; background: transparent; color: #aaa; cursor: pointer; }
+.review-success-close svg { width: 20px; height: 20px; }
+.review-success-check { display: block; width: 48px; height: 48px; margin: 0 auto 18px; color: #f59c99; }
+.review-success-dialog h2 { margin: 0 0 16px; font-size: 22px; line-height: 1.4; }
+.review-success-dialog p { margin: 0; color: #ab7a68; font-size: 14px; line-height: 1.8; }
+.review-success-confirm { width: 160px; min-height: 42px; margin-top: 20px; padding: 11px 20px; border: 0; border-radius: 6px; background: #f49b98; color: white; font: inherit; font-size: 14px; cursor: pointer; }
+.review-success-dialog button:focus-visible { outline: 2px solid #e75480; outline-offset: 4px; }
+@media(max-width: 400px) { .review-success-dialog { padding: 36px 20px; } .review-success-dialog h2 { font-size: 20px; } .review-success-dialog p { font-size: 12px; } }

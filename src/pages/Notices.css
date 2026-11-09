@@ -1,0 +1,55 @@
+.notices-content { position: relative; }
+.notices-heading { display: flex; justify-content: center; align-items: center; gap: 18px; min-height: 170px; margin-bottom: 44px; text-align: center; }
+.notices-heading h1 { margin: 0 0 20px; color: #70422f; font-size: 40px; }
+.notices-heading h1 span { color: #f56b98; font-size: 38px; font-weight: 400; }
+.notices-heading p { margin: 0; font-size: 16px; font-weight: 700; line-height: 1.7; }
+.notice-megaphone { flex: 0 0 85px; width: 85px; height: 100px; overflow: hidden; }
+.notices-example-label { margin: 0 0 18px; color: #a87564; font-size: 12px; }
+.notices-tools { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 36px; }
+.notices-tools nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.notices-tools nav a { padding: 10px 14px; border: 1px solid #f2a5be; border-radius: 24px; background: #fff0f4; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.notices-tools nav a[aria-current] { color: white; background: #f56890; border-color: #f56890; }
+.notices-tools form { display: flex; flex: 1; min-width: 180px; max-width: 300px; border: 1px solid #f2a5be; border-radius: 12px; background: white; overflow: hidden; }
+.notices-tools input { width: 100%; min-width: 0; padding: 12px; border: 0; font: inherit; font-size: 12px; color: #754c3c; background: transparent; }
+.notices-tools button { flex: 0 0 40px; border: 0; background: transparent; padding: 10px; }
+.notices-tools button svg { display: block; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.notices-table-wrap, .notice-detail { border: 1px solid #f2a5be; border-radius: 20px; background: white; overflow: hidden; }
+.notices-table { width: 100%; border-collapse: collapse; text-align: center; font-size: 13px; }
+.notices-table th { background: #fad4e0; padding: 16px 10px; font-size: 15px; }
+.notices-table td { padding: 20px 10px; line-height: 1.6; }
+.notices-table tr + tr td { border-top: 1px solid #f3bfce; }
+.notices-table th:first-child { width: 7%; }
+.notices-table th:nth-child(2) { width: 17%; }
+.notices-table th:nth-child(4) { width: 16%; }
+.notices-table th:last-child { width: 9%; }
+.notices-table td:nth-child(3) { text-align: left; font-weight: 700; }
+.notices-table td a:hover { color: #e75480; text-decoration: underline; }
+.notice-category { display: inline-block; padding: 4px 12px; border-radius: 20px; background: #e2f1ff; color: #3d89be; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.notice-category--1 { color: #f15d88; background: #fad4e0; }
+.notice-category--2 { color: #9464ca; background: #f2e8ff; }
+.notice-category--4 { color: #bc842c; background: #fff0d4; }
+.notices-empty { padding: 60px 20px !important; text-align: center !important; color: #a68b7c; font-weight: 400 !important; }
+.notice-rabbit { display: block; width: 260px; height: 170px; margin: 44px 0 -80px auto; overflow: hidden; }
+.notice-detail > header { padding: 28px; border-bottom: 1px solid #f3bfce; background: #fff0f4; }
+.notice-detail h2 { margin: 18px 0; font-size: 25px; line-height: 1.5; }
+.notice-detail dl { display: flex; gap: 28px; margin: 0; font-size: 13px; }
+.notice-detail dl div { display: flex; gap: 12px; }
+.notice-detail dd { margin: 0; }
+.notice-body { padding: 26px 32px; font-size: 15px; line-height: 1.9; overflow-wrap: anywhere; }
+.notice-body p { margin: 0 0 22px; }
+.notice-back { display: block; width: fit-content; margin: 28px auto 0; padding: 12px 36px; border-radius: 9px; background: #754c3c; color: white !important; font-size: 14px; }
+.notices-content :is(a,button,input):focus-visible { outline: 2px solid #e75480; outline-offset: 3px; }
+@media(max-width: 1300px) { .notices-tools { flex-wrap: wrap; gap: 16px; } .notices-tools form { max-width: none; } }
+@media(max-width: 600px) {
+  .notices-heading { gap: 8px; margin-bottom: 26px; }
+  .notices-heading h1 { font-size: 28px; }
+  .notices-heading h1 span { font-size: 26px; }
+  .notices-heading p { font-size: 12px; }
+  .notice-megaphone { width: 56px; flex-basis: 56px; height: 70px; }
+  .notices-tools nav a { padding: 9px 12px; font-size: 12px; }
+  .notices-tools form { flex-basis: 100%; }
+  .notices-table-wrap { overflow-x: auto; }
+  .notices-table { min-width: 560px; }
+  .notice-detail > header, .notice-body { padding: 22px 18px; }
+  .notice-detail h2 { font-size: 21px; }
+}

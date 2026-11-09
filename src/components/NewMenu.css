@@ -1,4 +1,7 @@
 /* Content and boundary styling only: preserve every existing section background. */
+.home-product-detail-link { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.home-product-detail-link:focus-visible { outline: 3px solid #ac426d; outline-offset: 4px; }
+.new-menu-card .new-menu-favorite, .arrivals-card .arrivals-favorite { position: relative; z-index: 2; }
 .new-menu-heading { position: relative; margin: 0 auto 62px; padding-top: 12px; text-align: center; }
 .new-menu-title-group { position: relative; display: inline-block; }
 .mellow-home .new-menu-title-group h2 {

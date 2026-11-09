@@ -1,3 +1,5 @@
+import { productHref } from './productLinks'
+
 // Additional products are used only by the home category listing routes.
 export const homeCategoryProducts = {
   bread: [
@@ -48,7 +50,7 @@ export function withHomeCategoryProducts(categories) {
     products: [...category.products, ...homeCategoryProducts[category.id].map(([name, koreanName, description, price], index) => ({
       id: category.id + '-' + (category.products.length + index + 1),
       name, koreanName, description, price,
-      imageSrc: null, detailHref: null, isTemporary: false,
+      imageSrc: null, detailHref: productHref(category.id + '-' + (category.products.length + index + 1)), isTemporary: false,
     }))],
   }))
 }

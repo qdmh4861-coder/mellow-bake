@@ -1,0 +1,19 @@
+.detail-header-thumbnails button { display: block; width: 100%; padding: 0; overflow: hidden; border: 2px solid transparent; border-radius: 8px; background: #fff8ee; cursor: pointer; }
+.detail-header-thumbnails button[aria-pressed='true'] { border-color: #d8b393; }
+.detail-header-thumbnails button:hover { border-color: #c5926b; }
+.frame737-hero .detail-header-rating { margin: -14px 0 18px; min-height: 18px; color: #9c7054; font-size: 12px; line-height: 1.5; }
+.detail-header-rating-value { color: #b77b24; font-weight: 700; }
+.detail-header-tabs { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 60px; }
+.detail-header-tabs :is(a,button) { box-sizing: border-box; display: inline-block; min-width: 120px; padding: 9px 12px; border: 0; border-radius: 24px; background: #ffda8b; color: #754c3c; font: 400 12px/1.5 'Malgun Gothic','Apple SD Gothic Neo',sans-serif; text-align: center; text-decoration: none; cursor: pointer; }
+.detail-header-tabs :is(a,button):hover { background: #f2ca7b; }
+/* Replace the old upper navigation row; keep its destination sections intact. */
+.product-detail-main > .detail-header-controls + .product-detail-expanded > .product-detail-section-nav { display: none; }
+.detail-header-qa { width: min(420px, calc(100% - 40px)); max-width: calc(100% - 40px); padding: 28px; border: 1px solid #e3d4c6; border-radius: 16px; background: #fff8ee; color: #754c3c; }
+.detail-header-qa::backdrop { background: #35261b60; }
+.detail-header-qa h2 { margin: 0 0 16px; font-size: 22px; }
+.detail-header-qa p { font-size: 14px; line-height: 1.9; }
+.detail-header-qa > a { display: inline-block; margin: 8px 0; text-decoration: underline; text-underline-offset: 4px; font-size: 13px; }
+.detail-header-qa form { margin-top: 20px; text-align: right; }
+.detail-header-qa button { padding: 9px 20px; border: 0; border-radius: 8px; background: #ffda8b; color: inherit; font: inherit; cursor: pointer; }
+.detail-header-controls :is(a,button):focus-visible, .detail-header-thumbnails button:focus-visible { outline: 2px solid #ac426d; outline-offset: 3px; }
+@media(max-width: 600px) { .detail-header-tabs { margin-top: 32px; gap: 8px; } .detail-header-tabs :is(a,button) { min-width: 0; padding: 9px 12px; font-size: 11px; } }

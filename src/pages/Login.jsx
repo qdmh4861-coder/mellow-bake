@@ -4,6 +4,7 @@ import HomeFooter from '../components/HomeFooter'
 import loginBear from '../images/login-bear.png'
 import loginCat from '../images/login-cat.png'
 import './Login.css'
+import { DEMO_EMAIL, loginDemo } from '../demoAuth'
 
 const savedEmailKey = 'mellow-bake.saved-email'
 
@@ -42,7 +43,8 @@ export default function Login() {
   const [remember, setRemember] = useState(() => Boolean(readSavedEmail()))
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState(() => new URLSearchParams(window.location.search).has('required') ? '로그인이 필요한 페이지입니다. 데모 계정으로 로그인해 주세요.' : new URLSearchParams(window.location.search).has('loggedOut') ? '로그아웃되었습니다.' : '')
+  const [submitting, setSubmitting] = useState(false)
 
   function saveEmail(nextEmail, nextRemember) {
     try {
@@ -54,9 +56,19 @@ export default function Login() {
     }
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
-    setMessage('로그인 서비스 연결 준비 중입니다. 현재 입력하신 정보는 전송되지 않습니다.')
+    if (submitting) return
+    setSubmitting(true)
+    try {
+      await loginDemo(email, password)
+      setPassword('')
+      window.location.assign('/mypage')
+    } catch (error) {
+      setPassword('')
+      setMessage(error.message || '데모 로그인에 실패했습니다. 브라우저 설정을 확인해 주세요.')
+      setSubmitting(false)
+    }
   }
 
   return <div className="login-page" id="home">
@@ -67,6 +79,7 @@ export default function Login() {
         <div className="login-brand"><LoginIcon type="cupcake" /></div>
         <h1 id="login-title">로그인</h1>
         <p className="login-welcome">MELLOW BAKE에 오신 것을 환영합니다!</p>
+        <p className="login-service-note">프론트엔드 데모 로그인 · {DEMO_EMAIL}<br />실제 회원 인증이 아닙니다. 비밀번호는 개발용 설정에서 지정합니다.</p>
         <form onSubmit={handleSubmit}>
           <label className="login-field">
             <span className="login-sr-only">이메일(아이디)</span>
@@ -87,7 +100,7 @@ export default function Login() {
           <div className="login-options">
             <label className="login-remember"><input type="checkbox" checked={remember} onChange={event => { setRemember(event.target.checked); saveEmail(email, event.target.checked) }} />아이디 저장</label>
           </div>
-          <button className="login-submit" type="submit">로그인</button>
+          <button className="login-submit" type="submit" disabled={submitting}>{submitting ? '확인 중…' : '로그인'}</button>
         </form>
             <div className="login-recovery">
               <button type="button" onClick={() => setMessage('아이디 찾기 서비스는 준비 중입니다.')}>아이디 찾기</button>

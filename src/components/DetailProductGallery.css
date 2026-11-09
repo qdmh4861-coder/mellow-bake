@@ -1,0 +1,45 @@
+/* The reference layout applies only to the upper product section. */
+.product-detail-hero.reference-product-hero, .mb-hero.reference-product-hero { grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 28px; align-items: start; padding: 26px; border-radius: 12px; background: #fff8ee; color: #754c3c; }
+.reference-product-gallery { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; min-width: 0; }
+.reference-product-thumbnails { padding-top: 14px; }
+.reference-product-thumbnails > div { border: 2px solid #e6c6ab; border-radius: 8px; overflow: hidden; background: #fff; }
+.reference-product-photo { min-width: 0; aspect-ratio: 1.06; display: grid; place-items: center; overflow: hidden; border-radius: 14px; background: #fff5e7; }
+.reference-product-gallery img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.reference-product-gallery .our-menu-product-media { width: 100%; height: 100%; border-radius: 0; }
+.reference-product-gallery .product-detail-photo-missing { padding: 16px; font-size: 20px; }
+.reference-product-thumbnails .product-detail-photo-missing { font-size: 10px; padding: 6px; }
+.reference-product-thumbnails .product-detail-photo-missing span { display: none; }
+.reference-product-hero :is(.product-detail-summary,.mb-summary) { padding-top: 14px; min-width: 0; }
+.reference-product-hero :is(.product-detail-summary,.mb-summary) h1 { margin: 0; font-size: 32px; line-height: 1.35; letter-spacing: -.045em; }
+.reference-product-hero :is(.product-detail-english,.mb-english) { margin: 6px 0 18px; font-family: inherit; font-size: 15px; color: #9c7053; }
+.reference-product-hero :is(.product-detail-price,.mb-price) { margin: 0 0 18px; font-size: 26px; font-weight: 800; }
+.reference-product-hero .mb-price span { font-size: 19px; }
+.reference-product-hero :is(.product-detail-description,.mb-description) { min-height: 0; max-width: none; margin: 0 0 14px; font-size: 13px; line-height: 1.8; }
+.reference-product-hero :is(.product-detail-quantity,.mb-quantity) { margin: 12px 0; border-color: #e3d4c6; border-radius: 4px; }
+.reference-product-hero :is(.product-detail-quantity,.mb-quantity) button { width: 32px; height: 30px; font-size: 15px; }
+.reference-product-hero :is(.product-detail-quantity,.mb-quantity) output { min-width: 30px; font-size: 12px; }
+.reference-product-hero :is(.product-detail-total,.mb-total) { margin: 0 0 16px; font-size: 12px; }
+.reference-product-hero :is(.product-detail-total,.mb-total) strong { font-size: 15px; }
+.reference-product-hero .mb-order-row { display: block; border: 0; padding: 0; }
+.reference-product-hero .mb-order-row > span { display: none; }
+.reference-product-hero :is(.mb-eyebrow,.mb-tags,.mb-details-link) { display: none; }
+.reference-product-actions, .reference-product-hero .mb-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.reference-product-actions button, .reference-product-hero .mb-actions button { width: auto; min-height: 38px; padding: 9px 14px; border: 0; border-radius: 7px; color: #503225; background: #ffe088; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
+.reference-product-actions button + button, .reference-product-hero .mb-actions button + button { background: #f7acc6; }
+.reference-product-hero :is(.product-detail-status,.mb-status) { min-height: 0; margin: 10px 0 0; font-size: 12px; }
+.reference-product-hero :is(.product-detail-status,.mb-status):empty { display: none; }
+.reference-product-quick-links { display: flex; justify-content: space-between; gap: 12px; max-width: 310px; margin-top: 30px; }
+.reference-product-quick-links a { display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 10px; color: #986b51; text-decoration: none; }
+.reference-product-quick-links svg { width: 24px; height: 24px; }
+@media(max-width: 900px) {
+  .product-detail-hero.reference-product-hero, .mb-hero.reference-product-hero { padding: 20px; gap: 22px; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+  .reference-product-gallery { grid-template-columns: 46px minmax(0, 1fr); gap: 8px; }
+  .reference-product-hero :is(.product-detail-summary,.mb-summary) h1 { font-size: 26px; }
+}
+@media(max-width: 600px) {
+  .product-detail-hero.reference-product-hero, .mb-hero.reference-product-hero { grid-template-columns: 1fr; padding: 16px; gap: 24px; }
+  .reference-product-gallery { grid-template-columns: 44px minmax(0, 1fr); }
+  .reference-product-hero :is(.product-detail-summary,.mb-summary) { padding-top: 0; }
+  .reference-product-hero :is(.product-detail-summary,.mb-summary) h1 { font-size: 29px; }
+  .reference-product-quick-links { margin-top: 24px; }
+}

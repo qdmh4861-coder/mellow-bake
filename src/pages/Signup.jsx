@@ -304,9 +304,9 @@ export default function Signup() {
       <button className="signup-completion-close" type="button" aria-label="회원가입 완료 시연 닫기" onClick={() => setCompletionOpen(false)} autoFocus>×</button>
       <svg className="signup-completion-check" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><circle cx="24" cy="24" r="20" /><path d="m14 24 7 7 13-14" strokeLinecap="round" strokeLinejoin="round" /></svg>
       <p className="signup-completion-demo" id="signup-completion-demo">개발용 시연 · 실제 계정은 생성되지 않았습니다.</p>
-      <h2 id="signup-completion-title">회원가입이 완료되었습니다!</h2>
-      <p id="signup-completion-description">MELLOW BAKE의 회원이 되신 것을 환영합니다.</p>
-      <p className="signup-completion-invitation">이제 달콤한 쇼핑을 시작해보세요.</p>
+      <h2 id="signup-completion-title">회원가입 입력 확인이 완료되었습니다.</h2>
+      <p id="signup-completion-description">서버 연동 전으로 실제 계정은 생성되지 않았습니다.</p>
+      <p className="signup-completion-invitation">로그인은 별도로 설정한 데모 계정을 이용해 주세요.</p>
       <a className="signup-completion-login" href="/login" onClick={() => { setCompletionOpen(false); window.scrollTo({ top:0, left:0, behavior:'instant' }) }}>로그인하러 가기</a>
     </dialog>
     <div className="signup-footer"><HomeFooter /></div>

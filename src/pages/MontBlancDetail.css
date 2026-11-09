@@ -1,0 +1,28 @@
+.mb-page { background: #fff8ee; color: #754c3c; font-family: 'Malgun Gothic','Apple SD Gothic Neo',sans-serif; }
+.mb-page a { color: inherit; text-decoration: none; }
+.mb-main { width: min(1210px, calc(100% - 48px)); margin: auto; padding: 32px 0 60px; }
+.mb-breadcrumb { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; color: #9c7854; font-size: 11px; letter-spacing: .07em; }
+.mb-breadcrumb a:hover { text-decoration: underline; }
+.mb-montblanc-photo { display: block; width: 100%; height: 100%; aspect-ratio: 469 / 406; overflow: hidden; }
+.mb-montblanc-photo svg { display: block; width: 100%; height: 100%; overflow: hidden; }
+.mb-page .catalog-product-thumbnails .mb-montblanc-photo { height: 100%; aspect-ratio: 1; }
+.mb-page .catalog-product-thumbnails { --mb-empty-size: 72px; }
+.mb-page .catalog-product-thumbnails button { height: var(--mb-empty-size); border: 0; border-radius: 8px; background: #d9d9d9; }
+.mb-page .catalog-product-thumbnails .mb-montblanc-photo { visibility: hidden; }
+/* Four additional empty slots are decoration, not duplicate product photos. */
+.mb-page .catalog-product-thumbnails::after {
+  content: '';
+  display: block;
+  height: var(--mb-empty-size);
+  margin-bottom: calc(var(--mb-empty-size) * 3 + 30px);
+  border-radius: 8px;
+  background: #d9d9d9;
+  box-shadow: 0 calc(var(--mb-empty-size) + 10px) 0 #d9d9d9,
+    0 calc(var(--mb-empty-size) * 2 + 20px) 0 #d9d9d9,
+    0 calc(var(--mb-empty-size) * 3 + 30px) 0 #d9d9d9;
+}
+.mb-page .mellow-footer { background: #604236; }
+.mb-back { display: block; width: fit-content; margin: 36px auto 0; padding-bottom: 5px; border-bottom: 1px solid #ccb69a; font-size: 12px; }
+.mb-page :is(a,button,select):focus-visible { outline: 2px solid #b84473; outline-offset: 4px; }
+@media(max-width: 900px) { .mb-page .catalog-product-thumbnails { --mb-empty-size: 56px; } }
+@media(max-width: 600px) { .mb-main { width: calc(100% - 32px); } .mb-page .catalog-product-thumbnails { --mb-empty-size: 54px; } }

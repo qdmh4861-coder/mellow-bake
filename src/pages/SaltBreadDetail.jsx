@@ -3,6 +3,10 @@ import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
 import reference from '../assets/salt-bread-figma-reference.png'
 import './SaltBreadDetail.css'
+import { menuCategories } from './OurMenu'
+import { cartAddMessage } from '../cartStore'
+
+const product = menuCategories.find(category => category.id === 'bread').products.find(item => item.id === 'bread-1')
 
 // Display regions of the supplied 1632 × 7491 Figma export without inventing assets.
 function FigmaRegion({ box, label, className = '' }) {
@@ -42,7 +46,7 @@ export default function SaltBreadDetail() {
             <button type="button" disabled={quantity === 99} onClick={() => setQuantity(value => value + 1)} aria-label="수량 늘리기">+</button>
           </div>
           <div className="salt-detail-actions">
-            <button type="button" onClick={() => setNotice('장바구니 서비스 연결 준비 중입니다. 상품은 담기지 않았습니다.')}>장바구니 담기</button>
+            <button type="button" onClick={() => setNotice(cartAddMessage(product, quantity))}>장바구니 담기</button>
             <button type="button" onClick={() => setNotice('주문·결제 서비스 연결 준비 중입니다. 주문은 생성되지 않았습니다.')}>바로 구매하기</button>
           </div>
           <p className="salt-detail-status" role="status">{notice}</p>
@@ -59,7 +63,7 @@ export default function SaltBreadDetail() {
         <FigmaRegion box="210 5575 1210 665" label="상품 정보 및 배송 안내. 첨부된 피그마 원본의 안내 표입니다. 운영 정보 확인이 필요합니다." />
       </section>
       <section id="salt-reviews" aria-label="상품 리뷰 디자인 시안">
-        <FigmaRegion box="210 6240 1210 420" label="피그마 디자인에 포함된 예시 상품 리뷰 카드입니다. 실제 구매 후기를 불러온 것이 아닙니다." />
+        <a style={{ display: 'block' }} href="/reviews?productId=bread-1" aria-label="소금빵 실제 상품 리뷰 보기"><FigmaRegion box="210 6240 1210 420" label="피그마 디자인에 포함된 예시 상품 리뷰 카드입니다. 실제 구매 후기를 불러온 것이 아닙니다." /></a>
       </section>
       <section id="salt-related" aria-label="함께 보면 좋은 상품 디자인 시안">
         <FigmaRegion box="210 6660 1210 440" label="함께 보면 좋은 상품: 딸기 생크림 케이크, 초코 크림빵, 시나몬롤, 바닐라 크림라떼. 원본 시안 이미지이며 다른 상품 상세페이지는 아직 연결하지 않았습니다." />

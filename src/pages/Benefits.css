@@ -1,0 +1,210 @@
+.benefits-content { min-width: 0; }
+.benefit-art { display: block; width: 100%; height: 100%; overflow: hidden; }
+.benefits-content button, .benefits-content input, .benefits-content select { font: inherit; }
+.benefits-content button { cursor: pointer; }
+.benefits-content button:disabled { opacity: .5; cursor: default; }
+.benefits-content h1 { color: #70422f; }
+.benefit-event-banner { display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; min-height: 300px; margin-bottom: 72px; padding: 24px 18px 0 36px; border-radius: 12px; background-color: #fce2e9; background-image: repeating-linear-gradient(0deg, #fff4f54d 0 24px, transparent 24px 48px), repeating-linear-gradient(90deg, #fff4f54d 0 24px, transparent 24px 48px); overflow: hidden; }
+.benefit-event-banner > div { text-align: center; z-index: 1; }
+.benefit-event-banner > div > span { display: block; color: #ef7197; font-size: clamp(26px, 3.5vw, 52px); font-weight: 900; letter-spacing: .08em; transform: rotate(-5deg); }
+.benefit-event-banner h1 { font-size: clamp(30px, 4vw, 58px); margin: 0 0 16px; letter-spacing: .08em; transform: rotate(-3deg); }
+.benefit-event-banner p { font-size: 15px; font-weight: 700; margin: 0; }
+.benefit-event-banner > .benefit-art { align-self: end; height: 280px; }
+.benefit-event-tickets { display: flex; flex-direction: column; gap: 64px; width: min(900px, calc(100% - 40px)); margin: auto; }
+.benefit-event-ticket { --ticket-radius: 30px; position: relative; display: grid; grid-template-columns: 28% minmax(0, 1fr) 130px; align-items: stretch; min-height: 210px; border: 3px solid #ff81a7; border-radius: var(--ticket-radius); clip-path: inset(0 round var(--ticket-radius)); background: #fff8ee; }
+.benefit-event-ticket::before, .benefit-event-ticket::after { content: ''; position: absolute; z-index: 1; top: calc(50% - 24px); width: 44px; height: 44px; border: 3px solid #ff81a7; border-radius: 50%; background: #fff8ee; }
+.benefit-event-ticket::before { left: -27px; border-left-color: transparent; }
+.benefit-event-ticket::after { right: -27px; border-right-color: transparent; }
+.benefit-ticket-illustration { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 27px 0 0 27px; background: #ffe4e9; padding: 18px 12px; border-right: 3px dashed #ff9bb5; }
+.benefit-ticket-illustration > span { padding: 4px 10px; border-radius: 20px; background: #f28ba8; color: white; font-size: 12px; transform: rotate(-8deg); }
+.benefit-ticket-illustration .benefit-art { max-height: 135px; }
+.benefit-ticket-body { padding: 28px 24px 22px; }
+.benefit-ticket-body > strong { color: #ed7094; font-size: 18px; font-weight: 900; letter-spacing: .06em; }
+.benefit-ticket-body h2 { margin: 8px 0 12px; font-size: 18px; font-weight: 400; }
+.benefit-ticket-body > p { margin: 0 0 12px; color: #ed7094; font-size: 38px; font-weight: 900; line-height: 1.25; }
+.benefit-ticket-body small { font-size: 11px; color: #a28b7c; line-height: 1.7; }
+.benefit-ticket-download { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 20px 14px; border-left: 3px dashed #ff9bb5; }
+.benefit-ticket-download span { padding: 5px 8px; border: 1px solid #efa8b8; border-radius: 20px; background: #fffdf4; font-size: 12px; text-align: center; }
+.benefit-ticket-download button { z-index: 2; border: 0; border-radius: 24px; padding: 10px 12px; background: #f28ba8; color: white; font-size: 14px; white-space: nowrap; }
+.benefit-policy-note { margin: 36px 0 22px; font-size: 12px; color: #a46e5b; line-height: 1.7; }
+.benefit-usage { padding: 24px; border: 1px solid #f2a8c0; border-radius: 24px; background: #fff0f4; }
+.benefit-usage h2 { margin: 0 0 20px; font-size: 21px; }
+.benefit-usage ul { margin: 0; padding-left: 20px; }
+.benefit-usage li { font-size: 13px; line-height: 1.8; }
+.benefit-usage li + li { margin-top: 10px; }
+.benefit-coupon-dialog { position: fixed; inset: 0; margin: auto; width: min(480px, calc(100% - 40px)); max-height: calc(100svh - 40px); overflow: auto; padding: 38px 28px; border: 1px solid #f3a2bb; border-radius: 24px; background: white; color: #754c3c; text-align: center; }
+.benefit-coupon-dialog::backdrop { background: #0006; }
+.benefit-dialog-close { position: absolute; top: 12px; right: 20px; border: 0; background: none; color: #ec88a7; font-size: 28px; cursor: pointer; }
+.benefit-coupon-dialog > .benefit-art { width: 110px; height: 95px; margin: 0 auto 14px; }
+.benefit-coupon-dialog h2 { margin: 0 0 16px; font-size: 23px; }
+.benefit-coupon-dialog h3 { font-size: 15px; color: #e7799a; }
+.benefit-dialog-discount { color: #e7799a; font-size: 26px; }
+.benefit-coupon-dialog p { font-size: 14px; line-height: 1.8; margin: 14px 0; }
+.benefit-dialog-actions { display: flex; justify-content: center; gap: 16px; margin-top: 24px; }
+.benefit-dialog-actions :is(a,button) { display: inline-block; min-width: 120px; padding: 11px 16px; border: 1px solid #9e7966; border-radius: 25px; background: white; color: #754c3c; font: inherit; font-size: 14px; cursor: pointer; }
+.benefit-dialog-actions > :first-child { border-color: #f08eaa; background: #f08eaa; color: white; }
+.benefit-page-heading { min-height: 150px; display: flex; align-items: center; justify-content: center; gap: 24px; text-align: center; margin-bottom: 64px; }
+.benefit-page-heading > .benefit-art { width: 150px; height: 140px; flex-shrink: 0; }
+.benefit-page-heading h1 { font-size: 40px; margin: 0 0 20px; line-height: 1.3; }
+.benefit-page-heading p { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.7; }
+.benefit-pill-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 42px; }
+.benefit-pill-tabs button { min-width: 0; padding: 16px 10px; border: 1px solid #efaac0; border-radius: 32px; background: white; color: #754c3c; font-size: 17px; font-weight: 700; }
+.benefit-pill-tabs button[aria-pressed='true'] { background: #70422f; border-color: #70422f; color: white; }
+.benefit-coupon-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: start; }
+.benefit-coupon-list { border: 1px solid #efaac0; border-radius: 24px; background: #fff0f4; padding: 20px 12px; }
+.benefit-coupon-list > header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 0 8px 24px; }
+.benefit-coupon-list h2 { margin: 0; font-size: 22px; }
+.benefit-coupon-list em { font-style: normal; color: #ed7397; }
+.benefits-content select { min-width: 0; padding: 10px 12px; border: 1px solid #efaac0; border-radius: 10px; background: white; color: #754c3c; font-size: 13px; }
+.benefit-owned-coupon { display: grid; grid-template-columns: 90px minmax(0, 1fr) 120px 80px; align-items: center; gap: 12px; padding: 10px; border: 1px solid #f18fad; border-radius: 16px; background: #fff5f4; }
+.benefit-owned-coupon + .benefit-owned-coupon { margin-top: 8px; }
+.benefit-owned-art { display: grid; align-content: center; min-height: 92px; border-radius: 10px; background: linear-gradient(135deg, #f47799, #f9a3b7); text-align: center; font-size: 14px; font-weight: 700; line-height: 1.6; }
+.benefit-owned-coupon h3 { margin: 0 0 8px; font-size: 16px; }
+.benefit-owned-coupon p { margin: 0 0 6px; font-size: 12px; line-height: 1.6; }
+.benefit-owned-coupon span { display: inline-block; padding: 3px 8px; border-radius: 14px; background: #f9d3dd; font-size: 11px; }
+.benefit-owned-value { padding-left: 12px; border-left: 2px dashed #ef86a6; }
+.benefit-owned-value strong { display: block; color: #eb7799; font-size: 24px; }
+.benefit-owned-value small { display: block; margin-top: 6px; font-size: 11px; color: #998477; line-height: 1.5; }
+.benefit-owned-coupon > button { border: 0; border-radius: 22px; padding: 10px 8px; background: #ed7198; color: white; font-size: 12px; }
+.benefit-code-register { border: 1px solid #efaac0; border-radius: 24px; padding: 20px 16px; background: #fff0f4; margin-bottom: 12px; }
+.benefit-code-register h2 { margin: 0 0 22px; font-size: 22px; }
+.benefit-code-register > div { display: flex; gap: 10px; }
+.benefit-code-register input { width: 100%; min-width: 0; padding: 12px; border: 1px solid #efaac0; border-radius: 8px; background: white; color: #754c3c; font-size: 12px; }
+.benefit-code-register button { flex-shrink: 0; padding: 12px; border: 0; border-radius: 8px; background: #ed7198; color: white; }
+.benefit-empty { display: grid; place-items: center; min-height: 180px; padding: 30px 16px; color: #a68c7b; font-size: 14px; text-align: center; }
+.benefit-status { margin: 18px 0 0; min-height: 24px; color: #a46e5b; font-size: 13px; line-height: 1.7; }
+.benefit-points-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 38px; align-items: start; }
+.benefit-point-balance { display: grid; grid-template-columns: 70px minmax(0, 1fr) minmax(0, 1.3fr); align-items: center; gap: 18px; border: 1px solid #efaac0; border-radius: 24px; padding: 24px; background: #fff0f4; }
+.benefit-coins { font-size: 58px; color: #e9b443; text-shadow: 2px 2px #865336; }
+.benefit-point-balance h2 { font-size: 19px; margin: 0 0 16px; }
+.benefit-point-balance strong { color: #eb7799; font-size: 38px; }
+.benefit-point-balance dl { margin: 0; padding-left: 18px; border-left: 1px solid #efaac0; }
+.benefit-point-balance dl > div { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; line-height: 1.7; }
+.benefit-point-balance dl > div + div { margin-top: 16px; }
+.benefit-point-balance dd { margin: 0; color: #eb7799; font-weight: 700; }
+.benefit-point-filters { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 56px 0 24px; }
+.benefit-point-filters > div { display: flex; flex-wrap: wrap; gap: 10px; }
+.benefit-point-filters button { padding: 10px 20px; border: 1px solid #efaac0; border-radius: 25px; background: #fff0f4; color: #754c3c; font-size: 15px; }
+.benefit-point-filters button[aria-pressed='true'] { background: #ee7499; color: white; }
+.benefit-date-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 20px; }
+.benefit-date-filter input { min-width: 0; max-width: 160px; padding: 8px; border: 1px solid #efaac0; border-radius: 8px; color: #754c3c; background: white; font-size: 12px; }
+.benefit-date-filter button { padding: 8px 16px; border: 0; border-radius: 8px; color: white; background: #ed7198; }
+.benefit-points-layout > aside > .benefit-art { width: 200px; height: 150px; margin: 0 auto; }
+.benefit-table { overflow-x: auto; border: 1px solid #efaac0; border-radius: 20px; background: white; }
+.benefit-table table { width: 100%; border-collapse: collapse; text-align: center; font-size: 12px; }
+.benefit-table thead { background: #fad6e1; }
+.benefit-table :is(th,td) { padding: 14px 12px; }
+.benefit-table tbody tr + tr { border-top: 1px solid #f1d6d9; }
+.benefit-table td.benefit-empty { display: table-cell; height: 160px; }
+.benefit-point-kind { display: inline-block; border: 1px solid #ee91ad; border-radius: 20px; padding: 3px 12px; background: #ffdfe8; color: #e97499; white-space: nowrap; }
+.benefit-point-kind--use { border-color: #b499e9; color: #9364ca; background: #f2e9ff; }
+.benefit-point-kind--expire { border-color: #aaa; color: #888; background: #eee; }
+.benefit-positive { color: #e97499; font-weight: 700; white-space: nowrap; }
+.benefit-negative { color: #9364ca; font-weight: 700; white-space: nowrap; }
+.benefit-overview-heading { margin-bottom: 14px; }
+.benefit-overview-heading h1 { font-size: 46px; }
+.benefit-overview-totals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 70px; padding: 0 40px; }
+.benefit-overview-totals > div > .benefit-art { width: 190px; height: 170px; margin: 0 auto; }
+.benefit-overview-totals a { display: flex; justify-content: space-around; align-items: center; gap: 16px; min-height: 130px; padding: 20px; border: 2px solid #f192b0; border-radius: 24px; background: white; }
+.benefit-overview-totals a > span { color: #e984a3; font-size: 38px; }
+.benefit-overview-totals h2 { margin: 0 0 12px; font-size: 24px; }
+.benefit-overview-totals strong { display: block; color: #eb7799; font-size: 38px; text-align: center; }
+.benefit-overview-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 64px 0 46px; }
+.benefit-overview-panels > section { padding: 24px 20px; border: 1px solid #eed9ca; border-radius: 22px; background: white; }
+.benefit-overview-panels header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 24px; }
+.benefit-overview-panels h2 { margin: 0; font-size: 21px; }
+.benefit-overview-panels header a { font-size: 12px; white-space: nowrap; }
+.benefit-overview-panels .benefit-table { border: 0; border-radius: 8px; }
+.benefit-mini-coupon { display: flex; align-items: center; gap: 16px; padding: 14px; border: 2px solid #f18eac; border-radius: 14px; background: #fff0f4; }
+.benefit-mini-coupon + .benefit-mini-coupon { margin-top: 8px; }
+.benefit-mini-coupon > strong { color: #e7799a; font-size: 22px; }
+.benefit-mini-coupon h3 { font-size: 14px; margin: 0 0 8px; }
+.benefit-mini-coupon p, .benefit-mini-coupon small { font-size: 11px; line-height: 1.6; margin: 0; }
+.benefits-content :is(a,button,input,select):focus-visible, .benefit-coupon-dialog :is(a,button):focus-visible { outline: 2px solid #e75480; outline-offset: 4px; }
+@media(max-width: 1300px) {
+  .benefit-coupon-layout, .benefit-points-layout { grid-template-columns: 1fr; }
+  .benefit-coupon-layout > aside { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .benefit-overview-totals { padding: 0; gap: 24px; }
+  .benefit-overview-panels { gap: 16px; }
+  .benefit-overview-panels > section { padding: 20px 14px; }
+  .benefit-overview-panels header { flex-wrap: wrap; }
+  .benefit-ticket-body { padding-inline: 18px; }
+}
+@media(max-width: 1000px) {
+  .benefit-event-ticket { grid-template-columns: 24% minmax(0, 1fr) 106px; min-height: 185px; }
+  .benefit-ticket-body > p { font-size: 30px; }
+  .benefit-ticket-body > strong, .benefit-ticket-body h2 { font-size: 15px; }
+  .benefit-ticket-download { padding-inline: 8px; }
+  .benefit-ticket-download button { font-size: 12px; }
+  .benefit-overview-panels { grid-template-columns: 1fr; }
+  .benefit-page-heading h1 { font-size: 32px; }
+  .benefit-page-heading p { font-size: 14px; }
+  .benefit-pill-tabs button { padding: 12px 4px; font-size: 14px; }
+}
+@media(max-width: 600px) {
+  .benefit-page-heading { margin-bottom: 34px; gap: 12px; min-height: 110px; }
+  .benefit-page-heading > .benefit-art { width: 90px; height: 90px; }
+  .benefit-page-heading h1 { font-size: 28px; margin-bottom: 14px; }
+  .benefit-page-heading p { font-size: 12px; }
+  .benefit-event-banner { min-height: 200px; margin-bottom: 40px; padding: 12px; }
+  .benefit-event-banner > .benefit-art { height: 180px; }
+  .benefit-event-banner p { font-size: 10px; }
+  .benefit-event-tickets { gap: 34px; width: calc(100% - 24px); }
+  .benefit-event-ticket { --ticket-radius: 20px; grid-template-columns: 78px minmax(0, 1fr); border-radius: 20px; min-height: 0; }
+  .benefit-ticket-illustration > span { font-size: 9px; padding: 4px 6px; }
+  .benefit-ticket-illustration { padding: 8px; border-radius: 18px 0 0 18px; grid-row: 1 / 3; }
+  .benefit-ticket-body { padding: 20px 12px 8px; }
+  .benefit-ticket-body > strong { font-size: 12px; }
+  .benefit-ticket-body h2 { font-size: 13px; }
+  .benefit-ticket-body > p { font-size: 26px; }
+  .benefit-ticket-download { grid-column: 2; padding: 8px 12px 16px; border: 0; flex-direction: row; gap: 8px; }
+  .benefit-ticket-download span { font-size: 9px; }
+  .benefit-ticket-download button { font-size: 11px; padding: 8px; }
+  .benefit-usage { padding: 20px; }
+  .benefit-coupon-layout > aside { grid-template-columns: 1fr; }
+  .benefit-owned-coupon { grid-template-columns: 60px minmax(0, 1fr); gap: 12px; }
+  .benefit-owned-art { grid-row: 1 / 3; font-size: 11px; height: 100%; }
+  .benefit-owned-value { grid-column: 2; border: 0; padding: 0; }
+  .benefit-owned-coupon > button { grid-column: 2; }
+  .benefit-pill-tabs { gap: 6px; margin-bottom: 28px; }
+  .benefit-pill-tabs button { font-size: 11px; padding: 12px 2px; }
+  .benefit-point-balance { grid-template-columns: 60px minmax(0, 1fr); padding: 20px; gap: 16px; }
+  .benefit-point-balance dl { grid-column: 1 / -1; border-left: 0; border-top: 1px solid #efaac0; padding: 16px 0 0; }
+  .benefit-point-filters { flex-wrap: wrap; margin-top: 30px; }
+  .benefit-point-filters button { padding: 9px 16px; font-size: 13px; }
+  .benefit-date-filter input { width: calc((100% - 30px) / 2); max-width: none; }
+  .benefit-table table { min-width: 400px; }
+  .benefit-overview-totals { gap: 14px; }
+  .benefit-overview-totals > div > .benefit-art { width: 130px; height: 120px; }
+  .benefit-overview-totals a { gap: 8px; flex-wrap: wrap; padding: 16px 8px; }
+  .benefit-overview-totals a > span:first-child { display: none; }
+  .benefit-overview-totals h2 { font-size: 17px; }
+  .benefit-overview-totals strong { font-size: 30px; }
+  .benefit-dialog-actions { gap: 10px; }
+  .benefit-dialog-actions :is(a,button) { min-width: 0; flex: 1; font-size: 12px; padding-inline: 10px; }
+}
+
+/* Separate ticket captions from the artwork and align ticket contents. */
+.benefit-ticket-illustration { min-width: 0; gap: 14px; padding: 22px 18px; }
+.benefit-ticket-illustration > span { flex: 0 0 auto; position: relative; z-index: 1; line-height: 1.5; }
+.benefit-ticket-illustration .benefit-art { flex: 0 0 auto; width: min(100%, 160px); height: 135px; max-height: none; }
+.benefit-ticket-body { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.benefit-ticket-body > strong { line-height: 1.4; }
+.benefit-ticket-body small { display: block; }
+.benefit-example-note { margin: -14px 0 22px; font-size: 12px; color: #a57869; }
+@media(min-width: 1100px) {
+ .benefit-coupon-layout, .benefit-points-layout { grid-template-columns: minmax(0, 1fr) 250px; gap: 20px; }
+ .benefit-coupon-layout > aside { display: block; }
+ .benefit-owned-coupon { grid-template-columns: 80px minmax(0, 1fr) 110px 72px; gap: 8px; padding: 8px; }
+ .benefit-owned-coupon h3 { font-size: 14px; margin-bottom: 5px; }
+ .benefit-owned-value strong { font-size: 21px; }
+ .benefit-coupon-list h2 { font-size: 19px; }
+}
+@media(max-width: 600px) {
+ .benefit-ticket-illustration { padding: 12px 6px; gap: 10px; }
+ .benefit-ticket-illustration .benefit-art { width: 100%; height: 80px; }
+}
+
+.benefit-ticket-illustration .benefit-art { height: 175px; }
+.benefit-ticket-download span { white-space: nowrap; font-size: 11px; }
+@media(max-width:600px) { .benefit-ticket-illustration .benefit-art { height: 105px; } }

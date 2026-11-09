@@ -1,0 +1,53 @@
+.order-list-content { padding-left: 52px; }
+.order-list-page .order-preview-notice, .order-history-page .order-preview-notice, .order-detail-page .order-preview-notice { margin: 0 0 20px; padding: 10px 12px; border-radius: 6px; background: #fff0f4; color: #a6506e; font-size: 12px; line-height: 1.6; }
+.order-preview-notice a { text-decoration: underline; text-underline-offset: 3px; }
+.order-list-content > h1 { margin: 0 0 18px; text-align: left; font-size: 30px; }
+.order-list-intro { margin: 0 0 30px; color: #a46e5b; font-size: 14px; line-height: 1.6; }
+.order-list-periods { display: flex; flex-wrap: wrap; gap: 10px; }
+.order-list-periods button, .order-list-date-filter button { padding: 12px 22px; min-width: 90px; border: 1px solid #eed9ca; border-radius: 6px; background: white; color: #754c3c; font: inherit; font-size: 14px; cursor: pointer; }
+.order-list-periods button[aria-pressed='true'], .order-list-date-filter button { background: #70422f; border-color: #70422f; color: white; }
+.order-list-date-filter { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 20px; }
+.order-list-date-filter input { width: 170px; min-width: 0; padding: 11px 16px; border: 1px solid #eed9ca; border-radius: 6px; color: #a46e5b; background: white; font: inherit; font-size: 14px; }
+.order-list-date-filter button { margin-left: 12px; min-width: 100px; }
+.order-list-filter-error { min-height: 16px; margin: 8px 0; font-size: 12px; color: #b54064; }
+.order-list-table-card { overflow: hidden; border: 1px solid #eed9ca; border-radius: 8px; background: white; }
+.order-list-table-card table { width: 100%; border-collapse: collapse; table-layout: fixed; text-align: center; font-size: 14px; }
+.order-list-date-col { width: 18%; }
+.order-list-product-col { width: 34%; }
+.order-list-table-card th { padding: 14px 8px; border-bottom: 1px solid #eed9ca; font-weight: 700; }
+.order-list-table-card td { padding: 18px 12px; vertical-align: middle; }
+.order-list-table-card tbody tr + tr td { border-top: 1px solid #eed9ca; }
+.order-list-products { display: flex; flex-direction: column; gap: 16px; }
+.order-list-product { display: flex; align-items: center; gap: 16px; text-align: left; min-width: 0; }
+.order-list-product > div:last-child { min-width: 0; }
+.order-list-photo { width: 80px; height: 80px; flex-shrink: 0; overflow: hidden; border-radius: 8px; }
+.order-list-photo .our-menu-product-media { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; }
+.order-list-photo svg { display: block; width: 100%; height: 100%; }
+.order-list-product h2 { margin: 0 0 10px; font-size: 16px; line-height: 1.4; word-break: keep-all; }
+.order-list-product p { margin: 0; color: #a46e5b; font-size: 12px; line-height: 1.6; }
+.order-list-paid { font-weight: 700; white-space: nowrap; }
+.order-list-table-card time { white-space: nowrap; }
+.order-list-status { display: inline-block; padding: 9px 14px; border-radius: 6px; background: #fff0d9; color: #bc8957; font-size: 13px; }
+.order-list-management { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.order-list-management a { display: inline-block; padding: 8px 14px; border: 1px solid #865340; border-radius: 6px; font-size: 13px; white-space: nowrap; }
+.order-list-table-card .order-list-empty { height: 270px; color: #a5a5a5; font-size: 15px; }
+@media(max-width: 1100px) {
+  .order-list-content { padding-left: 0; }
+  .order-list-periods button { min-width: 0; padding: 11px 14px; font-size: 12px; }
+  .order-list-photo { width: 52px; height: 58px; }
+  .order-list-product { gap: 10px; }
+  .order-list-product h2 { font-size: 13px; }
+  .order-list-table-card :is(th,td) { padding-inline: 6px; font-size: 12px; }
+  .order-list-management a { font-size: 11px; padding: 8px; }
+  .order-list-status { padding: 8px; font-size: 11px; }
+}
+@media(max-width: 600px) {
+  .order-list-content > h1 { font-size: 25px; }
+  .order-list-periods { gap: 6px; }
+  .order-list-periods button { padding: 10px; font-size: 11px; }
+  .order-list-date-filter { gap: 8px; }
+  .order-list-date-filter input { width: calc((100% - 30px) / 2); padding: 10px 8px; font-size: 12px; }
+  .order-list-date-filter button { margin-left: 0; padding: 10px 20px; font-size: 12px; }
+  .order-list-table-card { overflow-x: auto; }
+  .order-list-table-card table { min-width: 620px; }
+}

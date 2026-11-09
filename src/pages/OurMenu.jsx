@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { productHref } from './productLinks'
 import { withHomeCategoryProducts } from './homeCategoryProducts'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
@@ -25,7 +26,7 @@ import drinkHeadingReference from '../assets/ec7f3a07-853a-4023-bf53-ba35bc763b4
 import sandwichFlagOrnament from '../assets/sandwich-flag-ornament.png'
 import breadLoafOrnament from '../assets/bread-loaf-ornament.png'
 import homeBreadBackground from '../assets/home-bread-background-small-ornaments.png'
-import homeCakeBackground from '../assets/home-cake-background-larger-side-treats.png'
+import homeCakeBackground from '../assets/home-cake-background-smaller-logo.png'
 import homeSandwichBackground from '../assets/home-sandwich-background-spaced-ornaments.png'
 import homeDrinkBackground from '../assets/home-drink-background-wheat-header.png'
 import drinkBottomOrnaments from '../assets/a2356f3d-8e45-4be8-abe5-641e9afd1fe7.png'
@@ -37,7 +38,7 @@ import cakeBottomOrnaments from '../assets/home-cake-background-wheat-header.png
 
 // Text and prices transcribed from the supplied Figma reference, not a live catalog.
 // Set imageSrc to a public URL (for example /images/menu/salt-bread.png) when ready.
-// Only salt bread has a detail page; other product links remain unassigned.
+// Every listing uses the same product detail URL resolver.
 const categoryData = [
   { id: 'bread', title: 'BREAD', description: '매일 갓 구워낸 신선하고 맛있는 빵', items: [
     ['Salt Bread', '소금빵', '바삭한 겉면과 촉촉한 속살, 고소한 버터와 은은한 소금의 조화', 3200],
@@ -85,7 +86,7 @@ export const menuCategories = categoryData.map(({ items, ...category }) => ({
   ...category,
   products: items.map(([name, koreanName, description, price], index) => ({
     id: `${category.id}-${index + 1}`, name, koreanName, description, price,
-    imageSrc: null, detailHref: category.id === 'bread' && index === 0 ? '/menu/salt-bread' : null, isTemporary: false,
+    imageSrc: null, detailHref: productHref(`${category.id}-${index + 1}`), isTemporary: false,
   })),
 }))
 
@@ -199,7 +200,7 @@ function MenuImage({ src, alt, banner = false }) {
   </div>
 }
 
-function ProductCard({ product }) {
+export function MenuProductImage({ product }) {
   const cakePhotoX = { 'cake-1': 50, 'cake-2': 515, 'cake-3': 985, 'cake-4': 1455 }[product.id]
   const secondCakePhotoX = { 'cake-5': 114, 'cake-6': 545, 'cake-7': 972, 'cake-8': 1406 }[product.id]
   const drinkPhotoX = { 'drink-5': 55, 'drink-6': 499, 'drink-7': 943, 'drink-8': 1391 }[product.id]
@@ -210,7 +211,7 @@ function ProductCard({ product }) {
   const firstBreadPhotoX = { 'bread-1': 31, 'bread-2': 510, 'bread-3': 987, 'bread-4': 1468 }[product.id]
   const addedBreadPhotoX = { 'bread-9': 33, 'bread-10': 512, 'bread-11': 991, 'bread-12': 1470 }[product.id]
   const addedBreadSecondPhotoX = { 'bread-13': 30, 'bread-14': 510, 'bread-15': 990, 'bread-16': 1472 }[product.id]
-  const content = <>
+  return <>
     {addedBreadSecondPhotoX !== undefined
       ? <div className="our-menu-product-media"><svg viewBox={`${addedBreadSecondPhotoX} 24 462 406`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={addedBreadSecondReference} width="1957" height="804" /></svg></div>
       : addedBreadPhotoX !== undefined
@@ -232,6 +233,12 @@ function ProductCard({ product }) {
       : cakePhotoX !== undefined
       ? <div className="our-menu-product-media"><svg viewBox={`${cakePhotoX} 55 435 396`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={cakeProductReference} width="1938" height="812" /></svg></div>
       : product.id === 'bread-1' ? <div className="our-menu-product-media"><svg viewBox="315 286 650 610" role="img" aria-label="소금빵" style={{ display:'block', width:'100%', height:'100%' }}><image href={saltBreadReference} width="1632" height="7491" /></svg></div> : <MenuImage src={product.imageSrc} alt={product.koreanName} />}
+  </>
+}
+
+function ProductCard({ product, detailHref = product.detailHref }) {
+  const content = <>
+    <MenuProductImage product={product} />
     <div className="our-menu-product-copy">
       {product.isTemporary && <span className="our-menu-temporary">임시 상품 정보</span>}
       <h3>{product.name}</h3>
@@ -241,7 +248,7 @@ function ProductCard({ product }) {
     </div>
   </>
   return <article className="our-menu-product" data-product-id={product.id}>
-    {product.detailHref ? <a className="our-menu-product-link" href={product.detailHref}>{content}</a> : content}
+    {detailHref ? <a className="our-menu-product-link" href={detailHref}>{content}</a> : content}
   </article>
 }
 
@@ -256,6 +263,13 @@ export default function OurMenu({ categoryId: routeCategoryId } = {}) {
   return <div className="our-menu-page">
     <HomeHeader />
     <main>
+      {!routeCategoryId && <img
+        src="/images/b888723f-55a6-4898-b26b-db7c2f6c2b0f.png"
+        alt="MELLOW BAKE Our Menu — 매일의 달콤한 순간을 함께하는 멜로우 베이크"
+        width="1916" height="697"
+        style={{ width: '100%', height: 'auto' }}
+        fetchPriority="high"
+      />}
       <div className="our-menu-categories">
         {visibleCategories.map((category, index) => <section className={`our-menu-category${routeCategoryId && category.id === 'bread' ? ' our-menu-home-bread-list' : routeCategoryId && category.id === 'cake' ? ' our-menu-home-cake-list' : routeCategoryId && category.id === 'sandwich' ? ' our-menu-home-sandwich-list' : routeCategoryId && category.id === 'drink' ? ' our-menu-home-drink-list' : ''}`} style={{ backgroundColor: listingColor(category), ...(routeCategoryId && category.id === 'bread' ? { '--home-bread-background': `url("${homeBreadBackground}")` } : routeCategoryId && category.id === 'cake' ? { '--home-cake-background': `url("${homeCakeBackground}")` } : routeCategoryId && category.id === 'sandwich' ? { '--home-sandwich-background': `url("${homeSandwichBackground}")` } : routeCategoryId && category.id === 'drink' ? { '--home-drink-background': `url("${homeDrinkBackground}")` } : {}) }} key={category.id} id={`menu-${category.id}`} aria-labelledby={`menu-${category.id}-title`}>
           {index > 0 && <CategoryWave fromColor={listingColor(visibleCategories[index - 1])} toColor={listingColor(category)} />}
@@ -274,7 +288,7 @@ export default function OurMenu({ categoryId: routeCategoryId } = {}) {
                   ? <div className="our-menu-drink-heading"><h2 id="menu-drink-title"><img src={drinkHeadingReference} width="1997" height="788" alt="DRINK — 달콤한 디저트와 함께 즐기는 멜로우 베이크의 특별한 음료" /></h2></div>
                   : <div className="our-menu-category-heading"><h2 id={`menu-${category.id}-title`}>{category.title}</h2><p>{category.description}</p></div>}
           <div className="our-menu-grid">
-            {category.products.map(product => <ProductCard key={product.id} product={product} />)}
+            {category.products.map(product => <ProductCard key={product.id} product={product} detailHref={!routeCategoryId && product.id === 'bread-2' ? '/menu/mont-blanc' : product.detailHref} />)}
             {category.id === 'bread' && <BreadRowDecorations />}
           </div>
           </div>

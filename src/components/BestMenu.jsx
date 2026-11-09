@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useFavorites } from '../wishlistStore'
+import { productHref } from '../pages/productLinks'
 import './BestMenu.css'
 import headingImage from '../assets/a5abfc47-762f-43a5-8643-f9f11d61a678.png'
 
 const originalPhotos = import.meta.glob('../assets/best-menu/*.{png,jpg,jpeg,webp}', {
   eager: true, query: '?url', import: 'default',
 })
-const products = [
+export const bestProducts = [
   { id: 'strawberry-shortcake', badge: 'BEST', name: 'Strawberry Shortcake', koreanName: '딸기 생크림 케이크', description: '신선한 생딸기와 부드러운 생크림이 어우러진 클래식한 케이크', price: '7,500원' },
   { id: 'chocolate-cake', badge: 'BEST', name: 'Chocolate Cake', koreanName: '초콜릿 케이크', description: '진한 초콜릿과 부드러운 크림의 달콤한 조화', price: '6,900원' },
   { id: 'matcha-cake', badge: 'NEW', name: 'Matcha Cake', koreanName: '말차 케이크', description: '깊고 풍부한 말차와 부드러운 크림이 어우러진 케이크', price: '6,800원' },
@@ -31,21 +32,19 @@ function ProductPhoto({ product }) {
 }
 
 export default function BestMenu() {
-  const [favorites, setFavorites] = useState([])
-  function toggleFavorite(id) {
-    setFavorites(current => current.includes(id) ? current.filter(item => item !== id) : [...current, id])
-  }
+  const { favorites, toggleFavorite } = useFavorites()
   return <>
     <div className="best-menu-decorations" aria-hidden="true"><Heart className="best-menu-float-heart" /><span className="best-menu-float-sparkle">✧</span><span className="best-menu-float-flower">✿</span><Heart className="best-menu-bottom-heart" /></div>
     <div className="home-container best-menu-content">
       <BestMenuHeading />
-      <div className="best-menu-grid">{products.map(product => <article className="best-menu-card" key={product.id}>
+      <div className="best-menu-grid">{bestProducts.map(product => <article className="best-menu-card" key={product.id}>
         <span className={`best-menu-badge${product.badge === 'NEW' ? ' best-menu-badge--new' : ''}`}>
           <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,3 62,12 78,8 83,24 97,30 91,47 98,60 83,70 82,87 64,88 51,98 37,89 21,94 17,77 3,69 9,52 3,38 18,27 20,12 37,13" /></svg>
           <span>{product.badge}</span>
         </span>
+        <a className="best-menu-detail-link" href={productHref(product.id)} aria-label={`${product.koreanName} 상세 보기`} />
         <ProductPhoto product={product} />
-        <div className="best-menu-card-copy"><h3>{product.name}</h3><p className="best-menu-korean-name">{product.koreanName}</p><p className="best-menu-description">{product.description}</p><div className="best-menu-card-bottom"><strong>{product.price}</strong><button type="button" aria-label={`${product.koreanName} 찜`} aria-pressed={favorites.includes(product.id)} onClick={() => toggleFavorite(product.id)}><Heart filled={favorites.includes(product.id)} /></button></div></div>
+        <div className="best-menu-card-copy"><h3>{product.name}</h3><p className="best-menu-korean-name">{product.koreanName}</p><p className="best-menu-description">{product.description}</p><div className="best-menu-card-bottom"><strong>{product.price}</strong><button type="button" aria-label={`${product.koreanName} 찜`} aria-pressed={favorites.includes(product.id)} onClick={() => toggleFavorite(product)}><Heart filled={favorites.includes(product.id)} /></button></div></div>
       </article>)}</div>
     </div>
   </>

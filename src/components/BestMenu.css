@@ -1,5 +1,8 @@
 /* BEST MENU content only. Background, section sizing and wave styles are inherited unchanged. */
 .best-menu-content { position: relative; }
+.best-menu-detail-link { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.best-menu-detail-link:focus-visible { outline: 3px solid #ef347c; outline-offset: 3px; }
+.best-menu-card-bottom button { position: relative; z-index: 2; }
 .best-menu-heading { position: relative; margin: 0 auto 48px; text-align: center; }
 .mellow-home .best-menu-eyebrow { margin-bottom: 12px; color: #743d2a; font-size: 11px; font-weight: 800; letter-spacing: .24em; }
 .best-menu-title-group { position: relative; display: inline-flex; align-items: center; justify-content: center; max-width: 100%; }

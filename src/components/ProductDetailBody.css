@@ -1,0 +1,120 @@
+.catalog-story-body { --story-pink: #fadde2; --story-cream: #fff5e6; --story-ink: #784331; margin-top: 45px; color: var(--story-ink); }
+.catalog-story-body h2, .catalog-story-body h3 { word-break: keep-all; }
+.catalog-story-body p { font-size: 13px; line-height: 1.9; word-break: keep-all; }
+.catalog-story-intro { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; min-height: 270px; padding: 36px 50px 36px 145px; background: var(--story-pink); overflow: hidden; }
+.catalog-story-intro h2 { margin: 0 0 18px; font-size: 29px; line-height: 1.5; }
+.catalog-story-intro p { max-width: 320px; margin: 0; }
+.catalog-story-wordmark { position: absolute; left: 32px; top: 75px; transform: rotate(-15deg); color: #e8849c; font: italic 23px/1.2 Georgia,serif; }
+.catalog-story-banner-photo { min-width: 0; width: min(100%, 340px); justify-self: center; aspect-ratio: 1.25; overflow: hidden; border-radius: 50%; }
+.catalog-story-heart { position: absolute; top: 22px; right: 24px; color: #e77d99; font-size: 44px; transform: rotate(15deg); }
+.catalog-story-body .our-menu-product-media { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; }
+.catalog-story-body .our-menu-product-media svg { display: block; width: 100%; height: 100%; overflow: hidden; }
+.catalog-story-body img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.catalog-story-feature { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; margin-top: 14px; padding-right: 42px; background: var(--story-cream); }
+.catalog-story-photo { min-width: 0; aspect-ratio: 1.6; overflow: hidden; }
+.catalog-story-feature > div > p { margin: 16px 0 0 48px; }
+.catalog-story-body .story-title { display: flex; gap: 15px; align-items: start; }
+.catalog-story-body .story-title h2 { margin: 0; font-size: 24px; line-height: 1.5; }
+.catalog-story-body .story-step { display: inline-grid; place-items: center; flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #f4bfcb; color: #934356; font-size: 19px; font-weight: 800; }
+.catalog-story-panel { margin-top: 22px; padding: 38px 44px; background: var(--story-cream); }
+.catalog-story-materials { display: grid; grid-template-columns: 100px 1fr 1.7fr; gap: 22px; align-items: center; }
+.catalog-story-materials > img { width: 100px; height: 150px; }
+.catalog-story-materials .story-title h2 { font-size: 21px; }
+.catalog-story-small-ingredients { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 12px; min-width: 0; text-align: center; }
+.catalog-story-small-ingredients > div { flex: 1; min-width: 75px; max-width: 135px; }
+.catalog-story-small-ingredients h3 { margin: 8px 0; font-size: 13px; }
+.story-ingredient-art { display: block; width: 100%; height: auto; }
+.story-ingredient-symbol { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; aspect-ratio: 1.1; padding: 16px; border-radius: 50%; background: #f6e4c8; }
+.story-ingredient-symbol > span { font-size: 27px; color: #d7aa6b; }
+.story-ingredient-symbol > b { font-size: 15px; }
+.catalog-story-three-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 28px; }
+.catalog-story-guide-card { min-width: 0; text-align: center; }
+.catalog-story-guide-card h3 { margin: 15px 0 8px; font-size: 16px; }
+.catalog-story-guide-card > p { margin: 0; font-size: 12px; }
+.catalog-story-photo-pending { display: grid; place-content: center; min-height: 150px; padding: 18px; border: 1px dashed #ddc6a6; border-radius: 14px; background: #fffaf3; }
+.catalog-story-photo-pending span { color: #cc9d8c; font: italic 28px Georgia,serif; }
+.catalog-story-photo-pending p { margin: 12px 0 0; color: #ac8a73; font-size: 11px; }
+.catalog-story-guide-illustration { display: grid; place-items: center; min-height: 150px; border-radius: 45% 45% 12px 12px; background: #fffaf3; }
+.catalog-story-guide-illustration svg { width: 85px; height: 85px; color: #c79962; }
+.catalog-story-details > .story-step { margin-bottom: 12px; }
+.catalog-story-detail-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; padding: 25px 0; }
+.catalog-story-detail-row .catalog-story-photo { aspect-ratio: 1.3; border-radius: 14px; }
+.catalog-story-detail-row h3 { margin: 0 0 20px; font-size: 23px; line-height: 1.5; }
+.catalog-story-detail-row p { margin: 0; }
+.catalog-story-detail-row--reverse > .catalog-story-photo { order: 2; }
+.catalog-story-ingredients .story-title { justify-content: center; position: relative; padding-inline: 45px; }
+.catalog-story-ingredients .story-title .story-step { position: absolute; left: 0; }
+.catalog-story-center-note { margin: 14px 0 0; text-align: center; color: #a27b65; font-size: 12px !important; }
+.catalog-story-ingredient-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; padding: 30px 0; text-align: center; }
+.catalog-story-ingredient-grid > div { flex: 1; max-width: 200px; min-width: 110px; }
+.catalog-story-ingredient-grid h3 { margin: 18px 0 0; font-size: 18px; }
+.catalog-story-allergens { margin-top: 12px; padding: 20px 24px; border: 1px solid #e9d7c3; border-radius: 12px; background: #fffaf2; }
+.catalog-story-allergens h3 { margin: 0 0 12px; padding-bottom: 10px; border-bottom: 1px solid #cfaa8e; font-size: 15px; }
+.catalog-story-allergens p { margin: 6px 0; font-size: 12px; }
+.catalog-story-allergens strong { display: inline-block; min-width: 70px; }
+.catalog-story-allergens small { display: block; margin-top: 8px; color: #a27b65; font-size: 10px; line-height: 1.8; }
+.catalog-story-storage > h2, .catalog-story-shipping > h2 { margin: 0; text-align: center; font-size: 25px; line-height: 1.5; }
+.catalog-story-shipping dl { margin: 24px 0 0; padding: 22px 28px; border-radius: 14px; background: #fff; }
+.catalog-story-shipping dl > div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; padding: 7px 0; font-size: 12px; line-height: 1.8; }
+.catalog-story-shipping dt { font-weight: 700; }
+.catalog-story-shipping dd { margin: 0; }
+.catalog-story-reviews { margin-top: 28px; }
+.catalog-story-review-heading { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 14px 18px; background: var(--story-cream); }
+.catalog-story-review-heading h2 { margin: 0; color: #ae5b6a; font-size: 18px; }
+.catalog-story-review-heading > span { font-size: 11px; color: #a27b65; }
+.catalog-story-review-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }
+.catalog-story-review-pending { padding: 26px 14px; border: 1px dashed #e7c2bd; border-radius: 14px; background: #fffaf7; text-align: center; }
+.catalog-story-review-pending > span { color: #e3a2af; font-size: 35px; }
+.catalog-story-review-pending p { margin: 12px 0 8px; font-size: 13px; }
+.catalog-story-review-pending small { font-size: 10px; line-height: 1.8; color: #a27b65; }
+.catalog-story-related { margin-top: 40px; }
+.catalog-story-related > h2 { margin: 0 0 18px; font-size: 20px; font-weight: 500; }
+.catalog-story-related-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; padding: 28px 24px; background: var(--story-cream); }
+.catalog-story-related-grid > a { display: block; min-width: 0; padding: 9px 9px 18px; border: 1px solid #efd5c6; border-radius: 13px; background: #fff; text-align: center; }
+.catalog-story-related-photo { aspect-ratio: 1.4; overflow: hidden; border-radius: 8px; }
+.catalog-story-related-grid h3 { margin: 18px 0 8px; font-size: 14px; line-height: 1.5; }
+.catalog-story-related-grid p { margin: 0; font-size: 13px; font-weight: 700; }
+.catalog-story-body section[id] { scroll-margin-top: 24px; }
+.catalog-story-body :is(a,button):focus-visible { outline: 2px solid #ac426d; outline-offset: 4px; }
+@media(max-width: 900px) {
+  .catalog-story-intro { padding: 30px 30px 30px 100px; gap: 22px; }
+  .catalog-story-wordmark { left: 18px; font-size: 18px; }
+  .catalog-story-intro h2 { font-size: 25px; }
+  .catalog-story-panel { padding: 30px; }
+  .catalog-story-materials { grid-template-columns: 75px 1fr; }
+  .catalog-story-materials > img { width: 75px; height: 110px; }
+  .catalog-story-small-ingredients { grid-column: 1 / -1; }
+  .catalog-story-detail-row { gap: 30px; }
+  .catalog-story-three-cards { gap: 16px; }
+}
+@media(max-width: 600px) {
+  .catalog-story-body { margin-top: 30px; }
+  .catalog-story-intro { grid-template-columns: 1fr; padding: 30px 24px; gap: 24px; }
+  .catalog-story-wordmark { display: none; }
+  .catalog-story-intro h2 { font-size: 25px; }
+  .catalog-story-banner-photo { width: min(100%, 270px); }
+  .catalog-story-feature { grid-template-columns: 1fr; padding: 0 0 24px; gap: 24px; }
+  .catalog-story-feature > div:not(.catalog-story-photo) { padding-inline: 20px; }
+  .catalog-story-feature > div > p { margin-left: 0; }
+  .catalog-story-panel { padding: 26px 20px; }
+  .catalog-story-body .story-title { gap: 10px; }
+  .catalog-story-body .story-title h2 { font-size: 21px; }
+  .catalog-story-body .story-step { width: 30px; height: 30px; font-size: 17px; }
+  .catalog-story-materials { gap: 14px; }
+  .catalog-story-three-cards, .catalog-story-detail-row { grid-template-columns: 1fr; }
+  .catalog-story-three-cards { gap: 26px; }
+  .catalog-story-photo-pending, .catalog-story-guide-illustration { min-height: 140px; }
+  .catalog-story-detail-row { gap: 20px; padding: 20px 0; }
+  .catalog-story-detail-row--reverse > .catalog-story-photo { order: 0; }
+  .catalog-story-detail-row h3 { font-size: 21px; margin-bottom: 12px; }
+  .catalog-story-ingredients .story-title { padding-inline: 0; justify-content: start; }
+  .catalog-story-ingredients .story-title .story-step { position: static; }
+  .catalog-story-ingredient-grid > div { min-width: 100px; max-width: 140px; }
+  .catalog-story-allergens { padding: 18px; }
+  .catalog-story-storage > h2, .catalog-story-shipping > h2 { font-size: 23px; }
+  .catalog-story-shipping dl { padding: 18px; }
+  .catalog-story-shipping dl > div { grid-template-columns: 85px minmax(0, 1fr); gap: 8px; }
+  .catalog-story-review-grid, .catalog-story-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .catalog-story-related-grid { padding: 16px 12px; }
+  .catalog-story-review-heading { padding-inline: 12px; }
+}

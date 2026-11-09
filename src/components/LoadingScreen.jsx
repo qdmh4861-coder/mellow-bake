@@ -1,11 +1,20 @@
 ﻿import { useEffect, useLayoutEffect, useState } from 'react'
 import './LoadingScreen.css'
 
-// Module memory survives internal navigation, but resets on a full reload.
+const introSeenKey = 'mellow-bake.intro-seen'
+// Retain an in-memory fallback when browser storage is unavailable.
 let introCompleted = false
 
+function hasSeenIntro() {
+  try {
+    return introCompleted || window.sessionStorage.getItem(introSeenKey) === 'true'
+  } catch {
+    return introCompleted
+  }
+}
+
 export default function LoadingScreen({ children }) {
-  const [visible, setVisible] = useState(() => !introCompleted)
+  const [visible, setVisible] = useState(() => !hasSeenIntro())
   const [leaving, setLeaving] = useState(false)
 
   useLayoutEffect(() => {
@@ -14,13 +23,22 @@ export default function LoadingScreen({ children }) {
 
   useEffect(() => {
     if (!visible) return
+    introCompleted = true
+    try {
+      window.sessionStorage.setItem(introSeenKey, 'true')
+    } catch {
+      // Continue with the in-memory fallback if storage is blocked.
+    }
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     const fadeTimer = window.setTimeout(() => setLeaving(true), 1700)
     const finishTimer = window.setTimeout(() => {
       // Reset while the overlay still covers HOME, before releasing interaction.
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-      introCompleted = true
+      if (window.location.pathname !== '/') {
+        window.location.replace('/')
+        return
+      }
       setVisible(false)
     }, 2000)
 

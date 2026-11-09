@@ -1,0 +1,93 @@
+.mypage-page { background: #fff8ee; color: #754c3c; }
+.mypage-page a { color: inherit; text-decoration: none; }
+.mypage-layout a { color: inherit; text-decoration: none; }
+.mypage-layout button { font: inherit; color: inherit; cursor: pointer; }
+.mypage-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); align-items: start; gap: 34px; width: min(1232px, calc(100% - 96px)); margin: auto; padding: 164px 0 80px; }
+.mypage-sidebar { background: #fadce4; border-radius: 8px; padding: 28px 24px; }
+.mypage-sidebar section + section { margin-top: 38px; }
+.mypage-sidebar h2 { margin: 0 0 12px; font-size: 20px; line-height: 1.5; }
+.mypage-sidebar ul { padding-left: 18px; margin: 0; }
+.mypage-sidebar li { padding-left: 0; font-size: 16px; line-height: 1.65; }
+.mypage-sidebar li + li { margin-top: 12px; }
+.mypage-sidebar li::marker { font-size: 10px; }
+.mypage-sidebar button { border: 0; padding: 0; background: none; text-align: left; line-height: inherit; }
+.mypage-sidebar :is(a,button):hover { color: #bd527b; text-decoration: underline; }
+.mypage-sidebar a[aria-current='page'], .mypage-sidebar a[aria-current='page']:hover { color: #E75480; text-decoration: none; }
+.mypage-content { min-width: 0; }
+.mypage-content > h1 { margin: 8px 0 46px; text-align: center; font-size: 30px; line-height: 1.3; }
+.mypage-welcome, .mypage-status-card, .mypage-orders-card { border: 1px solid #eed9ca; border-radius: 8px; background: white; }
+.mypage-welcome { padding: 16px 32px 26px; text-align: center; }
+.mypage-welcome h2 { margin: 0 0 12px; font-size: 20px; }
+.mypage-welcome > p { margin: 0; color: #a16a57; font-size: 13px; line-height: 1.6; }
+.mypage-welcome > p a { text-decoration: underline; text-underline-offset: 3px; }
+.mypage-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 26px; }
+.mypage-summary > :is(a,button) { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border: 0; padding: 0 12px; background: none; }
+.mypage-summary > :is(a,button) + :is(a,button) { border-left: 1px solid #eed9ca; }
+.mypage-summary strong { font-size: 24px; }
+.mypage-summary span { font-size: 19px; color: #a46e5b; }
+.mypage-order-status, .mypage-orders { margin-top: 40px; }
+.mypage-content section > h2 { font-size: 21px; }
+.mypage-order-status > h2, .mypage-orders > h2 { margin: 0 0 20px; line-height: 1.5; }
+.mypage-content h2 > span { margin-left: 10px; color: #a46e5b; font-size: 13px; font-weight: 400; }
+.mypage-status-card { display: grid; grid-template-columns: minmax(0, 1fr) 100px; align-items: center; gap: 42px; padding: 28px 52px; }
+.mypage-status-card ol { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; padding: 0; margin: 0; list-style: none; }
+.mypage-status-card li { position: relative; min-width: 0; }
+.mypage-status-card li + li::before { content: '›'; position: absolute; top: 8px; left: -17px; font-size: 30px; color: #dcc7c2; }
+.mypage-status-card li a { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.mypage-status-card li strong { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid #eed9ca; border-radius: 50%; font-size: 21px; font-weight: 400; }
+.mypage-status-card li span { white-space: nowrap; font-size: 10px; }
+.mypage-status-card dl { margin: 0; font-size: 13px; }
+.mypage-status-card dl div { display: flex; gap: 4px; }
+.mypage-status-card dl div + div { margin-top: 16px; }
+.mypage-status-card dd { margin: 0; }
+.mypage-status-card dt::after { content: ' :'; }
+.mypage-orders { scroll-margin-top: 24px; }
+.mypage-orders table { width: 100%; border-collapse: collapse; table-layout: fixed; text-align: center; font-size: 14px; }
+.mypage-orders thead th { padding: 16px 8px; border-bottom: 1px solid #eed9ca; font-weight: 700; }
+.mypage-orders tbody td { height: 168px; padding: 24px; color: #a5a5a5; font-size: 15px; }
+.mypage-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.mypage-pending { width: min(460px, calc(100% - 40px)); border: 1px solid #efc7d6; border-radius: 14px; padding: 28px; background: #fff8ee; color: #754c3c; }
+.mypage-pending::backdrop { background: #50332855; }
+.mypage-pending h2 { margin: 0 0 16px; font-size: 22px; }
+.mypage-pending p { line-height: 1.8; font-size: 15px; }
+.mypage-pending form { text-align: right; }
+.mypage-pending button { padding: 10px 24px; border: 0; border-radius: 8px; background: #fadce4; color: inherit; font: inherit; cursor: pointer; }
+.mypage-layout :is(a,button):focus-visible, .mypage-pending button:focus-visible { outline: 2px solid #ba5179; outline-offset: 4px; }
+@media(max-width: 1100px) {
+  .mypage-layout { width: calc(100% - 48px); grid-template-columns: 210px minmax(0, 1fr); gap: 24px; padding-top: 100px; }
+  .mypage-sidebar { padding: 24px 20px; }
+  .mypage-sidebar li { font-size: 14px; }
+  .mypage-status-card { padding: 24px 18px; gap: 18px; grid-template-columns: minmax(0, 1fr) 65px; }
+  .mypage-status-card ol { gap: 14px; }
+  .mypage-status-card li + li::before { left: -12px; }
+  .mypage-summary strong { font-size: 20px; }
+  .mypage-welcome { padding-inline: 18px; }
+}
+@media(max-width: 760px) {
+  .mypage-layout { grid-template-columns: 1fr; padding-top: 58px; padding-bottom: 48px; }
+  .mypage-sidebar { grid-row: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+  .mypage-sidebar section + section { margin-top: 0; }
+  .mypage-content > h1 { margin-top: 0; margin-bottom: 30px; }
+}
+@media(max-width: 480px) {
+  .mypage-layout { width: calc(100% - 32px); gap: 32px; }
+  .mypage-welcome { padding: 20px 12px; }
+  .mypage-welcome h2 { font-size: 17px !important; line-height: 1.6; }
+  .mypage-welcome > p { font-size: 12px; }
+  .mypage-summary strong { font-size: 16px; }
+  .mypage-summary span { font-size: 17px; }
+  .mypage-summary > :is(a,button) { gap: 10px; padding-inline: 4px; }
+  .mypage-content section > h2 { font-size: 18px; }
+  .mypage-content h2 > span { display: inline-block; margin-left: 4px; font-size: 11px; }
+  .mypage-status-card { grid-template-columns: 1fr; gap: 24px; padding: 24px 12px; }
+  .mypage-status-card li strong { width: 38px; height: 38px; font-size: 18px; }
+  .mypage-status-card li + li::before { font-size: 24px; top: 5px; }
+  .mypage-status-card li span { font-size: 9px; }
+  .mypage-status-card dl { display: flex; justify-content: center; gap: 24px; border-top: 1px solid #f2e5dc; padding-top: 18px; font-size: 11px; }
+  .mypage-status-card dl div + div { margin-top: 0; }
+  .mypage-orders thead th { padding: 14px 2px; font-size: 10px; }
+  .mypage-orders tbody td { font-size: 13px; }
+  .mypage-sidebar { padding: 24px 18px; gap: 28px 14px; }
+  .mypage-sidebar h2 { font-size: 18px; }
+  .mypage-sidebar li { font-size: 12px; }
+}

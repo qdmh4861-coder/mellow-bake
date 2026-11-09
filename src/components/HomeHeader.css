@@ -112,3 +112,5 @@
   .home-header__logo { font-size: 16px; }
   .home-header__actions { gap: 0; }
 }
+
+.home-header__nav a[aria-current='page'], .home-header__dropdown a[aria-current='page'] { color: #ff4d92; }

@@ -1,0 +1,32 @@
+.seasonal-menu-page { background: #fff8ee; color: #663e32; }
+.seasonal-menu-page a { color: inherit; text-decoration: none; }
+.seasonal-menu-main { width: min(1312px, calc(100% - 80px)); margin: auto; padding: 28px 0 80px; }
+.seasonal-menu-banner { display: grid; grid-template-columns: 44% 56%; align-items: center; min-height: 220px; border-radius: 28px; overflow: hidden; background: radial-gradient(ellipse at top left,#fff4f1,transparent 65%),#fbc5d0; }
+.seasonal-menu-banner > div { text-align: center; padding: 24px 12px; }
+.seasonal-menu-banner > div > span { display: inline-block; background: #f25385; color: white; border-radius: 20px; padding: 5px 20px; font-weight: 700; transform: rotate(-4deg); }
+.seasonal-menu-banner h1 { margin: 8px 0; font: italic 700 clamp(40px,5.5vw,78px)/1.1 Georgia,serif; color: #e7597c; text-shadow: 2px 2px white; }
+.seasonal-menu-banner p { margin: 10px 0 0; font-size: 18px; line-height: 1.6; font-weight: 700; }
+.seasonal-menu-banner svg { display: block; width: 100%; height: 100%; min-height: 220px; overflow: hidden; }
+.seasonal-menu-heading { text-align: center; margin: 24px 0 22px; }
+.seasonal-menu-heading h2 { margin: 0 0 10px; font-size: clamp(20px,2.4vw,30px); color: #bd365c; }
+.seasonal-menu-heading p { margin: 0; font-size: 16px; line-height: 1.7; }
+.seasonal-menu-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px 24px; }
+.seasonal-menu-card { position: relative; min-width: 0; border: 1px solid #f9dfc5; border-radius: 18px; background: #fffaf3; box-shadow: 0 3px 7px #d5a37426; overflow: hidden; transition: transform .18s ease,box-shadow .18s ease; }
+.seasonal-menu-badge { position: absolute; z-index: 1; top: 9px; left: 10px; border-radius: 20px; padding: 3px 14px; background: #ff6395; color: white; font-size: 14px; font-weight: 700; }
+.seasonal-menu-photo { display: grid; place-items: center; aspect-ratio: 1.08; padding: 16px; box-sizing: border-box; overflow: hidden; background: #fffaf3; }
+.seasonal-menu-card { display: flex; flex-direction: column; }
+.seasonal-menu-copy { display: flex; flex-direction: column; flex: 1; padding: 8px 18px 18px; }
+.seasonal-menu-copy > span { display: inline-block; position: relative; margin-top: 0; padding: 3px 8px; border-radius: 8px 8px 0 0; background: #fffaf3; color: #d54068; font-size: 13px; font-weight: 700; }
+.seasonal-menu-copy h3 { min-height: 2.8em; margin: 4px 0 8px; font-size: 18px; line-height: 1.4; }
+.seasonal-menu-copy p { min-height: 3.2em; margin: 0 0 12px; font-size: 13px; line-height: 1.6; }
+.seasonal-menu-copy strong { margin-top: auto; font-size: 20px; color: #db1553; }
+.seasonal-detail-main { width: min(1280px,calc(100% - 80px)); margin: auto; padding: 48px 0 80px; }
+.seasonal-detail-back { display: inline-block; margin-bottom: 28px; border-bottom: 1px solid currentColor; }
+.seasonal-detail-favorite { border: 1px solid #ee9fb5; border-radius: 20px; padding: 8px 18px; background: #fff0f4; color: #d54068; font: inherit; cursor: pointer; }
+.seasonal-detail-page .catalog-product-main-image { background: #ffe7de; }
+.seasonal-menu-page :is(a,button):focus-visible { outline: 2px solid #e75480; outline-offset: 3px; }
+@media(hover:hover) { .seasonal-menu-card:hover { transform: translateY(-3px); box-shadow: 0 7px 15px #d5a3743b; } }
+@media(max-width:1000px) { .seasonal-menu-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .seasonal-menu-main,.seasonal-detail-main { width: calc(100% - 32px); } .seasonal-menu-banner { grid-template-columns: 1fr; } .seasonal-menu-banner svg { min-height: 150px; height: 160px; } .seasonal-menu-banner p { font-size: 15px; } .seasonal-menu-grid { gap: 14px; } .seasonal-menu-heading p { font-size: 13px; } .seasonal-menu-copy { padding-inline: 12px; } .seasonal-menu-copy h3 { font-size: 16px; } }
+@media(max-width:420px) { .seasonal-menu-grid { grid-template-columns: 1fr; } }
+@media(prefers-reduced-motion:reduce) { .seasonal-menu-card { transition: none; } }

@@ -1,0 +1,70 @@
+.profile-content { padding-left: 84px; }
+.profile-content > h1 { margin: 0 0 14px; font-size: 26px; text-align: center; }
+.profile-intro { margin: 0 0 18px; text-align: center; color: #a46e5b; font-size: 14px; line-height: 1.6; }
+.profile-card { background: white; border: 1px solid #eed9ca; border-radius: 8px; padding: 28px 38px 20px; }
+.profile-card > h2 { margin: 0; padding-bottom: 14px; border-bottom: 1px solid #eed9ca; font-size: 23px; }
+.profile-login-note { margin: 12px 0 20px; color: #a46e5b; font-size: 12px; line-height: 1.6; }
+.profile-login-note a { text-decoration: underline; text-underline-offset: 3px; }
+.profile-fields { padding: 0 20px 0 60px; }
+.profile-row { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 12px; }
+.profile-row > label, .profile-field-label { padding-top: 11px; font-size: 14px; font-weight: 700; }
+.profile-field { min-width: 0; max-width: 420px; }
+.profile-wide-field { max-width: none; }
+.profile-controls { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.profile-card :is(input:not([type='radio']),select) { box-sizing: border-box; display: block; width: 100%; min-width: 0; height: 40px; padding: 10px 12px; border: 1px solid #eed9ca; border-radius: 6px; background: white; color: #754c3c; font: inherit; font-size: 14px; }
+.profile-card input[readonly] { background: #f4f4f4; color: #aaa; }
+.profile-id-controls { align-items: center; }
+.profile-id-controls input { flex: 1; }
+.profile-id-note { width: 134px; flex-shrink: 0; font-size: 12px; color: #aaa; line-height: 1.5; }
+.profile-password-hidden { flex: 1; min-width: 0; min-height: 40px; display: flex; align-items: center; padding: 10px 12px; border: 1px solid #eed9ca; border-radius: 6px; color: #a98a79; font-size: 12px; }
+.profile-card .profile-soft-button { flex-shrink: 0; min-height: 40px; width: 130px; padding: 10px; border: 0; border-radius: 5px; background: #fff0eb; color: #916550; font: inherit; font-size: 12px; cursor: pointer; }
+.profile-segments { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 354px; }
+.profile-segments :is(input,select) { text-align: center; padding-inline: 8px; }
+.profile-gender { display: flex; align-items: center; gap: 22px; min-height: 40px; }
+.profile-gender label { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; }
+.profile-gender input { width: 16px; height: 16px; margin: 0; accent-color: #e8799e; }
+.profile-email-controls { display: grid; grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1fr) 130px; gap: 12px; }
+.profile-card .profile-custom-domain { margin-top: 12px; max-width: 420px; }
+.profile-postcode-controls { max-width: 324px; }
+.profile-postcode-controls input { flex: 1; }
+.profile-card .profile-address-input { margin-top: 12px; }
+.profile-error { margin: 7px 0 0; color: #bc385f; font-size: 12px; line-height: 1.6; }
+.profile-card [aria-invalid='true'] { border-color: #cb4a70 !important; }
+.profile-actions { display: flex; justify-content: center; gap: 12px; margin-top: 32px; }
+.profile-actions :is(a,button) { box-sizing: border-box; width: 150px; min-height: 44px; padding: 12px; border: 1px solid #865340; border-radius: 7px; background: white; color: #754c3c; font: inherit; font-size: 14px; font-weight: 700; text-align: center; cursor: pointer; }
+.profile-actions button { background: #70422f; color: white; }
+.profile-status { margin: 14px 0 0; min-height: 20px; font-size: 12px; line-height: 1.7; color: #a46e5b; }
+.profile-card :is(input,select,button,a):focus-visible { outline: 2px solid #e75480; outline-offset: 3px; }
+.profile-save-dialog { position: fixed; inset: 0; margin: auto; box-sizing: border-box; width: min(420px, calc(100% - 40px)); max-height: calc(100svh - 40px); overflow: auto; padding: 72px 32px; border: 1px solid #eed9ca; border-radius: 12px; background: white; color: #a46e5b; text-align: center; }
+.profile-save-dialog::backdrop { background: #0006; }
+.profile-save-dialog p { margin: 0; font-size: 14px; line-height: 1.7; }
+.profile-save-dialog form { margin-top: 44px; }
+.profile-save-dialog button { width: 150px; min-height: 44px; padding: 12px; border: 0; border-radius: 7px; background: #70422f; color: white; font: inherit; font-size: 14px; cursor: pointer; }
+.profile-save-dialog button:focus-visible { outline: 2px solid #e75480; outline-offset: 4px; }
+@media(max-width: 1400px) {
+  .profile-content { padding-left: 30px; }
+  .profile-card { padding-inline: 26px; }
+  .profile-fields { padding-inline: 0; }
+  .profile-row { grid-template-columns: 90px minmax(0, 1fr); gap: 14px; }
+  .profile-email-controls { grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1fr); }
+  .profile-email-controls button { grid-column: 1 / -1; justify-self: end; }
+}
+@media(max-width: 1100px) {
+  .profile-content { padding-left: 0; }
+  .profile-card { padding: 24px 20px; }
+  .profile-id-controls { flex-wrap: wrap; }
+  .profile-id-note { width: 100%; }
+  .profile-card .profile-soft-button { width: 110px; }
+}
+@media(max-width: 480px) {
+  .profile-card { padding: 24px 16px 16px; }
+  .profile-row { grid-template-columns: 1fr; gap: 8px; margin-top: 18px; }
+  .profile-row > label, .profile-field-label { padding-top: 0; }
+  .profile-card > h2 { font-size: 21px; }
+  .profile-intro { font-size: 12px; }
+  .profile-password-hidden { font-size: 11px; }
+  .profile-controls { gap: 8px; }
+  .profile-segments { gap: 8px; }
+  .profile-email-controls { gap: 8px; }
+  .profile-actions :is(a,button) { min-width: 0; width: auto; flex: 1; }
+}

@@ -1,12 +1,13 @@
 import './NewMenu.css'
+import { productHref } from '../pages/productLinks'
 import headingImage from '../assets/d8b8cd4a-65eb-4e3a-b50e-66912d8dcbcf.png'
 
-import { useState } from 'react'
+import { useFavorites } from '../wishlistStore'
 
 const photos = import.meta.glob('../assets/new-menu/*.{png,jpg,jpeg,webp}', {
   eager: true, query: '?url', import: 'default',
 })
-const products = [
+export const newMenuProducts = [
   { id: 'blueberry-cheesecake', badge: 'BEST', name: 'Blueberry Cheesecake', korean: '블루베리 치즈 케이크', description: '상큼한 블루베리와 고소한 크림치즈가 어우러진 케이크', price: '6,500원' },
   { id: 'tiramisu', badge: 'BEST', name: 'Tiramisu', korean: '티라미수', description: '진한 커피향과 부드러운 마스카포네 크림이 어우러진 디저트', price: '6,800원' },
   { id: 'lemon-tart', badge: 'NEW', name: 'Lemon Tart', korean: '레몬 타르트', description: '상큼한 레몬 크림과 바삭한 타르트가 어우러진 청량한 디저트', price: '6,500원' },
@@ -34,13 +35,10 @@ function Photo({ product }) {
 }
 
 export default function NewMenu() {
-  const [favorites, setFavorites] = useState([])
-  function toggleFavorite(id) {
-    setFavorites(current => current.includes(id) ? current.filter(item => item !== id) : [...current, id])
-  }
+  const { favorites, toggleFavorite } = useFavorites()
   return <div className="home-container new-menu-content">
     <Heading />
-    <div className="new-menu-grid">{products.map(product => <article className="new-menu-card" key={product.id}><Badge label={product.badge} /><Photo product={product} /><div className="new-menu-card-copy"><h3>{product.name}</h3><p className="new-menu-korean">{product.korean}</p><p className="new-menu-description">{product.description}</p><RibbonDivider /><div className="new-menu-card-bottom"><strong className="new-menu-price">{product.price}</strong><button className="new-menu-favorite" type="button" aria-label={`${product.korean} 찜`} aria-pressed={favorites.includes(product.id)} onClick={event => { event.stopPropagation(); toggleFavorite(product.id) }}><svg viewBox="0 0 40 40" fill={favorites.includes(product.id) ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="3" strokeLinejoin="round" aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" /></svg></button></div></div></article>)}</div>
+    <div className="new-menu-grid">{newMenuProducts.map(product => <article className="new-menu-card" key={product.id}><a className="home-product-detail-link" href={productHref(product.id)} aria-label={product.korean} /><Badge label={product.badge} /><Photo product={product} /><div className="new-menu-card-copy"><h3>{product.name}</h3><p className="new-menu-korean">{product.korean}</p><p className="new-menu-description">{product.description}</p><RibbonDivider /><div className="new-menu-card-bottom"><strong className="new-menu-price">{product.price}</strong><button className="new-menu-favorite" type="button" aria-label={`${product.korean} 찜`} aria-pressed={favorites.includes(product.id)} onClick={event => { event.stopPropagation(); toggleFavorite(product) }}><svg viewBox="0 0 40 40" fill={favorites.includes(product.id) ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="3" strokeLinejoin="round" aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" /></svg></button></div></div></article>)}</div>
   </div>
 }
 

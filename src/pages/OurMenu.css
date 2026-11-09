@@ -294,7 +294,7 @@
   mask-image: linear-gradient(to bottom, #000 92%, transparent 98%);
 }
 .our-menu-home-cake-list > .our-menu-category-inner {
-  padding-top: calc(30vw + 12px);
+  padding-top: calc(28vw + 4px);
 }
 
 /* Anchor the moved cake and shopping bag beside the end of the cake listing. */
