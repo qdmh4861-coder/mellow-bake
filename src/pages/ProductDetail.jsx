@@ -15,6 +15,7 @@ import '../components/SaltAlignedProductHero.css'
 import ProductHero from '../components/ProductHero'
 import { cartAddMessage } from '../cartStore'
 import ProductDetailBody from '../components/ProductDetailBody'
+import BasqueCheesecakeDetail from './BasqueCheesecakeDetail'
 
 const photos = import.meta.glob('../assets/{best-menu,new-menu,new-arrivals}/*.png', { eager: true, query: '?url', import: 'default' })
 const catalog = withHomeCategoryProducts(menuCategories).flatMap(category => category.products.map(product => ({ ...product, category: category.id })))
@@ -97,6 +98,8 @@ export default function ProductDetail({ slug }) {
   const useNativeHero = useFrame737
 
   if (!product) return <div className="product-detail-page"><HomeHeader /><main className="product-detail-main"><h1>상품을 찾을 수 없습니다</h1><a href="/menu">전체 메뉴 보기</a></main><HomeFooter /></div>
+
+  if (product.id === 'cake-2') return <BasqueCheesecakeDetail product={product} products={catalog} renderPhoto={item => <ProductPhoto product={item} />} />
 
   const category = base.category || 'cake'
   const photoNumber = Number(product.id.split('-').at(-1))

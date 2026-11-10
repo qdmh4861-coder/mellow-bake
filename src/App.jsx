@@ -25,6 +25,7 @@ import PasswordChange from './pages/PasswordChange'
 import NewMenuPage from './pages/NewMenuPage'
 import NewMenuDetail from './pages/NewMenuDetail'
 import Store from './pages/Store'
+import About from './pages/About'
 import Claims from './pages/Claims'
 import PaymentHistory from './pages/PaymentHistory'
 import ReviewWrite from './pages/ReviewWrite'
@@ -32,6 +33,7 @@ import AddressBook from './pages/AddressBook'
 import InquiryWrite from './pages/InquiryWrite'
 import InquiryHistory from './pages/InquiryHistory'
 import Faq from './pages/Faq'
+import MemberTheme from './components/MemberTheme'
 
 function DemoAccess({ children }) {
   const user = useDemoUser()
@@ -49,7 +51,7 @@ function App() {
   const productSlug = pathname.match(/^\/menu\/([^/]+)$/)?.[1]
   const benefitPage = ({ '/mypage/coupon-events': 'events', '/mypage/coupons': 'coupons', '/mypage/points': 'points', '/mypage/benefits': 'overview' })[pathname]
   const isNoticesPage = pathname === '/mypage/notices' || pathname.startsWith('/mypage/notices/')
-  const page = pathname === '/menu/bread-3' ? <SweetPotatoDetail /> : pathname === '/menu/bulgogi-sandwich' ? <BulgogiSandwichDetail /> : pathname === '/menu/cinnamon-roll' ? <CinnamonRollDetail /> : pathname === '/menu/mont-blanc' || pathname === '/menu/bread-2' ? <MontBlancDetail /> : pathname === '/menu/salt-bread' ? <SaltBreadDetail /> : menuCategory ? <OurMenu categoryId={menuCategory} /> : productSlug ? <ProductDetail key={productSlug} slug={productSlug} /> : pathname === '/menu' ? <OurMenu /> : pathname === '/login' ? <Login /> : pathname === '/signup' ? <Signup /> : <Home />
+  const page = pathname === '/about' ? <About /> : pathname === '/menu/bread-3' ? <SweetPotatoDetail /> : pathname === '/menu/bulgogi-sandwich' ? <BulgogiSandwichDetail /> : pathname === '/menu/cinnamon-roll' ? <CinnamonRollDetail /> : pathname === '/menu/mont-blanc' || pathname === '/menu/bread-2' ? <MontBlancDetail /> : pathname === '/menu/salt-bread' ? <SaltBreadDetail /> : menuCategory ? <OurMenu categoryId={menuCategory} /> : productSlug ? <ProductDetail key={productSlug} slug={productSlug} /> : pathname === '/menu' ? <OurMenu /> : pathname === '/login' ? <Login /> : pathname === '/signup' ? <Signup /> : <Home />
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
@@ -58,4 +60,5 @@ function App() {
   return <LoadingScreen>{pathname === '/mypage/faq' ? <Faq /> : pathname === '/mypage/inquiries' ? <InquiryHistory /> : pathname === '/mypage/inquiry' ? <InquiryWrite /> : pathname === '/mypage/addresses' ? <AddressBook /> : pathname === '/reviews/write' ? <ReviewWrite /> : pathname === '/mypage/payments' ? <PaymentHistory /> : pathname === '/mypage/claims' ? <Claims /> : pathname === '/store' ? <Store /> : pathname === '/new-menu' ? <NewMenuPage /> : pathname.startsWith('/new-menu/') ? <NewMenuDetail key={pathname} id={pathname.slice(10)} /> : pathname === '/mypage/password' ? <PasswordChange /> : isNoticesPage ? <Notices /> : benefitPage ? <Benefits key={benefitPage} page={benefitPage} /> : pathname === '/reviews' ? <Reviews /> : pathname === '/mypage/reviews' ? <Reviews own /> : pathname === '/mypage/profile' ? <Profile /> : pathname === '/wishlist' ? <Wishlist /> : pathname === '/mypage/orders/list' ? <OrderList /> : pathname === '/mypage/orders/detail' ? <OrderDetail /> : pathname === '/mypage/orders' ? <OrderHistory /> : pathname === '/mypage' ? <MyPage /> : pathname === '/cart' ? <Cart /> : page}</LoadingScreen>
 }
 
-export default function AuthenticatedApp() { return <DemoAccess><App /></DemoAccess> }
+export default function AuthenticatedApp() { return <DemoAccess><MemberTheme><App /></MemberTheme></DemoAccess> }
+

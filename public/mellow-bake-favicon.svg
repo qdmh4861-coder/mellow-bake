@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -18 96 96" width="64" height="64">
+  <title>MELLOW BAKE</title>
+  <rect x="-8" y="-18" width="96" height="96" rx="24" fill="#FFF8EF"/>
+  <!-- Reuse the chef-hat mark from About.jsx, with tab-sized strokes. -->
+  <g fill="#FFFFFF" stroke="#713B2A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 39C-2 38 1 12 22 13 24-4 54-3 58 13c21-4 26 25 5 27v17H17V39Z"/>
+    <path d="M18 46h44" stroke="#F50070" stroke-width="5"/>
+    <path d="M31 27v10m17-10v10" fill="none"/>
+  </g>
+</svg>

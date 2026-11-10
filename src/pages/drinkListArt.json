@@ -1,0 +1,210 @@
+{
+    "drink-13":  {
+                     "transparentPixels":  287898,
+                     "clip":  [
+                                  0,
+                                  0,
+                                  460,
+                                  819
+                              ],
+                     "src":  "/images/drink-list-clean/row-4.png",
+                     "box":  "-27.02 150.81 586.05 488.37",
+                     "height":  819,
+                     "width":  1920
+                 },
+    "drink-4":  {
+                    "transparentPixels":  337017,
+                    "clip":  [
+                                 1384,
+                                 0,
+                                 536,
+                                 819
+                             ],
+                    "src":  "/images/drink-list-clean/row-1.png",
+                    "box":  "1376.90 141.16 597.21 497.67",
+                    "height":  819,
+                    "width":  1920
+                },
+    "drink-16":  {
+                     "transparentPixels":  326434,
+                     "clip":  [
+                                  1395,
+                                  0,
+                                  525,
+                                  819
+                              ],
+                     "src":  "/images/drink-list-clean/row-4.png",
+                     "box":  "1368.26 158.55 573.49 477.91",
+                     "height":  819,
+                     "width":  1920
+                 },
+    "drink-1":  {
+                    "transparentPixels":  276699,
+                    "clip":  [
+                                 0,
+                                 0,
+                                 458,
+                                 819
+                             ],
+                    "src":  "/images/drink-list-clean/row-1.png",
+                    "box":  "-36.60 139.16 597.21 497.67",
+                    "height":  819,
+                    "width":  1920
+                },
+    "drink-2":  {
+                    "transparentPixels":  280086,
+                    "clip":  [
+                                 458,
+                                 0,
+                                 455,
+                                 819
+                             ],
+                    "src":  "/images/drink-list-clean/row-1.png",
+                    "box":  "471.28 193.23 527.44 439.53",
+                    "height":  819,
+                    "width":  1920
+                },
+    "drink-14":  {
+                     "transparentPixels":  286272,
+                     "clip":  [
+                                  460,
+                                  0,
+                                  475,
+                                  819
+                              ],
+                     "src":  "/images/drink-list-clean/row-4.png",
+                     "box":  "427.07 160.06 581.86 484.88",
+                     "height":  819,
+                     "width":  1920
+                 },
+    "drink-10":  {
+                     "transparentPixels":  252111,
+                     "clip":  [
+                                  510,
+                                  0,
+                                  552,
+                                  724
+                              ],
+                     "src":  "/images/drink-list-clean/row-3.png",
+                     "box":  "493.88 73.07 650.23 541.86",
+                     "height":  724,
+                     "width":  2172
+                 },
+    "drink-12":  {
+                     "transparentPixels":  279506,
+                     "clip":  [
+                                  1597,
+                                  0,
+                                  575,
+                                  724
+                              ],
+                     "src":  "/images/drink-list-clean/row-3.png",
+                     "box":  "1538.55 58.87 687.91 573.26",
+                     "height":  724,
+                     "width":  2172
+                 },
+    "drink-5":  {
+                    "transparentPixels":  209818,
+                    "clip":  [
+                                 0,
+                                 0,
+                                 500,
+                                 724
+                             ],
+                    "src":  "/images/drink-list-clean/row-2.png",
+                    "box":  "-82.24 39.05 753.49 627.91",
+                    "height":  724,
+                    "width":  2172
+                },
+    "drink-8":  {
+                    "transparentPixels":  265578,
+                    "clip":  [
+                                 1586,
+                                 0,
+                                 586,
+                                 724
+                             ],
+                    "src":  "/images/drink-list-clean/row-2.png",
+                    "box":  "1532.33 51.10 735.35 612.79",
+                    "height":  724,
+                    "width":  2172
+                },
+    "drink-3":  {
+                    "transparentPixels":  286562,
+                    "clip":  [
+                                 913,
+                                 0,
+                                 471,
+                                 819
+                             ],
+                    "src":  "/images/drink-list-clean/row-1.png",
+                    "box":  "896.41 135.76 604.19 503.49",
+                    "height":  819,
+                    "width":  1920
+                },
+    "drink-11":  {
+                     "transparentPixels":  247726,
+                     "clip":  [
+                                  1062,
+                                  0,
+                                  535,
+                                  724
+                              ],
+                     "src":  "/images/drink-list-clean/row-3.png",
+                     "box":  "1014.15 52.71 690.70 575.58",
+                     "height":  724,
+                     "width":  2172
+                 },
+    "drink-9":  {
+                    "transparentPixels":  241249,
+                    "clip":  [
+                                 0,
+                                 0,
+                                 510,
+                                 724
+                             ],
+                    "src":  "/images/drink-list-clean/row-3.png",
+                    "box":  "-56.05 54.63 692.09 576.74",
+                    "height":  724,
+                    "width":  2172
+                },
+    "drink-15":  {
+                     "transparentPixels":  275193,
+                     "clip":  [
+                                  935,
+                                  0,
+                                  460,
+                                  819
+                              ],
+                     "src":  "/images/drink-list-clean/row-4.png",
+                     "box":  "893.48 151.81 586.05 488.37",
+                     "height":  819,
+                     "width":  1920
+                 },
+    "drink-7":  {
+                    "transparentPixels":  218982,
+                    "clip":  [
+                                 1053,
+                                 0,
+                                 533,
+                                 724
+                             ],
+                    "src":  "/images/drink-list-clean/row-2.png",
+                    "box":  "990.34 44.70 742.33 618.60",
+                    "height":  724,
+                    "width":  2172
+                },
+    "drink-6":  {
+                    "transparentPixels":  245205,
+                    "clip":  [
+                                 500,
+                                 0,
+                                 553,
+                                 724
+                             ],
+                    "src":  "/images/drink-list-clean/row-2.png",
+                    "box":  "444.57 31.56 761.86 634.88",
+                    "height":  724,
+                    "width":  2172
+                }
+}

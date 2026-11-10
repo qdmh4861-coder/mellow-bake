@@ -1,0 +1,37 @@
+{
+  "desserts": {
+    "src": "/images/member-bottom-final-desserts-orange.png",
+    "width": 1536,
+    "height": 1024,
+    "box": "75 64 1423 912",
+    "transparent": 0.5723864237467448
+  },
+  "logo": {
+    "src": "/images/member-footer-logo-orange.png",
+    "width": 1944,
+    "height": 809,
+    "box": "232 54 1474 702",
+    "transparent": 0.6354120567484116
+  },
+  "left": {
+    "src": "/images/member-footer-left-orange.png",
+    "width": 1642,
+    "height": 958,
+    "box": "65 83 1491 801",
+    "transparent": 0.6221434220195851
+  },
+  "right": {
+    "src": "/images/member-footer-right-orange.png",
+    "width": 1774,
+    "height": 887,
+    "box": "143 87 1491 708",
+    "transparent": 0.6882382249427723
+  },
+  "bow": {
+    "src": "/images/member-footer-bow-orange.png",
+    "width": 1983,
+    "height": 793,
+    "box": "214 103 1553 613",
+    "transparent": 0.6748325457434855
+  }
+}

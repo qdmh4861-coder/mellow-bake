@@ -1,0 +1,102 @@
+﻿.member-theme .mypage-page .mypage-content .member-banner-cutout {
+  display: block; min-width: 0; max-width: 100%; object-fit: contain; object-position: center;
+  padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none;
+}
+.member-theme .mypage-page.claims-final-page .claims-final-banner > .member-banner-cutout,
+.member-theme .mypage-page.payment-history-final .payment-history-banner > .member-banner-cutout { width: 100%; height: 118px; }
+.member-theme .mypage-page.address-book-page .address-book-heading > .member-banner-cutout { width: 140px; height: 105px; }
+@media(max-width:1000px) {
+ .member-theme .mypage-page.claims-final-page .claims-final-banner > .member-banner-cutout,
+ .member-theme .mypage-page.payment-history-final .payment-history-banner > .member-banner-cutout { height: 100px; }
+}
+@media(max-width:600px) {
+ .member-theme .mypage-page.claims-final-page .claims-final-banner > .member-banner-cutout,
+ .member-theme .mypage-page.payment-history-final .payment-history-banner > .member-banner-cutout { height: 78px; }
+ .member-theme .mypage-page.address-book-page .address-book-heading > .member-banner-cutout { width: 100px; height: 85px; }
+}
+.member-theme .mypage-page .mypage-content .member-decoration { position: relative; isolation: isolate; display: grid; place-items: end center; min-width: 0; height: clamp(115px,13vw,175px); margin: 24px 0 0; padding: 4px 6px 0; border-radius: 0 0 24px 24px; overflow: hidden; background: linear-gradient(transparent 45%,#fff0f7); }
+.member-theme .mypage-page .mypage-content .member-decoration::before { content: ''; position: absolute; z-index: -1; inset: 55% 0 0; background: radial-gradient(ellipse 90px 45px at 50% 100%,#ffd4e8 99%,transparent) 0 0/180px 100% repeat-x,linear-gradient(transparent,#ffdaec); }
+.member-theme .mypage-page .mypage-content .member-decoration-strip { width: 100%; height: 100%; display: block; min-width: 0; object-fit: contain; }
+.member-theme .mypage-page .mypage-content .member-decoration--wallet,.member-theme .mypage-page .mypage-content .member-decoration--points { height: clamp(90px,9vw,130px); }
+/* Opaque, inseparable illustration crops receive an intentional framed setting.
+   This does not pretend the original bitmap backgrounds have been removed. */
+.member-theme .mypage-page .mypage-content :is(.coupon-event-banner,.coupon-wallet-banner,.points-ledger-banner,.my-reviews-banner,.payment-history-banner,.claims-final-banner) > svg,
+.member-theme .mypage-page .mypage-content :is(.coupon-event-usage,.coupon-wallet-guide,.points-ledger-aside,.my-reviews-empty) > svg,
+.member-theme .mypage-page .mypage-content :is(.faq-banner,.inquiry-banner,.inquiry-history-banner,.inquiry-heading) > svg:has(image),
+.member-theme .mypage-page .mypage-content .benefit-overview-totals > div > .benefit-art,
+.member-theme .mypage-page .mypage-content .coupon-event-usage > div > svg {
+  box-sizing: border-box; padding: 7px; border: 1px solid #ffc6dd; border-radius: 26px; background: linear-gradient(145deg,#fff8f2,#ffe4f0); box-shadow: inset 0 0 0 3px #fff9,0 3px 9px #e96e9e15; overflow: hidden;
+}
+.member-theme .mypage-page .mypage-content :is(.coupon-event-banner,.coupon-wallet-banner,.points-ledger-banner,.my-reviews-banner) { gap: 18px; }
+.member-theme .mypage-page .mypage-content :is(.my-reviews-pagination,.points-ledger-pagination,.claims-pagination,.order-list-pagination,.inquiry-history-pagination,.faq-pagination,.profile-pagination),
+.member-theme .wishlist-page .wishlist-pagination {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; width: fit-content; max-width: 100%; margin: 22px auto 0; padding: 4px; float: none;
+}
+.member-theme .mypage-page .mypage-content :is(.my-reviews-pagination,.points-ledger-pagination,.claims-pagination,.order-list-pagination,.inquiry-history-pagination,.faq-pagination) :is(button,a),
+.member-theme .wishlist-page .wishlist-pagination :is(button,a) {
+  display: inline-flex; flex: 0 0 38px; align-items: center; justify-content: center; width: 38px; min-width: 38px; max-width: 38px; height: 38px; min-height: 38px; padding: 0; margin: 0; border: 1px solid #ffb6d5; border-radius: 50%; background: #fffafb; color: #c8447c; font-size: 14px; line-height: 1;
+}
+.member-theme .mypage-page .mypage-content :is(.my-reviews-pagination,.points-ledger-pagination,.claims-pagination,.order-list-pagination,.inquiry-history-pagination,.faq-pagination) [aria-current='page'],
+.member-theme .wishlist-page .wishlist-pagination [aria-current='page'] { background: linear-gradient(#ff8fc3,#f02a7e); color: white; }
+.member-theme .mypage-page .mypage-content :is(.order-list-date-filter,.claims-search,.points-ledger-date,.benefit-date-filter) { align-items: center; column-gap: 10px; row-gap: 10px; }
+.member-theme .mypage-page .mypage-content :is(.claims-search,.points-ledger-controls,.coupon-wallet-list > header) select { flex: 0 1 auto; width: auto; min-width: 120px; max-width: 210px; padding-right: 28px; }
+.member-theme .mypage-page .mypage-content :is(.claims-search,.points-ledger-date,.benefit-date-filter) :is(input[type='date'],button[type='submit']) { box-sizing: border-box; min-height: 40px; }
+@media(max-width:760px) {
+ .member-theme .mypage-page .mypage-content .member-decoration { height: 125px; margin-top: 20px; padding-inline: 0; }
+ .member-theme .mypage-page .mypage-content :is(.coupon-event-banner,.coupon-wallet-banner,.points-ledger-banner,.my-reviews-banner) { gap: 12px; }
+ .member-theme .mypage-page .mypage-content :is(.claims-search,.points-ledger-controls,.coupon-wallet-list > header) select { max-width: 100%; width: auto; flex-basis: auto; }
+ .member-theme .mypage-page .mypage-content :is(.my-reviews-pagination,.points-ledger-pagination,.claims-pagination,.order-list-pagination,.inquiry-history-pagination) { gap: 8px; }
+}
+/* Edited transparent assets must never inherit the old white illustration cards. */
+.member-theme .mypage-page .mypage-content :is(header,.address-book-heading) > .member-banner-cutout {
+  padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none;
+}
+.member-theme .mypage-page .mypage-content svg.member-banner-cutout[aria-hidden='true'] {
+  padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; mask: none;
+}
+.member-theme .mypage-page .mypage-content .member-decoration {
+  grid-template-columns: 1fr .6fr .28fr .6fr 1fr; align-items: end; gap: 18px;
+  height: 150px; min-height: 150px;
+  background: linear-gradient(transparent 45%,#fff1f8 70%,#ffdeee);
+}
+.member-theme .mypage-page .mypage-content .member-decoration > svg.member-banner-cutout {
+  width: 100%; min-width: 0; height: 130px; max-height: 100%; align-self: end; position: relative; z-index: 1;
+}
+.member-theme .mypage-page .mypage-content .member-decoration > svg.member-decoration-small { height: 75px; margin-bottom: 7px; }
+.member-theme .mypage-page .mypage-content .member-decoration-heart { align-self: end; padding-bottom: 12px; color: #f575ad; font-size: 40px; line-height: 1; }
+.member-theme .mypage-page .mypage-content .member-decoration::before { inset: 48% -2px 0; background: radial-gradient(ellipse 100px 42px at 50% 100%,#ffd5e8 99%,transparent) 0 0/200px 100% repeat-x,linear-gradient(transparent,#ffd5e8); }
+.member-theme .mypage-page .mypage-content .member-decoration--wallet,
+.member-theme .mypage-page .mypage-content .member-decoration--points { height: 150px; }
+@media(max-width:760px) {
+ .member-theme .mypage-page .mypage-content .member-decoration { gap: 7px; height: 125px; min-height: 125px; }
+ .member-theme .mypage-page .mypage-content .member-decoration > svg.member-banner-cutout { height: 105px; }
+ .member-theme .mypage-page .mypage-content .member-decoration > svg.member-decoration-small { height: 50px; }
+ .member-theme .mypage-page .mypage-content .member-decoration-heart { font-size: 27px; }
+}
+
+
+/* Member content only. Never targets the sidebar or the public site. */
+/* Consistent native select behavior with an inset, centered chevron. */
+.member-theme.member-bottom-layout[class] .mypage-page select:not([multiple]),
+.member-theme.member-bottom-layout[class] .wishlist-page select:not([multiple]) {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 42px;
+  padding-right: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23713d35' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: right 14px center;
+}
+@media(max-width:600px) {
+  .member-theme.member-bottom-layout[class] .mypage-page select:not([multiple]),
+  .member-theme.member-bottom-layout[class] .wishlist-page select:not([multiple]) {
+    padding-right: 32px;
+    background-size: 16px 16px;
+    background-position: right 9px center;
+  }
+}
+
+

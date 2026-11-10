@@ -1,0 +1,210 @@
+{
+    "sandwich-5":  {
+                       "transparentPixels":  239409,
+                       "clip":  [
+                                    0,
+                                    0,
+                                    528,
+                                    724
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-2.png",
+                       "box":  "-7.91 93.24 595.81 496.51",
+                       "height":  724,
+                       "width":  2172
+                   },
+    "sandwich-3":  {
+                       "transparentPixels":  238059,
+                       "clip":  [
+                                    1059,
+                                    0,
+                                    520,
+                                    724
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-1.png",
+                       "box":  "1064.34 112.20 562.33 468.60",
+                       "height":  724,
+                       "width":  2172
+                   },
+    "sandwich-11":  {
+                        "transparentPixels":  273512,
+                        "clip":  [
+                                     926,
+                                     0,
+                                     471,
+                                     819
+                                 ],
+                        "src":  "/images/sandwich-list-clean/row-3.png",
+                        "box":  "924.29 167.83 534.42 445.35",
+                        "height":  819,
+                        "width":  1920
+                    },
+    "sandwich-14":  {
+                        "transparentPixels":  253074,
+                        "clip":  [
+                                     489,
+                                     0,
+                                     454,
+                                     819
+                                 ],
+                        "src":  "/images/sandwich-list-clean/row-4.png",
+                        "box":  "461.90 150.66 537.21 447.67",
+                        "height":  819,
+                        "width":  1920
+                    },
+    "sandwich-15":  {
+                        "transparentPixels":  259412,
+                        "clip":  [
+                                     943,
+                                     0,
+                                     471,
+                                     819
+                                 ],
+                        "src":  "/images/sandwich-list-clean/row-4.png",
+                        "box":  "925.00 150.50 540.00 450.00",
+                        "height":  819,
+                        "width":  1920
+                    },
+    "sandwich-10":  {
+                        "transparentPixels":  266747,
+                        "clip":  [
+                                     470,
+                                     0,
+                                     456,
+                                     819
+                                 ],
+                        "src":  "/images/sandwich-list-clean/row-3.png",
+                        "box":  "466.47 179.72 519.07 432.56",
+                        "height":  819,
+                        "width":  1920
+                    },
+    "sandwich-7":  {
+                       "transparentPixels":  241461,
+                       "clip":  [
+                                    1052,
+                                    0,
+                                    527,
+                                    724
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-2.png",
+                       "box":  "1046.90 92.16 597.21 497.67",
+                       "height":  724,
+                       "width":  2172
+                   },
+    "sandwich-8":  {
+                       "transparentPixels":  287042,
+                       "clip":  [
+                                    1579,
+                                    0,
+                                    593,
+                                    724
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-2.png",
+                       "box":  "1593.45 110.63 572.09 476.74",
+                       "height":  724,
+                       "width":  2172
+                   },
+    "sandwich-13":  {
+                        "transparentPixels":  281026,
+                        "clip":  [
+                                     0,
+                                     0,
+                                     489,
+                                     819
+                                 ],
+                        "src":  "/images/sandwich-list-clean/row-4.png",
+                        "box":  "6.20 150.58 538.60 448.84",
+                        "height":  819,
+                        "width":  1920
+                    },
+    "sandwich-16":  {
+                        "transparentPixels":  294582,
+                        "clip":  [
+                                     1414,
+                                     0,
+                                     506,
+                                     819
+                                 ],
+                        "src":  "/images/sandwich-list-clean/row-4.png",
+                        "box":  "1393.50 150.50 540.00 450.00",
+                        "height":  819,
+                        "width":  1920
+                    },
+    "sandwich-2":  {
+                       "transparentPixels":  238809,
+                       "clip":  [
+                                    538,
+                                    0,
+                                    521,
+                                    724
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-1.png",
+                       "box":  "540.74 111.95 566.51 472.09",
+                       "height":  724,
+                       "width":  2172
+                   },
+    "sandwich-4":  {
+                       "transparentPixels":  292095,
+                       "clip":  [
+                                    1579,
+                                    0,
+                                    593,
+                                    724
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-1.png",
+                       "box":  "1589.44 112.03 565.12 470.93",
+                       "height":  724,
+                       "width":  2172
+                   },
+    "sandwich-1":  {
+                       "transparentPixels":  254728,
+                       "clip":  [
+                                    0,
+                                    0,
+                                    538,
+                                    724
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-1.png",
+                       "box":  "22.34 114.20 562.33 468.60",
+                       "height":  724,
+                       "width":  2172
+                   },
+    "sandwich-9":  {
+                       "transparentPixels":  269395,
+                       "clip":  [
+                                    0,
+                                    0,
+                                    470,
+                                    819
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-3.png",
+                       "box":  "-6.41 168.74 535.81 446.51",
+                       "height":  819,
+                       "width":  1920
+                   },
+    "sandwich-12":  {
+                        "transparentPixels":  317991,
+                        "clip":  [
+                                     1397,
+                                     0,
+                                     523,
+                                     819
+                                 ],
+                        "src":  "/images/sandwich-list-clean/row-3.png",
+                        "box":  "1400.48 174.31 526.05 438.37",
+                        "height":  819,
+                        "width":  1920
+                    },
+    "sandwich-6":  {
+                       "transparentPixels":  237093,
+                       "clip":  [
+                                    528,
+                                    0,
+                                    524,
+                                    724
+                                ],
+                       "src":  "/images/sandwich-list-clean/row-2.png",
+                       "box":  "530.56 107.47 574.88 479.07",
+                       "height":  724,
+                       "width":  2172
+                   }
+}

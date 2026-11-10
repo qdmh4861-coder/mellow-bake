@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit, transparent background",
+  "source": "public/images/바스크.png",
+  "output": "public/images/basque-texture-completed.png",
+  "prompt": "Edit target: ONLY the illustration on the LEFT of section 01, directly below the large pink introduction banner in this bakery page reference. It is a horizontal cut wedge of Basque burnt cheesecake with a cute white chef rabbit peeking from behind, pink outlined hearts, three yellow accent rays on the left, blueberries, a raspberry and green leaves on the right, resting on wrinkled tan baking parchment. Extract that illustration alone, with NO text or page UI. Preserve its exact recognizable composition, character, colors, style and contents; do not add extra characters, plates, slogans or objects. Repair ONLY the abruptly cropped lower edge: naturally complete the bottom edge of the cheesecake crust, the berries and the folded parchment underneath, so all of them have fully drawn rounded outlines and a little breathing room. Do not leave a horizontal cutoff or fading-to-white strip along the bottom. Output a wide horizontal isolated transparent PNG with all ears, hat, hearts, berries, parchment and rays fully visible with safety margin. The other page illustrations are not targets. Aim at a 2.4:1 horizontal composition."
+}

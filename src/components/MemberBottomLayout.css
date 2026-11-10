@@ -1,0 +1,17 @@
+﻿/* Shared member bottom: final chef-rabbit and one coherent dessert still life. */
+.member-theme.member-bottom-layout .mypage-layout { align-items: stretch; }
+.member-theme.member-bottom-layout .mypage-layout > .mypage-content { display: flex; flex-direction: column; align-self: stretch; min-width: 0; }
+.member-theme.member-bottom-layout .mypage-layout > .mypage-content > * { flex-shrink: 0; }
+.member-theme.member-bottom-layout .mypage-page .mypage-content :is(.member-decoration,.member-bottom-decoration,.inquiry-final-decoration,.inquiry-bottom,.inquiry-history-bottom,.faq-bottom,.claims-bottom-art) { display: none; }
+.member-theme.member-bottom-layout .mypage-layout > .member-bottom-decoration { display: none; }
+.member-shared-bottom { position: relative; isolation: isolate; display: flex; align-items: end; justify-content: flex-end; flex-shrink: 0; width: 100%; min-width: 0; min-height: 320px; margin-top: auto; padding: 40px 24px 20px; box-sizing: border-box; pointer-events: none; }
+.member-shared-bottom::before { content: ''; position: absolute; z-index: -1; inset: auto 0 0; height: 90px; border-radius: 0 0 24px 24px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='100' viewBox='0 0 1200 100' preserveAspectRatio='none'%3E%3Cpath d='M0 38 Q70 0 150 37 T300 40 T450 34 T600 39 T750 35 T900 37 T1050 30 T1200 40 V100 H0Z' fill='%23ffd6e9' stroke='%23fff6fa' stroke-width='4'/%3E%3Cpath d='M0 75 Q100 35 200 75 T400 72 T600 78 T800 70 T1000 76 T1200 70 V100 H0Z' fill='%23ffcae3' fill-opacity='.65'/%3E%3C/svg%3E") center bottom/100% 100% no-repeat; }
+.member-shared-bottom > .member-common-bow { position: absolute; bottom: 28px; left: 12%; width: 190px; height: 52px; z-index: 1; }
+
+.member-shared-desserts { position: relative; display: flex; justify-content: flex-end; width: min(100%,550px); height: 280px; min-width: 0; padding: 0 0 10px; box-sizing: border-box; }
+.member-shared-desserts > .member-bottom-final-art { display: block; width: 100%; height: 100%; min-width: 0; max-width: 100%; object-fit: contain; }
+.member-sidebar-bottom { width: min(210px,100%); height: 175px; margin: 18px auto 0; padding: 0 6px 4px; box-sizing: border-box; pointer-events: none; }
+.member-sidebar-bottom > .member-bottom-final-art { display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; }
+@media(max-width:1100px) { .member-shared-bottom { min-height: 280px; padding-inline: 24px; }.member-shared-desserts { width: min(100%,460px); height: 240px; }.member-shared-bottom > .member-common-bow { left: 6%; width: 140px; height: 42px; } }
+@media(max-width:760px) { .member-theme.member-bottom-layout .mypage-layout { align-items: start; }.member-shared-bottom { min-height: 250px; margin-top: 0; padding-inline: 16px; }.member-shared-desserts { width: min(100%,380px); height: 210px; padding-bottom: 18px; }.member-shared-bottom > .member-common-bow { width: 100px; height: 30px; left: 5%; bottom: 10px; }.member-shared-bottom::before { height: 65px; }.member-sidebar-bottom { max-width: 210px; } }
+

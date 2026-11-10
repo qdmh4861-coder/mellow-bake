@@ -1,0 +1,210 @@
+{
+    "cake-9":  {
+                   "transparentPixels":  251195,
+                   "clip":  [
+                                0,
+                                0,
+                                531,
+                                724
+                            ],
+                   "src":  "/images/cake-list-clean/row-3.png",
+                   "box":  "7.56 122.47 574.88 479.07",
+                   "height":  724,
+                   "width":  2172
+               },
+    "cake-1":  {
+                   "transparentPixels":  287993,
+                   "clip":  [
+                                0,
+                                0,
+                                454,
+                                819
+                            ],
+                   "src":  "/images/cake-list-clean/row-1.png",
+                   "box":  "36.16 210.30 457.67 381.40",
+                   "height":  819,
+                   "width":  1920
+               },
+    "cake-7":  {
+                   "transparentPixels":  248599,
+                   "clip":  [
+                                1054,
+                                0,
+                                520,
+                                724
+                            ],
+                   "src":  "/images/cake-list-clean/row-2.png",
+                   "box":  "1056.05 125.87 567.91 473.26",
+                   "height":  724,
+                   "width":  2172
+               },
+    "cake-13":  {
+                    "transparentPixels":  287734,
+                    "clip":  [
+                                 0,
+                                 0,
+                                 476,
+                                 819
+                             ],
+                    "src":  "/images/cake-list-clean/row-4.png",
+                    "box":  "10.56 205.97 514.88 429.07",
+                    "height":  819,
+                    "width":  1920
+                },
+    "cake-6":  {
+                   "transparentPixels":  239517,
+                   "clip":  [
+                                545,
+                                0,
+                                509,
+                                724
+                            ],
+                   "src":  "/images/cake-list-clean/row-2.png",
+                   "box":  "526.38 108.57 590.23 491.86",
+                   "height":  724,
+                   "width":  2172
+               },
+    "cake-8":  {
+                   "transparentPixels":  306675,
+                   "clip":  [
+                                1574,
+                                0,
+                                598,
+                                724
+                            ],
+                   "src":  "/images/cake-list-clean/row-2.png",
+                   "box":  "1588.73 132.36 559.53 466.28",
+                   "height":  724,
+                   "width":  2172
+               },
+    "cake-5":  {
+                   "transparentPixels":  264377,
+                   "clip":  [
+                                0,
+                                0,
+                                545,
+                                724
+                            ],
+                   "src":  "/images/cake-list-clean/row-2.png",
+                   "box":  "24.47 116.22 579.07 482.56",
+                   "height":  724,
+                   "width":  2172
+               },
+    "cake-10":  {
+                    "transparentPixels":  251812,
+                    "clip":  [
+                                 531,
+                                 0,
+                                 529,
+                                 724
+                             ],
+                    "src":  "/images/cake-list-clean/row-3.png",
+                    "box":  "536.16 120.30 577.67 481.40",
+                    "height":  724,
+                    "width":  2172
+                },
+    "cake-14":  {
+                    "transparentPixels":  273922,
+                    "clip":  [
+                                 476,
+                                 0,
+                                 466,
+                                 819
+                             ],
+                    "src":  "/images/cake-list-clean/row-4.png",
+                    "box":  "473.97 202.72 519.07 432.56",
+                    "height":  819,
+                    "width":  1920
+                },
+    "cake-16":  {
+                    "transparentPixels":  318332,
+                    "clip":  [
+                                 1406,
+                                 0,
+                                 514,
+                                 819
+                             ],
+                    "src":  "/images/cake-list-clean/row-4.png",
+                    "box":  "1415.02 221.19 493.95 411.63",
+                    "height":  819,
+                    "width":  1920
+                },
+    "cake-3":  {
+                   "transparentPixels":  288707,
+                   "clip":  [
+                                933,
+                                0,
+                                457,
+                                819
+                            ],
+                   "src":  "/images/cake-list-clean/row-1.png",
+                   "box":  "968.76 214.55 453.49 377.91",
+                   "height":  819,
+                   "width":  1920
+               },
+    "cake-11":  {
+                    "transparentPixels":  247666,
+                    "clip":  [
+                                 1060,
+                                 0,
+                                 527,
+                                 724
+                             ],
+                    "src":  "/images/cake-list-clean/row-3.png",
+                    "box":  "1063.26 122.55 573.49 477.91",
+                    "height":  724,
+                    "width":  2172
+                },
+    "cake-4":  {
+                   "transparentPixels":  348743,
+                   "clip":  [
+                                1390,
+                                0,
+                                530,
+                                819
+                            ],
+                   "src":  "/images/cake-list-clean/row-1.png",
+                   "box":  "1432.47 210.22 459.07 382.56",
+                   "height":  819,
+                   "width":  1920
+               },
+    "cake-15":  {
+                    "transparentPixels":  280615,
+                    "clip":  [
+                                 942,
+                                 0,
+                                 464,
+                                 819
+                             ],
+                    "src":  "/images/cake-list-clean/row-4.png",
+                    "box":  "950.83 221.10 495.35 412.79",
+                    "height":  819,
+                    "width":  1920
+                },
+    "cake-12":  {
+                    "transparentPixels":  288646,
+                    "clip":  [
+                                 1587,
+                                 0,
+                                 585,
+                                 724
+                             ],
+                    "src":  "/images/cake-list-clean/row-3.png",
+                    "box":  "1595.06 122.47 574.88 479.07",
+                    "height":  724,
+                    "width":  2172
+                },
+    "cake-2":  {
+                   "transparentPixels":  308173,
+                   "clip":  [
+                                454,
+                                0,
+                                479,
+                                819
+                            ],
+                   "src":  "/images/cake-list-clean/row-1.png",
+                   "box":  "482.06 202.47 484.88 404.07",
+                   "height":  819,
+                   "width":  1920
+               }
+}

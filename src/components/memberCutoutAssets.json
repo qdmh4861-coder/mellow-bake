@@ -1,0 +1,134 @@
+{
+  "address-cutout": [
+    "address-cutout",
+    1536,
+    1024,
+    "314 157 942 747"
+  ],
+  "benefit-bear-left": [
+    "benefit-bear-left",
+    1437,
+    1095,
+    "302 103 793 877"
+  ],
+  "benefit-gift-rabbit": [
+    "benefit-gift-rabbit",
+    1536,
+    1024,
+    "324 123 852 779"
+  ],
+  "cake-bunny": [
+    "cake-bunny",
+    1536,
+    1024,
+    "302 186 940 687"
+  ],
+  "claims-desserts-cutout": [
+    "claims-desserts-cutout",
+    1374,
+    1145,
+    "126 145 1127 901"
+  ],
+  "claims-rabbit-cutout": [
+    "claims-rabbit-cutout",
+    1312,
+    1199,
+    "151 39 994 1118"
+  ],
+  "coin-bunny": [
+    "coin-bunny",
+    1536,
+    1024,
+    "339 94 852 850"
+  ],
+  "coin-cake": [
+    "coin-cake",
+    1774,
+    887,
+    "272 175 1250 552"
+  ],
+  "coins": [
+    "coins",
+    1536,
+    1024,
+    "279 178 979 625"
+  ],
+  "coupon-basket": [
+    "coupon-basket",
+    1403,
+    1121,
+    "306 175 806 748"
+  ],
+  "coupon-bunny": [
+    "coupon-bunny",
+    1536,
+    1024,
+    "287 65 991 868"
+  ],
+  "coupon-cake": [
+    "coupon-cake",
+    1536,
+    1024,
+    "382 157 729 677"
+  ],
+  "coupon-croissant": [
+    "coupon-croissant",
+    1774,
+    887,
+    "374 134 1014 658"
+  ],
+  "coupon-gift": [
+    "coupon-gift",
+    1402,
+    1122,
+    "307 179 743 755"
+  ],
+  "coupon-truck": [
+    "coupon-truck",
+    1536,
+    1024,
+    "321 175 858 692"
+  ],
+  "empty-box": [
+    "empty-box",
+    1536,
+    1024,
+    "306 257 924 557"
+  ],
+  "event-desserts": [
+    "event-desserts",
+    1774,
+    887,
+    "147 90 1483 734"
+  ],
+  "payments-rabbit-cutout": [
+    "payments-rabbit-cutout",
+    1536,
+    1024,
+    "332 133 864 748"
+  ],
+  "payments-symbols-cutout": [
+    "payments-symbols-cutout",
+    1536,
+    1024,
+    "207 218 1148 605"
+  ],
+  "review-bunny": [
+    "review-bunny",
+    1374,
+    1145,
+    "184 135 1000 903"
+  ],
+  "review-cupcake": [
+    "review-cupcake",
+    1536,
+    1024,
+    "439 143 655 727"
+  ],
+  "wallet-desserts": [
+    "wallet-desserts",
+    2172,
+    724,
+    "438 63 1308 593"
+  ]
+}

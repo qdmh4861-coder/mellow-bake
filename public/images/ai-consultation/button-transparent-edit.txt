@@ -1,0 +1,4 @@
+Tool: built-in image_gen, edit mode, transparent_background=true.
+Source: button.png (original preserved).
+Output: button-transparent.png.
+Prompt: Remove ONLY the gray and white checkerboard background outside the sticker artwork and make it truly alpha transparent, including gaps between the ornaments. Preserve the exact rabbit, entire ears and hat, plate, purple cyan pink neon glow, ribbon, sparkles, and the Korean lettering 멜로우에게 물어봐! and AI 상담 exactly as the input. Do not redesign, add, crop or recolor the artwork. Keep all artwork fully visible with a small transparent safety margin. Output transparent PNG.

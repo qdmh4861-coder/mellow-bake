@@ -1,0 +1,4 @@
+.member-product-illustration { width: 100%; height: 100%; min-width: 0; display: grid; place-items: center; box-sizing: border-box; padding: 3px; background: transparent; }
+.member-product-illustration > .our-menu-product-media { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; background: transparent; }
+.member-product-illustration img,.member-product-illustration svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain !important; }
+.member-product-art-missing { display: grid; align-content: center; justify-items: center; gap: 4px; padding: 4px; text-align: center; font-size: 11px; color: #9b6a7b; overflow-wrap: anywhere; }.member-product-art-missing small { font-size: 10px; }

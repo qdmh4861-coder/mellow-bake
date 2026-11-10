@@ -1,6 +1,9 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import MemberArtwork from './MemberArtwork'
+import MemberIcon from './MemberIcon'
 
-import { logoutDemo } from '../demoAuth'
+import LogoutConfirm from './LogoutConfirm'
+import { MemberSidebarDecoration } from './MemberBottomLayout'
 
 const menuGroups = [
   ['쇼핑정보', ['주문내역', '배송조회', '취소 / 반품 / 교환 내역', '환불 / 결제 내역', '배송지 관리']],
@@ -11,6 +14,14 @@ const menuGroups = [
 ]
 
 export default function MyPageSidebar() {
+  const [logoutOpen, setLogoutOpen] = useState(false)
+  const [expanded, setExpanded] = useState(() => window.innerWidth > 760)
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 761px)')
+    const change = () => setExpanded(query.matches)
+    query.addEventListener('change', change)
+    return () => query.removeEventListener('change', change)
+  }, [])
   const dialog = useRef(null)
   const [feature, setFeature] = useState('')
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
@@ -30,14 +41,20 @@ export default function MyPageSidebar() {
         ? '현재 표시할 쿠폰 데이터가 없습니다. 쿠폰함 서비스는 준비 중입니다.'
         : `${feature} 서비스는 준비 중입니다. 현재 연결된 회원 데이터나 페이지가 없습니다.`
   function showPending(label) {
-    if (label === '로그아웃') { logoutDemo(); return }
+    if (label === '로그아웃') { setLogoutOpen(true); return }
     setFeature(label)
     dialog.current?.showModal()
   }
   return <>
-    <aside className="mypage-sidebar" aria-label="마이페이지 메뉴">
-      {menuGroups.map(([group, entries]) => <section key={group}><h2>{group}</h2><ul>{entries.map(label => <li key={label}>{menuLinks[label] ? <a href={menuLinks[label]} aria-current={activeMenu === label ? 'page' : undefined}>{label}</a> : <button type="button" onClick={() => showPending(label)}>{label}</button>}</li>)}</ul></section>)}
-    </aside>
+    <details className="mypage-navigation" open={expanded} onToggle={event => setExpanded(event.currentTarget.open)}>
+      <summary>마이페이지 전체 메뉴 <span aria-hidden="true">⌄</span></summary>
+      <aside className="mypage-sidebar" aria-label="마이페이지 메뉴">
+        <a className="member-sidebar-brand" href="/mypage" aria-current={pathname === '/mypage' ? 'page' : undefined}><MemberArtwork part="badge" /><strong>마이페이지</strong><span>My Page</span></a>
+        {menuGroups.map(([group, entries], index) => <section key={group}><h2><MemberIcon type={['bag', 'heart', 'gift', 'support', 'user'][index]} />{group}</h2><ul>{entries.map(label => <li key={label}>{menuLinks[label] ? <a href={menuLinks[label]} aria-current={activeMenu === label ? 'page' : undefined}>{label}<span className="member-menu-arrow" aria-hidden="true">›</span></a> : <button type="button" onClick={() => showPending(label)}>{label}<span className="member-menu-arrow" aria-hidden="true">›</span></button>}</li>)}</ul></section>)}
+        <MemberSidebarDecoration />
+      </aside>
+    </details>
     <dialog className="mypage-pending" ref={dialog} aria-label={feature || '메뉴 안내'}><h2>{feature}</h2><p>{pendingMessage}</p><form method="dialog"><button type="submit">확인</button></form></dialog>
+    <LogoutConfirm open={logoutOpen} onClose={() => setLogoutOpen(false)} />
   </>
 }

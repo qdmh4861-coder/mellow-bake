@@ -1,12 +1,15 @@
 import './HomeFooter.css'
 
+import AboutFooter from './AboutFooter'
+
 function SocialIcon({ type }) {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
     {type === 'instagram' ? <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" /></> : type === 'youtube' ? <><rect x="2" y="5" width="20" height="14" rx="5" /><path d="m10 9 5 3-5 3Z" /></> : <><path d="M21 11c0 5-4 8-9 8H9l-5 3 1-5a8 8 0 0 1-2-6c0-5 4-8 9-8s9 3 9 8Z" /><path d="M8 11h.1m4 0h.1m4 0h.1" strokeLinecap="round" strokeWidth="2.5" /></>}
   </svg>
 }
 
-export default function HomeFooter({ artwork = null, referenceImage = null }) {
+export default function HomeFooter({ artwork = null, referenceImage = null, variant = 'default' }) {
+  if (variant === 'about') return <AboutFooter />
   if (referenceImage) {
     return <footer className="mellow-footer-reference" aria-label="MELLOW BAKE 푸터">
       <svg viewBox="0 135 2172 589" role="img" aria-label="MELLOW BAKE — 일상 속 달콤한 쉼표, 멜로우 베이크. 좋은 재료와 정성을 담아 달콤한 순간을 전합니다. INFORMATION, CUSTOMER, FOLLOW US. © 2026 MELLOW BAKE. All Rights Reserved.">

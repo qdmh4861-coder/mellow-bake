@@ -1,3 +1,4 @@
+﻿import MemberProductImage from '../components/MemberProductImage'
 import { useLayoutEffect, useRef, useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
@@ -14,6 +15,7 @@ import './Reviews.css'
 import { useReviewUpdates, deleteDemoReview } from '../reviewData'
 import { findReviewProduct } from '../reviewProducts'
 import NewMenuProductImage from '../components/NewMenuProductImage'
+import MyReviews from './MyReviews'
 
 const photos = import.meta.glob('../assets/{best-menu,new-menu,new-arrivals}/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' })
 const examplePhoto = name => Object.entries(photos).find(([path]) => path.split('/').at(-1).split('.')[0] === name)?.[1]
@@ -41,11 +43,12 @@ const productName = review => { const product = productFor(review); return produ
 function Stars({ rating }) {
   return <span className="reviews-stars" role="img" aria-label={rating === null ? '등록된 평가 없음' : `5점 만점에 ${rating.toFixed(1)}점`}><span aria-hidden="true">★★★★★</span><span className="reviews-stars-fill" aria-hidden="true" style={{ width: `${rating === null ? 0 : rating / 5 * 100}%` }}>★★★★★</span></span>
 }
-function ReviewProductPhoto({ review }) {
+function ReviewProductPhoto({ review, contain = false }) {
   const ref = useRef(null)
   const product = productFor(review)
   const photo = Object.entries(photos).find(([path]) => path.split('/').at(-1).split('.')[0] === review.productId)?.[1]
-  useLayoutEffect(() => { ref.current?.querySelectorAll('svg').forEach(svg => svg.setAttribute('preserveAspectRatio', 'xMidYMid slice')) }, [review.productId])
+  useLayoutEffect(() => { ref.current?.querySelectorAll('svg').forEach(svg => svg.setAttribute('preserveAspectRatio', contain ? 'xMidYMid meet' : 'xMidYMid slice')) }, [review.productId, contain])
+  if (window.location.pathname === '/mypage/reviews') return <div className="reviews-product-photo"><MemberProductImage item={{ ...product, productId: review.productId }} /></div>
   return <div className="reviews-product-photo" ref={ref}>{product?.id.startsWith('new-') ? <NewMenuProductImage product={product} /> : photo ? <img src={photo} alt={productName(review)} loading="lazy" /> : product ? <MenuProductImage product={product} /> : <span>상품 사진 준비 중</span>}</div>
 }
 
@@ -84,7 +87,10 @@ function ReviewFeed({ reviews, own, onOpen }) {
   </section>
 }
 
-export default function Reviews({ own = false, submissionResult = null }) {
+export default function Reviews(props) {
+  return props.own ? <MyReviews Photo={ReviewProductPhoto} Stars={Stars} submissionResult={props.submissionResult} /> : <PublicReviews {...props} />
+}
+function PublicReviews({ own = false, submissionResult = null }) {
   useReviewUpdates()
   const productId = new URLSearchParams(window.location.search).get('productId')
   const actualReviews = own ? getMyReviews() : productId ? getProductReviews(productId) : getPublicReviews()
@@ -112,3 +118,4 @@ export default function Reviews({ own = false, submissionResult = null }) {
     <HomeFooter />
   </div>
 }
+

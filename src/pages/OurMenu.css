@@ -71,6 +71,9 @@
 .our-menu-product-link:focus-visible { outline: 3px solid #b47591; outline-offset: -3px; border-radius: inherit; }
 .our-menu-product-media { width: 100%; aspect-ratio: 1.04; flex-shrink: 0; overflow: hidden; border-radius: 18px; }
 .our-menu-product-media img { width: 100%; height: 100%; object-fit: contain; }
+/* Match the first cake illustrations' viewBox so SVG letterboxing does not
+   expose the purple source backdrop above the rounded image panels. */
+.our-menu-page #menu-cake :is([data-product-id="cake-1"], [data-product-id="cake-2"], [data-product-id="cake-3"], [data-product-id="cake-4"]) .our-menu-product-media { aspect-ratio: 435 / 396; }
 .our-menu-product-copy { display: flex; flex-direction: column; flex: 1; min-width: 0; padding: 22px 18px 20px; }
 .our-menu-product-copy h3 { min-height: 2.6em; font-size: 18px; line-height: 1.3; font-weight: 800; overflow-wrap: anywhere; }
 .our-menu-korean { margin-top: 14px !important; color: #93786d; font-size: 14px; }
@@ -364,3 +367,157 @@
 .drink-extra-ornament--coffee { top: 65%; right: 1%; }
 .drink-extra-ornament--berry { top: 79%; left: 1%; }
 .drink-extra-ornament--matcha { top: 80%; right: 1%; }
+
+/* Home category routes only: retain each title illustration and the side art,
+   but exclude the duplicate brand/awning block embedded in the backdrop.
+   The source image files and the ordinary /menu page are unchanged. */
+.our-menu-page.our-menu-home-category-page .our-menu-category > .our-menu-category-inner {
+  padding-top: 40px;
+}
+.our-menu-home-category-page :is(.our-menu-bread-heading,.our-menu-sandwich-heading,.our-menu-cake-heading,.our-menu-drink-heading) {
+  margin-bottom: 24px;
+}
+.our-menu-home-category-page :is(.our-menu-home-bread-list,.our-menu-home-cake-list,.our-menu-home-sandwich-list,.our-menu-home-drink-list)::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1536' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cfilter id='soft' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='24'/%3E%3C/filter%3E%3ClinearGradient id='fade' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='white'/%3E%3Cstop offset='.90' stop-color='white'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M-60 100H120V420H904V100H1084V1596H-60Z' fill='url(%23fade)' filter='url(%23soft)'/%3E%3C/svg%3E");
+  mask-size: 100% auto; mask-repeat: no-repeat; mask-position: center top;
+}
+.our-menu-home-category-page .our-menu-home-bread-list::before { mask-size: 100% 100%; }
+/* Hide only the bottom checked hem of the sandwich backdrop. */
+.our-menu-home-category-page .our-menu-home-sandwich-list::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1536'%3E%3Cdefs%3E%3ClinearGradient id='fade' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='white'/%3E%3Cstop offset='.90' stop-color='white'/%3E%3Cstop offset='.935' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3Cfilter id='soft'%3E%3CfeGaussianBlur stdDeviation='24'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M-60 100H120V420H904V100H1084V1596H-60Z' fill='url(%23fade)' filter='url(%23soft)'/%3E%3C/svg%3E");
+
+}
+.our-menu-home-category-page.our-menu-unified-product-frames .our-menu-home-sandwich-list::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1536'%3E%3Cdefs%3E%3ClinearGradient id='fade' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='white'/%3E%3Cstop offset='.90' stop-color='white'/%3E%3Cstop offset='.935' stop-color='white' stop-opacity='0'/%3E%3C/linearGradient%3E%3Cfilter id='soft'%3E%3CfeGaussianBlur stdDeviation='24'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M-60 100H120V420H904V100H1084V1596H-60Z' fill='url(%23fade)' filter='url(%23soft)'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1536'%3E%3Cdefs%3E%3Cfilter id='edge' x='-10%25' y='-10%25' width='120%25' height='120%25'%3E%3CfeGaussianBlur stdDeviation='10'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M-30 -30H1054V1566H320V1100H-30Z' fill='white' filter='url(%23edge)'/%3E%3C/svg%3E");
+  mask-composite:intersect;
+}
+/* Fit each supplied illustration panel to its own source ratio. All four
+   cards in a row share that ratio, without stretching or cropping the food. */
+.our-menu-home-category-page :is([data-product-id="bread-1"], [data-product-id="bread-2"], [data-product-id="bread-3"], [data-product-id="bread-4"]) .our-menu-product-media { --category-art-ratio: 469 / 406; }
+.our-menu-home-category-page :is([data-product-id="bread-5"], [data-product-id="bread-6"], [data-product-id="bread-7"], [data-product-id="bread-8"]) .our-menu-product-media { --category-art-ratio: 430 / 391; }
+.our-menu-home-category-page :is([data-product-id="bread-9"], [data-product-id="bread-10"], [data-product-id="bread-11"], [data-product-id="bread-12"]) .our-menu-product-media { --category-art-ratio: 461 / 407; }
+.our-menu-home-category-page :is([data-product-id="bread-13"], [data-product-id="bread-14"], [data-product-id="bread-15"], [data-product-id="bread-16"]) .our-menu-product-media { --category-art-ratio: 462 / 406; }
+.our-menu-home-category-page :is([data-product-id="sandwich-1"], [data-product-id="sandwich-2"], [data-product-id="sandwich-3"], [data-product-id="sandwich-4"]) .our-menu-product-media { --category-art-ratio: 446 / 400; }
+.our-menu-home-category-page :is([data-product-id="sandwich-5"], [data-product-id="sandwich-6"], [data-product-id="sandwich-7"], [data-product-id="sandwich-8"]) .our-menu-product-media { --category-art-ratio: 380 / 352; }
+.our-menu-home-category-page :is([data-product-id="drink-1"], [data-product-id="drink-2"], [data-product-id="drink-3"], [data-product-id="drink-4"]) .our-menu-product-media { --category-art-ratio: 435 / 407; }
+.our-menu-home-category-page :is([data-product-id="drink-5"], [data-product-id="drink-6"], [data-product-id="drink-7"], [data-product-id="drink-8"]) .our-menu-product-media { --category-art-ratio: 418 / 414; }
+.our-menu-home-category-page :is([data-product-id="cake-5"], [data-product-id="cake-6"], [data-product-id="cake-7"], [data-product-id="cake-8"]) .our-menu-product-media { --category-art-ratio: 407 / 391; }
+@media(max-width:600px) {
+  .our-menu-page.our-menu-home-category-page .our-menu-category > .our-menu-category-inner { padding-top: 32px; }
+}
+
+/* Category route frames only; source illustration panels keep their ratios. */
+.our-menu-home-category-page .our-menu-category-inner { display:flex; flex-direction:column; }
+.our-menu-home-category-page .our-menu-category-inner > :first-child { position:relative; flex:none; height:auto; }
+.our-menu-home-category-page :is(.our-menu-bread-heading,.our-menu-sandwich-heading,.our-menu-cake-heading,.our-menu-drink-heading) { margin-bottom:32px; }
+.our-menu-home-category-page .our-menu-grid { width:100%; align-items:stretch; flex:none; }
+.our-menu-page.our-menu-home-category-page .our-menu-product .our-menu-product-media {
+  aspect-ratio:var(--category-art-ratio, 435 / 396) !important;
+  display:grid;
+  place-items:center;
+  container-type:size;
+}
+.our-menu-home-category-page .our-menu-product-media > svg {
+  width:min(100cqw, calc(100cqh * (var(--category-art-ratio, 435 / 396)))) !important;
+  height:auto !important;
+  aspect-ratio:var(--category-art-ratio, 435 / 396);
+  clip-path:inset(0);
+}
+.our-menu-home-category-page .our-menu-product-copy {
+  padding:16px 14px 18px;
+  display:grid;
+  grid-template-rows:auto auto minmax(3em,1fr) auto;
+  gap:8px;
+}
+.our-menu-home-category-page .our-menu-product-copy h3 { min-height:0; }
+.our-menu-home-category-page .our-menu-product-copy .our-menu-korean { margin:0 !important; }
+.our-menu-home-category-page .our-menu-product-copy .our-menu-description { margin:0 !important; }
+.our-menu-home-category-page .our-menu-product-copy .our-menu-price { margin:4px 0 0; }
+.our-menu-page.our-menu-home-category-page .our-menu-product,
+.our-menu-page.our-menu-home-category-page .our-menu-product-link,
+.our-menu-page.our-menu-home-category-page .our-menu-product-media { border-radius:16px; }
+.our-menu-page.our-menu-home-category-page .our-menu-product-media > svg,
+.our-menu-page.our-menu-home-category-page .our-menu-product-media > img {
+  border-radius:16px;
+  clip-path:inset(0 round 16px);
+}
+
+/* Only the four individual HOME category routes use the review frame sizes. */
+.our-menu-unified-product-frames .our-menu-grid { gap:24px; }
+.our-menu-page.our-menu-unified-product-frames .our-menu-product {
+  border:1px solid #e7d9d1;
+  border-radius:20px;
+}
+.our-menu-page.our-menu-unified-product-frames .our-menu-product-link { border-radius:20px; }
+.our-menu-page.our-menu-home-category-page.our-menu-unified-product-frames .our-menu-product .our-menu-product-media {
+  aspect-ratio:6 / 5 !important;
+  border-radius:20px;
+}
+.our-menu-page.our-menu-home-category-page.our-menu-unified-product-frames .our-menu-product-media > :is(svg,img) {
+  border-radius:20px;
+  clip-path:inset(0 round 20px);
+}
+.our-menu-unified-product-frames .our-menu-product-copy { padding-top:16px; }
+
+/* BREAD only: keep the source PNGs intact; approved transparent edits are
+   selected separately for the dedicated bread listing. */
+.our-menu-page.our-menu-home-category-page.our-menu-unified-product-frames #menu-bread .our-menu-product .our-menu-product-media {
+  background:transparent;
+  border:0;
+  padding:0;
+  margin:0;
+  border-radius:20px;
+  width:100%;
+  height:auto;
+  aspect-ratio:6 / 5 !important;
+  place-items:center;
+}
+.our-menu-page.our-menu-home-category-page.our-menu-unified-product-frames #menu-bread .our-menu-product-media > :is(svg,img) {
+  display:block;
+  margin:0;
+  padding:0;
+  border:0;
+  object-fit:fill;
+  object-position:center;
+}
+.our-menu-page.our-menu-home-category-page.our-menu-unified-product-frames #menu-bread .our-menu-product .our-menu-product-media--clean-bread {
+  background:#FFF4E5;
+}
+.our-menu-page.our-menu-home-category-page.our-menu-unified-product-frames #menu-cake .our-menu-product .our-menu-product-media--clean-cake {
+  background:#FFF4E5;
+  width:100%;
+  height:auto;
+  border:0;
+  padding:0;
+  margin:0;
+  border-radius:20px;
+  place-items:center;
+}
+.our-menu-page.our-menu-home-category-page.our-menu-unified-product-frames :is(#menu-sandwich,#menu-drink) .our-menu-product .our-menu-product-media--clean-other {
+  background:#FFF4E5;
+  width:100%;
+  height:auto;
+  border:0;
+  padding:0;
+  margin:0;
+  border-radius:20px;
+  place-items:center;
+}
+/* Only the dedicated SANDWICH route: keep the backdrop's original bear and
+   leave enough room between the unique kitten, cup and bottom ornaments. */
+.our-menu-unified-product-frames .our-menu-home-sandwich-list .sandwich-extra-ornament--rabbit {
+  top:53%;
+  left:2%;
+  width:min(12%,220px);
+}
+@media(max-width:1000px) {
+  .our-menu-unified-product-frames .our-menu-home-sandwich-list .sandwich-extra-ornament--rabbit { left:4px; width:calc(12% - 12px); }
+  .our-menu-unified-product-frames .our-menu-home-sandwich-list .our-menu-sandwich-bottom-ornament { width:calc(12% - 12px); }
+}
+@media(max-width:540px) {
+  .our-menu-unified-product-frames .our-menu-home-sandwich-list .sandwich-extra-ornament--rabbit,
+  .our-menu-unified-product-frames .our-menu-home-sandwich-list .our-menu-sandwich-bottom-ornament { width:28px; }
+  .our-menu-unified-product-frames .our-menu-home-sandwich-list .our-menu-sandwich-bottom-ornament--left { left:4px; }
+  .our-menu-unified-product-frames .our-menu-home-sandwich-list .our-menu-sandwich-bottom-ornament--right { right:4px; }
+}
+

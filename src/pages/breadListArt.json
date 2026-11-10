@@ -1,0 +1,210 @@
+{
+    "bread-12":  {
+                     "transparentPixels":  251193,
+                     "clip":  [
+                                  1563,
+                                  0,
+                                  557,
+                                  742
+                              ],
+                     "src":  "/images/bread-list-clean/row-3.png",
+                     "box":  "1504.38 84.07 650.23 541.86",
+                     "height":  742,
+                     "width":  2120
+                 },
+    "bread-7":  {
+                    "transparentPixels":  247540,
+                    "clip":  [
+                                 955,
+                                 0,
+                                 472,
+                                 809
+                             ],
+                    "src":  "/images/bread-list-clean/row-2.png",
+                    "box":  "898.50 133.00 600.00 500.00",
+                    "height":  809,
+                    "width":  1942
+                },
+    "bread-10":  {
+                     "transparentPixels":  228220,
+                     "clip":  [
+                                  541,
+                                  0,
+                                  514,
+                                  742
+                              ],
+                     "src":  "/images/bread-list-clean/row-3.png",
+                     "box":  "480.48 86.31 646.05 538.37",
+                     "height":  742,
+                     "width":  2120
+                 },
+    "bread-9":  {
+                    "transparentPixels":  256560,
+                    "clip":  [
+                                 0,
+                                 0,
+                                 541,
+                                 742
+                             ],
+                    "src":  "/images/bread-list-clean/row-3.png",
+                    "box":  "-36.51 81.91 653.02 544.19",
+                    "height":  742,
+                    "width":  2120
+                },
+    "bread-1":  {
+                    "transparentPixels":  255199,
+                    "clip":  [
+                                 0,
+                                 0,
+                                 549,
+                                 724
+                             ],
+                    "src":  "/images/bread-list-clean/row-1.png",
+                    "box":  "-25.24 114.05 633.49 527.91",
+                    "height":  724,
+                    "width":  2172
+                },
+    "bread-15":  {
+                     "transparentPixels":  221081,
+                     "clip":  [
+                                  1076,
+                                  0,
+                                  535,
+                                  724
+                              ],
+                     "src":  "/images/bread-list-clean/row-4.png",
+                     "box":  "1041.05 99.37 627.91 523.26",
+                     "height":  724,
+                     "width":  2172
+                 },
+    "bread-16":  {
+                     "transparentPixels":  247378,
+                     "clip":  [
+                                  1611,
+                                  0,
+                                  561,
+                                  724
+                              ],
+                     "src":  "/images/bread-list-clean/row-4.png",
+                     "box":  "1578.64 99.62 623.72 519.77",
+                     "height":  724,
+                     "width":  2172
+                 },
+    "bread-11":  {
+                     "transparentPixels":  223687,
+                     "clip":  [
+                                  1055,
+                                  0,
+                                  508,
+                                  742
+                              ],
+                     "src":  "/images/bread-list-clean/row-3.png",
+                     "box":  "990.19 82.99 651.63 543.02",
+                     "height":  742,
+                     "width":  2120
+                 },
+    "bread-8":  {
+                    "transparentPixels":  279293,
+                    "clip":  [
+                                 1427,
+                                 0,
+                                 515,
+                                 809
+                             ],
+                    "src":  "/images/bread-list-clean/row-2.png",
+                    "box":  "1379.98 142.81 586.05 488.37",
+                    "height":  809,
+                    "width":  1942
+                },
+    "bread-5":  {
+                    "transparentPixels":  265626,
+                    "clip":  [
+                                 0,
+                                 0,
+                                 500,
+                                 809
+                             ],
+                    "src":  "/images/bread-list-clean/row-2.png",
+                    "box":  "-34.80 133.08 598.60 498.84",
+                    "height":  809,
+                    "width":  1942
+                },
+    "bread-13":  {
+                     "transparentPixels":  231234,
+                     "clip":  [
+                                  0,
+                                  0,
+                                  544,
+                                  724
+                              ],
+                     "src":  "/images/bread-list-clean/row-4.png",
+                     "box":  "-15.37 100.02 616.74 513.95",
+                     "height":  724,
+                     "width":  2172
+                 },
+    "bread-2":  {
+                    "transparentPixels":  238007,
+                    "clip":  [
+                                 549,
+                                 0,
+                                 519,
+                                 724
+                             ],
+                    "src":  "/images/bread-list-clean/row-1.png",
+                    "box":  "531.78 113.73 587.44 489.53",
+                    "height":  724,
+                    "width":  2172
+                },
+    "bread-3":  {
+                    "transparentPixels":  247450,
+                    "clip":  [
+                                 1068,
+                                 0,
+                                 530,
+                                 724
+                             ],
+                    "src":  "/images/bread-list-clean/row-1.png",
+                    "box":  "1057.38 118.57 590.23 491.86",
+                    "height":  724,
+                    "width":  2172
+                },
+    "bread-14":  {
+                     "transparentPixels":  222025,
+                     "clip":  [
+                                  544,
+                                  0,
+                                  532,
+                                  724
+                              ],
+                     "src":  "/images/bread-list-clean/row-4.png",
+                     "box":  "515.84 97.70 622.33 518.60",
+                     "height":  724,
+                     "width":  2172
+                 },
+    "bread-4":  {
+                    "transparentPixels":  267695,
+                    "clip":  [
+                                 1598,
+                                 0,
+                                 574,
+                                 724
+                             ],
+                    "src":  "/images/bread-list-clean/row-1.png",
+                    "box":  "1590.00 113.00 600.00 500.00",
+                    "height":  724,
+                    "width":  2172
+                },
+    "bread-6":  {
+                    "transparentPixels":  234961,
+                    "clip":  [
+                                 500,
+                                 0,
+                                 455,
+                                 809
+                             ],
+                    "src":  "/images/bread-list-clean/row-2.png",
+                    "box":  "440.97 148.22 579.07 482.56",
+                    "height":  809,
+                    "width":  1942
+                }
+}

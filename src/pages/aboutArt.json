@@ -1,0 +1,51 @@
+{
+  "hero-rabbit": {
+    "src": "/images/about/hero-rabbit-v2.png",
+    "width": 1349,
+    "height": 1166,
+    "box": "165 78 1074 1020",
+    "transparent": 0.6173831832740598
+  },
+  "hero-desserts": {
+    "src": "/images/about/hero-desserts-v2.png",
+    "width": 1536,
+    "height": 1024,
+    "box": "178 48 1152 947",
+    "transparent": 0.5949579874674479
+  },
+  "story": {
+    "src": "/images/about/story.png",
+    "width": 1536,
+    "height": 1024,
+    "box": "155 52 1196 908",
+    "transparent": 0.45650355021158856
+  },
+  "ingredients": {
+    "src": "/images/about/ingredients-v2.png",
+    "width": 1774,
+    "height": 887,
+    "box": "361 200 1084 525",
+    "transparent": 0.7966537827494474
+  },
+  "tools": {
+    "src": "/images/about/tools-v2.png",
+    "width": 1536,
+    "height": 1024,
+    "box": "257 206 1005 617",
+    "transparent": 0.8109474182128906
+  },
+  "friends": {
+    "src": "/images/about/friends.png",
+    "width": 1536,
+    "height": 1024,
+    "box": "196 120 1193 808",
+    "transparent": 0.6641502380371094
+  },
+  "bakery": {
+    "src": "/images/about/bakery-v2.png",
+    "width": 1774,
+    "height": 887,
+    "box": "159 43 1454 838",
+    "transparent": 0.5457402363336634
+  }
+}

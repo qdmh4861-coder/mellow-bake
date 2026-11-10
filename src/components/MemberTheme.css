@@ -1,0 +1,166 @@
+/* Member-area-only skin. Shared header/footer and public pages retain their CSS. */
+.member-theme { --member-pink: #ec237b; --member-ink: #612b40; --member-line: #ffacd0; --member-soft: #fff0f7; color: var(--member-ink); }
+.member-theme .mypage-page, .member-theme .wishlist-page { background: radial-gradient(ellipse at 85% 8%, #ffd9ef 0, transparent 45%), linear-gradient(135deg,#fff4f9,#fff8f0 55%,#ffe4f2); }
+.member-theme .mypage-layout { width: min(1440px, calc(100% - 96px)); grid-template-columns: 260px minmax(0,1fr); gap: 30px; padding: 48px 0 76px; align-items: start; }
+.member-theme .mypage-content { min-width: 0; padding-left: 0; }
+.member-theme .mypage-content > h1:not(.mypage-sr-only), .member-theme .password-change-heading h1 { margin: 0 0 22px; text-align: left; color: #b52661; font-size: clamp(25px,2.2vw,34px); line-height: 1.45; text-shadow: 0 2px white; }
+.member-theme .mypage-content > h1:not(.mypage-sr-only)::after { content: ''; display: block; width: 64px; height: 4px; margin-top: 12px; border-radius: 10px; background: linear-gradient(90deg,#ff328e,#ffc9e7); box-shadow: 0 2px 8px #ff69b455; }
+.member-theme .mypage-content > section + section { margin-top: 40px; }
+.member-theme .mypage-navigation { min-width: 0; }
+.member-theme .mypage-navigation > summary { display: none; }
+.member-theme .mypage-sidebar { position: relative; display: block; border: 2px solid white; border-radius: 34px; padding: 20px 15px 26px; background: linear-gradient(115deg,#ffe3f2,#fff7fa 52%,#ffd8ec); box-shadow: 0 0 0 2px #ffa6cf, 0 8px 0 #ffb9d580, 0 14px 32px #d94b8c20, inset 0 0 15px white; }
+.member-theme .member-sidebar-brand { display: flex; flex-direction: column; align-items: center; margin: -2px 0 25px; text-decoration: none; color: #d91367; }
+.member-theme .member-sidebar-brand > svg { width: 100%; max-width: 220px; height: 181px; border-radius: 0; }
+.member-theme .member-sidebar-brand > :is(strong,span) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.member-theme .mypage-sidebar section + section { margin-top: 24px; padding-top: 18px; border-top: 1px solid #ffc3de; }
+.member-theme .mypage-sidebar h2 { display: flex; gap: 9px; align-items: center; margin: 0 0 10px; padding: 9px 13px; border: 2px solid white; border-radius: 24px; color: white; background: linear-gradient(#ff91c4,#f32280 75%); box-shadow: 0 0 0 1px #ff88bc,0 3px 7px #ee448332,inset 0 2px 6px #ffffff80; text-shadow: 0 1px 2px #a2235a; font-size: 18px; line-height: 1.4; }
+.member-theme .mypage-sidebar h2 svg { width: 25px; height: 25px; flex-shrink: 0; }
+.member-theme .mypage-sidebar ul { list-style: none; padding: 0; }
+.member-theme .mypage-sidebar li { padding: 0; font-size: 14px; line-height: 1.6; }
+.member-theme .mypage-sidebar li + li { margin-top: 3px; }
+.member-theme .mypage-sidebar li :is(a,button) { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 9px 10px; border: 1px solid transparent; border-radius: 12px; background: transparent; text-align: left; font: inherit; font-weight: 600; color: #6d3847; text-decoration: none; transition: background .18s,color .18s,transform .18s; }
+.member-theme .mypage-sidebar li :is(a,button):hover { background: #ffe0ee; color: #b51a58; transform: translateX(2px); text-decoration: none; }
+.member-theme .mypage-sidebar li a[aria-current='page'] { background: linear-gradient(100deg,#ffcae2,#fff0f9); border-color: #ff9ec8; color: #b51a58; box-shadow: inset 3px 0 #f52c83; }
+.member-theme .member-menu-arrow { font-size: 21px; color: #df4c89; }
+.member-theme .member-sidebar-sweets { display: grid; justify-items: center; margin-top: 24px; }
+.member-theme .member-sidebar-sweets svg { width: 170px; height: 120px; border-radius: 0; filter: drop-shadow(0 3px 5px #e9468330); }
+.member-theme .member-sidebar-sweets > span { color: #c03573; font-size: 12px; font-weight: 700; }
+.member-theme .member-art { display: block; overflow: hidden; pointer-events: none; }
+.member-theme .member-bottom-decoration { grid-column: 1 / -1; position: relative; display: flex; justify-content: space-between; align-items: end; gap: 20px; min-height: 110px; padding: 12px 35px 0; border-bottom: 12px solid #ffb9db; border-radius: 40% 35% 14px 14px; background: linear-gradient(transparent 5%,#ffe6f3 45%,#ffc9e4); color: #ee599b; font-size: 38px; text-shadow: 0 2px white; }
+.member-theme .member-bottom-decoration svg { width: 160px; height: 110px; mask-image: radial-gradient(ellipse,#000 45%,transparent 74%); }
+.member-theme .member-dashboard .mypage-welcome { position: relative; display: grid; place-items: center; min-height: 310px; isolation: isolate; padding: 48px 22% 34px; overflow: hidden; border: 3px solid white; border-radius: 42px; background: radial-gradient(ellipse at 50% 20%,#ffb1d9 0,transparent 60%),linear-gradient(125deg,#ed4d98,#ed1e7d 52%,#fc9ecc); box-shadow: 0 0 0 2px #ff8bbd,0 9px 0 #ffc4dc,0 12px 28px #df488549,inset 0 0 30px #fff8; text-align: center; }
+.member-theme .member-dashboard .mypage-welcome::after { content: ''; position: absolute; inset: 18px; border: 1px solid #fff9; border-radius: 50%; z-index: -1; box-shadow: 0 0 14px #fff5,inset 0 0 20px #fff3; }
+.member-theme .member-banner-ribbon { position: absolute; top: 14px; left: 50%; transform: translateX(-50%) rotate(-3deg); padding: 5px 24px; border: 2px solid white; border-radius: 6px; background: linear-gradient(#ff86be,#ed257b); color: white; font-size: 14px; font-weight: 900; white-space: nowrap; box-shadow: 0 0 10px #fff9; }
+.member-theme .mypage-welcome .member-art--rabbit { position: absolute; left: 10px; bottom: 8px; width: 25%; height: auto; max-height: calc(100% - 24px); z-index: -1; }
+.member-theme .mypage-welcome .member-art--treats { position: absolute; right: 10px; bottom: 8px; width: 26%; height: auto; max-height: calc(100% - 24px); z-index: -1; }
+.member-theme .member-welcome-copy h2 { margin: 20px 0 22px; color: white; font-size: clamp(24px,2.6vw,40px); font-weight: 900; line-height: 1.45; letter-spacing: -.04em; text-shadow: 0 2px 0 #cc1a64,0 0 8px #ffb5dc,0 0 20px #ff8ec3; word-break: keep-all; }
+.member-theme .member-welcome-copy p { margin: 0; color: white; font-size: 13px; line-height: 1.9; text-shadow: 0 1px 3px #9c255f; word-break: keep-all; }
+.member-theme .member-welcome-copy p strong { font-size: 18px; color: #fff9bd; }
+.member-theme .member-sparkle { position: absolute; color: #fff6af; text-shadow: 0 0 8px #fff; font-size: 48px; z-index: -1; }
+.member-theme .member-sparkle--one { left: 20%; top: 20px; }.member-theme .member-sparkle--two { right: 8%; top: 28px; transform: rotate(20deg); }
+.member-theme .member-demo-note { margin: 20px 4px 26px; font-size: 11px; color: #915168; line-height: 1.7; }
+.member-theme .mypage-summary { gap: 22px; margin: 0; }
+.member-theme .mypage-summary > a { position: relative; display: flex; flex-direction: row; justify-content: space-between; gap: 12px; min-height: 140px; padding: 23px 18px; border: 2px solid white; outline: 1px solid #ff8dbe; outline-offset: 3px; border-radius: 28px; background: linear-gradient(135deg,#fffaff,#fff0ce); box-shadow: 0 8px #ffb6d16b,0 12px 18px #c73c7514; transition: transform .2s,box-shadow .2s; }
+.member-theme .mypage-summary > a:nth-child(2) { background: linear-gradient(135deg,#fff7fd,#ffd0e7); }
+.member-theme .mypage-summary > a:nth-child(3) { background: linear-gradient(135deg,#fffaff,#e8ccff); outline-color: #e8a3ff; }
+.member-theme .mypage-summary > a::after { content: ''; position: absolute; inset: 6px; border: 1px dashed #f394be; border-radius: 22px; pointer-events: none; }
+.member-theme .mypage-summary > a:hover { transform: translateY(-4px); box-shadow: 0 12px 22px #e260a030; }
+.member-theme .mypage-summary svg { flex-shrink: 0; width: 48px; height: 48px; color: #ec2b7d; filter: drop-shadow(0 3px 0 #ffb0d3); }
+.member-theme .mypage-summary div { display: grid; gap: 9px; text-align: center; }
+.member-theme .mypage-summary strong { font-size: clamp(16px,1.6vw,22px); color: #642d42; white-space: nowrap; }
+.member-theme .mypage-summary div > span { color: #e91373; font-size: 34px; font-weight: 900; line-height: 1.2; text-shadow: 0 2px white; }
+.member-theme .mypage-summary b { font-size: 30px; color: #bc1f59; }
+.member-theme .member-card-bow { position: absolute; left: 8px; top: -25px; width: 46px; color: #ff2f8d; font-size: 50px; line-height: 1; text-shadow: -2px -2px white,2px 2px white; transform: rotate(-20deg); z-index: 1; }
+.member-theme .mypage-order-status > h2, .member-theme .mypage-orders > h2 { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; color: #702538; font-size: 24px; margin-bottom: 18px; }
+.member-theme .mypage-content h2 > span { color: #8d4e65; }
+.member-theme .mypage-order-status > h2 > svg, .member-theme .mypage-orders > h2 > svg { width: 36px; height: 36px; color: #ed277d; }
+.member-theme .mypage-status-card { grid-template-columns: minmax(0,1fr) 115px; gap: 20px; padding: 26px 18px; border: 2px solid #ffabd3; border-radius: 32px; background: linear-gradient(120deg,#fff,#ffedf7); box-shadow: 0 5px 0 #ffd6e9,inset 0 0 0 3px white; }
+.member-theme .mypage-status-card ol { gap: 12px; }
+.member-theme .mypage-status-card li a { gap: 14px; }
+.member-theme .mypage-status-card li + li::before { left: -10px; top: 36px; color: #d42b70; font-size: 25px; }
+.member-theme .member-status-cloud { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; width: 100%; max-width: 98px; min-height: 103px; border: 2px solid #ffafdd; border-radius: 38% 45% 40% 47%; background: radial-gradient(ellipse at 40% 30%,white,#ffd7ed); box-shadow: 0 0 0 3px #fff,0 0 0 4px #ffdfef; transition: transform .18s; }
+.member-theme .mypage-status-card li:nth-child(3) .member-status-cloud { background: linear-gradient(white,#fff0d6); border-color: #ffc6a4; }
+.member-theme .member-status-cloud svg { width: 31px; height: 31px; color: #f1217d; }
+.member-theme .mypage-status-card li strong { display: block; border: 0; width: auto; height: auto; font-size: 23px; font-weight: 900; color: #54263d; }
+.member-theme .mypage-status-card li span { font-size: 12px; font-weight: 700; }
+.member-theme .mypage-status-card li a:hover .member-status-cloud { transform: translateY(-3px); }
+.member-theme .mypage-status-card dl { display: grid; gap: 10px; padding-left: 16px; border-left: 1px dashed #f788b9; font-size: 13px; }
+.member-theme .mypage-status-card dl div { justify-content: center; gap: 5px; margin: 0; padding: 7px; border: 1px solid white; border-radius: 24px; background: linear-gradient(#ffe1f0,#ffb4d7); color: #9b204e; font-weight: 800; }
+.member-theme .mypage-status-card dl div:nth-child(2) { background: linear-gradient(#f8e7ff,#ecc6ff); }
+.member-theme .mypage-orders-card { overflow: auto; border: 2px solid #ffa3cf; border-radius: 28px; background: #fffafd; box-shadow: 0 5px 0 #ffdaeb; }
+.member-theme .mypage-orders thead th { background: linear-gradient(#ffe0ee,#ffb6d8); border-bottom: 1px solid #fb9dc9; color: #932451; padding: 16px 8px; }
+.member-theme .mypage-orders tbody td { color: #6c3b4d; overflow-wrap: anywhere; }
+.member-theme .mypage-orders tbody td[colspan] { height: 245px; background: radial-gradient(ellipse,#fff,#fff0f7); text-align: center; }
+.member-theme .mypage-orders td[colspan] .member-art { width: 190px; height: 96px; margin: 0 auto 18px; }
+.member-theme .mypage-orders td[colspan] p { font-size: 17px; font-weight: 600; margin: 0; }
+.member-theme .mypage-orders td small { display: block; margin-top: 8px; color: #cb3475; }
+/* Existing subpages keep their JSX, data, filters, forms and dialogs. */
+.member-theme .claims-banner { min-height: 175px; border-bottom: 2px solid white; background: radial-gradient(ellipse at center,#ffc8e7,#ffe5f3 65%); box-shadow: inset 0 8px 24px #fff; }
+.member-theme .claims-banner h1 { color: #bd2666; text-shadow: 0 2px white; }
+.member-theme .claims-banner p { color: #d92b78; }
+.member-theme main :is(.claims-card,.profile-card,.password-change-card,.order-detail-products,.order-detail-cards > section,.order-list-table-card,.order-history-product,.order-history-progress,.order-history-delivery,.benefit-overview-panels > section,.benefit-usage,.benefit-wallet,.benefit-registration,.benefit-guide,.benefit-table,.notice-table,.notice-detail) { border: 1px solid var(--member-line); border-radius: 24px; background-color: #fffcfe; box-shadow: 0 6px 20px #e7478e0c,inset 0 0 0 2px white; }
+.member-theme main :is(button,a[class*='button'],a[class*='add'],.order-list-management a,.reviews-own-toolbar a) { border-radius: 12px; transition: background .18s,box-shadow .18s,transform .18s; }
+.member-theme main button:not(:disabled):hover, .member-theme main :is(a[class*='button'],.order-list-management a):hover { box-shadow: 0 3px 10px #e735831b; }
+.member-theme main :is(button[aria-pressed='true'],button[aria-selected='true'],button[aria-current='page'],.order-list-date-filter button,.claims-search button,.address-book-add,.inquiry-submit,.profile-actions button[type='submit']) { background: linear-gradient(#fa68a7,#e8287c); border-color: #f25a9b; color: white; box-shadow: 0 3px 6px #f35b9c24; }
+.member-theme :is(.order-detail-actions a,.password-change-actions button[type='submit'],.inquiry-form-actions button[type='submit'],.address-book-dialog-actions button[type='submit'],.benefit-dialog-actions > button:first-child,.order-detail-confirm-actions > button:last-child) { background: linear-gradient(#fa68a7,#e8287c); border-color: #f25a9b; color: white; }
+.member-theme main :is(.benefit-coupon-list,.benefit-coupon-register,.benefit-point-summary,.benefit-point-guide,.benefit-overview-summary > a,.benefit-overview-coupons,.benefit-overview-points) { border-color: #ffadd0; border-radius: 24px; box-shadow: 0 6px 20px #e7478e0c; }
+.member-theme main :is(input:not([type='checkbox']):not([type='radio']):not([type='file']),textarea,select) { border-color: #edbdd2; border-radius: 10px; color: #65394c; background-color: #fffdfe; max-width: 100%; }
+.member-theme main :is(input,textarea,select):focus-visible { outline: 2px solid #f574ad; outline-offset: 2px; }
+.member-theme main :is(input[type='checkbox'],input[type='radio']) { accent-color: #e8327e; }
+.member-theme main table th { background: #ffdfed; color: #933457; border-color: #f3c5d9; }
+.member-theme main table td { border-color: #f6d9e6; }
+.member-theme main table { max-width: 100%; }
+.member-theme main :is(.claims-demo-note,.profile-login-note,.benefit-example-note,.reviews-own-toolbar p) { color: #8c526a; }
+.member-theme main :is(.profile-fields,.password-change-fields) { padding-inline: 12px; }
+.member-theme .profile-content { padding-left: 0; }.member-theme .password-change-card { width: 100%; padding: 30px 24px; }
+.member-theme .order-detail-content { padding-left: 0; }.member-theme .order-history-content { padding-left: 0; }
+.member-theme .order-history-step-icon { background: #d09bae; }.member-theme [data-current='true'] .order-history-step-icon { background: #ef4c96; box-shadow: 0 0 0 5px #ffe0ef; }
+.member-theme dialog { border: 2px solid #ffb1d2; border-radius: 24px; background: #fffcfe; box-shadow: 0 12px 60px #9e235347; }
+.member-theme dialog::backdrop { background: #46263875; backdrop-filter: blur(3px); }
+.member-theme dialog button { border-radius: 10px; }.member-theme :is(main,.mypage-navigation,dialog) :is(a,button):focus-visible { outline: 2px solid #d42b76; outline-offset: 3px; }
+.member-theme .wishlist-main { width: min(1440px,calc(100% - 96px)); }
+.member-theme .wishlist-card { border: 1px solid #ffb4d5; border-radius: 24px; background: #fffafd; padding: 14px; box-shadow: 0 6px 20px #e94c8d0e; }
+.member-theme .wishlist-main h1 { color: #b62964; text-shadow: 0 2px white; }
+.member-theme .reviews-own-page .reviews-feed { padding: 24px; border: 1px solid #ffb4d5; border-radius: 24px; background: #fffafd; }
+@media(min-width:1700px) { .member-theme .member-dashboard .mypage-welcome { min-height: 345px; }.member-theme .member-welcome-copy h2 { font-size: 40px; } }
+@media(max-width:1200px) {
+  .member-theme .mypage-layout { width: calc(100% - 64px); grid-template-columns: 230px minmax(0,1fr); gap: 26px; }
+  .member-theme .mypage-summary { gap: 16px; }.member-theme .mypage-summary > a { gap: 8px; padding: 22px 12px; }.member-theme .mypage-summary svg { width: 34px; height: 34px; }.member-theme .mypage-summary div > span { font-size: 28px; }
+  .member-theme .mypage-status-card { grid-template-columns: 1fr; gap: 24px; }.member-theme .mypage-status-card dl { display: flex; border-left: 0; border-top: 1px dashed #f788b9; padding: 16px 0 0; justify-content: center; }.member-theme .mypage-status-card dl div { min-width: 85px; }
+  .member-theme .member-dashboard .mypage-welcome { padding-inline: 18%; }.member-theme .member-welcome-copy h2 { font-size: 29px; }.member-theme .member-welcome-copy p { font-size: 12px; }
+}
+@media(max-width:1000px) {
+  .member-theme .mypage-layout { grid-template-columns: 210px minmax(0,1fr); gap: 24px; width: calc(100% - 48px); }
+  .member-theme .mypage-sidebar { padding-inline: 10px; }.member-theme .mypage-sidebar li { font-size: 12px; }.member-theme .mypage-sidebar h2 { font-size: 16px; }
+  .member-theme .mypage-summary { gap: 12px; }.member-theme .mypage-summary > a { flex-direction: column; min-height: 165px; padding: 20px 8px 12px; gap: 5px; }.member-theme .mypage-summary b { position: absolute; right: 8px; top: 40%; font-size: 22px; }.member-theme .mypage-summary strong { font-size: 15px; }
+  .member-theme .member-welcome-copy h2 { font-size: 24px; }.member-theme .member-welcome-copy p strong { font-size: 16px; }.member-theme .member-dashboard .mypage-welcome { padding-inline: 15%; min-height: 290px; }
+  .member-theme .profile-fields { padding: 0; }.member-theme .profile-row { gap: 12px; grid-template-columns: 90px minmax(0,1fr); }.member-theme .profile-email-controls { grid-template-columns: minmax(0,1fr) 12px minmax(0,1fr); }.member-theme .profile-email-controls button { grid-column: 1/-1; width: 100%; }.member-theme .profile-card { padding: 24px 18px; }
+  .member-theme .order-detail-item { padding: 16px 12px; gap: 12px; grid-template-columns: 70px minmax(0,1fr) 50px 72px; }.member-theme .order-detail-photo { width: 70px; height: 70px; }.member-theme .order-detail-meta { padding: 20px 16px; gap: 12px; grid-template-columns: 1fr 1fr; }
+  .member-theme .password-change-row { grid-template-columns: 1fr; gap: 4px; }.member-theme .password-change-card { padding: 24px 14px; }
+  .member-theme .benefit-event-ticket { grid-template-columns: 28% minmax(0,1fr); }.member-theme .benefit-ticket-download { grid-column: 1/-1; }.member-theme .benefit-event-tickets { width: 100%; }
+}
+@media(max-width:760px) {
+  .member-theme .mypage-layout { grid-template-columns: minmax(0,1fr); gap: 28px; width: calc(100% - 32px); padding: 28px 0 52px; }
+  .member-theme .mypage-navigation { grid-row: 1; }.member-theme .mypage-navigation > summary { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; border: 1px solid #ff9fc8; border-radius: 18px; background: linear-gradient(#fff5fb,#ffd8ec); color: #ab2d61; font-weight: 700; cursor: pointer; list-style: none; }.member-theme .mypage-navigation > summary::-webkit-details-marker { display: none; }
+  .member-theme .mypage-navigation[open] > summary { margin-bottom: 18px; }.member-theme .mypage-sidebar { display: block; padding: 20px; }.member-theme .mypage-sidebar section + section { margin-top: 22px; }.member-theme .mypage-sidebar li { font-size: 15px; }.member-theme .member-sidebar-brand { max-width: 230px; margin-inline: auto; }.member-theme .member-sidebar-sweets { display: none; }
+  .member-theme .member-dashboard .mypage-welcome { min-height: 295px; padding: 45px 12% 35px; border-radius: 30px; }.member-theme .member-welcome-copy h2 { font-size: clamp(24px,4.7vw,34px); }.member-theme .member-welcome-copy p { max-width: 240px; margin: auto; }.member-theme .mypage-welcome .member-art--rabbit,.member-theme .mypage-welcome .member-art--treats { width: 27%; opacity: .75; }.member-theme .member-banner-ribbon { font-size: 12px; }
+  .member-theme .mypage-summary > a { min-height: 160px; }.member-theme .mypage-summary strong { font-size: 14px; }.member-theme .mypage-summary div > span { font-size: 28px; }.member-theme .member-card-bow { font-size: 40px; top: -18px; }.member-theme .mypage-summary svg { width: 32px; height: 32px; }
+  .member-theme .mypage-summary { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px 16px; }.member-theme .mypage-summary > a:last-child { grid-column: 1 / -1; flex-direction: row; justify-content: center; gap: 28px; min-height: 112px; }.member-theme .mypage-summary > a:last-child > svg { width: 45px; height: 45px; }.member-theme .member-bottom-decoration { padding-inline: 18px; min-height: 85px; }.member-theme .member-bottom-decoration svg { width: 120px; height: 85px; }
+  .member-theme .mypage-order-status > h2,.member-theme .mypage-orders > h2 { font-size: 20px; gap: 7px; }.member-theme .mypage-content h2 > span { margin-left: 0; font-size: 12px; }.member-theme .mypage-content > section + section { margin-top: 36px; }
+  .member-theme .mypage-status-card { padding: 22px 14px; }.member-theme .mypage-status-card ol { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px 18px; }.member-theme .mypage-status-card li + li::before { display: none; }.member-theme .member-status-cloud { max-width: 90px; min-height: 96px; }.member-theme .mypage-status-card li span { font-size: 12px; }.member-theme .mypage-status-card dl { flex-wrap: wrap; gap: 8px; }.member-theme .mypage-status-card dl div { min-width: 78px; }
+  .member-theme .mypage-orders-card table { min-width: 540px; }.member-theme .mypage-orders-card table:has(td[colspan]) { min-width: 0; }.member-theme .mypage-orders th { font-size: 11px; padding-inline: 4px; }.member-theme .mypage-orders td[colspan] p { font-size: 14px; }
+  .member-theme .wishlist-main { width: calc(100% - 32px); }.member-theme .claims-banner { min-height: 145px; }.member-theme .claims-banner h1 { font-size: 28px; }
+  .member-theme .mypage-content > :is(.claims-card,.profile-card,.password-change-card) { padding: 22px 16px; }.member-theme .reviews-own-page .reviews-feed { padding: 16px; }
+}
+@media(prefers-reduced-motion:reduce) { .member-theme main *, .member-theme .mypage-navigation * { transition: none !important; } }
+
+/* Illustration placement only: separate slots prevent decoration collisions. */
+.member-theme .mypage-page .inquiry-history-example-photo .our-menu-product-media { height: 100%; aspect-ratio: auto; }
+.member-theme .mypage-page.notices-page .notice-rabbit { max-width: 100%; margin: 24px 0 0 auto; }
+.member-theme .mypage-page :is(.faq-bottom,.inquiry-bottom,.inquiry-history-bottom) { min-height: 150px; height: auto; padding: 16px 12px; margin: 20px 0 0; overflow: visible; gap: 12px; align-items: end; }
+.member-theme .mypage-page :is(.faq-bottom,.inquiry-bottom,.inquiry-history-bottom) > svg { flex: 1 1 0; min-width: 0; max-width: 100%; height: 115px; margin: 0; }
+.member-theme .mypage-page:is(.address-book-page,.claims-final-page,.payment-history-final) :is(.address-book-bottom,.claims-final-bottom,.payment-history-bottom) {
+  display: grid; grid-template-columns: 1fr .48fr .55fr .4fr .6fr .6fr 1fr; align-items: end; gap: 10px;
+  height: 150px; min-height: 150px; padding: 8px 4px; box-sizing: border-box;
+}
+.member-theme .mypage-page:is(.address-book-page,.claims-final-page,.payment-history-final) :is(.address-book-bottom,.claims-final-bottom,.payment-history-bottom) > svg {
+  display: block; position: relative; inset: auto; width: 100%; min-width: 0; max-width: 100%; height: 125px; max-height: 100%; margin: 0; align-self: end;
+}
+.member-theme .mypage-page:is(.address-book-page,.claims-final-page,.payment-history-final) :is(.address-book-heart-line,.claims-final-bottom > span,.payment-history-bottom > span) {
+  position: relative; inset: auto; align-self: end; margin: 0; padding-bottom: 12px; text-align: center; font-size: 38px; line-height: 1;
+}
+.member-theme .mypage-page.address-book-page :is(.address-book-bottom-heart,.address-book-bottom-sparkle) { position: absolute; top: 8px; bottom: auto; font-size: 22px; }
+.member-theme .mypage-page.address-book-page .address-book-bottom-heart { left: 5px; }
+.member-theme .mypage-page.address-book-page .address-book-bottom-sparkle { right: 5px; }
+.member-theme .mypage-page :is(.my-reviews-decoration,.coupon-event-decoration,.coupon-wallet-decoration,.points-ledger-decoration) { padding: 8px; box-sizing: border-box; }
+.member-theme .mypage-page :is(.my-reviews-banner,.coupon-event-banner,.coupon-wallet-banner,.points-ledger-banner) > svg { min-width: 0; max-width: 100%; box-sizing: border-box; padding: 4px; }
+@media(max-width:760px) {
+ .member-theme .mypage-page:is(.address-book-page,.claims-final-page,.payment-history-final) :is(.address-book-bottom,.claims-final-bottom,.payment-history-bottom) { height: 125px; min-height: 125px; gap: 3px; padding-inline: 2px; }
+ .member-theme .mypage-page:is(.address-book-page,.claims-final-page,.payment-history-final) :is(.address-book-bottom,.claims-final-bottom,.payment-history-bottom) > svg { display: block; height: 110px; }
+ .member-theme .mypage-page:is(.address-book-page,.claims-final-page,.payment-history-final) :is(.address-book-heart-line,.claims-final-bottom > span,.payment-history-bottom > span) { font-size: 24px; }
+ .member-theme .mypage-page:is(.order-list-page,.order-history-page) .order-list-content .order-list-banner {
+   display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; padding: 24px 18px 14px; overflow: visible;
+ }
+ .member-theme .mypage-page:is(.order-list-page,.order-history-page) .order-list-content .order-list-banner > div { grid-row: 1; grid-column: 1/-1; width: 100%; }
+ .member-theme .mypage-page:is(.order-list-page,.order-history-page) .order-list-content .order-list-banner > .member-art { position: relative; inset: auto; width: 100%; height: 95px; max-height: none; grid-row: 2; opacity: 1; z-index: auto; }
+}
