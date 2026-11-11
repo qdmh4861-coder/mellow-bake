@@ -1,14 +1,15 @@
-﻿import './HomeHeader.css'
+import { appLocation, appHref, assetHref } from '../appRouting'
+import './HomeHeader.css'
 
 import { useCallback, useEffect, useId, useRef, useState } from 'react'
 import { logoutDemo, useDemoUser } from '../demoAuth'
 import ProductSearch from './ProductSearch'
 
 const mainLinks = [
-  ['HOME', '/mellow-bake/'],
-  ['MENU', '/mellow-bake/menu'],
-  ['ABOUT', '/mellow-bake/about'],
-  ['STORE', '/mellow-bake/store'],
+  ['HOME', '/'],
+  ['MENU', '/menu'],
+  ['ABOUT', '/about'],
+  ['STORE', '/store'],
 ]
 
 function HeaderIcon({ type }) {
@@ -30,10 +31,10 @@ export default function HomeHeader() {
   const [searchOpen, setSearchOpen] = useState(false)
   const closeSearch = useCallback(() => setSearchOpen(false), [])
   const user = useDemoUser()
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
-  const [hash, setHash] = useState(window.location.hash)
+  const pathname = appLocation.pathname.replace(/\/+$/, '') || '/'
+  const [hash, setHash] = useState(appLocation.hash)
   useEffect(() => {
-    const updateHash = () => setHash(window.location.hash)
+    const updateHash = () => setHash(appLocation.hash)
     window.addEventListener('hashchange', updateHash)
     return () => window.removeEventListener('hashchange', updateHash)
   }, [])
@@ -97,11 +98,11 @@ export default function HomeHeader() {
   return (
     <header className="home-header">
       <div className="home-header__inner">
-        <a className="home-header__logo" href="/" aria-label="MELLOW BAKE 홈">
-          <svg className="home-header__brand-art" viewBox="89 74 1995 557" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href="/images/header-bakery-logo.png" width="2172" height="724" /></svg>
+        <a className="home-header__logo" href={appHref("/")} aria-label="MELLOW BAKE 홈">
+          <svg className="home-header__brand-art" viewBox="89 74 1995 557" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={assetHref("/images/header-bakery-logo.png")} width="2172" height="724" /></svg>
         </a>
         <nav className="home-header__nav" aria-label="메인 메뉴">
-          {mainLinks.map(([label, href]) => <a key={label} href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>)}
+          {mainLinks.map(([label, href]) => <a key={label} href={appHref(href)} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>)}
         </nav>
         <div className="home-header__actions">
           <button className="home-header__icon" type="button" aria-label="상품 검색" title="상품 검색" aria-haspopup="dialog" onClick={() => setSearchOpen(true)}><HeaderIcon type="search" /></button>
@@ -110,10 +111,13 @@ export default function HomeHeader() {
             onPointerLeave={event => { if (event.pointerType === 'mouse' && !event.currentTarget.contains(window.document.activeElement)) setCartOpen(false) }}
             onFocus={() => setCartOpen(true)}
             onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setCartOpen(false) }}>
-            <a className="home-header__icon" ref={cartLink} href="/cart" aria-label="장바구니" title="장바구니" aria-expanded={cartOpen} aria-controls={cartMenuId}><HeaderIcon type="cart" /></a>
+           <a className="home-header__icon" ref={cartLink} href={appHref("/cart")}
+  aria-label="장바구니" title="장바구니" aria-expanded={cartOpen} aria-controls={cartMenuId}>
+  <HeaderIcon type="cart" />
+</a>
             <nav className="home-header__account-dropdown" id={cartMenuId} aria-label="장바구니 및 찜 메뉴" hidden={!cartOpen}>
-              <a href="/cart" onClick={() => setCartOpen(false)}>장바구니</a>
-              <a href="/wishlist" onClick={() => setCartOpen(false)}>찜</a>
+              <a href={appHref("/cart")} onClick={() => setCartOpen(false)}>장바구니</a>
+              <a href={appHref("/wishlist")} onClick={() => setCartOpen(false)}>찜</a>
             </nav>
           </div>
           <div className="home-header__account" ref={accountRef}
@@ -122,18 +126,18 @@ export default function HomeHeader() {
             onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setAccountOpen(false) }}>
             <button className="home-header__icon" type="button" ref={accountButton} aria-label="회원 메뉴" title="로그인 및 회원가입" aria-expanded={accountOpen} aria-controls={accountMenuId} onClick={toggleAccount}><HeaderIcon type="user" /></button>
             <nav className="home-header__account-dropdown" id={accountMenuId} aria-label="회원 메뉴" hidden={!accountOpen}>
-             {!user && <a href="/mellow-bake/login" onClick={() => setAccountOpen(false)}>로그인</a>}
-              {!user && <a href="/mellow-bake/signup" onClick={() => setAccountOpen(false)}>회원가입</a>}
-              <a href="/mellow-bake/mypage" onClick={() => setAccountOpen(false)}>마이페이지</a>
-             {user && <a href="/mellow-bake/login?loggedOut=1" onClick={event => { event.preventDefault(); logoutDemo() }}>로그아웃</a>}
+             {!user && <a href={appHref("/login")} onClick={() => setAccountOpen(false)}>로그인</a>}
+              {!user && <a href={appHref("/signup")} onClick={() => setAccountOpen(false)}>회원가입</a>}
+              <a href={appHref("/mypage")} onClick={() => setAccountOpen(false)}>마이페이지</a>
+             {user && <a href={appHref("/login?loggedOut=1")} onClick={event => { event.preventDefault(); logoutDemo() }}>로그아웃</a>}
             </nav>
           </div>
           <details className="home-header__menu">
             <summary className="home-header__icon" aria-label="전체 메뉴"><HeaderIcon type="menu" /></summary>
             <nav className="home-header__dropdown" aria-label="전체 메뉴">
-              {mainLinks.map(([label, href]) => <a key={label} href={href} aria-current={isCurrent(href) ? 'page' : undefined} onClick={event => event.currentTarget.closest('details').removeAttribute('open')}>{label}</a>)}
-              <a href="/new-menu" onClick={event => event.currentTarget.closest('details').removeAttribute('open')}>NEW MENU</a>
-              <a href="/reviews" onClick={event => event.currentTarget.closest('details').removeAttribute('open')}>REVIEW</a>
+              {mainLinks.map(([label, href]) => <a key={label} href={appHref(href)} aria-current={isCurrent(href) ? 'page' : undefined} onClick={event => event.currentTarget.closest('details').removeAttribute('open')}>{label}</a>)}
+              <a href={appHref("/new-menu")} onClick={event => event.currentTarget.closest('details').removeAttribute('open')}>NEW MENU</a>
+              <a href={appHref("/reviews")} onClick={event => event.currentTarget.closest('details').removeAttribute('open')}>REVIEW</a>
             </nav>
           </details>
         </div>

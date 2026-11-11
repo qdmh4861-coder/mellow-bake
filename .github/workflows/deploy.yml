@@ -35,7 +35,15 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --base=/mellow-bake/
+        env:
+          VITE_DEMO_AUTH_SALT: ${{ secrets.VITE_DEMO_AUTH_SALT }}
+          VITE_DEMO_AUTH_VERIFIER: ${{ secrets.VITE_DEMO_AUTH_VERIFIER }}
+        run: npm run build
+
+      - name: Verify Pages entry points
+        run: |
+          test -f dist/index.html
+          test -f dist/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

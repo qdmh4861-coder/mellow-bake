@@ -1,3 +1,4 @@
+import { appLocation, assetHref, resolveAppUrl } from '../appRouting'
 import { useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
@@ -33,8 +34,8 @@ function LoginArtwork() {
         {[ [430, 100, 13], [1210, 260, 10], [390, 480, 9], [1280, 540, 12], [70, 370, 9], [1500, 120, 10] ].map(([x, y, r]) => <path key={`${x}-${y}`} d={`M${x} ${y-r}q0 ${r} ${r} ${r}q-${r} 0 -${r} ${r}q0 -${r} -${r} -${r}q${r} 0 ${r} -${r}Z`} />)}
       </g>
     </svg>
-    <img className="login-character login-character--bear" src={loginBear} alt="" />
-    <img className="login-character login-character--cat" src={loginCat} alt="" />
+    <img className="login-character login-character--bear" src={assetHref(loginBear)} alt="" />
+    <img className="login-character login-character--cat" src={assetHref(loginCat)} alt="" />
   </div>
 }
 
@@ -43,7 +44,7 @@ export default function Login() {
   const [remember, setRemember] = useState(() => Boolean(readSavedEmail()))
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const [message, setMessage] = useState(() => new URLSearchParams(window.location.search).has('required') ? '로그인이 필요한 페이지입니다. 데모 계정으로 로그인해 주세요.' : new URLSearchParams(window.location.search).has('loggedOut') ? '로그아웃되었습니다.' : '')
+  const [message, setMessage] = useState(() => new URLSearchParams(appLocation.search).has('required') ? '로그인이 필요한 페이지입니다. 데모 계정으로 로그인해 주세요.' : new URLSearchParams(appLocation.search).has('loggedOut') ? '로그아웃되었습니다.' : '')
   const [submitting, setSubmitting] = useState(false)
 
   function saveEmail(nextEmail, nextRemember) {
@@ -63,15 +64,15 @@ export default function Login() {
     try {
       await loginDemo(email, password)
       setPassword('')
-      const next = new URLSearchParams(window.location.search).get('next')
+      const next = new URLSearchParams(appLocation.search).get('next')
       let destination = '/mypage'
       if (next) {
         try {
-          const target = new URL(next, window.location.origin)
-          if (target.origin === window.location.origin && requiresDemoLogin(target.pathname)) destination = target.pathname + target.search
+          const target = resolveAppUrl(next)
+          if (target?.origin === appLocation.origin && requiresDemoLogin(target.pathname)) destination = target.pathname + target.search
         } catch { /* An invalid return address must not prevent a valid login. */ }
       }
-      window.location.assign(destination)
+      appLocation.assign(destination)
     } catch (error) {
       setPassword('')
       setMessage(error.message || '데모 로그인에 실패했습니다. 브라우저 설정을 확인해 주세요.')
@@ -122,7 +123,7 @@ export default function Login() {
           <button className="login-provider login-provider--google" type="button" disabled><span className="login-google-mark" aria-hidden="true">G</span>구글 로그인</button>
         </div>
         <p id="login-social-note" className="login-service-note">간편 로그인은 연동 준비 중입니다.</p>
-       <p className="login-signup">아직 계정이 없으신가요? <button type="button" onClick={() => { window.location.href = '/mellow-bake/signup' }}>회원가입</button></p>
+       <p className="login-signup">아직 계정이 없으신가요? <button type="button" onClick={() => { appLocation.href = '/signup' }}>회원가입</button></p>
         <p className="login-status" role="status" aria-live="polite">{message}</p>
       </section>
     </main>

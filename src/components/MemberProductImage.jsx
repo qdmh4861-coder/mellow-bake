@@ -1,3 +1,4 @@
+import { assetHref } from '../appRouting'
 import { useLayoutEffect, useRef } from 'react'
 import { menuCategories, MenuProductImage } from '../pages/OurMenu'
 import { reviewProducts } from '../reviewProducts'
@@ -33,5 +34,5 @@ export default function MemberProductImage({ item }) {
   useLayoutEffect(() => {
     container.current?.querySelectorAll('svg').forEach(svg => svg.setAttribute('preserveAspectRatio', 'xMidYMid meet'))
   }, [art?.product.id])
-  return <div className="member-product-illustration" ref={container} data-product-art={art?.product.id || 'missing'}>{art?.kind === 'menu' ? <MenuProductImage product={art.product} /> : art?.kind === 'seasonal' ? <NewMenuProductImage product={art.product} /> : art?.kind === 'asset' ? <img src={art.product.imageSrc} alt={name} /> : <span className="member-product-art-missing" role="img" aria-label={`${name} 일러스트 준비 중`}>{name}<small>일러스트 준비 중</small></span>}</div>
+  return <div className="member-product-illustration" ref={container} data-product-art={art?.product.id || 'missing'}>{art?.kind === 'menu' ? <MenuProductImage product={art.product} /> : art?.kind === 'seasonal' ? <NewMenuProductImage product={art.product} /> : art?.kind === 'asset' ? <img src={assetHref(art.product.imageSrc)} alt={name} /> : <span className="member-product-art-missing" role="img" aria-label={`${name} 일러스트 준비 중`}>{name}<small>일러스트 준비 중</small></span>}</div>
 }

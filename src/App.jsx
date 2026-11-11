@@ -1,4 +1,5 @@
-﻿import LoadingScreen from './components/LoadingScreen'
+import { appLocation } from './appRouting'
+import LoadingScreen from './components/LoadingScreen'
 import { useEffect, useLayoutEffect } from 'react'
 import { requiresDemoLogin, useDemoUser } from './demoAuth'
 import Home from './pages/Home'
@@ -37,17 +38,17 @@ import MemberTheme from './components/MemberTheme'
 
 function DemoAccess({ children }) {
   const user = useDemoUser()
-  const required = requiresDemoLogin(window.location.pathname.replace(/\/+$/, '') || '/')
+  const requestedPath = appLocation.pathname + appLocation.search
+  const required = requiresDemoLogin(appLocation.pathname.replace(/\/+$/, '') || '/')
   const signedIn = Boolean(user)
   useEffect(() => {
-    if (required && !signedIn) window.location.replace(`/login?required=1&next=${encodeURIComponent(window.location.pathname + window.location.search)}`)
-  }, [required, signedIn])
+    if (required && !signedIn) appLocation.replace(`/login?required=1&next=${encodeURIComponent(requestedPath)}`)
+  }, [required, signedIn, requestedPath])
   return required && !signedIn ? null : children
 }
 
 function App() {
-  const pathname = window.location.pathname
-  .replace(/^\/mellow-bake(?=\/|$)/, '')
+  const pathname = appLocation.pathname
   .replace(/\/+$/, '') || '/'
   const menuCategory = pathname.match(/^\/menu\/(bread|cake|sandwich|drink|all)$/)?.[1]
   const productSlug = pathname.match(/^\/menu\/([^/]+)$/)?.[1]

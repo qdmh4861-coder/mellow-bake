@@ -1,3 +1,4 @@
+import { appLocation } from './appRouting'
 import { useSyncExternalStore } from 'react'
 
 export const CART_KEY = 'mellow-bake.cart.v1'
@@ -74,7 +75,7 @@ export function cartAddMessage(product, quantity, price = product.price) {
 export function buyNow(product, quantity, price = product.price) {
   try {
     addToCart(product, quantity, price)
-    window.location.assign('/cart')
+    appLocation.assign('/cart')
     return ''
   } catch {
     return '장바구니를 저장하지 못했습니다. 브라우저 저장 공간 설정을 확인해 주세요.'

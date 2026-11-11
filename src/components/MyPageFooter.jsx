@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import './MyPageFooter.css'
 
 import wishlistDecorAssets from './wishlistDecorAssets.json'
@@ -16,8 +17,8 @@ function ReferenceArt({ part, className = '', orange = false }) {
   }
   const [width, height, box] = assets[part]
   const recolored = orange && wishlistDecorAssets[part]
-  if (recolored) return <svg className={`mypage-footer-reference-art ${className}`} viewBox={recolored.box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={recolored.src} width={recolored.width} height={recolored.height} /></svg>
-  return <svg className={`mypage-footer-reference-art ${className}`} viewBox={box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={`/images/member-footer-${part}.png`} width={width} height={height} /></svg>
+  if (recolored) return <svg className={`mypage-footer-reference-art ${className}`} viewBox={recolored.box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={assetHref(recolored.src)} width={recolored.width} height={recolored.height} /></svg>
+  return <svg className={`mypage-footer-reference-art ${className}`} viewBox={box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={assetHref(`/images/member-footer-${part}.png`)} width={width} height={height} /></svg>
 }
 const columns = [
   { title: 'INFORMATION', icon: 'store', links: [['About Us', '/#our-story'], ['Store Location', '/store'], ['Contact Us', '/mypage/inquiry']] },
@@ -29,12 +30,12 @@ export default function MyPageFooter({ orange = false }) {
     <div className="mypage-footer-awning" aria-hidden="true">{Array.from({ length: 32 }, (_, index) => <span key={index} />)}</div>
     <div className="mypage-footer-inner">
       <div className="mypage-footer-columns">
-        <section className="mypage-footer-brand"><a className="mypage-footer-logo" href="/" aria-label="MELLOW BAKE 홈"><ReferenceArt orange={orange} part="logo" /></a><p>일상 속 달콤한 쉼표, 멜로우 베이크</p><p>좋은 재료와 정성을 담아 달콤한 순간을 전합니다.</p></section>
-        {columns.map(column => <nav className="mypage-footer-column" aria-label={`마이페이지 푸터 ${column.title}`} key={column.title}><h2><FooterIcon type={column.icon} />{column.title}</h2>{column.links.map(([label, href, icon]) => href ? <a href={href} key={label}>{icon && <FooterIcon type={icon} />}<span>{label}</span><b aria-hidden="true">›</b></a> : <span className="mypage-footer-unlinked" key={label}><FooterIcon type={icon} /><span>{label}</span><b aria-hidden="true">›</b></span>)}</nav>)}
+        <section className="mypage-footer-brand"><a className="mypage-footer-logo" href={appHref("/")} aria-label="MELLOW BAKE 홈"><ReferenceArt orange={orange} part="logo" /></a><p>일상 속 달콤한 쉼표, 멜로우 베이크</p><p>좋은 재료와 정성을 담아 달콤한 순간을 전합니다.</p></section>
+        {columns.map(column => <nav className="mypage-footer-column" aria-label={`마이페이지 푸터 ${column.title}`} key={column.title}><h2><FooterIcon type={column.icon} />{column.title}</h2>{column.links.map(([label, href, icon]) => href ? <a href={appHref(href)} key={label}>{icon && <FooterIcon type={icon} />}<span>{label}</span><b aria-hidden="true">›</b></a> : <span className="mypage-footer-unlinked" key={label}><FooterIcon type={icon} /><span>{label}</span><b aria-hidden="true">›</b></span>)}</nav>)}
       </div>
       <div className="mypage-footer-art" aria-hidden="true"><ReferenceArt orange={orange} part="left" className="mypage-footer-left-art" /><ReferenceArt orange={orange} part="bow" className="mypage-footer-center-art" /><ReferenceArt orange={orange} part="right" className="mypage-footer-right-art" /></div>
     </div>
-    <div className="mypage-footer-bottom"><div><span>© 2025 MELLOW BAKE. All rights reserved.</span><nav aria-label="마이페이지 푸터 정책 및 바로가기"><a href="/menu">MENU</a><button type="button" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })}>BACK TO TOP ↑</button><span className="mypage-footer-policy" title="아직 연결된 약관 페이지가 없습니다.">이용약관 <small>준비 중</small></span><span className="mypage-footer-policy" title="아직 연결된 개인정보처리방침 페이지가 없습니다.">개인정보처리방침 <small>준비 중</small></span></nav></div></div>
+    <div className="mypage-footer-bottom"><div><span>© 2025 MELLOW BAKE. All rights reserved.</span><nav aria-label="마이페이지 푸터 정책 및 바로가기"><a href={appHref("/menu")}>MENU</a><button type="button" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })}>BACK TO TOP ↑</button><span className="mypage-footer-policy" title="아직 연결된 약관 페이지가 없습니다.">이용약관 <small>준비 중</small></span><span className="mypage-footer-policy" title="아직 연결된 개인정보처리방침 페이지가 없습니다.">개인정보처리방침 <small>준비 중</small></span></nav></div></div>
   </footer>
 }
 

@@ -1,3 +1,4 @@
+import { appHref } from '../appRouting'
 import { useId, useLayoutEffect, useRef, useState } from 'react'
 import './ProductHero.css'
 import { getProductReviews, reviewStats } from '../reviewData'
@@ -43,10 +44,10 @@ export default function ProductHero({ product, images, placeholder, price, quant
         </div>
         <div className="catalog-product-actions"><button type="button" onClick={onCart}>장바구니 담기</button><button type="button" onClick={onBuy}>바로 구매하기</button></div>
         {notice && <p className="catalog-product-notice" role="status">{notice}</p>}
-        <nav className="catalog-product-features" aria-label="상품 특징 안내">{features.map(([href, label], index) => <a href={href} key={href}><FeatureIcon index={index} /><span>{label}</span></a>)}</nav>
+        <nav className="catalog-product-features" aria-label="상품 특징 안내">{features.map(([href, label], index) => <a href={appHref(href)} key={href}><FeatureIcon index={index} /><span>{label}</span></a>)}</nav>
       </div>
     </section>
-    <nav className="catalog-product-tabs" aria-label="상품 상세 메뉴"><a href={anchors.introduction}>상품정보</a><a href={anchors.ingredients}>원재료 및 영양정보</a><a href={anchors.reviews}>리뷰</a><button type="button" aria-haspopup="dialog" onClick={() => dialogRef.current?.showModal()}>Q&amp;A</button></nav>
-    <dialog className="catalog-product-qa" ref={dialogRef} aria-label="상품 Q&A"><h2>상품 Q&amp;A</h2><p>아직 제공된 상품 문의 자료가 없습니다.<br />문의 등록 기능은 준비 중입니다.</p>{anchors.shipping && <a href={anchors.shipping} onClick={() => dialogRef.current?.close()}>상품 및 배송 안내 보기</a>}<form method="dialog"><button type="submit">닫기</button></form></dialog>
+    <nav className="catalog-product-tabs" aria-label="상품 상세 메뉴"><a href={appHref(anchors.introduction)}>상품정보</a><a href={appHref(anchors.ingredients)}>원재료 및 영양정보</a><a href={appHref(anchors.reviews)}>리뷰</a><button type="button" aria-haspopup="dialog" onClick={() => dialogRef.current?.showModal()}>Q&amp;A</button></nav>
+    <dialog className="catalog-product-qa" ref={dialogRef} aria-label="상품 Q&A"><h2>상품 Q&amp;A</h2><p>아직 제공된 상품 문의 자료가 없습니다.<br />문의 등록 기능은 준비 중입니다.</p>{anchors.shipping && <a href={appHref(anchors.shipping)} onClick={() => dialogRef.current?.close()}>상품 및 배송 안내 보기</a>}<form method="dialog"><button type="submit">닫기</button></form></dialog>
   </div>
 }

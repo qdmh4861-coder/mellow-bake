@@ -1,3 +1,4 @@
+import { appLocation } from './appRouting'
 import { useEffect, useSyncExternalStore } from 'react'
 
 // UI-only demo: bundled verifier and browser session can be inspected/forged.
@@ -49,12 +50,12 @@ export async function loginDemo(email, password) {
   window.dispatchEvent(new Event(EVENT))
 }
 
-export function logoutDemo(destination = '/mellow-bake/login?loggedOut=1') {
+export function logoutDemo(destination = '/login?loggedOut=1') {
   sessionStorage.removeItem(KEY)
   // Home navigation mounts with a cleared session; avoid the protected-page guard
   // replacing that destination with /login during this document's teardown.
   if (destination !== '/') window.dispatchEvent(new Event(EVENT))
-  window.location.assign(destination)
+  appLocation.assign(destination)
 }
 export function requiresDemoLogin(path) {
   return path === '/mypage' || (path.startsWith('/mypage/') && !['/mypage/faq', '/mypage/notices'].some(publicPath => path === publicPath || path.startsWith(`${publicPath}/`))) || path === '/wishlist' || path === '/reviews/write'

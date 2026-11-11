@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useId, useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import ProductDetailFooter from '../components/ProductDetailFooter'
@@ -36,7 +37,7 @@ function FigmaRegion({ box, label }) {
   const [x, y, width, height] = box.split(' ').map(Number)
   return <svg className="bulgogi-figma-region" viewBox={box} role="img" aria-label={label}>
     <defs><clipPath id={clipId}><rect x={x} y={y} width={width} height={height} /></clipPath></defs>
-    <image href={reference} width="1632" height="7491" clipPath={`url(#${clipId})`} />
+    <image href={assetHref(reference)} width="1632" height="7491" clipPath={`url(#${clipId})`} />
   </svg>
 }
 
@@ -57,20 +58,20 @@ export default function BulgogiSandwichDetail() {
         <div className="bulgogi-quantity" role="group" aria-label="상품 수량"><button type="button" aria-label="수량 늘리기" disabled={quantity === 99} onClick={() => setQuantity(value => value + 1)}>+</button><output aria-live="polite">{quantity}</output><button type="button" aria-label="수량 줄이기" disabled={quantity === 1} onClick={() => setQuantity(value => value - 1)}>−</button></div>
         <button className="bulgogi-cart" type="button" onClick={() => setNotice(cartAddMessage(product, quantity))}>장바구니 담기</button>
         <button className="bulgogi-buy" type="button" onClick={() => setNotice(buyNow(product, quantity, product.price))}>바로 구매하기</button>
-        <nav className="bulgogi-tabs" aria-label="불고기 샌드위치 상세 메뉴"><a href="#bulgogi-introduction" aria-label="상품 정보" /><a href="#bulgogi-ingredients" aria-label="원재료 및 영양 정보" /><a href="#bulgogi-reviews" aria-label="피그마 시안 리뷰" /><a href="#bulgogi-shipping" aria-label="상품 및 배송 안내" /></nav>
+        <nav className="bulgogi-tabs" aria-label="불고기 샌드위치 상세 메뉴"><a href={appHref("#bulgogi-introduction")} aria-label="상품 정보" /><a href={appHref("#bulgogi-ingredients")} aria-label="원재료 및 영양 정보" /><a href={appHref("#bulgogi-reviews")} aria-label="피그마 시안 리뷰" /><a href={appHref("#bulgogi-shipping")} aria-label="상품 및 배송 안내" /></nav>
       </section>
       <p className="bulgogi-action-status" role="status">{notice}</p>
       {artworkSections.map(([id, top, bottom, label]) => <section className="bulgogi-art-section" id={id} key={id} aria-label={label}>
-        {id === 'bulgogi-reviews' ? <a style={{ display: 'block' }} href="/reviews?productId=sandwich-5" aria-label="불고기 샌드위치 실제 상품 리뷰 보기"><FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} /></a> : <FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} />}
+        {id === 'bulgogi-reviews' ? <a style={{ display: 'block' }} href={appHref("/reviews?productId=sandwich-5")} aria-label="불고기 샌드위치 실제 상품 리뷰 보기"><FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} /></a> : <FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} />}
       </section>)}
       <section id="bulgogi-related" className="bulgogi-related" aria-labelledby="bulgogi-related-title">
         <h2 id="bulgogi-related-title">함께 보면 좋은 상품</h2>
-        <div className="bulgogi-related-grid">{recommendations.map((item, index) => <a className="bulgogi-related-card" href={item.detailHref} key={item.id} data-product-id={item.id}>
+        <div className="bulgogi-related-grid">{recommendations.map((item, index) => <a className="bulgogi-related-card" href={appHref(item.detailHref)} key={item.id} data-product-id={item.id}>
           <div className="bulgogi-related-photo">{recommendationPhotos[index] ? <FigmaRegion box={recommendationPhotos[index]} label={item.koreanName} /> : <MenuProductImage product={item} />}</div>
           <h3>{item.koreanName}</h3><p>{item.price.toLocaleString('ko-KR')}원</p>
         </a>)}</div>
       </section>
-      <p className="bulgogi-source-note">재료·보관·배송 안내와 리뷰는 제공된 피그마 시안입니다. 실제 판매 정보는 확인 후 적용됩니다. <a href={reference} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
+      <p className="bulgogi-source-note">재료·보관·배송 안내와 리뷰는 제공된 피그마 시안입니다. 실제 판매 정보는 확인 후 적용됩니다. <a href={appHref(reference)} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
     </main>
     <ProductDetailFooter />
   </div>

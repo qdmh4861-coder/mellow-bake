@@ -1,3 +1,4 @@
+import { appLocation, assetHref, appHref } from '../appRouting'
 import './HomeFooter.css'
 
 import AboutFooter from './AboutFooter'
@@ -18,33 +19,33 @@ export default function HomeFooter({ artwork = null, referenceImage = null, vari
   if (referenceImage) {
     return <footer className="mellow-footer-reference" aria-label="MELLOW BAKE 푸터">
       <svg viewBox="0 135 2172 589" role="img" aria-label="MELLOW BAKE — 일상 속 달콤한 쉼표, 멜로우 베이크. 좋은 재료와 정성을 담아 달콤한 순간을 전합니다. INFORMATION, CUSTOMER, FOLLOW US. © 2026 MELLOW BAKE. All Rights Reserved.">
-        <image href={referenceImage} width="2172" height="724" />
+        <image href={assetHref(referenceImage)} width="2172" height="724" />
       </svg>
       <nav aria-label="푸터 바로가기">
-        <a className="footer-reference-link footer-reference-about" href="/about" aria-label="About Us" />
-        <a className="footer-reference-link footer-reference-store" href="/store" aria-label="Store Location" />
-        <a className="footer-reference-link footer-reference-menu" href="/menu" aria-label="MENU" />
-        <a className="footer-reference-link footer-reference-top" href="#" onClick={backToTop} aria-label="BACK TO TOP" />
+        <a className="footer-reference-link footer-reference-about" href={appHref("/about")} aria-label="About Us" />
+        <a className="footer-reference-link footer-reference-store" href={appHref("/store")} aria-label="Store Location" />
+        <a className="footer-reference-link footer-reference-menu" href={appHref("/menu")} aria-label="MENU" />
+        <a className="footer-reference-link footer-reference-top" href={appHref("#")} onClick={backToTop} aria-label="BACK TO TOP" />
       </nav>
     </footer>
   }
   const content = <div className="mellow-footer-top">
       <div className="mellow-footer-brand">
-        <a className="mellow-footer-title" href="/">MELLOW BAKE</a>
+        <a className="mellow-footer-title" href={appHref("/")}>MELLOW BAKE</a>
         <p>일상 속 달콤한 쉼표, 멜로우 베이크</p>
         <p>좋은 재료와 정성을 담아 달콤한 순간을 전합니다.</p>
       </div>
       <nav className="mellow-footer-column" aria-label="INFORMATION">
         <h2>INFORMATION</h2>
-        <a href="/about">About Us</a>
-        <a href="/store">Store Location</a>
-        <button type="button" onClick={() => window.location.assign('/mypage/inquiry')}>Contact Us</button>
+        <a href={appHref("/about")}>About Us</a>
+        <a href={appHref("/store")}>Store Location</a>
+        <button type="button" onClick={() => appLocation.assign('/mypage/inquiry')}>Contact Us</button>
       </nav>
       <nav className="mellow-footer-column" aria-label="CUSTOMER">
         <h2>CUSTOMER</h2>
-        <button type="button" onClick={() => window.location.assign('/mypage/faq')}>FAQ</button>
-        <button type="button" onClick={() => window.location.assign('/mypage/orders')}>Delivery Guide</button>
-        <button type="button" onClick={() => window.location.assign('/mypage/inquiry')}>1:1 Inquiry</button>
+        <button type="button" onClick={() => appLocation.assign('/mypage/faq')}>FAQ</button>
+        <button type="button" onClick={() => appLocation.assign('/mypage/orders')}>Delivery Guide</button>
+        <button type="button" onClick={() => appLocation.assign('/mypage/inquiry')}>1:1 Inquiry</button>
       </nav>
       <nav className="mellow-footer-column mellow-footer-social" aria-label="FOLLOW US">
         <h2>FOLLOW US</h2>
@@ -58,8 +59,8 @@ export default function HomeFooter({ artwork = null, referenceImage = null, vari
     <div className="mellow-footer-bottom">
       <span>© 2026 MELLOW BAKE. All Rights Reserved.</span>
       <nav aria-label="푸터 정책 및 바로가기">
-        <a href="/menu">MENU</a>
-        <a href="#" onClick={backToTop}>BACK TO TOP ↑</a>
+        <a href={appHref("/menu")}>MENU</a>
+        <a href={appHref("#")} onClick={backToTop}>BACK TO TOP ↑</a>
         <button type="button" disabled>이용약관</button>
         <button type="button" disabled>개인정보처리방침</button>
       </nav>

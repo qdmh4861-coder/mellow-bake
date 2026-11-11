@@ -1,4 +1,5 @@
-﻿import WishlistProductImage from '../components/WishlistProductImage'
+import { appLocation, assetHref, appHref } from '../appRouting'
+import WishlistProductImage from '../components/WishlistProductImage'
 import { useEffect, useRef, useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
@@ -42,7 +43,7 @@ function Heart({ filled = true }) { return <svg viewBox="0 0 24 24" aria-hidden=
 
 export default function Wishlist() {
   const savedItems = useWishlist()
-  const previewSetting = new URLSearchParams(window.location.search).get('preview')
+  const previewSetting = new URLSearchParams(appLocation.search).get('preview')
   const [preview] = useState(() => previewSetting === '1' || (previewSetting !== '0' && savedItems.length === 0))
   const [dismissedExamples, setDismissedExamples] = useState([])
   const items = (preview ? products.slice(0, PAGE_SIZE).filter(item => !dismissedExamples.includes(item.id)) : savedItems).map(resolveWishlistItem)
@@ -105,7 +106,7 @@ export default function Wishlist() {
   function buy(item) {
     act(() => {
       addToCart({ ...item, id: item.catalogId }, 1)
-      window.location.assign('/cart')
+      appLocation.assign('/cart')
     })
   }
   return <div className="wishlist-page">
@@ -113,23 +114,23 @@ export default function Wishlist() {
     <main className="wishlist-main">
       <section className="wishlist-banner" aria-labelledby="wishlist-heading">
         <svg className="wishlist-banner-bow" viewBox="0 0 100 40" fill="none" aria-hidden="true"><path d="M49 22C24-3 13 8 24 20c7 7 17 6 25 2Zm2 0C76-3 87 8 76 20c-7 7-17 6-25 2Z" fill="#fb923c" stroke="#ea580c" strokeWidth="2" /><path d="m47 25-12 11m18-11 12 11" stroke="#f97316" strokeWidth="5" /><rect x="45" y="17" width="10" height="11" rx="4" fill="#f97316" stroke="#ea580c" strokeWidth="2" /></svg>
-        <img className="wishlist-banner-art wishlist-banner-art--left" src={wishlistBannerLeft} alt="" />
+        <img className="wishlist-banner-art wishlist-banner-art--left" src={assetHref(wishlistBannerLeft)} alt="" />
         <div className="wishlist-banner-copy"><h1 id="wishlist-heading"><span className="wishlist-banner-heart" aria-hidden="true"><Heart filled={false} /></span>{preview ? '찜 목록 미리보기' : '찜 목록'}<span className="wishlist-banner-heart" aria-hidden="true"><Heart filled={false} /></span></h1>
           <svg className="wishlist-banner-underline" viewBox="0 0 400 22" fill="none" aria-hidden="true"><path d="M10 16Q160-5 390 13M23 20Q190 4 370 16" stroke="#F97316" strokeWidth="5" strokeLinecap="round" /></svg>
           <p className="wishlist-intro">{preview ? '하트를 눌러 찜하고, 장바구니에 상품을 담아보세요.' : '마음에 드는 상품을 한눈에 확인해 보세요'}</p>
         </div>
-        <img className="wishlist-banner-art wishlist-banner-art--right" src={wishlistBannerRight} alt="" />
+        <img className="wishlist-banner-art wishlist-banner-art--right" src={assetHref(wishlistBannerRight)} alt="" />
       </section>
       <div className="wishlist-toolbar"><h2>{preview ? '전체상품' : '찜한 상품'}({items.length}개)</h2><div><button type="button" disabled={!selected.length} onClick={deleteSelected}>선택 삭제</button><button type="button" disabled={!selected.length} onClick={addSelectedToCart}>장바구니 담기</button><label><input ref={allCheckbox} type="checkbox" disabled={!items.length} checked={items.length > 0 && selected.length === items.length} onChange={event => setSelectedIds(event.target.checked ? items.map(item => item.id) : [])} />전체 선택</label></div></div>
       <p className="wishlist-notice" role="status">{notice}</p>
       {items.length ? <div className="wishlist-grid">{visibleItems.map(item => <article className="wishlist-card" key={item.id} data-wishlist-id={item.id}>
         <div className="wishlist-card-selection"><input className="wishlist-item-select" type="checkbox" aria-label={`${item.koreanName} 선택`} checked={selectedIds.includes(item.id)} onChange={event => select(item.id, event.target.checked)} /></div>
-        <div className="wishlist-image-wrap">{item.href ? <a href={item.href} aria-label={`${item.koreanName} 상세 보기`}><WishlistPhoto item={item} /></a> : <WishlistPhoto item={item} />}</div>
-        <p className="wishlist-english-name">{item.href ? <a href={item.href}>{item.name}</a> : item.name}</p>
-        <div className="wishlist-card-title"><h3>{item.href ? <a href={item.href}>{item.koreanName}</a> : item.koreanName}</h3><button className="wishlist-heart" type="button" aria-pressed={isFavorite(item)} aria-label={`${item.koreanName} 찜 ${isFavorite(item) ? '해제' : '추가'}`} onClick={() => toggleHeart(item)}><Heart filled={isFavorite(item)} /></button></div>
+        <div className="wishlist-image-wrap">{item.href ? <a href={appHref(item.href)} aria-label={`${item.koreanName} 상세 보기`}><WishlistPhoto item={item} /></a> : <WishlistPhoto item={item} />}</div>
+        <p className="wishlist-english-name">{item.href ? <a href={appHref(item.href)}>{item.name}</a> : item.name}</p>
+        <div className="wishlist-card-title"><h3>{item.href ? <a href={appHref(item.href)}>{item.koreanName}</a> : item.koreanName}</h3><button className="wishlist-heart" type="button" aria-pressed={isFavorite(item)} aria-label={`${item.koreanName} 찜 ${isFavorite(item) ? '해제' : '추가'}`} onClick={() => toggleHeart(item)}><Heart filled={isFavorite(item)} /></button></div>
         <strong className="wishlist-price">{item.price === null ? '가격 확인 중' : money(item.price)}</strong><p className="wishlist-description">{item.description}</p>
         <div className="wishlist-card-actions"><button type="button" disabled={!item.canOrder} onClick={() => addCardToCart(item)}>장바구니 담기</button><button type="button" disabled={!item.canOrder} onClick={() => buy(item)}>바로 구매</button></div>
-      </article>)}</div> : <section className="wishlist-empty"><Heart /><h2>아직 찜한 상품이 없습니다</h2><p>상품의 하트를 눌러 마음에 드는 메뉴를 모아 보세요.</p><a href="/">상품 둘러보기</a></section>}
+      </article>)}</div> : <section className="wishlist-empty"><Heart /><h2>아직 찜한 상품이 없습니다</h2><p>상품의 하트를 눌러 마음에 드는 메뉴를 모아 보세요.</p><a href={appHref("/")}>상품 둘러보기</a></section>}
       {pageCount > 0 && <nav className="wishlist-pagination" aria-label="찜 목록 페이지"><button type="button" aria-label="이전 페이지" disabled={currentPage === 1} onClick={() => changePage(currentPage - 1)}>‹</button>{Array.from({ length: pageCount }, (_, index) => <button type="button" key={index + 1} aria-label={`${index + 1}페이지`} aria-current={currentPage === index + 1 ? 'page' : undefined} onClick={() => changePage(index + 1)}>{index + 1}</button>)}<button type="button" aria-label="다음 페이지" disabled={currentPage === pageCount} onClick={() => changePage(currentPage + 1)}>›</button></nav>}
       <div className="wishlist-bottom-slot" />
     </main>

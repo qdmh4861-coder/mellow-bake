@@ -1,3 +1,4 @@
+import { appHref } from '../appRouting'
 import './ProductDetailFooter.css'
 
 function Icon({ type }) {
@@ -17,18 +18,18 @@ export default function ProductDetailFooter() {
     <div className="product-detail-footer-wave" aria-hidden="true"><svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path fill="#FFF8EF" d="M0 0H1440V28Q1380 62 1320 28T1080 28T840 28T600 28T360 28T120 28Q60 62 0 28Z" /><path fill="none" stroke="#cfacb5" strokeWidth="1.5" strokeDasharray="6 6" d="M0 19Q60 53 120 19T360 19T600 19T840 19T1080 19T1320 19Q1380 53 1440 19" /></svg></div>
     <div className="product-detail-footer-inner">
       <section className="product-detail-footer-brand">
-        <a href="/" className="product-detail-footer-logo"><Icon type="hat" /><span>MELLOW BAKE <b aria-hidden="true">♡</b></span></a>
+        <a href={appHref("/")} className="product-detail-footer-logo"><Icon type="hat" /><span>MELLOW BAKE <b aria-hidden="true">♡</b></span></a>
         <p>일상 속 달콤한 쉼표, 멜로우 베이크</p>
         <p>좋은 재료와 정성을 담아 달콤한 순간을 전합니다.</p>
       </section>
       {groups.map(group => <nav className="product-detail-footer-column" aria-label={`상품 푸터 ${group.title}`} key={group.title}>
         <h2><Icon type={group.icon} />{group.title}</h2>
-        {group.links.map(([label, href, icon]) => href ? <a href={href} key={label}>{label}</a> : <span className="product-detail-footer-unlinked" key={label}>{icon && <Icon type={icon} />}<span>{label}<small>연결 준비 중</small></span></span>)}
+        {group.links.map(([label, href, icon]) => href ? <a href={appHref(href)} key={label}>{label}</a> : <span className="product-detail-footer-unlinked" key={label}>{icon && <Icon type={icon} />}<span>{label}<small>연결 준비 중</small></span></span>)}
       </nav>)}
     </div>
     <div className="product-detail-footer-bottom"><div>
       <span>© 2026 MELLOW BAKE. All Rights Reserved.</span>
-      <nav aria-label="상품 푸터 정책 및 바로가기"><a href="/menu">MENU</a><button type="button" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })}>BACK TO TOP ↑</button><span>이용약관 <small>준비 중</small></span><span>개인정보처리방침 <small>준비 중</small></span></nav>
+      <nav aria-label="상품 푸터 정책 및 바로가기"><a href={appHref("/menu")}>MENU</a><button type="button" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })}>BACK TO TOP ↑</button><span>이용약관 <small>준비 중</small></span><span>개인정보처리방침 <small>준비 중</small></span></nav>
     </div></div>
   </footer>
 }

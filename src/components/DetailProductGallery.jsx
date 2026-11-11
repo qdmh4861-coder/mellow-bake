@@ -1,3 +1,4 @@
+import { appHref } from '../appRouting'
 import { useLayoutEffect, useRef, useState } from 'react'
 import './DetailProductGallery.css'
 
@@ -20,7 +21,7 @@ export default function DetailProductGallery({ children, images }) {
 }
 
 export function DetailQuickLinks({ links }) {
-  return <nav className="reference-product-quick-links" aria-label="상품 안내 바로가기">{links.map(([href, label], index) => <a href={href} key={href}>
+  return <nav className="reference-product-quick-links" aria-label="상품 안내 바로가기">{links.map(([href, label], index) => <a href={appHref(href)} key={href}>
     <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       {index === 0 ? <><path d="M10 27 22 5M15 19C2 16 4 7 13 11c5 3 2 8 2 8Zm4-7c-5-9 3-15 6-7 2 5-6 7-6 7Zm-9 15C0 25 1 17 8 20c5 2 2 7 2 7Z" /></> : index === 1 ? <path d="M16 27S2 18 3 10c1-7 10-8 13-1 3-7 12-6 13 1 1 8-13 17-13 17Z" /> : <><path d="m4 10 12-7 12 7v13l-12 7-12-7V10Zm0 0 12 7 12-7M16 17v13M10 6l12 7v6" /></>}
     </svg><span>{label}</span>

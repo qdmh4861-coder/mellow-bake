@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import './NewMenu.css'
 import { productHref } from '../pages/productLinks'
 import headingImage from '../assets/d8b8cd4a-65eb-4e3a-b50e-66912d8dcbcf.png'
@@ -17,7 +18,7 @@ export const newMenuProducts = [
 function Heading() {
   return <div className="new-menu-heading">
     <h2 id="new-menu-title" className="new-menu-heading-art">
-      <img src={headingImage} width="2172" height="724" alt="NEW MENU — 오늘의 달콤한 신메뉴를 만나보세요!" />
+      <img src={assetHref(headingImage)} width="2172" height="724" alt="NEW MENU — 오늘의 달콤한 신메뉴를 만나보세요!" />
     </h2>
   </div>
 }
@@ -31,14 +32,14 @@ function RibbonDivider() {
 
 function Photo({ product }) {
   const source = Object.entries(photos).find(([path]) => path.split('/').pop().split('.')[0] === product.id)?.[1]
-  return <div className="new-menu-photo">{source ? <img src={source} alt={product.korean} loading="lazy" /> : <div className="new-menu-photo-missing" role="img" aria-label={`${product.korean} 원본 이미지 필요`}><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="6" /><circle cx="17" cy="18" r="4" /><path d="m6 35 12-11 8 8 7-7 9 10" /></svg><span>원본 이미지 필요</span><small>{product.id}.png</small></div>}</div>
+  return <div className="new-menu-photo">{source ? <img src={assetHref(source)} alt={product.korean} loading="lazy" /> : <div className="new-menu-photo-missing" role="img" aria-label={`${product.korean} 원본 이미지 필요`}><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="6" /><circle cx="17" cy="18" r="4" /><path d="m6 35 12-11 8 8 7-7 9 10" /></svg><span>원본 이미지 필요</span><small>{product.id}.png</small></div>}</div>
 }
 
 export default function NewMenu() {
   const { favorites, toggleFavorite } = useFavorites()
   return <div className="home-container new-menu-content">
     <Heading />
-    <div className="new-menu-grid">{newMenuProducts.map(product => <article className="new-menu-card" key={product.id}><a className="home-product-detail-link" href={productHref(product.id)} aria-label={product.korean} /><Badge label={product.badge} /><Photo product={product} /><div className="new-menu-card-copy"><h3>{product.name}</h3><p className="new-menu-korean">{product.korean}</p><p className="new-menu-description">{product.description}</p><RibbonDivider /><div className="new-menu-card-bottom"><strong className="new-menu-price">{product.price}</strong><button className="new-menu-favorite" type="button" aria-label={`${product.korean} 찜`} aria-pressed={favorites.includes(product.id)} onClick={event => { event.stopPropagation(); toggleFavorite(product) }}><svg viewBox="0 0 40 40" fill={favorites.includes(product.id) ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="3" strokeLinejoin="round" aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" /></svg></button></div></div></article>)}</div>
+    <div className="new-menu-grid">{newMenuProducts.map(product => <article className="new-menu-card" key={product.id}><a className="home-product-detail-link" href={appHref(productHref(product.id))} aria-label={product.korean} /><Badge label={product.badge} /><Photo product={product} /><div className="new-menu-card-copy"><h3>{product.name}</h3><p className="new-menu-korean">{product.korean}</p><p className="new-menu-description">{product.description}</p><RibbonDivider /><div className="new-menu-card-bottom"><strong className="new-menu-price">{product.price}</strong><button className="new-menu-favorite" type="button" aria-label={`${product.korean} 찜`} aria-pressed={favorites.includes(product.id)} onClick={event => { event.stopPropagation(); toggleFavorite(product) }}><svg viewBox="0 0 40 40" fill={favorites.includes(product.id) ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="3" strokeLinejoin="round" aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" /></svg></button></div></div></article>)}</div>
   </div>
 }
 

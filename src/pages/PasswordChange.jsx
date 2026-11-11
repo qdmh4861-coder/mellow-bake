@@ -1,4 +1,5 @@
-﻿import { useState } from 'react'
+import { appHref } from '../appRouting'
+import { useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
 import MyPageSidebar from '../components/MyPageSidebar'
@@ -53,8 +54,8 @@ export default function PasswordChange() {
       <div className="password-security-guide"><SecurityIcon shield /><p>보다 안전한 계정 관리를 위해 주기적으로 비밀번호를 변경하는 것을 권장합니다.</p></div>
       <p className="password-demo-limit">프론트엔드 데모 · 입력 검사만 제공하며 현재 비밀번호 확인과 실제 변경은 지원하지 않습니다. 비밀번호는 저장하거나 전송하지 않습니다.</p>
       <div className="password-change-fields">{fields.map(([name, label, placeholder, autoComplete]) => <div className="password-change-row" key={name}><label htmlFor={`password-change-${name}`}><SecurityIcon current={name === 'current'} />{label} <em>*</em></label><div><div className="password-change-input"><input id={`password-change-${name}`} name={name} type={visible[name] ? 'text' : 'password'} autoComplete={autoComplete} placeholder={placeholder} required value={values[name]} aria-invalid={Boolean(errors[name])} aria-describedby={`password-change-${name}-help`} onChange={event => change(name, event.target.value)} /><button type="button" aria-label={`${label} ${visible[name] ? '숨기기' : '표시'}`} aria-pressed={Boolean(visible[name])} onClick={() => setVisible(old => ({ ...old, [name]: !old[name] }))}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" /><circle cx="12" cy="12" r="3" />{!visible[name] && <path d="m3 3 18 18" />}</svg></button></div><p className={`password-change-help${errors[name] ? ' password-change-error' : ''}`} id={`password-change-${name}-help`} aria-live="polite">{errors[name] || (name === 'password' ? 'ⓘ 영문, 숫자, 특수문자를 포함한 8자 이상 입력해 주세요' : name === 'confirm' ? 'ⓘ 비밀번호가 일치하는지 확인해 주세요' : '')}</p></div></div>)}</div>
-      <div className="password-change-actions"><a href="/mypage/profile">취소</a><button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="m4 12 5 5L20 5" /></svg>변경하기</button></div>
-      {notice && <div className="password-change-notice" role="status"><p>{notice}</p><a href="/login">로그인 페이지로 이동</a></div>}
+      <div className="password-change-actions"><a href={appHref("/mypage/profile")}>취소</a><button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><path d="m4 12 5 5L20 5" /></svg>변경하기</button></div>
+      {notice && <div className="password-change-notice" role="status"><p>{notice}</p><a href={appHref("/login")}>로그인 페이지로 이동</a></div>}
     </form><MemberDecoration variant="wallet" />
   </div></main><HomeFooter /></div>
 }

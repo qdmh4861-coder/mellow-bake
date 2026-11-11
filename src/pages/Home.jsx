@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useState } from 'react'
 import './Home.css'
 import HomeHeader from '../components/HomeHeader'
@@ -39,7 +40,7 @@ function ReviewPhoto({ review }) {
   const source = reviewImages[review.id]
 
   return <div className="home-review-photo-area">
-    <img className="home-review-photo" src={source} alt={review.product} loading="lazy" style={{ visibility: status === 'loaded' ? 'visible' : 'hidden' }} onLoad={() => setStatus('loaded')} onError={() => setStatus('error')} />
+    <img className="home-review-photo" src={assetHref(source)} alt={review.product} loading="lazy" style={{ visibility: status === 'loaded' ? 'visible' : 'hidden' }} onLoad={() => setStatus('loaded')} onError={() => setStatus('error')} />
     {status !== 'loaded' && <div className="home-review-photo-placeholder" role="img" aria-label={`${review.product} 리뷰 사진 준비 중`}><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="6" /><circle cx="17" cy="18" r="4" /><path d="m6 35 12-11 8 8 7-7 9 10" /></svg><span>리뷰 사진 준비 중</span></div>}
   </div>
 }
@@ -48,7 +49,7 @@ const storeDetails = { photoSrc: storePhoto, mapUrl: null, address: '서울특�
 function StorePhoto() {
   const [status, setStatus] = useState('loading')
   return <div className="visit-store-photo">
-    {storeDetails.photoSrc && <img src={storeDetails.photoSrc} alt="MELLOW BAKE 매장 내부" loading="lazy" style={{ visibility: status === 'loaded' ? 'visible' : 'hidden' }} onLoad={() => setStatus('loaded')} onError={() => setStatus('error')} />}
+    {storeDetails.photoSrc && <img src={assetHref(storeDetails.photoSrc)} alt="MELLOW BAKE 매장 내부" loading="lazy" style={{ visibility: status === 'loaded' ? 'visible' : 'hidden' }} onLoad={() => setStatus('loaded')} onError={() => setStatus('error')} />}
     {(!storeDetails.photoSrc || status !== 'loaded') && <span>매장 사진 준비 중</span>}
   </div>
 }
@@ -145,7 +146,7 @@ export default function Home() {
           <div className="home-container">
             <div className="home-review-heading">
               <h2 id="home-review-title" className="home-review-heading-art">
-                <img src={reviewHeadingImage} width="2172" height="724" alt="CUSTOMER REVIEW — SWEET MOMENTS, HAPPY CUSTOMERS" />
+                <img src={assetHref(reviewHeadingImage)} width="2172" height="724" alt="CUSTOMER REVIEW — SWEET MOMENTS, HAPPY CUSTOMERS" />
               </h2>
             </div>
             <div className="home-review-grid">{customerReviews.map(review => {
@@ -161,11 +162,11 @@ export default function Home() {
         <section id="visit" className="home-section home-visit" aria-labelledby="home-visit-title">
           <div className="visit-store-reference">
             <h2 id="home-visit-title" className="visit-store-reference-title">
-              <img src={storeReference} width="1711" height="919" alt="VISIT OUR STORE — MELLOW BAKE. 달콤한 쉼표가 있는 공간. 향긋한 커피와 갓 구운 디저트가 있는 곳, 멜로우 베이크에서 달콤한 여유를 즐겨보세요." />
+              <img src={assetHref(storeReference)} width="1711" height="919" alt="VISIT OUR STORE — MELLOW BAKE. 달콤한 쉼표가 있는 공간. 향긋한 커피와 갓 구운 디저트가 있는 곳, 멜로우 베이크에서 달콤한 여유를 즐겨보세요." />
             </h2>
             <p className="visit-store-sr-only">{storeDetails.address}, {storeDetails.addressDetail}. 영업시간: {storeDetails.hours}. 라스트 오더: {storeDetails.lastOrder}. 휴무일: {storeDetails.closedDays}. 전화번호: {storeDetails.phone}.</p>
             {storeDetails.mapUrl
-              ? <a className="visit-store-reference-map" href={storeDetails.mapUrl} aria-label="VIEW MAP — 지도 보기" />
+              ? <a className="visit-store-reference-map" href={appHref(storeDetails.mapUrl)} aria-label="VIEW MAP — 지도 보기" />
               : <button className="visit-store-reference-map" type="button" disabled aria-label="VIEW MAP — 지도 정보 준비 중" />}
           </div>
           <WaveDivider fromColor="#adf3ef" toColor="#9a76c8" />

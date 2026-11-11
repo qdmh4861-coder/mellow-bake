@@ -1,7 +1,8 @@
+import { appLocation } from '../appRouting'
 import { useLayoutEffect, useRef } from 'react'
 import './ReviewSuccessDialog.css'
 
-const goToMyReviews = () => window.location.assign('/mypage/reviews')
+const goToMyReviews = () => appLocation.assign('/mypage/reviews')
 
 // Pass the successful save response from the review service, never form validity alone.
 // Expected result: { success: true, review: { id, authorId, productId } }.

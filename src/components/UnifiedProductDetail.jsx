@@ -1,3 +1,4 @@
+import { appHref } from '../appRouting'
 import { useState } from 'react'
 import HomeHeader from './HomeHeader'
 import ProductDetailFooter from './ProductDetailFooter'
@@ -27,13 +28,13 @@ export default function UnifiedProductDetail({ product: source, products, option
   return <div className="unified-detail-page" data-product-id={product.id}>
     <HomeHeader />
     <main className="unified-detail-main">
-      <a className="unified-detail-back" href={product.id.startsWith('new-') ? '/new-menu' : '/menu'}>← 전체 메뉴</a>
+      <a className="unified-detail-back" href={appHref(product.id.startsWith('new-') ? '/new-menu' : '/menu')}>← 전체 메뉴</a>
       <ProductHero key={product.id} product={product} price={product.price} images={images} quantity={quantity} onQuantityChange={setQuantity} containImages
         onCart={() => setNotice(cartAddMessage(product, quantity, product.price))}
         onBuy={() => setNotice(buyNow(product, quantity, product.price))}
         notice={notice} anchors={anchors} options={<>{options}<button className="unified-detail-favorite" type="button" onClick={toggle} aria-pressed={favorite}>{favorite ? '♥ 찜 해제' : '♡ 찜하기'}</button></>} />
       <ProductStoryBody product={product} products={products} />
-      <a className="unified-detail-back unified-detail-bottom-back" href={product.id.startsWith('new-') ? '/new-menu' : '/menu'}>전체 메뉴로 돌아가기</a>
+      <a className="unified-detail-back unified-detail-bottom-back" href={appHref(product.id.startsWith('new-') ? '/new-menu' : '/menu')}>전체 메뉴로 돌아가기</a>
     </main>
     <ProductDetailFooter />
   </div>

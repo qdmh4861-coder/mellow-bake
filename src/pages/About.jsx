@@ -1,11 +1,12 @@
-﻿import HomeHeader from '../components/HomeHeader'
+import { assetHref, appHref } from '../appRouting'
+import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
 import artAssets from './aboutArt.json'
 import './About.css'
 
 function Art({ name, className = '' }) {
   const asset = artAssets[name]
-  return asset ? <svg className={`about-art ${className}`} viewBox={asset.box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={asset.src} width={asset.width} height={asset.height} /></svg> : null
+  return asset ? <svg className={`about-art ${className}`} viewBox={asset.box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={assetHref(asset.src)} width={asset.width} height={asset.height} /></svg> : null
 }
 function Bow({ className = '' }) {
   return <svg className={`about-bow ${className}`} viewBox="0 0 120 48" aria-hidden="true"><path d="M59 26C30-6 5 8 23 25c10 9 26 7 36 1Zm2 0C90-6 115 8 97 25c-10 9-26 7-36 1Z" fill="#f6a8b7" stroke="#a71936" strokeWidth="3" /><path d="m54 30-16 15 18-5 4-9 4 9 18 5-16-15" fill="#ce4662" stroke="#a71936" strokeWidth="2" /><rect x="54" y="20" width="12" height="13" rx="5" fill="#c63754" stroke="#790f24" strokeWidth="2" /></svg>
@@ -66,7 +67,7 @@ export default function About() {
         <Divider />
         <section className="about-friends" aria-labelledby="about-friends-title"><SectionLabel id="about-friends-title">03. MELLOW FRIENDS</SectionLabel><div className="about-split"><div className="about-friends-cloud"><Art name="friends" /></div><div className="about-section-copy"><h3>멜로우 베이크의 마스코트, 토끼 제빵사 멜로우!</h3><p>빵을 사랑하는 귀여운 토끼 제빵사 '멜로우'와 함께<br />멜로우 베이크의 달콤한 이야기를 만들어가요.</p></div></div></section>
         <Divider />
-        <section className="about-bakery" aria-labelledby="about-bakery-title"><SectionLabel id="about-bakery-title">04. OUR BAKERY</SectionLabel><div className="about-split"><Art name="bakery" /><div className="about-section-copy"><h3>멜로우 베이크의 대표 메뉴를 만나보세요!</h3><p>소금빵부터 시나몬롤, 케이크, 샌드위치까지<br />멜로우 베이크의 다양한 베이커리를 확인해보세요.</p><nav className="about-bakery-links" aria-label="대표 메뉴 바로가기">{bakeryLinks.map(([name, href, image]) => <a href={href} key={name}><img src={image} alt="" /><span>{name}</span><b aria-hidden="true">›</b></a>)}</nav></div></div></section>
+        <section className="about-bakery" aria-labelledby="about-bakery-title"><SectionLabel id="about-bakery-title">04. OUR BAKERY</SectionLabel><div className="about-split"><Art name="bakery" /><div className="about-section-copy"><h3>멜로우 베이크의 대표 메뉴를 만나보세요!</h3><p>소금빵부터 시나몬롤, 케이크, 샌드위치까지<br />멜로우 베이크의 다양한 베이커리를 확인해보세요.</p><nav className="about-bakery-links" aria-label="대표 메뉴 바로가기">{bakeryLinks.map(([name, href, image]) => <a href={appHref(href)} key={name}><img src={assetHref(image)} alt="" /><span>{name}</span><b aria-hidden="true">›</b></a>)}</nav></div></div></section>
       </div>
       <section className="about-closing" aria-label="멜로우 베이크의 인사"><div className="about-closing-brand"><ClosingMark /></div><p><span aria-hidden="true">♥</span>“오늘도 당신의 하루가 조금 더 달콤해지길”<span aria-hidden="true">♥</span></p></section>
     </main>

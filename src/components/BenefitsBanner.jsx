@@ -1,3 +1,4 @@
+import { assetHref } from '../appRouting'
 import { useId } from 'react'
 import icons from '../assets/benefits/illustrations.png'
 import './BenefitsBanner.css'
@@ -11,7 +12,7 @@ const items = [
 
 function Icon({ col, row }) {
   const clipId = useId()
-  return <div className="benefits-guide-icon" aria-hidden="true"><svg viewBox="0 0 1 1"><defs><clipPath id={clipId}><rect width="1" height="1" /></clipPath></defs><image href={icons} x={-col} y={-row} width="2" height="2" preserveAspectRatio="none" clipPath={`url(#${clipId})`} /></svg><svg className="benefits-guide-spark" viewBox="0 0 32 36"><path d="M16 2Q17 16 30 18 17 19 16 34 14 20 2 18 14 16 16 2Z" fill="#ffd34b" /><path d="m24 4 2 4m-3 20 3 3" stroke="#ffe58b" strokeWidth="3" strokeLinecap="round" /></svg></div>
+  return <div className="benefits-guide-icon" aria-hidden="true"><svg viewBox="0 0 1 1"><defs><clipPath id={clipId}><rect width="1" height="1" /></clipPath></defs><image href={assetHref(icons)} x={-col} y={-row} width="2" height="2" preserveAspectRatio="none" clipPath={`url(#${clipId})`} /></svg><svg className="benefits-guide-spark" viewBox="0 0 32 36"><path d="M16 2Q17 16 30 18 17 19 16 34 14 20 2 18 14 16 16 2Z" fill="#ffd34b" /><path d="m24 4 2 4m-3 20 3 3" stroke="#ffe58b" strokeWidth="3" strokeLinecap="round" /></svg></div>
 }
 
 function Ribbon() {

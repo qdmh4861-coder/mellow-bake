@@ -1,3 +1,4 @@
+import { appLocation, appHref } from '../appRouting'
 import { useEffect, useRef, useState } from 'react'
 import MemberArtwork from './MemberArtwork'
 import MemberIcon from './MemberIcon'
@@ -24,7 +25,7 @@ export default function MyPageSidebar() {
   }, [])
   const dialog = useRef(null)
   const [feature, setFeature] = useState('')
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
+  const pathname = appLocation.pathname.replace(/\/+$/, '') || '/'
   const menuLinks = { '주문내역': '/mypage/orders/list', '배송조회': '/mypage/orders', '찜한 상품': '/wishlist', '회원정보 변경': '/mypage/profile', '작성한 리뷰': '/mypage/reviews', '쿠폰 이벤트': '/mypage/coupon-events', '쿠폰함': '/mypage/coupons', '적립금 내역': '/mypage/points', '쿠폰·포인트 현황': '/mypage/benefits' }
   menuLinks['공지사항'] = '/mypage/notices'
   menuLinks['비밀번호 변경'] = '/mypage/password'
@@ -49,8 +50,8 @@ export default function MyPageSidebar() {
     <details className="mypage-navigation" open={expanded} onToggle={event => setExpanded(event.currentTarget.open)}>
       <summary>마이페이지 전체 메뉴 <span aria-hidden="true">⌄</span></summary>
       <aside className="mypage-sidebar" aria-label="마이페이지 메뉴">
-        <a className="member-sidebar-brand" href="/mypage" aria-current={pathname === '/mypage' ? 'page' : undefined}><MemberArtwork part="badge" /><strong>마이페이지</strong><span>My Page</span></a>
-        {menuGroups.map(([group, entries], index) => <section key={group}><h2><MemberIcon type={['bag', 'heart', 'gift', 'support', 'user'][index]} />{group}</h2><ul>{entries.map(label => <li key={label}>{menuLinks[label] ? <a href={menuLinks[label]} aria-current={activeMenu === label ? 'page' : undefined}>{label}<span className="member-menu-arrow" aria-hidden="true">›</span></a> : <button type="button" onClick={() => showPending(label)}>{label}<span className="member-menu-arrow" aria-hidden="true">›</span></button>}</li>)}</ul></section>)}
+        <a className="member-sidebar-brand" href={appHref("/mypage")} aria-current={pathname === '/mypage' ? 'page' : undefined}><MemberArtwork part="badge" /><strong>마이페이지</strong><span>My Page</span></a>
+        {menuGroups.map(([group, entries], index) => <section key={group}><h2><MemberIcon type={['bag', 'heart', 'gift', 'support', 'user'][index]} />{group}</h2><ul>{entries.map(label => <li key={label}>{menuLinks[label] ? <a href={appHref(menuLinks[label])} aria-current={activeMenu === label ? 'page' : undefined}>{label}<span className="member-menu-arrow" aria-hidden="true">›</span></a> : <button type="button" onClick={() => showPending(label)}>{label}<span className="member-menu-arrow" aria-hidden="true">›</span></button>}</li>)}</ul></section>)}
         <MemberSidebarDecoration />
       </aside>
     </details>

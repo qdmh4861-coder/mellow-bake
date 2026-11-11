@@ -1,3 +1,4 @@
+import { assetHref } from '../appRouting'
 // Alpha bounds measured from the edited PNGs. Trim only transparent padding,
 // with extra safety space around hats, ears, hands and object corners.
 import extendedAssets from './memberCutoutAssets.json'
@@ -11,5 +12,5 @@ const assets = {
 }
 export default function MemberCutout({ name, className = '' }) {
   const [file, width, height, box] = assets[name]
-  return <svg className={`member-banner-cutout ${className}`} viewBox={box} preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><image href={`/images/member-cutouts/${file}.png`} width={width} height={height} /></svg>
+  return <svg className={`member-banner-cutout ${className}`} viewBox={box} preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><image href={assetHref(`/images/member-cutouts/${file}.png`)} width={width} height={height} /></svg>
 }

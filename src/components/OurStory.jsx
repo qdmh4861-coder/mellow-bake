@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useId } from 'react'
 import desserts from '../assets/our-story/desserts.png'
 import bunny from '../assets/our-story/bunny.png'
@@ -29,15 +30,15 @@ function StoryRibbon() {
 
 export default function OurStory() {
   return <div className="story-content story-neon-content">
-    <div className="story-artwork"><NeonLogo /><img className="story-desserts" src={desserts} alt="딸기 생크림 케이크와 크루아상, 컵케이크, 까눌레, 핑크 마카롱을 올린 핑크 체크무늬 천" loading="lazy" /></div>
+    <div className="story-artwork"><NeonLogo /><img className="story-desserts" src={assetHref(desserts)} alt="딸기 생크림 케이크와 크루아상, 컵케이크, 까눌레, 핑크 마카롱을 올린 핑크 체크무늬 천" loading="lazy" /></div>
     <div className="story-copy">
       <StoryRibbon />
       <h2 id="home-story-title"><span>일상 속 달콤한 쉼표,</span><strong>멜로우 베이크 ♡</strong></h2>
       <p className="story-introduction">멜로우 베이크는 좋은 재료와 정성으로<br className="story-desktop-break" /> 일상에 작은 행복과 달콤한 휴식을 전하는 디저트 브랜드입니다.</p>
       <div className="story-copy-lower"><div className="story-values-and-action">
         <ul className="story-features" aria-label="멜로우 베이크의 브랜드 특징"><Feature icon="sprout">좋은 재료</Feature><Feature icon="chef">정성 가득</Feature><Feature icon="heart">달콤한 휴식</Feature></ul>
-        <a className="story-button" href="#visit">VIEW MORE <span aria-hidden="true">&gt;</span></a>
-      </div><img className="story-chef-bunny" src={bunny} alt="핑크 짤주머니를 든 흰색 토끼 요리사" loading="lazy" /></div>
+        <a className="story-button" href={appHref("#visit")}>VIEW MORE <span aria-hidden="true">&gt;</span></a>
+      </div><img className="story-chef-bunny" src={assetHref(bunny)} alt="핑크 짤주머니를 든 흰색 토끼 요리사" loading="lazy" /></div>
     </div>
   </div>
 }

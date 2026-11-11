@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useId, useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import ProductDetailFooter from '../components/ProductDetailFooter'
@@ -37,7 +38,7 @@ function FigmaRegion({ box, label }) {
   const [x, y, width, height] = box.split(' ').map(Number)
   return <svg className="cinnamon-figma-region" viewBox={box} role="img" aria-label={label}>
     <defs><clipPath id={clipId}><rect x={x} y={y} width={width} height={height} /></clipPath></defs>
-    <image href={reference} width="1632" height="7521" clipPath={`url(#${clipId})`} />
+    <image href={assetHref(reference)} width="1632" height="7521" clipPath={`url(#${clipId})`} />
   </svg>
 }
 
@@ -56,10 +57,10 @@ export default function CinnamonRollDetail() {
       />
       <p className="cinnamon-action-status" role="status">{notice}</p>
       {artworkSections.map(([id, top, bottom, label]) => <section className="cinnamon-art-section" id={id} key={id} aria-label={label} style={id === 'cinnamon-related' ? { position: 'relative' } : undefined}>
-        {id === 'cinnamon-reviews' ? <a style={{ display: 'block' }} href="/reviews?productId=bread-7" aria-label="시나몬롤 실제 상품 리뷰 보기"><FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} /></a> : <FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} />}
-        {id === 'cinnamon-related' && recommendations.map((item, index) => <a key={item.id} href={productHref(item.id)} aria-label={`${item.koreanName} 상세보기`} style={{ position: 'absolute', left: `${index * 25}%`, top: '20%', width: '25%', height: '75%' }} />)}
+        {id === 'cinnamon-reviews' ? <a style={{ display: 'block' }} href={appHref("/reviews?productId=bread-7")} aria-label="시나몬롤 실제 상품 리뷰 보기"><FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} /></a> : <FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} />}
+        {id === 'cinnamon-related' && recommendations.map((item, index) => <a key={item.id} href={appHref(productHref(item.id))} aria-label={`${item.koreanName} 상세보기`} style={{ position: 'absolute', left: `${index * 25}%`, top: '20%', width: '25%', height: '75%' }} />)}
       </section>)}
-      <p className="cinnamon-source-note">재료·보관·배송 안내와 리뷰는 제공된 피그마 시안입니다. 실제 판매 정보는 확인 후 적용됩니다. <a href={reference} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
+      <p className="cinnamon-source-note">재료·보관·배송 안내와 리뷰는 제공된 피그마 시안입니다. 실제 판매 정보는 확인 후 적용됩니다. <a href={appHref(reference)} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
     </main>
     <ProductDetailFooter />
   </div>

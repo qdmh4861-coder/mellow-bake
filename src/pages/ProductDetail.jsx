@@ -1,3 +1,4 @@
+import { appLocation, appHistory, assetHref, appHref } from '../appRouting'
 import { useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
@@ -49,7 +50,7 @@ function ProductPhoto({ product }) {
   const photo = photoFor(product)
   const number = Number(product.id.split('-').at(-1))
   const hasMenuPhoto = /^(bread|cake|sandwich|drink)-\d+$/.test(product.id) && (product.category === 'bread' || number <= 8)
-  return photo ? <img src={photo} alt={product.koreanName} loading="lazy" />
+  return photo ? <img src={assetHref(photo)} alt={product.koreanName} loading="lazy" />
     : hasMenuPhoto ? <MenuProductImage product={product} />
       : <div className="product-detail-photo-missing">{product.koreanName}<span>상품 사진 준비 중</span></div>
 }
@@ -62,7 +63,7 @@ function DetailSections({ product, presentation }) {
   const related = [...candidates.filter(item => item.category === product.category).slice(0, 2), ...candidates.filter(item => item.category !== product.category).slice(0, 2)]
   return <div className="product-detail-expanded">
     <nav className="product-detail-section-nav" aria-label="상품 상세 메뉴">
-      <a href="#product-introduction">상품 소개</a><a href="#product-ingredients">재료</a><a href="#product-storage">보관 방법</a><a href="#product-reviews">리뷰</a><a href="#product-recommendations">추천 상품</a>
+      <a href={appHref("#product-introduction")}>상품 소개</a><a href={appHref("#product-ingredients")}>재료</a><a href={appHref("#product-storage")}>보관 방법</a><a href={appHref("#product-reviews")}>리뷰</a><a href={appHref("#product-recommendations")}>추천 상품</a>
     </nav>
     <section id="product-introduction" className={`product-detail-story product-detail-story--${presentation}`} aria-labelledby="product-story-title">
       <div><span className="product-detail-eyebrow">MADE FOR YOUR SWEET MOMENT</span><h2 id="product-story-title">{product.koreanName}</h2><p>{product.description}</p></div>
@@ -83,7 +84,7 @@ function DetailSections({ product, presentation }) {
     </section>
     <section id="product-recommendations" className="product-detail-section" aria-labelledby="product-recommendations-title">
       <span className="product-detail-eyebrow">MORE TO LOVE</span><h2 id="product-recommendations-title">함께 보면 좋은 상품</h2>
-      <div className="product-detail-related">{related.map(item => <a href={productHref(item.id)} className="product-detail-related-card" key={item.id}><div className="product-detail-related-photo"><ProductPhoto product={item} /></div><h3>{item.koreanName}</h3><p>{item.price.toLocaleString('ko-KR')}원</p></a>)}</div>
+      <div className="product-detail-related">{related.map(item => <a href={appHref(productHref(item.id))} className="product-detail-related-card" key={item.id}><div className="product-detail-related-photo"><ProductPhoto product={item} /></div><h3>{item.koreanName}</h3><p>{item.price.toLocaleString('ko-KR')}원</p></a>)}</div>
     </section>
   </div>
 }
@@ -92,7 +93,7 @@ export default function ProductDetail({ slug }) {
   const base = findDetailProduct(slug)
   const best = base && homeProducts.find(product => product.id === pairings[base.id])
   const homeLabel = bestProducts.some(item => item.id === best?.id) ? 'BEST MENU' : 'NEW MENU'
-  const [option, setOption] = useState(() => best && ['best', 'home'].includes(new URLSearchParams(window.location.search).get('option')) ? 'best' : 'menu')
+  const [option, setOption] = useState(() => best && ['best', 'home'].includes(new URLSearchParams(appLocation.search).get('option')) ? 'best' : 'menu')
   const [quantity, setQuantity] = useState(1)
   const [notice, setNotice] = useState('')
   const product = option === 'best' ? best : base
@@ -100,7 +101,7 @@ export default function ProductDetail({ slug }) {
   const useSaltAlignedHero = useFrame737
   const useNativeHero = useFrame737
 
-  if (!product) return <div className="product-detail-page"><HomeHeader /><main className="product-detail-main"><h1>상품을 찾을 수 없습니다</h1><a href="/menu">전체 메뉴 보기</a></main><HomeFooter /></div>
+  if (!product) return <div className="product-detail-page"><HomeHeader /><main className="product-detail-main"><h1>상품을 찾을 수 없습니다</h1><a href={appHref("/menu")}>전체 메뉴 보기</a></main><HomeFooter /></div>
 
   if (product.id === 'cake-2') return <BasqueCheesecakeDetail product={{ ...product, description: '진하게 구워낸 카라멜빛 겉면과 부드럽고 꾸덕한 치즈의 풍미가 어우러진 바스크 치즈케이크입니다. 한 입 가득 퍼지는 진한 치즈의 맛을 즐겨보세요.' }} products={catalog} renderPhoto={item => <ProductPhoto product={item} />} />
 
@@ -117,10 +118,10 @@ export default function ProductDetail({ slug }) {
     setOption(value)
     setQuantity(1)
     setNotice('')
-    const url = new URL(window.location.href)
+    const url = new URL(appLocation.href)
     if (value === 'best') url.searchParams.set('option', 'best')
     else url.searchParams.delete('option')
-    window.history.replaceState(null, '', url)
+    appHistory.replaceState(null, '', url)
   }
 
   if (!['bread-1', 'bread-7', 'sandwich-5'].includes(product.id)) return <UnifiedProductDetail key={product.id} product={{ ...product, category }} products={registeredProducts.filter(item => !item.id.startsWith('new-'))}
@@ -129,7 +130,7 @@ export default function ProductDetail({ slug }) {
   return <div className="product-detail-page" style={{ '--product-background': background }} data-product-id={product.id}>
     <HomeHeader />
     <main className={`product-detail-main${useNativeHero ? ' catalog-product-main' : ''}`}>
-      <a className="product-detail-back" href="/menu">← 전체 메뉴</a>
+      <a className="product-detail-back" href={appHref("/menu")}>← 전체 메뉴</a>
       {useNativeHero ? <ProductHero key={product.id} product={product} price={price} images={galleryImages} emptyThumbnailSlots={product.id !== 'bread-4'}
         placeholder={<ProductPhoto product={{ ...product, category }} />}
         quantity={quantity} onQuantityChange={setQuantity}

@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useId } from 'react'
 import WaveDivider from './WaveDivider'
 import artwork from '../assets/find-your-sweet-illustrations.png'
@@ -15,7 +16,7 @@ function Illustration({ col, row, className = '' }) {
   const clipId = useId()
   return <svg className={`find-sweet-art ${className}`} viewBox="0 0 1 1" aria-hidden="true" focusable="false">
     <defs><clipPath id={clipId}><rect width="1" height="1" /></clipPath></defs>
-    <image href={artwork} x={-col} y={-row} width="4" height="2" preserveAspectRatio="none" clipPath={`url(#${clipId})`} />
+    <image href={assetHref(artwork)} x={-col} y={-row} width="4" height="2" preserveAspectRatio="none" clipPath={`url(#${clipId})`} />
   </svg>
 }
 
@@ -36,7 +37,7 @@ export default function FindYourSweet() {
         <div className="find-sweet-character find-sweet-character--cat"><Illustration col={1} row={0} /><span className="find-sweet-floating-heart"><Heart /></span></div>
       </div>
       <nav className="find-sweet-cards" aria-label="디저트 카테고리">
-        {categories.map(category => <a className="find-sweet-card" key={category.id} href={`/menu/${category.id}`}>
+        {categories.map(category => <a className="find-sweet-card" key={category.id} href={appHref(`/menu/${category.id}`)}>
           <Illustration col={category.col} row={category.row} />
           <span className="find-sweet-card-label">{category.label}</span>
           <span className="find-sweet-card-rays" aria-hidden="true"><i /><i /><i /></span>

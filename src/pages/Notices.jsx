@@ -1,3 +1,4 @@
+import { appLocation, appHref } from '../appRouting'
 import { useState } from 'react'
 import MemberCutout from '../components/MemberCutout'
 import MemberDecoration from '../components/MemberDecoration'
@@ -26,11 +27,11 @@ const relatedPages = {
 }
 
 export default function Notices() {
-  const params = new URLSearchParams(window.location.search)
+  const params = new URLSearchParams(appLocation.search)
   const category = categories.includes(params.get('category')) ? params.get('category') : '전체'
   const query = params.get('q') || ''
   const [draft, setDraft] = useState(query)
-  const detailId = window.location.pathname.replace(/\/+$/, '').match(/^\/mypage\/notices\/([^/]+)$/)?.[1]
+  const detailId = appLocation.pathname.replace(/\/+$/, '').match(/^\/mypage\/notices\/([^/]+)$/)?.[1]
   const notice = exampleNotices.find(item => item.id === detailId)
   function listHref(nextCategory = category, nextQuery = query) {
     const search = new URLSearchParams()
@@ -40,14 +41,14 @@ export default function Notices() {
   }
   const filtered = [...exampleNotices].sort((a, b) => b.date.localeCompare(a.date)).filter(item => (category === '전체' || item.category === category) && `${item.title} ${item.body.join(' ')}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()))
   const currentIndex = exampleNotices.findIndex(item => item.id === detailId)
-  const detailHref = id => `/mypage/notices/${id}${window.location.search}`
+  const detailHref = id => `/mypage/notices/${id}${appLocation.search}`
   const adjacentPosts = [{ label: '이전 글', item: exampleNotices[currentIndex + 1] }, { label: '다음 글', item: exampleNotices[currentIndex - 1] }]
   return <div className="mypage-page notices-page"><HomeHeader /><main className="mypage-layout"><MyPageSidebar /><div className="mypage-content notices-content">
     <header className="notices-heading"><span className="notices-awning" aria-hidden="true" /><MemberCutout name="coupon-bunny" className="notices-banner-character" /><div><h1><span aria-hidden="true">♡</span> 공지사항 <span aria-hidden="true">♡</span></h1><p>멜로우 베이크의 새로운 소식과 안내를 확인해 보세요!</p></div><MemberCutout name="wallet-desserts" className="notices-banner-desserts" /></header>
     <p className="notices-example-label">포트폴리오 시연용 예시 공지사항입니다.</p>
-    {detailId ? <><article className="notice-detail">{notice ? <><header><span className={categoryClass(notice.category)}>{notice.category}</span><h2>{notice.title}</h2><dl><div><dt>등록일</dt><dd>{notice.date}</dd></div><div><dt>조회수</dt><dd>{notice.views}</dd></div></dl></header><div className="notice-body">{notice.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<p className="notice-demo-information">현재 화면은 프론트엔드 시연용입니다. 실제 결제·배송·환불 서비스와는 연결되어 있지 않습니다.</p><nav className="notice-related" aria-label="관련 페이지">{relatedPages[notice.id].map(([href,label]) => <a key={href} href={href}>{label} →</a>)}</nav></div></> : <div className="notices-empty">해당 공지사항을 찾을 수 없습니다.</div>}</article><nav className="notice-post-navigation" aria-label="공지사항 이전 다음">{adjacentPosts.map(({label,item}) => <div key={label}><strong>{label}</strong>{notice && item ? <a href={detailHref(item.id)}>{item.title}</a> : <span>더 이상 공지사항이 없습니다.</span>}</div>)}</nav><a className="notice-back" href={listHref()}>목록으로</a></> : <>
-      <div className="notices-tools"><nav aria-label="공지사항 분류">{categories.map(item => <a href={listHref(item)} key={item} aria-current={category === item ? 'true' : undefined}>{item}</a>)}</nav><form role="search" onSubmit={event => { event.preventDefault(); window.location.assign(listHref(category, draft.trim())) }}><label className="mypage-sr-only" htmlFor="notice-search">공지사항 제목 또는 내용 검색</label><input id="notice-search" type="search" placeholder="제목 또는 내용을 검색해 주세요." value={draft} onChange={event => setDraft(event.target.value)} /><button type="submit" aria-label="검색"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5" /><path d="m15 15 6 6" /></svg></button></form></div>
-      <div className="notices-table-wrap"><table className="notices-table"><caption className="mypage-sr-only">공지사항 목록</caption><thead><tr>{['번호', '구분', '제목', '등록일', '조회수'].map(label => <th key={label} scope="col">{label}</th>)}</tr></thead><tbody>{filtered.length ? filtered.map(item => <tr key={item.id} onClick={event => { if (!event.target.closest("a")) window.location.assign(detailHref(item.id)) }}><td data-label="number">{exampleNotices.length - exampleNotices.indexOf(item)}</td><td data-label="category"><span className={categoryClass(item.category)}>{item.category}</span></td><td data-label="title"><a href={detailHref(item.id)}>{item.title}</a></td><td data-label="date"><time>{item.date}</time></td><td data-label="views">{item.views}</td></tr>) : <tr><td colSpan={5} className="notices-empty">검색 조건에 맞는 공지사항이 없습니다.</td></tr>}</tbody></table></div>
+    {detailId ? <><article className="notice-detail">{notice ? <><header><span className={categoryClass(notice.category)}>{notice.category}</span><h2>{notice.title}</h2><dl><div><dt>등록일</dt><dd>{notice.date}</dd></div><div><dt>조회수</dt><dd>{notice.views}</dd></div></dl></header><div className="notice-body">{notice.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<p className="notice-demo-information">현재 화면은 프론트엔드 시연용입니다. 실제 결제·배송·환불 서비스와는 연결되어 있지 않습니다.</p><nav className="notice-related" aria-label="관련 페이지">{relatedPages[notice.id].map(([href,label]) => <a key={href} href={appHref(href)}>{label} →</a>)}</nav></div></> : <div className="notices-empty">해당 공지사항을 찾을 수 없습니다.</div>}</article><nav className="notice-post-navigation" aria-label="공지사항 이전 다음">{adjacentPosts.map(({label,item}) => <div key={label}><strong>{label}</strong>{notice && item ? <a href={appHref(detailHref(item.id))}>{item.title}</a> : <span>더 이상 공지사항이 없습니다.</span>}</div>)}</nav><a className="notice-back" href={appHref(listHref())}>목록으로</a></> : <>
+      <div className="notices-tools"><nav aria-label="공지사항 분류">{categories.map(item => <a href={appHref(listHref(item))} key={item} aria-current={category === item ? 'true' : undefined}>{item}</a>)}</nav><form role="search" onSubmit={event => { event.preventDefault(); appLocation.assign(listHref(category, draft.trim())) }}><label className="mypage-sr-only" htmlFor="notice-search">공지사항 제목 또는 내용 검색</label><input id="notice-search" type="search" placeholder="제목 또는 내용을 검색해 주세요." value={draft} onChange={event => setDraft(event.target.value)} /><button type="submit" aria-label="검색"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5" /><path d="m15 15 6 6" /></svg></button></form></div>
+      <div className="notices-table-wrap"><table className="notices-table"><caption className="mypage-sr-only">공지사항 목록</caption><thead><tr>{['번호', '구분', '제목', '등록일', '조회수'].map(label => <th key={label} scope="col">{label}</th>)}</tr></thead><tbody>{filtered.length ? filtered.map(item => <tr key={item.id} onClick={event => { if (!event.target.closest("a")) appLocation.assign(detailHref(item.id)) }}><td data-label="number">{exampleNotices.length - exampleNotices.indexOf(item)}</td><td data-label="category"><span className={categoryClass(item.category)}>{item.category}</span></td><td data-label="title"><a href={appHref(detailHref(item.id))}>{item.title}</a></td><td data-label="date"><time>{item.date}</time></td><td data-label="views">{item.views}</td></tr>) : <tr><td colSpan={5} className="notices-empty">검색 조건에 맞는 공지사항이 없습니다.</td></tr>}</tbody></table></div>
     <MemberDecoration variant="wallet" /></>}
   </div></main><HomeFooter /></div>
 }

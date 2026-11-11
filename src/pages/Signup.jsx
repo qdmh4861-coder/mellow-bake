@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useEffect, useRef, useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
@@ -169,7 +170,7 @@ export default function Signup() {
       </div>
       <div className="signup-masthead" aria-label="BAKERY & DESSERT MELLOW BAKE"><span>BAKERY &amp; DESSERT</span><SignupIcon /><strong>MELLOW BAKE</strong></div>
       <div className="signup-stage">
-        <img className="signup-character signup-character--dog" src={dog} alt="딸기 케이크를 만드는 강아지 파티시에" />
+        <img className="signup-character signup-character--dog" src={assetHref(dog)} alt="딸기 케이크를 만드는 강아지 파티시에" />
         <section className="signup-card" aria-labelledby="signup-title">
           <h1 id="signup-title">회원가입</h1>
           <p className="signup-welcome">MELLOW BAKE와 함께 달콤한 이야기를 시작해요!</p>
@@ -204,9 +205,9 @@ export default function Signup() {
             <button className="signup-submit" type="submit"><SignupIcon />회원가입</button>
             <p className="signup-status" role="status" aria-live="polite">{message || '현재 회원가입 서비스 연결 준비 중입니다.'}</p>
           </form>
-          <p className="signup-login">이미 계정이 있으신가요? <a href="/login">로그인</a></p>
+          <p className="signup-login">이미 계정이 있으신가요? <a href={appHref("/login")}>로그인</a></p>
         </section>
-        <img className="signup-character signup-character--cat" src={cat} alt="하트 쿠키를 들고 웃는 아기 고양이 파티시에" />
+        <img className="signup-character signup-character--cat" src={assetHref(cat)} alt="하트 쿠키를 들고 웃는 아기 고양이 파티시에" />
       </div>
       <dialog className={`signup-dialog${document === '이용약관' ? ' signup-terms-dialog' : document === '개인정보 수집 및 이용' ? ' signup-privacy-dialog' : document === '이벤트 및 혜택 정보 수신' ? ' signup-events-dialog' : ''}`} ref={dialog} aria-labelledby="signup-document-title" onClick={event => { if (event.target === event.currentTarget) dialog.current.close() }}>
         {document === '이용약관' ? <>
@@ -307,7 +308,7 @@ export default function Signup() {
       <h2 id="signup-completion-title">회원가입 입력 확인이 완료되었습니다.</h2>
       <p id="signup-completion-description">서버 연동 전으로 실제 계정은 생성되지 않았습니다.</p>
       <p className="signup-completion-invitation">로그인은 별도로 설정한 데모 계정을 이용해 주세요.</p>
-      <a className="signup-completion-login" href="/login" onClick={() => { setCompletionOpen(false); window.scrollTo({ top:0, left:0, behavior:'instant' }) }}>로그인하러 가기</a>
+      <a className="signup-completion-login" href={appHref("/login")} onClick={() => { setCompletionOpen(false); window.scrollTo({ top:0, left:0, behavior:'instant' }) }}>로그인하러 가기</a>
     </dialog>
     <div className="signup-footer"><HomeFooter /></div>
   </div>

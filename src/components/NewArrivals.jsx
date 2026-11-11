@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import './NewArrivals.css'
 import { productHref } from '../pages/productLinks'
 import headingImage from '../assets/new-arrivals-heading-transparent.png'
@@ -16,7 +17,7 @@ export const newArrivalProducts = [
 
 function Photo({ product }) {
   const source = Object.entries(originalPhotos).find(([path]) => path.split('/').pop().split('.')[0] === product.id)?.[1]
-  return <div className="arrivals-photo">{source ? <img src={source} alt={product.korean} loading="lazy" /> : <div className="arrivals-photo-missing" role="img" aria-label={`${product.korean} 원본 이미지 필요`}><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="6" /><circle cx="17" cy="18" r="4" /><path d="m6 35 12-11 8 8 7-7 9 10" /></svg><span>원본 이미지 필요</span><small>{product.id}.png</small></div>}</div>
+  return <div className="arrivals-photo">{source ? <img src={assetHref(source)} alt={product.korean} loading="lazy" /> : <div className="arrivals-photo-missing" role="img" aria-label={`${product.korean} 원본 이미지 필요`}><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="6" /><circle cx="17" cy="18" r="4" /><path d="m6 35 12-11 8 8 7-7 9 10" /></svg><span>원본 이미지 필요</span><small>{product.id}.png</small></div>}</div>
 }
 
 function Badge({ warm }) {
@@ -27,9 +28,9 @@ export default function NewArrivals() {
   const { favorites, toggleFavorite } = useFavorites()
   return <div className="home-container arrivals-content">
     <div className="arrivals-heading arrivals-heading--image">
-      <img id="new-arrivals-title" className="arrivals-heading-image" src={headingImage} width="2172" height="724" alt="NEW ARRIVALS — 새로운 시즌, 디저트를 만나보세요!" />
+      <img id="new-arrivals-title" className="arrivals-heading-image" src={assetHref(headingImage)} width="2172" height="724" alt="NEW ARRIVALS — 새로운 시즌, 디저트를 만나보세요!" />
     </div>
-    <div className="arrivals-grid">{newArrivalProducts.map((product, index) => <article className="arrivals-card" key={product.id}><a className="home-product-detail-link" href={productHref(product.id)} aria-label={product.korean} /><Badge warm={index === 3} /><Photo product={product} /><div className="arrivals-card-copy"><h3>{product.name}</h3><p className="arrivals-korean">{product.korean}</p><p className="arrivals-description">{product.description}</p><div className="arrivals-card-divider" aria-hidden="true"><span /><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M30 17C7-8 0 8 8 18c5 6 14 4 22-1Zm4 0C57-8 64 8 56 18c-5 6-14 4-22-1ZM30 20 18 35m16-15 12 15" /><ellipse cx="32" cy="18" rx="4" ry="5" /></svg><span /></div><div className="arrivals-card-bottom"><strong className="arrivals-price">{product.price}</strong><button className="arrivals-favorite" type="button" aria-label={`${product.korean} 찜`} aria-pressed={favorites.includes(product.id)} onClick={event => { event.stopPropagation(); toggleFavorite(product) }}><svg viewBox="0 0 40 40" fill={favorites.includes(product.id) ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="3" strokeLinejoin="round" aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" /></svg></button></div></div></article>)}</div>
+    <div className="arrivals-grid">{newArrivalProducts.map((product, index) => <article className="arrivals-card" key={product.id}><a className="home-product-detail-link" href={appHref(productHref(product.id))} aria-label={product.korean} /><Badge warm={index === 3} /><Photo product={product} /><div className="arrivals-card-copy"><h3>{product.name}</h3><p className="arrivals-korean">{product.korean}</p><p className="arrivals-description">{product.description}</p><div className="arrivals-card-divider" aria-hidden="true"><span /><svg viewBox="0 0 64 40" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M30 17C7-8 0 8 8 18c5 6 14 4 22-1Zm4 0C57-8 64 8 56 18c-5 6-14 4-22-1ZM30 20 18 35m16-15 12 15" /><ellipse cx="32" cy="18" rx="4" ry="5" /></svg><span /></div><div className="arrivals-card-bottom"><strong className="arrivals-price">{product.price}</strong><button className="arrivals-favorite" type="button" aria-label={`${product.korean} 찜`} aria-pressed={favorites.includes(product.id)} onClick={event => { event.stopPropagation(); toggleFavorite(product) }}><svg viewBox="0 0 40 40" fill={favorites.includes(product.id) ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="3" strokeLinejoin="round" aria-hidden="true"><path d="M20 34S3 23 3 13C3 3 16 2 20 11 24 2 37 3 37 13c0 10-17 21-17 21Z" /></svg></button></div></div></article>)}</div>
   </div>
 }
 

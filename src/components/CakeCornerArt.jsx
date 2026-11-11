@@ -1,4 +1,5 @@
-﻿import cakeBackground from '../images/back.png'
+import { assetHref } from '../appRouting'
+import cakeBackground from '../images/back.png'
 
 // Original artwork is cropped into four SVGs, using SANDWICH's display areas.
 export default function CakeCornerArt({ side, position }) {
@@ -14,6 +15,6 @@ export default function CakeCornerArt({ side, position }) {
     viewBox={`${sourceX} ${sourceY} 492 ${sourceHeight}`}
     style={{ aspectRatio: `492 / ${viewportHeight}` }}
     preserveAspectRatio={alignment} focusable="false">
-    <image href={cakeBackground} width="1635" height="1416" />
+    <image href={assetHref(cakeBackground)} width="1635" height="1416" />
   </svg>
 }

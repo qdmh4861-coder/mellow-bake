@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useId, useLayoutEffect, useRef } from 'react'
 import chef from '../assets/our-story/bunny.png'
 import { productHref, productSlug } from '../pages/productLinks'
@@ -12,7 +13,7 @@ function Ingredient({ name }) {
   const box = ingredientArtwork[name]
   if (!box) return <div className="story-ingredient-symbol" aria-hidden="true"><span>✦</span><b>{name}</b></div>
   const [x, y, width, height] = box.split(' ').map(Number)
-  return <svg viewBox={box} className="story-ingredient-art" role="img" aria-label={name}><defs><clipPath id={clip}><rect x={x} y={y} width={width} height={height} /></clipPath></defs><image href="/images/03_시나몬.png" width="1632" height="7521" clipPath={`url(#${clip})`} /></svg>
+  return <svg viewBox={box} className="story-ingredient-art" role="img" aria-label={name}><defs><clipPath id={clip}><rect x={x} y={y} width={width} height={height} /></clipPath></defs><image href={assetHref("/images/03_시나몬.png")} width="1632" height="7521" clipPath={`url(#${clip})`} /></svg>
 }
 
 function Title({ number, children }) {
@@ -45,7 +46,7 @@ export default function ProductDetailBody({ product, price, products, renderPhot
 
     <section className="catalog-story-feature" aria-label="상품 특징"><div className="catalog-story-photo">{renderPhoto(product)}</div><div><Title number="01">{product.koreanName}의<br />맛있는 순간</Title><p>{product.description}</p></div></section>
 
-    <section className="catalog-story-panel catalog-story-materials" aria-label="상품 설명에 소개된 재료"><img src={chef} alt="" loading="lazy" /><div><Title number="02">상품 설명에 담긴<br />재료를 소개합니다.</Title><p>확인된 상품 설명을 바탕으로 소개합니다.</p></div><div className="catalog-story-small-ingredients">{known.length ? known.slice(0, 3).map(name => <div key={name}><Ingredient name={name} /><h3>{name}</h3></div>) : <p>정확한 재료 정보를 확인 중입니다.</p>}</div></section>
+    <section className="catalog-story-panel catalog-story-materials" aria-label="상품 설명에 소개된 재료"><img src={assetHref(chef)} alt="" loading="lazy" /><div><Title number="02">상품 설명에 담긴<br />재료를 소개합니다.</Title><p>확인된 상품 설명을 바탕으로 소개합니다.</p></div><div className="catalog-story-small-ingredients">{known.length ? known.slice(0, 3).map(name => <div key={name}><Ingredient name={name} /><h3>{name}</h3></div>) : <p>정확한 재료 정보를 확인 중입니다.</p>}</div></section>
 
     <section id="product-process" className="catalog-story-panel" aria-labelledby="catalog-story-process-title"><Title number="03"><span id="catalog-story-process-title">정성을 담는<br />제작 과정</span></Title><div className="catalog-story-three-cards">{['준비 과정', '제조 과정', '완성 과정'].map((label, index) => <div className="catalog-story-guide-card" key={label}><div className="catalog-story-photo-pending"><span aria-hidden="true">0{index + 1}</span><p>공정 사진 준비 중</p></div><h3>{label}</h3><p>실제 제조 단계와 설명을<br />확인한 뒤 안내하겠습니다.</p></div>)}</div></section>
 
@@ -59,8 +60,8 @@ export default function ProductDetailBody({ product, price, products, renderPhot
 
     <section id="product-shipping" className="catalog-story-panel catalog-story-shipping" aria-labelledby="catalog-story-shipping-title"><h2 id="catalog-story-shipping-title">상품 정보 및 배송 안내</h2><p className="catalog-story-center-note">주문 전 상품별 운영 정보를 확인해 주세요.</p><dl><div><dt>상품명</dt><dd>{product.koreanName}</dd></div><div><dt>판매 가격</dt><dd>{price.toLocaleString('ko-KR')}원</dd></div><div><dt>판매 단위</dt><dd>중량·용량·판매 구성 확인 중</dd></div><div><dt>보관 및 알레르기</dt><dd>상품별 정확한 기준 확인 중</dd></div></dl><dl>{['배송 방법', '배송 일정', '배송비', '교환 / 환불'].map(label => <div key={label}><dt>{label}</dt><dd>운영 기준 확인 후 안내 예정</dd></div>)}</dl></section>
 
-    <section id="product-reviews" className="catalog-story-reviews" aria-labelledby="catalog-story-reviews-title"><div className="catalog-story-review-heading"><h2 id="catalog-story-reviews-title"><a href={reviewsHref(product.id)}>✿ 상품 리뷰</a></h2><span>{reviews.length ? `구매 후기 ${reviews.length}개` : '구매 후기 준비 중'}</span></div><div className="catalog-story-review-grid">{reviews.length ? reviews.slice(0, 4).map(review => <a className="catalog-story-review-pending" href={reviewsHref(product.id)} key={review.id}><strong>{review.nickname || '작성자'}</strong><p>{review.body}</p><small>{review.rating}점 · {review.createdAt?.slice(0, 10)}</small></a>) : [1, 2, 3, 4].map(index => <div className="catalog-story-review-pending" key={index}><span aria-hidden="true">♡</span><p>리뷰 준비 중</p><small>제공된 실제 구매 후기가 없습니다.</small></div>)}</div></section>
+    <section id="product-reviews" className="catalog-story-reviews" aria-labelledby="catalog-story-reviews-title"><div className="catalog-story-review-heading"><h2 id="catalog-story-reviews-title"><a href={appHref(reviewsHref(product.id))}>✿ 상품 리뷰</a></h2><span>{reviews.length ? `구매 후기 ${reviews.length}개` : '구매 후기 준비 중'}</span></div><div className="catalog-story-review-grid">{reviews.length ? reviews.slice(0, 4).map(review => <a className="catalog-story-review-pending" href={appHref(reviewsHref(product.id))} key={review.id}><strong>{review.nickname || '작성자'}</strong><p>{review.body}</p><small>{review.rating}점 · {review.createdAt?.slice(0, 10)}</small></a>) : [1, 2, 3, 4].map(index => <div className="catalog-story-review-pending" key={index}><span aria-hidden="true">♡</span><p>리뷰 준비 중</p><small>제공된 실제 구매 후기가 없습니다.</small></div>)}</div></section>
 
-    <section id="product-recommendations" className="catalog-story-related" aria-labelledby="catalog-story-related-title"><h2 id="catalog-story-related-title">함께 보면 좋은 상품</h2><div className="catalog-story-related-grid">{related.map(item => <a href={productHref(item.id)} key={item.id} data-product-id={item.id}><div className="catalog-story-related-photo">{renderPhoto(item)}</div><h3>{item.koreanName}</h3><p>{item.price.toLocaleString('ko-KR')}원</p></a>)}</div></section>
+    <section id="product-recommendations" className="catalog-story-related" aria-labelledby="catalog-story-related-title"><h2 id="catalog-story-related-title">함께 보면 좋은 상품</h2><div className="catalog-story-related-grid">{related.map(item => <a href={appHref(productHref(item.id))} key={item.id} data-product-id={item.id}><div className="catalog-story-related-photo">{renderPhoto(item)}</div><h3>{item.koreanName}</h3><p>{item.price.toLocaleString('ko-KR')}원</p></a>)}</div></section>
   </div>
 }

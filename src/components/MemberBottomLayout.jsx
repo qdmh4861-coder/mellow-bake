@@ -1,4 +1,5 @@
-﻿import { useEffect, useState } from 'react'
+import { assetHref } from '../appRouting'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import './MemberBottomLayout.css'
 import wishlistDecorAssets from './wishlistDecorAssets.json'
@@ -20,8 +21,8 @@ function BottomArt({ name, className = '', orange = false }) {
   }
   const [width, height, box] = assets[name]
   const recolored = orange && wishlistDecorAssets[name]
-  if (recolored) return <svg className={`member-bottom-final-art ${className}`} viewBox={recolored.box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={recolored.src} width={recolored.width} height={recolored.height} /></svg>
-  return <svg className={`member-bottom-final-art ${className}`} viewBox={box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={`/images/member-bottom-final-${name}.png`} width={width} height={height} /></svg>
+  if (recolored) return <svg className={`member-bottom-final-art ${className}`} viewBox={recolored.box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={assetHref(recolored.src)} width={recolored.width} height={recolored.height} /></svg>
+  return <svg className={`member-bottom-final-art ${className}`} viewBox={box} preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href={assetHref(`/images/member-bottom-final-${name}.png`)} width={width} height={height} /></svg>
 }
 export function MemberSidebarDecoration() {
   return <div className="member-sidebar-bottom" aria-hidden="true"><BottomArt name="rabbit" /></div>

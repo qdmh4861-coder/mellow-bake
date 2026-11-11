@@ -1,3 +1,4 @@
+import { appLocation, assetHref } from '../appRouting'
 import MemberProductImage from '../components/MemberProductImage'
 import { useLayoutEffect, useRef } from 'react'
 import { MenuProductImage } from './OurMenu'
@@ -17,8 +18,8 @@ function ReviewProductPhoto({ review, contain = false }) {
   const product = productFor(review)
   const photo = Object.entries(photos).find(([path]) => path.split('/').at(-1).split('.')[0] === review.productId)?.[1]
   useLayoutEffect(() => { ref.current?.querySelectorAll('svg').forEach(svg => svg.setAttribute('preserveAspectRatio', contain ? 'xMidYMid meet' : 'xMidYMid slice')) }, [review.productId, contain])
-  if (window.location.pathname === '/mypage/reviews') return <div className="reviews-product-photo"><MemberProductImage item={{ ...product, productId: review.productId }} /></div>
-  return <div className="reviews-product-photo" ref={ref}>{product?.id.startsWith('new-') ? <NewMenuProductImage product={product} /> : photo ? <img src={photo} alt={productName(review)} loading="lazy" /> : product ? <MenuProductImage product={product} /> : <span>상품 사진 준비 중</span>}</div>
+  if (appLocation.pathname === '/mypage/reviews') return <div className="reviews-product-photo"><MemberProductImage item={{ ...product, productId: review.productId }} /></div>
+  return <div className="reviews-product-photo" ref={ref}>{product?.id.startsWith('new-') ? <NewMenuProductImage product={product} /> : photo ? <img src={assetHref(photo)} alt={productName(review)} loading="lazy" /> : product ? <MenuProductImage product={product} /> : <span>상품 사진 준비 중</span>}</div>
 }
 
 

@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useFavorites } from '../wishlistStore'
 import { productHref } from '../pages/productLinks'
 import './BestMenu.css'
@@ -20,14 +21,14 @@ function Heart({ filled = false, className = '' }) {
 function BestMenuHeading() {
   return <div className="best-menu-heading">
     <h2 id="best-menu-title" className="best-menu-heading-art">
-      <img src={headingImage} width="2172" height="724" alt="OUR SWEET FAVORITES — BEST MENU — 지금 가장 사랑받는 메뉴예요!" />
+      <img src={assetHref(headingImage)} width="2172" height="724" alt="OUR SWEET FAVORITES — BEST MENU — 지금 가장 사랑받는 메뉴예요!" />
     </h2>
   </div>
 }
 function ProductPhoto({ product }) {
   const photo = Object.entries(originalPhotos).find(([path]) => path.split('/').pop().split('.')[0] === product.id)?.[1]
   return <div className="best-menu-photo">
-    {photo ? <img src={photo} alt={product.koreanName} loading="lazy" /> : <div className="best-menu-photo-missing" role="img" aria-label={`${product.koreanName} 원본 이미지 필요`}><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="6" /><circle cx="17" cy="18" r="4" /><path d="m6 35 12-11 8 8 7-7 9 10" /></svg><span>원본 이미지 필요</span><small>{product.id}.png</small></div>}
+    {photo ? <img src={assetHref(photo)} alt={product.koreanName} loading="lazy" /> : <div className="best-menu-photo-missing" role="img" aria-label={`${product.koreanName} 원본 이미지 필요`}><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="6" /><circle cx="17" cy="18" r="4" /><path d="m6 35 12-11 8 8 7-7 9 10" /></svg><span>원본 이미지 필요</span><small>{product.id}.png</small></div>}
   </div>
 }
 
@@ -42,7 +43,7 @@ export default function BestMenu() {
           <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,3 62,12 78,8 83,24 97,30 91,47 98,60 83,70 82,87 64,88 51,98 37,89 21,94 17,77 3,69 9,52 3,38 18,27 20,12 37,13" /></svg>
           <span>{product.badge}</span>
         </span>
-        <a className="best-menu-detail-link" href={productHref(product.id)} aria-label={`${product.koreanName} 상세 보기`} />
+        <a className="best-menu-detail-link" href={appHref(productHref(product.id))} aria-label={`${product.koreanName} 상세 보기`} />
         <ProductPhoto product={product} />
         <div className="best-menu-card-copy"><h3>{product.name}</h3><p className="best-menu-korean-name">{product.koreanName}</p><p className="best-menu-description">{product.description}</p><div className="best-menu-card-bottom"><strong>{product.price}</strong><button type="button" aria-label={`${product.koreanName} 찜`} aria-pressed={favorites.includes(product.id)} onClick={() => toggleFavorite(product)}><Heart filled={favorites.includes(product.id)} /></button></div></div>
       </article>)}</div>

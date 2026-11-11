@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import MemberCutout from '../components/MemberCutout'
 import MemberDecoration from '../components/MemberDecoration'
 import { useState } from 'react'
@@ -25,7 +26,7 @@ function Art({ box, className = '' }) {
   return <MemberCutout name={names[box]} className={"coupon-wallet-art " + className} />
 }
 function CouponArt({ coupon }) {
-  if (coupon.offerId === 'delivery' || coupon.offerId === 'first-order') return <Art src="이벤.png" width={1649} height={954} box={coupon.offerId === 'delivery' ? '770 375 135 115' : '1222 375 140 128'} />
+  if (coupon.offerId === 'delivery' || coupon.offerId === 'first-order') return <Art src={assetHref("이벤.png")} width={1649} height={954} box={coupon.offerId === 'delivery' ? '770 375 135 115' : '1222 375 140 128'} />
   const illustration = coupon.illustration || (coupon.offerId === 'welcome' ? 'gift' : null)
   const box = ({ gift: '350 393 150 105', cake: '350 513 150 103', croissant: '350 636 150 98' })[illustration]
   return box ? <Art box={box} /> : <span className="coupon-wallet-ticket-icon" aria-hidden="true">♧</span>
@@ -64,7 +65,7 @@ export default function CouponWallet() {
     <div className="coupon-wallet-layout"><section className="coupon-wallet-list" aria-label="보유 쿠폰 목록"><header><h2><span aria-hidden="true">♧</span> 보유 쿠폰 <em>{coupons.length}개</em></h2><select aria-label="쿠폰 정렬" value={sort} onChange={event => setSort(event.target.value)}><option value="newest">최신순</option><option value="expiry">유효기간 임박순</option><option value="benefit">할인 혜택순</option></select></header>
       {sort === 'benefit' && <p className="coupon-wallet-sort-note">정액 → 정률 → 무료배송 순, 같은 유형은 할인 수치가 큰 순입니다. 실제 할인액은 주문 조건에 따라 달라집니다.</p>}
       <div className="coupon-wallet-cards">{visible.map(coupon => <article className="coupon-wallet-card" key={coupon.id} data-coupon-id={coupon.id}><div className="coupon-wallet-illustration"><CouponArt coupon={coupon} /></div><div className="coupon-wallet-info"><h3>{coupon.title}</h3><p>{coupon.conditions || '사용 조건 확인 필요'}</p><span className={`coupon-wallet-status coupon-wallet-status--${couponStatus(coupon)}`}>{statuses[couponStatus(coupon)]}</span></div><div className="coupon-wallet-value"><strong>{coupon.benefit || '혜택 확인 필요'}</strong><small>{expiry(coupon)}</small></div><button type="button" disabled={couponStatus(coupon) !== 'available'} onClick={() => setNotice(preview ? '디자인 예시 쿠폰입니다. 실제로 사용할 수 없습니다.' : '쿠폰 사용은 결제 서비스 연동 후 가능합니다. 쿠폰은 사용 완료 처리되지 않았습니다.')}>{couponStatus(coupon) === 'available' ? '사용하기' : statuses[couponStatus(coupon)]}</button></article>)}</div>
-      {!visible.length && <div className="coupon-wallet-empty"><span aria-hidden="true">♧</span><h3>{filter === 'all' ? '보유한 쿠폰이 없습니다' : `${statuses[filter]} 쿠폰이 없습니다`}</h3><p>쿠폰 이벤트에서 받을 수 있는 혜택을 확인해 보세요.</p><a href="/mypage/coupon-events">쿠폰 이벤트 보기</a></div>}
+      {!visible.length && <div className="coupon-wallet-empty"><span aria-hidden="true">♧</span><h3>{filter === 'all' ? '보유한 쿠폰이 없습니다' : `${statuses[filter]} 쿠폰이 없습니다`}</h3><p>쿠폰 이벤트에서 받을 수 있는 혜택을 확인해 보세요.</p><a href={appHref("/mypage/coupon-events")}>쿠폰 이벤트 보기</a></div>}
     </section><aside className="coupon-wallet-aside"><form className="coupon-wallet-register" onSubmit={register}><h2><span aria-hidden="true">♧</span> 쿠폰 등록</h2><div><input aria-label="쿠폰 번호" maxLength={100} placeholder="쿠폰 번호를 입력해 주세요." value={code} onChange={event => setCode(event.target.value)} /><button type="submit">등록</button></div></form><section className="coupon-wallet-guide"><h2><span aria-hidden="true">▤</span> 쿠폰 이용 안내</h2><ul><li>쿠폰별 적용 상품과 최소 주문 금액을 확인해 주세요.</li><li>중복 사용과 발급 횟수는 쿠폰별 정책 확인이 필요합니다.</li><li>데모 발급은 브라우저에 저장되며 실제 쿠폰 사용은 결제 서비스 연동 후 가능합니다.</li></ul><Art box="1555 609 205 188" /></section></aside></div>
     <p className="coupon-wallet-notice" role="status">{notice}</p>
     <MemberDecoration variant="wallet" />

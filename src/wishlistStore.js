@@ -1,3 +1,4 @@
+import { appLocation } from './appRouting'
 import { useSyncExternalStore } from 'react'
 
 import { getDemoUser } from './demoAuth'
@@ -37,7 +38,7 @@ window.addEventListener('storage', event => {
 })
 export function useWishlist() { return useSyncExternalStore(subscribe, () => snapshot) }
 export function toggleWishlist(product) {
-  if (!getDemoUser()) { window.location.assign('/login?required=1'); return }
+  if (!getDemoUser()) { appLocation.assign('/login?required=1'); return }
   const items = readWishlist()
   if (items.some(item => item.id === product.id)) { publish(items.filter(item => item.id !== product.id)); return }
   const price = typeof product.price === 'number' ? product.price : Number(String(product.price).replace(/[^\d.]/g, ''))
@@ -45,7 +46,7 @@ export function toggleWishlist(product) {
   publish([...items, { id: product.id, name: product.name, koreanName: product.koreanName || product.korean, description: product.description || '', price }])
 }
 export function removeWishlistItems(ids) {
-  if (!getDemoUser()) { window.location.assign('/login?required=1'); return }
+  if (!getDemoUser()) { appLocation.assign('/login?required=1'); return }
   publish(readWishlist().filter(item => !ids.includes(item.id)))
 }
 export function useFavorites() {

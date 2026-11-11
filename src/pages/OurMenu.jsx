@@ -1,3 +1,4 @@
+import { appLocation, assetHref, appHref } from '../appRouting'
 import { useState } from 'react'
 import { productHref } from './productLinks'
 import { withHomeCategoryProducts } from './homeCategoryProducts'
@@ -109,7 +110,7 @@ function DrinkDecorations() {
           style={{ aspectRatio: `492 / ${displayHeight}` }}
           preserveAspectRatio={`${side === 'right' ? 'xMax' : 'xMin'}${position === 'bottom' ? 'YMax' : 'YMin'} meet`}
           focusable="false">
-          <image href={drinkBackground} width="1635" height="1416" />
+          <image href={assetHref(drinkBackground)} width="1635" height="1416" />
         </svg>)}
     </div>)}
   </div>
@@ -121,7 +122,7 @@ function MenuFooterArtwork() {
       className={`our-menu-footer-edge our-menu-footer-edge--${side}`}
       viewBox={`${side === 'right' ? 1146 : 0} 0 490 628`}
       preserveAspectRatio={`${side === 'right' ? 'xMax' : 'xMin'}YMax meet`} focusable="false">
-      <image href={footerBackground} width="1636" height="628" />
+      <image href={assetHref(footerBackground)} width="1636" height="628" />
     </svg>)}
   </div>
 }
@@ -129,10 +130,10 @@ function MenuFooterArtwork() {
 function BreadRowDecorations() {
   return <div className="our-menu-bread-row-decorations" aria-hidden="true">
     <svg viewBox="0 1080 270 270" focusable="false">
-      <image href="/images/menu/bread/bread-background.png" width="1635" height="1382" />
+      <image href={assetHref("/images/menu/bread/bread-background.png")} width="1635" height="1382" />
     </svg>
     <svg viewBox="235 145 75 75" focusable="false">
-      <image href="/images/menu/bread/bread-background.png" width="1635" height="1382" />
+      <image href={assetHref("/images/menu/bread/bread-background.png")} width="1635" height="1382" />
     </svg>
     <svg viewBox="0 0 80 80" focusable="false">
       <path d="M39 7c1 20-8 26-25 33 18 3 24 12 26 31 5-22 12-27 28-32C49 34 45 23 39 7Z" fill="#fff8af" stroke="#fff" strokeWidth="4" />
@@ -157,7 +158,7 @@ function MobileCategoryDecorations({ category }) {
   const art = mobileCategoryArt[category]
   if (!art) return null
   return <div className={`our-menu-mobile-decorations our-menu-mobile-decorations--${category}`} aria-hidden="true">
-    {art.boxes.map((box, index) => <svg key={box} className={`our-menu-mobile-character our-menu-mobile-character--${index ? 'right' : 'left'}`} viewBox={box} preserveAspectRatio="xMidYMid meet" focusable="false"><image href={art.src} width="1024" height="1536" /></svg>)}
+    {art.boxes.map((box, index) => <svg key={box} className={`our-menu-mobile-character our-menu-mobile-character--${index ? 'right' : 'left'}`} viewBox={box} preserveAspectRatio="xMidYMid meet" focusable="false"><image href={assetHref(art.src)} width="1024" height="1536" /></svg>)}
     <svg className="our-menu-mobile-sparkles" viewBox="0 0 100 40" fill="none" focusable="false"><path d="M18 4c1 10 4 13 13 15-9 2-12 5-13 15-2-10-5-13-14-15C13 17 16 14 18 4Z" fill="#fff8d7" stroke="#f6ba3b" strokeWidth="2" /><path d="M69 32S48 21 53 12c4-7 13-4 16 2 3-6 12-9 16-2 5 9-16 20-16 20Z" fill="#fff7f8" stroke="#f58ab3" strokeWidth="2" /></svg>
   </div>
 }
@@ -170,10 +171,10 @@ function BreadDecorations() {
         <svg key={position} className={`our-menu-bread-corner our-menu-bread-corner--${position}`}
           viewBox={`${side === 'left' ? 0 : 1145} ${y} 490 ${height}`}
           style={{ aspectRatio: `490 / ${height}` }} preserveAspectRatio="xMidYMid meet" focusable="false">
-          <image href="/images/menu/bread/bread-background.png" width="1635" height="1382" />
+          <image href={assetHref("/images/menu/bread/bread-background.png")} width="1635" height="1382" />
         </svg>)}
     </div>)}
-    <img className="our-menu-bread-moved-loaf" src={breadLoafOrnament} alt="" />
+    <img className="our-menu-bread-moved-loaf" src={assetHref(breadLoafOrnament)} alt="" />
   </div>
 }
 
@@ -186,10 +187,10 @@ function SandwichDecorations() {
         <svg key={position} className={`our-menu-sandwich-corner our-menu-sandwich-corner--${position}`}
           viewBox={`${side === 'left' ? 0 : 1149} ${y} 492 ${height}`}
           style={{ aspectRatio: `492 / ${height}` }} preserveAspectRatio="xMidYMid meet" focusable="false">
-          <image href={sandwichBackgroundSrc} width="1641" height="1292" />
+          <image href={assetHref(sandwichBackgroundSrc)} width="1641" height="1292" />
         </svg>)}
     </div>)}
-    <img className="our-menu-sandwich-flag" src={sandwichFlagOrnament} alt="" />
+    <img className="our-menu-sandwich-flag" src={assetHref(sandwichFlagOrnament)} alt="" />
   </div>
 }
 
@@ -204,7 +205,7 @@ function CakeDecorations() {
 // The supplied artwork includes the red background and all decorations, but no text.
 function BannerDecorations() {
   return <div className="our-menu-banner-artwork" aria-hidden="true">
-    <img className="our-menu-banner-composition" src="/images/Rectangle%20289.png" alt="" decoding="async" fetchPriority="high" />
+    <img className="our-menu-banner-composition" src={assetHref("/images/Rectangle%20289.png")} alt="" decoding="async" fetchPriority="high" />
   </div>
 }
 
@@ -218,7 +219,7 @@ function ImagePlaceholder({ banner = false }) {
 function MenuImage({ src, alt, banner = false }) {
   const [failedSrc, setFailedSrc] = useState(null)
   return <div className={banner ? 'our-menu-banner-media' : 'our-menu-product-media'}>
-    {src && failedSrc !== src ? <img src={src} alt={alt} loading={banner ? 'eager' : 'lazy'} onError={() => setFailedSrc(src)} /> : <ImagePlaceholder banner={banner} />}
+    {src && failedSrc !== src ? <img src={assetHref(src)} alt={alt} loading={banner ? 'eager' : 'lazy'} onError={() => setFailedSrc(src)} /> : <ImagePlaceholder banner={banner} />}
   </div>
 }
 
@@ -235,26 +236,26 @@ export function MenuProductImage({ product }) {
   const addedBreadSecondPhotoX = { 'bread-13': 30, 'bread-14': 510, 'bread-15': 990, 'bread-16': 1472 }[product.id]
   return <>
     {addedBreadSecondPhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${addedBreadSecondPhotoX} 24 462 406`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={addedBreadSecondReference} width="1957" height="804" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${addedBreadSecondPhotoX} 24 462 406`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(addedBreadSecondReference)} width="1957" height="804" /></svg></div>
       : addedBreadPhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${addedBreadPhotoX} 26 461 407`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={addedBreadProductReference} width="1957" height="804" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${addedBreadPhotoX} 26 461 407`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(addedBreadProductReference)} width="1957" height="804" /></svg></div>
       : firstBreadPhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${firstBreadPhotoX} 36 469 406`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={breadFirstProductReference} width="1956" height="804" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${firstBreadPhotoX} 36 469 406`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(breadFirstProductReference)} width="1956" height="804" /></svg></div>
       : breadPhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${breadPhotoX} 66 430 391`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={breadProductReference} width="1848" height="851" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${breadPhotoX} 66 430 391`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(breadProductReference)} width="1848" height="851" /></svg></div>
       : firstSandwichPhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${firstSandwichPhotoX} 24 446 400`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={sandwichFirstProductReference} width="1960" height="802" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${firstSandwichPhotoX} 24 446 400`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(sandwichFirstProductReference)} width="1960" height="802" /></svg></div>
       : sandwichPhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${sandwichPhotoX} 70 380 352`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={sandwichProductReference} width="1794" height="877" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${sandwichPhotoX} 70 380 352`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(sandwichProductReference)} width="1794" height="877" /></svg></div>
       : coffeePhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${coffeePhotoX} 27 435 407`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={coffeeProductReference} width="1991" height="790" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${coffeePhotoX} 27 435 407`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(coffeeProductReference)} width="1991" height="790" /></svg></div>
       : drinkPhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${drinkPhotoX} 41 418 414`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={drinkProductReference} width="1858" height="846" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${drinkPhotoX} 41 418 414`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(drinkProductReference)} width="1858" height="846" /></svg></div>
       : secondCakePhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${secondCakePhotoX} 45 407 391`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={cakeProductSecondReference} width="1883" height="835" /></svg></div>
+      ? <div className="our-menu-product-media"><svg viewBox={`${secondCakePhotoX} 45 407 391`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(cakeProductSecondReference)} width="1883" height="835" /></svg></div>
       : cakePhotoX !== undefined
-      ? <div className="our-menu-product-media"><svg viewBox={`${cakePhotoX} 55 435 396`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={cakeProductReference} width="1938" height="812" /></svg></div>
-      : product.id === 'bread-1' ? <div className="our-menu-product-media"><svg viewBox="315 286 650 610" role="img" aria-label="소금빵" style={{ display:'block', width:'100%', height:'100%' }}><image href={saltBreadReference} width="1632" height="7491" /></svg></div> : <MenuImage src={product.imageSrc} alt={product.koreanName} />}
+      ? <div className="our-menu-product-media"><svg viewBox={`${cakePhotoX} 55 435 396`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref(cakeProductReference)} width="1938" height="812" /></svg></div>
+      : product.id === 'bread-1' ? <div className="our-menu-product-media"><svg viewBox="315 286 650 610" role="img" aria-label="소금빵" style={{ display:'block', width:'100%', height:'100%' }}><image href={assetHref(saltBreadReference)} width="1632" height="7491" /></svg></div> : <MenuImage src={assetHref(product.imageSrc)} alt={product.koreanName} />}
   </>
 }
 
@@ -270,23 +271,23 @@ function ProductCard({ product, detailHref = product.detailHref, cleanBreadImage
   const suppliedSandwichX = { 'sandwich-13': 62, 'sandwich-14': 535, 'sandwich-15': 1007, 'sandwich-16': 1479 }[product.id]
   const content = <>
     {cleanOtherArt
-      ? <div className="our-menu-product-media our-menu-product-media--clean-other" style={{ '--category-art-ratio': '6 / 5' }}><svg viewBox={cleanOtherArt.box} role="img" aria-label={product.koreanName} style={{ display:'block', width:'100%', height:'100%' }}><defs><clipPath id={`category-list-${product.id}`} clipPathUnits="userSpaceOnUse"><rect x={cleanOtherArt.clip[0]} y={cleanOtherArt.clip[1]} width={cleanOtherArt.clip[2]} height={cleanOtherArt.clip[3]} /></clipPath></defs><image href={cleanOtherArt.src} width={cleanOtherArt.width} height={cleanOtherArt.height} clipPath={`url(#category-list-${product.id})`} /></svg></div>
+      ? <div className="our-menu-product-media our-menu-product-media--clean-other" style={{ '--category-art-ratio': '6 / 5' }}><svg viewBox={cleanOtherArt.box} role="img" aria-label={product.koreanName} style={{ display:'block', width:'100%', height:'100%' }}><defs><clipPath id={`category-list-${product.id}`} clipPathUnits="userSpaceOnUse"><rect x={cleanOtherArt.clip[0]} y={cleanOtherArt.clip[1]} width={cleanOtherArt.clip[2]} height={cleanOtherArt.clip[3]} /></clipPath></defs><image href={assetHref(cleanOtherArt.src)} width={cleanOtherArt.width} height={cleanOtherArt.height} clipPath={`url(#category-list-${product.id})`} /></svg></div>
       : cleanCakeArt
-      ? <div className="our-menu-product-media our-menu-product-media--clean-cake" style={{ '--category-art-ratio': '6 / 5' }}><svg viewBox={cleanCakeArt.box} role="img" aria-label={product.koreanName} style={{ display:'block', width:'100%', height:'100%' }}><defs><clipPath id={`cake-list-${product.id}`} clipPathUnits="userSpaceOnUse"><rect x={cleanCakeArt.clip[0]} y={cleanCakeArt.clip[1]} width={cleanCakeArt.clip[2]} height={cleanCakeArt.clip[3]} /></clipPath></defs><image href={cleanCakeArt.src} width={cleanCakeArt.width} height={cleanCakeArt.height} clipPath={`url(#cake-list-${product.id})`} /></svg></div>
+      ? <div className="our-menu-product-media our-menu-product-media--clean-cake" style={{ '--category-art-ratio': '6 / 5' }}><svg viewBox={cleanCakeArt.box} role="img" aria-label={product.koreanName} style={{ display:'block', width:'100%', height:'100%' }}><defs><clipPath id={`cake-list-${product.id}`} clipPathUnits="userSpaceOnUse"><rect x={cleanCakeArt.clip[0]} y={cleanCakeArt.clip[1]} width={cleanCakeArt.clip[2]} height={cleanCakeArt.clip[3]} /></clipPath></defs><image href={assetHref(cleanCakeArt.src)} width={cleanCakeArt.width} height={cleanCakeArt.height} clipPath={`url(#cake-list-${product.id})`} /></svg></div>
       : cleanBreadArt
-      ? <div className="our-menu-product-media our-menu-product-media--clean-bread" style={{ '--category-art-ratio': '6 / 5' }}><svg viewBox={cleanBreadArt.box} role="img" aria-label={product.koreanName} style={{ display:'block', width:'100%', height:'100%' }}><defs><clipPath id={`bread-list-${product.id}`} clipPathUnits="userSpaceOnUse"><rect x={cleanBreadArt.clip[0]} y={cleanBreadArt.clip[1]} width={cleanBreadArt.clip[2]} height={cleanBreadArt.clip[3]} /></clipPath></defs><image href={cleanBreadArt.src} width={cleanBreadArt.width} height={cleanBreadArt.height} clipPath={`url(#bread-list-${product.id})`} /></svg></div>
+      ? <div className="our-menu-product-media our-menu-product-media--clean-bread" style={{ '--category-art-ratio': '6 / 5' }}><svg viewBox={cleanBreadArt.box} role="img" aria-label={product.koreanName} style={{ display:'block', width:'100%', height:'100%' }}><defs><clipPath id={`bread-list-${product.id}`} clipPathUnits="userSpaceOnUse"><rect x={cleanBreadArt.clip[0]} y={cleanBreadArt.clip[1]} width={cleanBreadArt.clip[2]} height={cleanBreadArt.clip[3]} /></clipPath></defs><image href={assetHref(cleanBreadArt.src)} width={cleanBreadArt.width} height={cleanBreadArt.height} clipPath={`url(#bread-list-${product.id})`} /></svg></div>
       : suppliedSecondDrinkX !== undefined
-      ? <div className="our-menu-product-media" style={{ aspectRatio: '442 / 393', '--category-art-ratio': '442 / 393' }}><svg viewBox={`${suppliedSecondDrinkX} 40 442 393`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href="/images/음음.png" width="1918" height="820" /></svg></div>
+      ? <div className="our-menu-product-media" style={{ aspectRatio: '442 / 393', '--category-art-ratio': '442 / 393' }}><svg viewBox={`${suppliedSecondDrinkX} 40 442 393`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref("/images/음음.png")} width="1918" height="820" /></svg></div>
       : suppliedDrinkX !== undefined
-      ? <div className="our-menu-product-media" style={{ aspectRatio: '418 / 430', '--category-art-ratio': '418 / 430' }}><svg viewBox={`${suppliedDrinkX} 43 418 430`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href="/images/음.png" width="1811" height="868" /></svg></div>
+      ? <div className="our-menu-product-media" style={{ aspectRatio: '418 / 430', '--category-art-ratio': '418 / 430' }}><svg viewBox={`${suppliedDrinkX} 43 418 430`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref("/images/음.png")} width="1811" height="868" /></svg></div>
       : suppliedSecondCakeX !== undefined
-      ? <div className="our-menu-product-media" style={{ aspectRatio: '447 / 393', '--category-art-ratio': '447 / 393' }}><svg viewBox={`${suppliedSecondCakeX} 28 447 393`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href="/images/rrrrrr.png" width="1949" height="807" /></svg></div>
+      ? <div className="our-menu-product-media" style={{ aspectRatio: '447 / 393', '--category-art-ratio': '447 / 393' }}><svg viewBox={`${suppliedSecondCakeX} 28 447 393`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref("/images/rrrrrr.png")} width="1949" height="807" /></svg></div>
       : suppliedCakeX !== undefined
-      ? <div className="our-menu-product-media" style={{ aspectRatio: '448 / 388', '--category-art-ratio': '448 / 388' }}><svg viewBox={`${suppliedCakeX} 20 448 388`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href="/images/케.png" width="1993" height="789" /></svg></div>
+      ? <div className="our-menu-product-media" style={{ aspectRatio: '448 / 388', '--category-art-ratio': '448 / 388' }}><svg viewBox={`${suppliedCakeX} 20 448 388`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref("/images/케.png")} width="1993" height="789" /></svg></div>
       : suppliedFirstSandwichX !== undefined
-      ? <div className="our-menu-product-media" style={{ aspectRatio: '435 / 403', '--category-art-ratio': '435 / 403' }}><svg viewBox={`${suppliedFirstSandwichX} 49 435 403`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href="/images/545ggg.png" width="1891" height="831" /></svg></div>
+      ? <div className="our-menu-product-media" style={{ aspectRatio: '435 / 403', '--category-art-ratio': '435 / 403' }}><svg viewBox={`${suppliedFirstSandwichX} 49 435 403`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref("/images/545ggg.png")} width="1891" height="831" /></svg></div>
       : suppliedSandwichX !== undefined
-      ? <div className="our-menu-product-media" style={{ aspectRatio: '444 / 390', '--category-art-ratio': '444 / 390' }}><svg viewBox={`${suppliedSandwichX} 20 444 390`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href="/images/hgh.png" width="1979" height="794" /></svg></div>
+      ? <div className="our-menu-product-media" style={{ aspectRatio: '444 / 390', '--category-art-ratio': '444 / 390' }}><svg viewBox={`${suppliedSandwichX} 20 444 390`} role="img" aria-label={product.koreanName} style={{ display: 'block', width: '100%', height: '100%' }}><image href={assetHref("/images/hgh.png")} width="1979" height="794" /></svg></div>
       : <MenuProductImage product={product} />}
     <div className="our-menu-product-copy">
       {product.isTemporary && <span className="our-menu-temporary">임시 상품 정보</span>}
@@ -297,12 +298,12 @@ function ProductCard({ product, detailHref = product.detailHref, cleanBreadImage
     </div>
   </>
   return <article className="our-menu-product" data-product-id={product.id}>
-    {detailHref ? <a className="our-menu-product-link" href={detailHref}>{content}</a> : content}
+    {detailHref ? <a className="our-menu-product-link" href={appHref(detailHref)}>{content}</a> : content}
   </article>
 }
 
 export default function OurMenu({ categoryId: routeCategoryId } = {}) {
-  const categoryId = routeCategoryId ?? new URLSearchParams(window.location.search).get('category')
+  const categoryId = routeCategoryId ?? new URLSearchParams(appLocation.search).get('category')
   const listingCategories = routeCategoryId ? withHomeCategoryProducts(menuCategories) : menuCategories
   const visibleCategories = listingCategories.filter(category => !listingCategories.some(item => item.id === categoryId) || category.id === categoryId)
   const firstCategoryColor = categoryColors[listingCategories.indexOf(visibleCategories[0])]
@@ -313,7 +314,7 @@ export default function OurMenu({ categoryId: routeCategoryId } = {}) {
     <HomeHeader />
     <main>
       {!routeCategoryId && <img
-        src="/images/b888723f-55a6-4898-b26b-db7c2f6c2b0f.png"
+        src={assetHref("/images/b888723f-55a6-4898-b26b-db7c2f6c2b0f.png")}
         alt="MELLOW BAKE Our Menu — 매일의 달콤한 순간을 함께하는 멜로우 베이크"
         width="1916" height="697"
         style={{ width: '100%', height: 'auto' }}
@@ -328,13 +329,13 @@ export default function OurMenu({ categoryId: routeCategoryId } = {}) {
             : (routeCategoryId ? null : <DrinkDecorations />)}
           <div className="our-menu-category-inner">
           {category.id === 'bread'
-            ? <div className="our-menu-bread-heading"><h2 id="menu-bread-title"><img src={breadHeadingReference} width="2206" height="713" alt="BREAD — 매일 갓 구워낸 신선하고 맛있는 빵" /></h2></div>
+            ? <div className="our-menu-bread-heading"><h2 id="menu-bread-title"><img src={assetHref(breadHeadingReference)} width="2206" height="713" alt="BREAD — 매일 갓 구워낸 신선하고 맛있는 빵" /></h2></div>
             : category.id === 'sandwich'
-              ? <div className="our-menu-sandwich-heading"><h2 id="menu-sandwich-title"><img src={sandwichHeadingReference} width="1908" height="824" alt="SANDWICH — 신선한 재료로 만든 든든한 샌드위치" /></h2></div>
+              ? <div className="our-menu-sandwich-heading"><h2 id="menu-sandwich-title"><img src={assetHref(sandwichHeadingReference)} width="1908" height="824" alt="SANDWICH — 신선한 재료로 만든 든든한 샌드위치" /></h2></div>
               : category.id === 'cake'
-                ? <div className="our-menu-cake-heading"><h2 id="menu-cake-title"><img src={cakeHeadingReference} width="2172" height="724" alt="CAKE — 달콤한 순간을 더욱 특별하게 만드는 멜로우 베이크의 케이크" /></h2></div>
+                ? <div className="our-menu-cake-heading"><h2 id="menu-cake-title"><img src={assetHref(cakeHeadingReference)} width="2172" height="724" alt="CAKE — 달콤한 순간을 더욱 특별하게 만드는 멜로우 베이크의 케이크" /></h2></div>
                 : category.id === 'drink'
-                  ? <div className="our-menu-drink-heading"><h2 id="menu-drink-title"><img src={drinkHeadingReference} width="1997" height="788" alt="DRINK — 달콤한 디저트와 함께 즐기는 멜로우 베이크의 특별한 음료" /></h2></div>
+                  ? <div className="our-menu-drink-heading"><h2 id="menu-drink-title"><img src={assetHref(drinkHeadingReference)} width="1997" height="788" alt="DRINK — 달콤한 디저트와 함께 즐기는 멜로우 베이크의 특별한 음료" /></h2></div>
                   : <div className="our-menu-category-heading"><h2 id={`menu-${category.id}-title`}>{category.title}</h2><p>{category.description}</p></div>}
           <MobileCategoryDecorations category={category.id} />
           <div className="our-menu-grid">
@@ -343,24 +344,24 @@ export default function OurMenu({ categoryId: routeCategoryId } = {}) {
           </div>
           </div>
           {routeCategoryId && category.id === 'drink' && <div className="our-menu-drink-extra-ornaments" aria-hidden="true">
-            {[['lemon', '130 55 380 535'], ['coffee', '750 50 370 540'], ['berry', '120 680 410 510']].map(([name, viewBox]) => <svg key={name} className={`drink-extra-ornament drink-extra-ornament--${name}`} viewBox={viewBox}><image href={drinkSideOrnaments} width="1254" height="1254" /></svg>)}
+            {[['lemon', '130 55 380 535'], ['coffee', '750 50 370 540'], ['berry', '120 680 410 510']].map(([name, viewBox]) => <svg key={name} className={`drink-extra-ornament drink-extra-ornament--${name}`} viewBox={viewBox}><image href={assetHref(drinkSideOrnaments)} width="1254" height="1254" /></svg>)}
           </div>}
           {routeCategoryId && category.id === 'drink' && <div className="our-menu-drink-bottom-ornaments" aria-hidden="true">
-            <svg className="our-menu-drink-bottom-ornament our-menu-drink-bottom-ornament--left" viewBox="0 980 360 480"><image href={drinkBottomOrnaments} width="1024" height="1536" /></svg>
-            <svg className="our-menu-drink-bottom-ornament our-menu-drink-bottom-ornament--right" viewBox="735 1000 289 470"><image href={drinkBottomOrnaments} width="1024" height="1536" /></svg>
+            <svg className="our-menu-drink-bottom-ornament our-menu-drink-bottom-ornament--left" viewBox="0 980 360 480"><image href={assetHref(drinkBottomOrnaments)} width="1024" height="1536" /></svg>
+            <svg className="our-menu-drink-bottom-ornament our-menu-drink-bottom-ornament--right" viewBox="735 1000 289 470"><image href={assetHref(drinkBottomOrnaments)} width="1024" height="1536" /></svg>
           </div>}
           {routeCategoryId && category.id === 'sandwich' && <div className="our-menu-sandwich-extra-ornaments" aria-hidden="true">
-            {routeCategoryId !== 'sandwich' && <svg className="sandwich-extra-ornament sandwich-extra-ornament--bear" viewBox="790 770 230 190"><image href={sandwichBottomOrnaments} width="1024" height="1536" /></svg>}
-            <svg className="sandwich-extra-ornament sandwich-extra-ornament--rabbit" viewBox="65 55 755 785"><image href={sandwichKitten} width="1774" height="887" /></svg>
-            {routeCategoryId !== 'sandwich' && <svg className="sandwich-extra-ornament sandwich-extra-ornament--drink" viewBox="1100 95 460 710"><image href={sandwichRabbitDrink} width="1774" height="887" /></svg>}
+            {routeCategoryId !== 'sandwich' && <svg className="sandwich-extra-ornament sandwich-extra-ornament--bear" viewBox="790 770 230 190"><image href={assetHref(sandwichBottomOrnaments)} width="1024" height="1536" /></svg>}
+            <svg className="sandwich-extra-ornament sandwich-extra-ornament--rabbit" viewBox="65 55 755 785"><image href={assetHref(sandwichKitten)} width="1774" height="887" /></svg>
+            {routeCategoryId !== 'sandwich' && <svg className="sandwich-extra-ornament sandwich-extra-ornament--drink" viewBox="1100 95 460 710"><image href={assetHref(sandwichRabbitDrink)} width="1774" height="887" /></svg>}
           </div>}
           {routeCategoryId && category.id === 'sandwich' && <div className="our-menu-sandwich-bottom-ornaments" aria-hidden="true">
-            <svg className="our-menu-sandwich-bottom-ornament our-menu-sandwich-bottom-ornament--left" viewBox="0 1150 380 300"><image href={sandwichBottomOrnaments} width="1024" height="1536" /></svg>
-            <svg className="our-menu-sandwich-bottom-ornament our-menu-sandwich-bottom-ornament--right" viewBox="580 1200 444 270"><image href={sandwichBottomOrnaments} width="1024" height="1536" /></svg>
+            <svg className="our-menu-sandwich-bottom-ornament our-menu-sandwich-bottom-ornament--left" viewBox="0 1150 380 300"><image href={assetHref(sandwichBottomOrnaments)} width="1024" height="1536" /></svg>
+            <svg className="our-menu-sandwich-bottom-ornament our-menu-sandwich-bottom-ornament--right" viewBox="580 1200 444 270"><image href={assetHref(sandwichBottomOrnaments)} width="1024" height="1536" /></svg>
           </div>}
           {routeCategoryId && category.id === 'cake' && <div className="our-menu-cake-bottom-ornaments" aria-hidden="true">
-            <svg className="our-menu-cake-bottom-ornament our-menu-cake-bottom-ornament--left" viewBox="15 1090 175 235"><image href={cakeBottomOrnaments} width="1024" height="1536" /></svg>
-            <svg className="our-menu-cake-bottom-ornament our-menu-cake-bottom-ornament--right" viewBox="775 1120 235 215"><image href={cakeBottomOrnaments} width="1024" height="1536" /></svg>
+            <svg className="our-menu-cake-bottom-ornament our-menu-cake-bottom-ornament--left" viewBox="15 1090 175 235"><image href={assetHref(cakeBottomOrnaments)} width="1024" height="1536" /></svg>
+            <svg className="our-menu-cake-bottom-ornament our-menu-cake-bottom-ornament--right" viewBox="775 1120 235 215"><image href={assetHref(cakeBottomOrnaments)} width="1024" height="1536" /></svg>
           </div>}
         </section>)}
       </div>

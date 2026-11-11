@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { registeredProducts } from '../productCatalog'
@@ -54,11 +55,11 @@ export default function ProductSearch({ onClose }) {
       <div className="mb-search-top">
         <p className="mb-search-eyebrow">✦ MELLOW BAKE · DISCOVER</p>
         <div className="mb-search-heading">
-          <img className="mb-search-rabbit" src="/images/member-cutouts/review-bunny.png" alt="" />
+          <img className="mb-search-rabbit" src={assetHref("/images/member-cutouts/review-bunny.png")} alt="" />
           <span className="mb-search-crown" aria-hidden="true">♔</span>
           <h2 id="mb-search-title">Find your sweet</h2>
           <p>오늘 마음에 드는 디저트를 찾아봐요.</p>
-          <img className="mb-search-cupcake" src="/images/member-cutouts/review-cupcake.png" alt="" />
+          <img className="mb-search-cupcake" src={assetHref("/images/member-cutouts/review-cupcake.png")} alt="" />
         </div>
         <form className="mb-search-field" role="search" onSubmit={event => event.preventDefault()}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><circle cx="10" cy="10" r="6.5" /><path d="m15 15 6 6" /></svg>
@@ -72,7 +73,7 @@ export default function ProductSearch({ onClose }) {
       <div className="mb-search-results">
         <div className="mb-search-result-heading"><div><h3>오늘의 달콤한 발견 ♡</h3><p>작은 행복을 하나씩 골라봐요 ♡</p></div><span role="status" aria-live="polite">✦ {matches.length}개의 디저트</span></div>
         <div className="mb-search-categories" role="group" aria-label="상품 카테고리">{categories.map(([id,label]) => <button type="button" key={id} aria-pressed={category === id} onClick={() => setCategory(id)}><CategoryIcon category={id} /> {label}</button>)}</div>
-        {matches.length ? <div className="mb-search-grid">{matches.map(product => <a className={`mb-search-card mb-search-card--${product.category}`} key={product.id} href={product.detailHref} data-search-product={product.id} onClick={onClose}>
+        {matches.length ? <div className="mb-search-grid">{matches.map(product => <a className={`mb-search-card mb-search-card--${product.category}`} key={product.id} href={appHref(product.detailHref)} data-search-product={product.id} onClick={onClose}>
           <div className="mb-search-card-copy"><span className="mb-search-card-spark" aria-hidden="true">✦ ♡</span><h4>{product.koreanName}</h4><p className="mb-search-english">{product.name}</p><p className="mb-search-description">{product.description}</p><span className="mb-search-discover">DISCOVER ✧ <span>→</span></span></div>
           <div className="mb-search-product-art"><CatalogProductImage product={product} artwork={product.id === 'cake-2' ? cakeArtwork['cake-2'] : undefined} /></div>
         </a>)}</div> : <div className="mb-search-empty"><span aria-hidden="true">✧ ♡ ✧</span><h4>앗! 찾는 디저트가 없어요 ♡</h4><p>다른 이름으로 다시 찾아볼까요?</p><button type="button" onClick={() => { setQuery(''); setCategory('all'); input.current?.focus() }}>검색어와 카테고리 초기화</button></div>}

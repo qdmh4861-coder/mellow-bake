@@ -1,3 +1,4 @@
+import { assetHref } from '../appRouting'
 import { useId } from 'react'
 import MemberCutout from './MemberCutout'
 
@@ -18,5 +19,5 @@ export default function MemberArtwork({ part, className = '', cutout = false }) 
   if (cutout) return <MemberCutout name={({ rabbit: 'rabbit', treats: 'desserts', box: 'empty-box' })[part]} className={`member-art member-art--${part} ${className}`} />
   const [x, y, width, height] = regions[part] || regions.rabbit
   const softRabbit = part === 'rabbit'
-  return <svg className={`member-art member-art--${part} ${className}`} viewBox={`${x} ${y} ${width} ${height}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><defs><clipPath id={id}>{silhouettes[part] ? <path d={silhouettes[part]} /> : <rect x={x} y={y} width={width} height={height} />}</clipPath>{softRabbit && <><filter id={`${id}-feather`} x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="4" /></filter><mask id={`${id}-soft`} maskUnits="userSpaceOnUse" x={x} y={y} width={width} height={height}><path d="M294 140H509V242L541 279 573 311V390L530 436H359L303 398 290 332Z" fill="white" filter={`url(#${id}-feather)`} /></mask></>}</defs><image href="/images/마이.png" width="1200" height="1312" clipPath={`url(#${id})`} mask={softRabbit ? `url(#${id}-soft)` : undefined} /></svg>
+  return <svg className={`member-art member-art--${part} ${className}`} viewBox={`${x} ${y} ${width} ${height}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><defs><clipPath id={id}>{silhouettes[part] ? <path d={silhouettes[part]} /> : <rect x={x} y={y} width={width} height={height} />}</clipPath>{softRabbit && <><filter id={`${id}-feather`} x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="4" /></filter><mask id={`${id}-soft`} maskUnits="userSpaceOnUse" x={x} y={y} width={width} height={height}><path d="M294 140H509V242L541 279 573 311V390L530 436H359L303 398 290 332Z" fill="white" filter={`url(#${id}-feather)`} /></mask></>}</defs><image href={assetHref("/images/마이.png")} width="1200" height="1312" clipPath={`url(#${id})`} mask={softRabbit ? `url(#${id}-soft)` : undefined} /></svg>
 }

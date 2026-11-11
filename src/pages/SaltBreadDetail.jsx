@@ -1,3 +1,4 @@
+import { assetHref, appHref } from '../appRouting'
 import { useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import ProductDetailFooter from '../components/ProductDetailFooter'
@@ -13,7 +14,7 @@ const recommendations = ['cake-1', 'bread-6', 'bread-7', 'drink-3'].map(id => me
 // Display regions of the supplied 1632 × 7491 Figma export without inventing assets.
 function FigmaRegion({ box, label, className = '' }) {
   return <svg className={`salt-detail-art ${className}`} viewBox={box} role="img" aria-label={label}>
-    <image href={reference} width="1632" height="7491" />
+    <image href={assetHref(reference)} width="1632" height="7491" />
   </svg>
 }
 
@@ -55,7 +56,7 @@ export default function SaltBreadDetail() {
         </div>
       </section>
       <nav className="salt-detail-tabs" aria-label="상품 상세 메뉴">
-        <a href="#salt-description">상품설명</a><a href="#salt-shipping">상품 및 배송안내</a><a href="#salt-reviews">상품 리뷰</a><a href="#salt-related">함께 보면 좋은 상품</a>
+        <a href={appHref("#salt-description")}>상품설명</a><a href={appHref("#salt-shipping")}>상품 및 배송안내</a><a href={appHref("#salt-reviews")}>상품 리뷰</a><a href={appHref("#salt-related")}>함께 보면 좋은 상품</a>
       </nav>
       <section id="salt-description" aria-label="소금빵 상품 설명">
         <FigmaRegion box="210 1025 1210 3645" label="멜로우베이크의 시그니처 소금빵. 겉은 바삭, 속은 촉촉한 식감. 좋은 재료, 정성 가득한 제작 과정, 소금빵을 즐기는 방법과 밀가루·버터·우유·소금 재료 안내. 상세 문구는 첨부된 피그마 원본 이미지입니다." />
@@ -65,14 +66,14 @@ export default function SaltBreadDetail() {
         <FigmaRegion box="210 5575 1210 665" label="상품 정보 및 배송 안내. 첨부된 피그마 원본의 안내 표입니다. 운영 정보 확인이 필요합니다." />
       </section>
       <section id="salt-reviews" aria-label="상품 리뷰 디자인 시안">
-        <a style={{ display: 'block' }} href="/reviews?productId=bread-1" aria-label="소금빵 실제 상품 리뷰 보기"><FigmaRegion box="210 6240 1210 420" label="피그마 디자인에 포함된 예시 상품 리뷰 카드입니다. 실제 구매 후기를 불러온 것이 아닙니다." /></a>
+        <a style={{ display: 'block' }} href={appHref("/reviews?productId=bread-1")} aria-label="소금빵 실제 상품 리뷰 보기"><FigmaRegion box="210 6240 1210 420" label="피그마 디자인에 포함된 예시 상품 리뷰 카드입니다. 실제 구매 후기를 불러온 것이 아닙니다." /></a>
       </section>
       <section id="salt-related" aria-label="함께 보면 좋은 상품 디자인 시안" style={{ position: 'relative' }}>
         <FigmaRegion box="210 6660 1210 440" label="함께 보면 좋은 상품: 딸기 생크림 케이크, 초코 크림빵, 시나몬롤, 바닐라 라떼. 제공된 원본 시안 이미지입니다." />
-        {recommendations.map((item, index) => <a key={item.id} href={productHref(item.id)} aria-label={`${item.koreanName} 상세보기`} style={{ position: 'absolute', left: `${index * 25}%`, top: '20%', width: '25%', height: '75%' }} />)}
+        {recommendations.map((item, index) => <a key={item.id} href={appHref(productHref(item.id))} aria-label={`${item.koreanName} 상세보기`} style={{ position: 'absolute', left: `${index * 25}%`, top: '20%', width: '25%', height: '75%' }} />)}
       </section>
-      <p className="salt-detail-source-note">상세 설명과 리뷰는 제공된 피그마 시안 이미지입니다. <a href={reference} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
-      <a className="salt-detail-back" href="/menu">OUR MENU로 돌아가기</a>
+      <p className="salt-detail-source-note">상세 설명과 리뷰는 제공된 피그마 시안 이미지입니다. <a href={appHref(reference)} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
+      <a className="salt-detail-back" href={appHref("/menu")}>OUR MENU로 돌아가기</a>
     </main>
     <ProductDetailFooter />
   </div>
