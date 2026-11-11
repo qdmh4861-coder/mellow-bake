@@ -249,3 +249,18 @@
   pointer-events: none;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23FFCC00' stroke-width='10' stroke-linecap='round'%3E%3Cpath d='m10 39 17 9M24 16l12 19M51 9l2 20'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
 }
+
+@media(max-width:520px){
+ .member-theme .wishlist-page .wishlist-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .member-theme .wishlist-page .wishlist-card{padding:12px 9px}
+ .wishlist-page .wishlist-card-selection{margin-bottom:8px}
+ .wishlist-page .wishlist-card .wishlist-english-name{font-size:13px;line-height:1.4;min-height:2.8em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-top:10px}
+ .wishlist-page .wishlist-card .wishlist-card-title{gap:3px}
+ .wishlist-page .wishlist-card .wishlist-card-title h3{font-size:12px;line-height:1.5;min-height:3em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .wishlist-page .wishlist-card .wishlist-heart{width:24px;height:24px;flex-shrink:0;padding:2px}
+ .wishlist-page .wishlist-card .wishlist-heart svg{width:20px;height:20px}
+ .wishlist-page .wishlist-card .wishlist-price{font-size:16px;margin-top:8px}
+ .wishlist-page .wishlist-card .wishlist-description{font-size:12px;line-height:1.5;min-height:3em;margin:8px 0 12px}
+ .wishlist-page .wishlist-card .wishlist-card-actions{gap:6px}
+ .wishlist-page .wishlist-card .wishlist-card-actions button{font-size:12px;min-height:48px;padding:6px 2px}
+}

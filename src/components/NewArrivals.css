@@ -86,3 +86,12 @@
 /* Reference heading only; exclude the reference product cards and badges. */
 .arrivals-heading--image { width: 100%; }
 .arrivals-heading-image { display: block; width: 100%; height: auto; aspect-ratio: 2172 / 560; object-fit: contain; }
+@media(max-width:480px){
+ .mellow-home .arrivals-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px;max-width:none}
+ .mellow-home .arrivals-card{padding:9px}
+ .mellow-home .arrivals-card-copy{padding:12px 0 0}
+ .mellow-home .arrivals-card-copy h3{font-size:13px;line-height:1.4;min-height:2.8em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
+ .mellow-home .arrivals-korean{font-size:12px;line-height:1.5;min-height:3em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .mellow-home .arrivals-description{font-size:12px;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:8px 0 12px}
+ .mellow-home .arrivals-card-bottom{gap:4px;font-size:15px}
+}

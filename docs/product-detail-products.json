@@ -1,0 +1,2782 @@
+[
+  {
+    "id": "bread-2",
+    "name": "Mont Blanc Bread",
+    "koreanName": "몽블랑",
+    "description": "겹겹이 쌓인 부드러운 페이스트리에 달콤한 버터 풍미를 더한 빵",
+    "price": 4800,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-2",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 238007,
+      "clip": [
+        549,
+        0,
+        519,
+        724
+      ],
+      "src": "/images/bread-list-clean/row-1.png",
+      "box": "531.78 113.73 587.44 489.53",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-3",
+    "name": "Sweet Potato Cream Bread",
+    "koreanName": "고구마 크림빵",
+    "description": "달콤한 고구마 크림이 가득 들어간 부드럽고 촉촉한 빵",
+    "price": 3200,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-3",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 247450,
+      "clip": [
+        1068,
+        0,
+        530,
+        724
+      ],
+      "src": "/images/bread-list-clean/row-1.png",
+      "box": "1057.38 118.57 590.23 491.86",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-4",
+    "name": "Mammoth Bread",
+    "koreanName": "맘모스빵",
+    "description": "고소한 소보로 빵 사이에 달콤한 크림과 팥앙금, 잼을 가득 채운 빵",
+    "price": 5500,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-4",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 267695,
+      "clip": [
+        1598,
+        0,
+        574,
+        724
+      ],
+      "src": "/images/bread-list-clean/row-1.png",
+      "box": "1590.00 113.00 600.00 500.00",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-5",
+    "name": "Garlic Cream Cheese Bread",
+    "koreanName": "육쪽 마늘빵",
+    "description": "진한 마늘버터 향과 부드러운 크림치즈가 어우러진 달콤짭짤한 빵",
+    "price": 4500,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-5",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 265626,
+      "clip": [
+        0,
+        0,
+        500,
+        809
+      ],
+      "src": "/images/bread-list-clean/row-2.png",
+      "box": "-34.80 133.08 598.60 498.84",
+      "height": 809,
+      "width": 1942,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-6",
+    "name": "Pain au Chocolat",
+    "koreanName": "뺑오쇼콜라",
+    "description": "바삭한 페이스트리 속에 진한 초콜릿을 넣어 구운 달콤한 빵",
+    "price": 4200,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-6",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 234961,
+      "clip": [
+        500,
+        0,
+        455,
+        809
+      ],
+      "src": "/images/bread-list-clean/row-2.png",
+      "box": "440.97 148.22 579.07 482.56",
+      "height": 809,
+      "width": 1942,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-8",
+    "name": "Sausage Bread",
+    "koreanName": "소시지빵",
+    "description": "탱글한 소시지와 고소한 치즈, 부드러운 빵이 어우러진 든든한 간식",
+    "price": 3800,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-8",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 279293,
+      "clip": [
+        1427,
+        0,
+        515,
+        809
+      ],
+      "src": "/images/bread-list-clean/row-2.png",
+      "box": "1379.98 142.81 586.05 488.37",
+      "height": 809,
+      "width": 1942,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-9",
+    "name": "Almond Croissant",
+    "koreanName": "아몬드 크루아상",
+    "description": "아몬드 크림과 슬라이스 아몬드를 올린 바삭한 크루아상",
+    "price": 4900,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-9",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 256560,
+      "clip": [
+        0,
+        0,
+        541,
+        742
+      ],
+      "src": "/images/bread-list-clean/row-3.png",
+      "box": "-36.51 81.91 653.02 544.19",
+      "height": 742,
+      "width": 2120,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-10",
+    "name": "Olive Ciabatta",
+    "koreanName": "올리브 치아바타",
+    "description": "블랙 올리브를 넣어 짭조름하고 쫄깃한 식사빵",
+    "price": 3900,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-10",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 228220,
+      "clip": [
+        541,
+        0,
+        514,
+        742
+      ],
+      "src": "/images/bread-list-clean/row-3.png",
+      "box": "480.48 86.31 646.05 538.37",
+      "height": 742,
+      "width": 2120,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-11",
+    "name": "Fig Walnut Bread",
+    "koreanName": "무화과 호두빵",
+    "description": "말린 무화과와 호두를 담아 은은하게 달콤한 빵",
+    "price": 5700,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-11",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 223687,
+      "clip": [
+        1055,
+        0,
+        508,
+        742
+      ],
+      "src": "/images/bread-list-clean/row-3.png",
+      "box": "990.19 82.99 651.63 543.02",
+      "height": 742,
+      "width": 2120,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-12",
+    "name": "Milk Cream Bun",
+    "koreanName": "우유 크림번",
+    "description": "폭신한 번 속에 부드러운 우유 크림을 채운 빵",
+    "price": 4100,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-12",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 251193,
+      "clip": [
+        1563,
+        0,
+        557,
+        742
+      ],
+      "src": "/images/bread-list-clean/row-3.png",
+      "box": "1504.38 84.07 650.23 541.86",
+      "height": 742,
+      "width": 2120,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-13",
+    "name": "Potato Focaccia",
+    "koreanName": "감자 포카치아",
+    "description": "감자와 로즈메리를 올려 향긋하게 구운 포카치아",
+    "price": 5200,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-13",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 231234,
+      "clip": [
+        0,
+        0,
+        544,
+        724
+      ],
+      "src": "/images/bread-list-clean/row-4.png",
+      "box": "-15.37 100.02 616.74 513.95",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-14",
+    "name": "Earl Grey Brioche",
+    "koreanName": "얼그레이 브리오슈",
+    "description": "버터 향에 얼그레이 찻잎의 풍미를 더한 브리오슈",
+    "price": 4600,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-14",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 222025,
+      "clip": [
+        544,
+        0,
+        532,
+        724
+      ],
+      "src": "/images/bread-list-clean/row-4.png",
+      "box": "515.84 97.70 622.33 518.60",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-15",
+    "name": "Chestnut Loaf",
+    "koreanName": "밤 식빵",
+    "description": "포슬한 밤 조각을 넣어 한 장씩 즐기는 부드러운 식빵",
+    "price": 6200,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-15",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 221081,
+      "clip": [
+        1076,
+        0,
+        535,
+        724
+      ],
+      "src": "/images/bread-list-clean/row-4.png",
+      "box": "1041.05 99.37 627.91 523.26",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "bread-16",
+    "name": "Apple Crumble Danish",
+    "koreanName": "애플 크럼블 데니시",
+    "description": "사과 조림과 크럼블을 올린 겹겹의 데니시",
+    "price": 5900,
+    "imageSrc": null,
+    "detailHref": "/menu/bread-16",
+    "isTemporary": false,
+    "category": "bread",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 247378,
+      "clip": [
+        1611,
+        0,
+        561,
+        724
+      ],
+      "src": "/images/bread-list-clean/row-4.png",
+      "box": "1578.64 99.62 623.72 519.77",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-1",
+    "name": "Ham & Cheese Sandwich",
+    "koreanName": "햄치즈 샌드위치",
+    "description": "풍부한 햄과 고소한 치즈, 신선한 채소가 어우러진 클래식 샌드위치",
+    "price": 5800,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-1",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 254728,
+      "clip": [
+        0,
+        0,
+        538,
+        724
+      ],
+      "src": "/images/sandwich-list-clean/row-1.png",
+      "box": "22.34 114.20 562.33 468.60",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-2",
+    "name": "Egg Sandwich",
+    "koreanName": "에그 샌드위치",
+    "description": "부드러운 달걀과 아삭한 채소가 조화로운 담백한 샌드위치",
+    "price": 5500,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-2",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 238809,
+      "clip": [
+        538,
+        0,
+        521,
+        724
+      ],
+      "src": "/images/sandwich-list-clean/row-1.png",
+      "box": "540.74 111.95 566.51 472.09",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-3",
+    "name": "Chicken Sandwich",
+    "koreanName": "치킨 샌드위치",
+    "description": "담백한 치킨과 신선한 채소를 듬뿍 담은 든든한 샌드위치",
+    "price": 6500,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-3",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 238059,
+      "clip": [
+        1059,
+        0,
+        520,
+        724
+      ],
+      "src": "/images/sandwich-list-clean/row-1.png",
+      "box": "1064.34 112.20 562.33 468.60",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-4",
+    "name": "BLT Sandwich",
+    "koreanName": "BLT 샌드위치",
+    "description": "바삭한 베이컨과 신선한 토마토, 아삭한 양상추의 조화",
+    "price": 6800,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-4",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 292095,
+      "clip": [
+        1579,
+        0,
+        593,
+        724
+      ],
+      "src": "/images/sandwich-list-clean/row-1.png",
+      "box": "1589.44 112.03 565.12 470.93",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-6",
+    "name": "Avocado Sandwich",
+    "koreanName": "아보카도 샌드위치",
+    "description": "고소한 아보카도와 신선한 채소를 듬뿍 담은 샌드위치",
+    "price": 6800,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-6",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 237093,
+      "clip": [
+        528,
+        0,
+        524,
+        724
+      ],
+      "src": "/images/sandwich-list-clean/row-2.png",
+      "box": "530.56 107.47 574.88 479.07",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-7",
+    "name": "Croissant Sandwich",
+    "koreanName": "크루아상 샌드위치",
+    "description": "바삭한 크루아상에 신선한 재료를 더한 특별한 맛",
+    "price": 6800,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-7",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 241461,
+      "clip": [
+        1052,
+        0,
+        527,
+        724
+      ],
+      "src": "/images/sandwich-list-clean/row-2.png",
+      "box": "1046.90 92.16 597.21 497.67",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-8",
+    "name": "Basil Tomato Sandwich",
+    "koreanName": "바질 토마토 샌드위치",
+    "description": "향긋한 바질과 토마토의 상큼한 조화가 매력적인 샌드위치",
+    "price": 6500,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-8",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 287042,
+      "clip": [
+        1579,
+        0,
+        593,
+        724
+      ],
+      "src": "/images/sandwich-list-clean/row-2.png",
+      "box": "1593.45 110.63 572.09 476.74",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-9",
+    "name": "Tuna Corn Sandwich",
+    "koreanName": "참치 콘 샌드위치",
+    "description": "담백한 참치와 톡톡 터지는 옥수수를 담은 샌드위치",
+    "price": 5900,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-9",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 269395,
+      "clip": [
+        0,
+        0,
+        470,
+        819
+      ],
+      "src": "/images/sandwich-list-clean/row-3.png",
+      "box": "-6.41 168.74 535.81 446.51",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-10",
+    "name": "Potato Salad Sandwich",
+    "koreanName": "감자 샐러드 샌드위치",
+    "description": "포슬한 감자 샐러드와 아삭한 오이를 곁들인 샌드위치",
+    "price": 6200,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-10",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 266747,
+      "clip": [
+        470,
+        0,
+        456,
+        819
+      ],
+      "src": "/images/sandwich-list-clean/row-3.png",
+      "box": "466.47 179.72 519.07 432.56",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-11",
+    "name": "Mushroom Melt Sandwich",
+    "koreanName": "머쉬룸 멜트 샌드위치",
+    "description": "구운 버섯과 녹인 치즈를 통밀빵에 채운 샌드위치",
+    "price": 6900,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-11",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 273512,
+      "clip": [
+        926,
+        0,
+        471,
+        819
+      ],
+      "src": "/images/sandwich-list-clean/row-3.png",
+      "box": "924.29 167.83 534.42 445.35",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-12",
+    "name": "Turkey Cranberry Sandwich",
+    "koreanName": "터키 크랜베리 샌드위치",
+    "description": "칠면조 슬라이스와 새콤한 크랜베리 소스를 담은 샌드위치",
+    "price": 7200,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-12",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 317991,
+      "clip": [
+        1397,
+        0,
+        523,
+        819
+      ],
+      "src": "/images/sandwich-list-clean/row-3.png",
+      "box": "1400.48 174.31 526.05 438.37",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-13",
+    "name": "Shrimp Cabbage Sandwich",
+    "koreanName": "쉬림프 양배추 샌드위치",
+    "description": "새우와 양배추 슬로에 레몬 소스를 곁들인 샌드위치",
+    "price": 7500,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-13",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 281026,
+      "clip": [
+        0,
+        0,
+        489,
+        819
+      ],
+      "src": "/images/sandwich-list-clean/row-4.png",
+      "box": "6.20 150.58 538.60 448.84",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-14",
+    "name": "Smoked Salmon Bagel",
+    "koreanName": "훈제연어 베이글 샌드위치",
+    "description": "훈제연어와 크림치즈, 케이퍼를 담은 쫄깃한 베이글",
+    "price": 8100,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-14",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 253074,
+      "clip": [
+        489,
+        0,
+        454,
+        819
+      ],
+      "src": "/images/sandwich-list-clean/row-4.png",
+      "box": "461.90 150.66 537.21 447.67",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-15",
+    "name": "Roast Beef Sandwich",
+    "koreanName": "로스트비프 샌드위치",
+    "description": "로스트비프와 루콜라에 홀그레인 머스터드를 곁들인 샌드위치",
+    "price": 8400,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-15",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 259412,
+      "clip": [
+        943,
+        0,
+        471,
+        819
+      ],
+      "src": "/images/sandwich-list-clean/row-4.png",
+      "box": "925.00 150.50 540.00 450.00",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "sandwich-16",
+    "name": "Grilled Vegetable Panini",
+    "koreanName": "그릴드 채소 파니니",
+    "description": "구운 가지와 주키니, 모차렐라를 넣어 구운 파니니",
+    "price": 7800,
+    "imageSrc": null,
+    "detailHref": "/menu/sandwich-16",
+    "isTemporary": false,
+    "category": "sandwich",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 294582,
+      "clip": [
+        1414,
+        0,
+        506,
+        819
+      ],
+      "src": "/images/sandwich-list-clean/row-4.png",
+      "box": "1393.50 150.50 540.00 450.00",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-1",
+    "name": "Strawberry Fresh Cream Cake",
+    "koreanName": "딸기 생크림 케이크",
+    "description": "신선한 생딸기와 부드러운 우유 생크림이 어우러진 달콤한 케이크",
+    "price": 32000,
+    "imageSrc": null,
+    "detailHref": "/menu/strawberry-cream-cake",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 287993,
+      "clip": [
+        0,
+        0,
+        454,
+        819
+      ],
+      "src": "/images/cake-list-clean/row-1.png",
+      "box": "36.16 210.30 457.67 381.40",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-2",
+    "name": "Basque Burnt Cheesecake",
+    "koreanName": "바스크 치즈 케이크",
+    "description": "진하게 구워낸 카라멜빛 겉면과 부드럽고 꾸덕한 치즈의 풍미가 어우러진 바스크 치즈케이크입니다. 한 입 가득 퍼지는 진한 치즈의 맛을 즐겨보세요.",
+    "price": 29000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-2",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/Frame 930.png",
+      "width": 1216,
+      "height": 693,
+      "box": "115 0 650 600",
+      "clip": [
+        115,
+        0,
+        650,
+        600
+      ],
+      "source": "basque-supplied-illustration"
+    },
+    "missingSlots": []
+  },
+  {
+    "id": "cake-3",
+    "name": "Chocolate Ganache Cake",
+    "koreanName": "초콜릿 가나슈 케이크",
+    "description": "진한 초콜릿 시트에 부드러운 초콜릿 크림과 달콤한 가나슈를 더한 케이크",
+    "price": 34000,
+    "imageSrc": null,
+    "detailHref": "/menu/chocolate-cake",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 288707,
+      "clip": [
+        933,
+        0,
+        457,
+        819
+      ],
+      "src": "/images/cake-list-clean/row-1.png",
+      "box": "968.76 214.55 453.49 377.91",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-4",
+    "name": "Matcha Cream Cake",
+    "koreanName": "말차 크림 케이크",
+    "description": "진한 말차의 쌉싸름한 풍미와 부드러운 생크림이 조화롭게 어우러진 케이크",
+    "price": 33000,
+    "imageSrc": null,
+    "detailHref": "/menu/matcha-cake",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 348743,
+      "clip": [
+        1390,
+        0,
+        530,
+        819
+      ],
+      "src": "/images/cake-list-clean/row-1.png",
+      "box": "1432.47 210.22 459.07 382.56",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-5",
+    "name": "Tiramisu Cake",
+    "koreanName": "티라미수 케이크",
+    "description": "향긋한 에스프레소와 부드러운 마스카포네 크림, 진한 코코아의 풍미가 어우러진 케이크",
+    "price": 34000,
+    "imageSrc": null,
+    "detailHref": "/menu/tiramisu-cake",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 264377,
+      "clip": [
+        0,
+        0,
+        545,
+        724
+      ],
+      "src": "/images/cake-list-clean/row-2.png",
+      "box": "24.47 116.22 579.07 482.56",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-6",
+    "name": "Red Velvet Cake",
+    "koreanName": "레드벨벳 케이크",
+    "description": "촉촉한 레드벨벳 시트와 부드러운 크림치즈 프로스팅이 어우러진 달콤한 케이크",
+    "price": 35000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-6",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 239517,
+      "clip": [
+        545,
+        0,
+        509,
+        724
+      ],
+      "src": "/images/cake-list-clean/row-2.png",
+      "box": "526.38 108.57 590.23 491.86",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-7",
+    "name": "Carrot Cake",
+    "koreanName": "당근 케이크",
+    "description": "촉촉한 당근 시트에 고소한 호두와 부드러운 크림치즈 프로스팅을 더한 케이크",
+    "price": 32000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-7",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 248599,
+      "clip": [
+        1054,
+        0,
+        520,
+        724
+      ],
+      "src": "/images/cake-list-clean/row-2.png",
+      "box": "1056.05 125.87 567.91 473.26",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-8",
+    "name": "Blueberry Cheesecake",
+    "koreanName": "블루베리 치즈케이크",
+    "description": "진한 크림치즈의 부드러운 풍미에 상큼한 블루베리 콤포트를 더한 케이크",
+    "price": 33000,
+    "imageSrc": null,
+    "detailHref": "/menu/blueberry-cheesecake",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 306675,
+      "clip": [
+        1574,
+        0,
+        598,
+        724
+      ],
+      "src": "/images/cake-list-clean/row-2.png",
+      "box": "1588.73 132.36 559.53 466.28",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-9",
+    "name": "Lemon Yogurt Cake",
+    "koreanName": "레몬 요거트 케이크",
+    "description": "레몬 커드와 산뜻한 요거트 크림을 겹겹이 채운 케이크",
+    "price": 30000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-9",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 251195,
+      "clip": [
+        0,
+        0,
+        531,
+        724
+      ],
+      "src": "/images/cake-list-clean/row-3.png",
+      "box": "7.56 122.47 574.88 479.07",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-10",
+    "name": "Peach Earl Grey Cake",
+    "koreanName": "복숭아 얼그레이 케이크",
+    "description": "얼그레이 시트에 복숭아와 밀크티 크림을 담은 케이크",
+    "price": 36000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-10",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 251812,
+      "clip": [
+        531,
+        0,
+        529,
+        724
+      ],
+      "src": "/images/cake-list-clean/row-3.png",
+      "box": "536.16 120.30 577.67 481.40",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-11",
+    "name": "Black Sesame Cream Cake",
+    "koreanName": "흑임자 크림 케이크",
+    "description": "볶은 흑임자와 우유 크림이 고소하게 어우러진 케이크",
+    "price": 31000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-11",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 247666,
+      "clip": [
+        1060,
+        0,
+        527,
+        724
+      ],
+      "src": "/images/cake-list-clean/row-3.png",
+      "box": "1063.26 122.55 573.49 477.91",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-12",
+    "name": "Mango Coconut Cake",
+    "koreanName": "망고 코코넛 케이크",
+    "description": "망고 퓌레와 코코넛 무스를 쌓은 열대 과일 케이크",
+    "price": 37000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-12",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 288646,
+      "clip": [
+        1587,
+        0,
+        585,
+        724
+      ],
+      "src": "/images/cake-list-clean/row-3.png",
+      "box": "1595.06 122.47 574.88 479.07",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-13",
+    "name": "Raspberry Pistachio Cake",
+    "koreanName": "라즈베리 피스타치오 케이크",
+    "description": "피스타치오 시트에 새콤한 라즈베리 콩피를 더한 케이크",
+    "price": 39000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-13",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 287734,
+      "clip": [
+        0,
+        0,
+        476,
+        819
+      ],
+      "src": "/images/cake-list-clean/row-4.png",
+      "box": "10.56 205.97 514.88 429.07",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-14",
+    "name": "Honey Castella Cake",
+    "koreanName": "허니 카스텔라 케이크",
+    "description": "꿀 카스텔라에 담백한 생크림을 곁들인 케이크",
+    "price": 28000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-14",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 273922,
+      "clip": [
+        476,
+        0,
+        466,
+        819
+      ],
+      "src": "/images/cake-list-clean/row-4.png",
+      "box": "473.97 202.72 519.07 432.56",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-15",
+    "name": "Chestnut Mont Blanc Cake",
+    "koreanName": "밤 몽블랑 케이크",
+    "description": "밤 페이스트와 바닐라 크림을 올린 부드러운 케이크",
+    "price": 38000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-15",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 280615,
+      "clip": [
+        942,
+        0,
+        464,
+        819
+      ],
+      "src": "/images/cake-list-clean/row-4.png",
+      "box": "950.83 221.10 495.35 412.79",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "cake-16",
+    "name": "Salted Caramel Mousse Cake",
+    "koreanName": "솔티드 카라멜 무스 케이크",
+    "description": "카라멜 무스에 소금의 여운과 크런치를 더한 케이크",
+    "price": 40000,
+    "imageSrc": null,
+    "detailHref": "/menu/cake-16",
+    "isTemporary": false,
+    "category": "cake",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 318332,
+      "clip": [
+        1406,
+        0,
+        514,
+        819
+      ],
+      "src": "/images/cake-list-clean/row-4.png",
+      "box": "1415.02 221.19 493.95 411.63",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-1",
+    "name": "Iced Americano",
+    "koreanName": "아이스 아메리카노",
+    "description": "깊고 진한 에스프레소에 시원한 얼음을 더해 깔끔하게 즐기는 커피",
+    "price": 4500,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-1",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 276699,
+      "clip": [
+        0,
+        0,
+        458,
+        819
+      ],
+      "src": "/images/drink-list-clean/row-1.png",
+      "box": "-36.60 139.16 597.21 497.67",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-2",
+    "name": "Iced Cafe Latte",
+    "koreanName": "아이스 카페라떼",
+    "description": "고소하고 부드러운 우유에 진한 에스프레소를 더한 시원한 라떼",
+    "price": 5000,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-2",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 280086,
+      "clip": [
+        458,
+        0,
+        455,
+        819
+      ],
+      "src": "/images/drink-list-clean/row-1.png",
+      "box": "471.28 193.23 527.44 439.53",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-3",
+    "name": "Iced Vanilla Latte",
+    "koreanName": "아이스 바닐라 라떼",
+    "description": "향긋한 바닐라 시럽과 고소한 우유, 진한 에스프레소가 어우러진 달콤한 라떼",
+    "price": 5500,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-3",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 286562,
+      "clip": [
+        913,
+        0,
+        471,
+        819
+      ],
+      "src": "/images/drink-list-clean/row-1.png",
+      "box": "896.41 135.76 604.19 503.49",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-4",
+    "name": "Iced Caramel Macchiato",
+    "koreanName": "아이스 카라멜 마키아토",
+    "description": "부드러운 우유와 진한 에스프레소에 달콤한 카라멜 소스를 더한 라떼",
+    "price": 5500,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-4",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 337017,
+      "clip": [
+        1384,
+        0,
+        536,
+        819
+      ],
+      "src": "/images/drink-list-clean/row-1.png",
+      "box": "1376.90 141.16 597.21 497.67",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-5",
+    "name": "Strawberry Latte",
+    "koreanName": "딸기 라떼",
+    "description": "상큼한 생딸기와 달콤한 딸기청에 부드러운 우유를 더한 달콤한 라떼",
+    "price": 5800,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-5",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 209818,
+      "clip": [
+        0,
+        0,
+        500,
+        724
+      ],
+      "src": "/images/drink-list-clean/row-2.png",
+      "box": "-82.24 39.05 753.49 627.91",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-6",
+    "name": "Iced Matcha Latte",
+    "koreanName": "아이스 말차 라떼",
+    "description": "진한 말차의 쌉싸름한 풍미와 고소한 우유가 어우러진 시원한 라떼",
+    "price": 5500,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-6",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 245205,
+      "clip": [
+        500,
+        0,
+        553,
+        724
+      ],
+      "src": "/images/drink-list-clean/row-2.png",
+      "box": "444.57 31.56 761.86 634.88",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-7",
+    "name": "Lemon Ade",
+    "koreanName": "레몬 에이드",
+    "description": "상큼한 생레몬과 청량한 탄산이 어우러진 시원하고 산뜻한 에이드",
+    "price": 5800,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-7",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 218982,
+      "clip": [
+        1053,
+        0,
+        533,
+        724
+      ],
+      "src": "/images/drink-list-clean/row-2.png",
+      "box": "990.34 44.70 742.33 618.60",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-8",
+    "name": "Peach Iced Tea",
+    "koreanName": "복숭아 아이스티",
+    "description": "달콤한 복숭아의 향긋한 풍미와 은은한 홍차의 맛이 어우러진 시원한 아이스티",
+    "price": 5000,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-8",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 265578,
+      "clip": [
+        1586,
+        0,
+        586,
+        724
+      ],
+      "src": "/images/drink-list-clean/row-2.png",
+      "box": "1532.33 51.10 735.35 612.79",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-9",
+    "name": "Cold Brew",
+    "koreanName": "콜드브루",
+    "description": "찬물로 천천히 추출해 부드러운 여운을 살린 커피",
+    "price": 4800,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-9",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 241249,
+      "clip": [
+        0,
+        0,
+        510,
+        724
+      ],
+      "src": "/images/drink-list-clean/row-3.png",
+      "box": "-56.05 54.63 692.09 576.74",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-10",
+    "name": "Honey Chamomile Tea",
+    "koreanName": "허니 캐모마일 티",
+    "description": "캐모마일 꽃향기에 꿀의 은은한 단맛을 더한 허브티",
+    "price": 4600,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-10",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 252111,
+      "clip": [
+        510,
+        0,
+        552,
+        724
+      ],
+      "src": "/images/drink-list-clean/row-3.png",
+      "box": "493.88 73.07 650.23 541.86",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-11",
+    "name": "Grapefruit Ade",
+    "koreanName": "자몽 에이드",
+    "description": "자몽 과육의 쌉싸름함을 탄산과 즐기는 과일 에이드",
+    "price": 6000,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-11",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 247726,
+      "clip": [
+        1062,
+        0,
+        535,
+        724
+      ],
+      "src": "/images/drink-list-clean/row-3.png",
+      "box": "1014.15 52.71 690.70 575.58",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-12",
+    "name": "Blueberry Yogurt Smoothie",
+    "koreanName": "블루베리 요거트 스무디",
+    "description": "블루베리와 플레인 요거트를 곱게 갈아 만든 스무디",
+    "price": 6500,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-12",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 279506,
+      "clip": [
+        1597,
+        0,
+        575,
+        724
+      ],
+      "src": "/images/drink-list-clean/row-3.png",
+      "box": "1538.55 58.87 687.91 573.26",
+      "height": 724,
+      "width": 2172,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-13",
+    "name": "Black Sesame Latte",
+    "koreanName": "흑임자 라떼",
+    "description": "흑임자 페이스트와 우유로 고소하게 즐기는 라떼",
+    "price": 5600,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-13",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 287898,
+      "clip": [
+        0,
+        0,
+        460,
+        819
+      ],
+      "src": "/images/drink-list-clean/row-4.png",
+      "box": "-27.02 150.81 586.05 488.37",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-14",
+    "name": "Jeju Tangerine Tea",
+    "koreanName": "제주 청귤 티",
+    "description": "청귤청과 귤 조각을 넣어 산뜻하게 즐기는 과일차",
+    "price": 5200,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-14",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 286272,
+      "clip": [
+        460,
+        0,
+        475,
+        819
+      ],
+      "src": "/images/drink-list-clean/row-4.png",
+      "box": "427.07 160.06 581.86 484.88",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-15",
+    "name": "Coconut Coffee Shake",
+    "koreanName": "코코넛 커피 쉐이크",
+    "description": "에스프레소와 코코넛 밀크를 블렌딩한 시원한 쉐이크",
+    "price": 6800,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-15",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 275193,
+      "clip": [
+        935,
+        0,
+        460,
+        819
+      ],
+      "src": "/images/drink-list-clean/row-4.png",
+      "box": "893.48 151.81 586.05 488.37",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "drink-16",
+    "name": "Raspberry Hibiscus Tea",
+    "koreanName": "라즈베리 히비스커스 티",
+    "description": "라즈베리와 히비스커스의 붉은 과일 향을 살린 티",
+    "price": 6200,
+    "imageSrc": null,
+    "detailHref": "/menu/drink-16",
+    "isTemporary": false,
+    "category": "drink",
+    "registeredIn": "MENU / HOME 카테고리",
+    "protected": false,
+    "art": {
+      "transparentPixels": 326434,
+      "clip": [
+        1395,
+        0,
+        525,
+        819
+      ],
+      "src": "/images/drink-list-clean/row-4.png",
+      "box": "1368.26 158.55 573.49 477.91",
+      "height": 819,
+      "width": 1920,
+      "kind": "region",
+      "source": "category-illustration"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "strawberry-shortcake",
+    "badge": "BEST",
+    "name": "Strawberry Shortcake",
+    "koreanName": "딸기 생크림 케이크",
+    "description": "신선한 생딸기와 부드러운 생크림이 어우러진 클래식한 케이크",
+    "price": 7500,
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/strawberry-cream-cake?option=best",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/best-menu/strawberry-shortcake.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "chocolate-cake",
+    "badge": "BEST",
+    "name": "Chocolate Cake",
+    "koreanName": "초콜릿 케이크",
+    "description": "진한 초콜릿과 부드러운 크림의 달콤한 조화",
+    "price": 6900,
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/chocolate-cake?option=best",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/best-menu/chocolate-cake.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "matcha-cake",
+    "badge": "NEW",
+    "name": "Matcha Cake",
+    "koreanName": "말차 케이크",
+    "description": "깊고 풍부한 말차와 부드러운 크림이 어우러진 케이크",
+    "price": 6800,
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/matcha-cake?option=best",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/best-menu/matcha-cake.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "strawberry-roll-cake",
+    "badge": "BEST",
+    "name": "Strawberry Roll Cake",
+    "koreanName": "딸기 롤케이크",
+    "description": "폭신한 시트에 부드러운 생크림과 달콤한 딸기를 가득 넣은 롤케이크",
+    "price": 6300,
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/strawberry-roll-cake",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/best-menu/strawberry-roll-cake.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "blueberry-cheesecake",
+    "badge": "BEST",
+    "name": "Blueberry Cheesecake",
+    "korean": "블루베리 치즈 케이크",
+    "description": "상큼한 블루베리와 고소한 크림치즈가 어우러진 케이크",
+    "price": 6500,
+    "koreanName": "블루베리 치즈 케이크",
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/blueberry-cheesecake?option=home",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/new-menu/blueberry-cheesecake.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "tiramisu",
+    "badge": "BEST",
+    "name": "Tiramisu",
+    "korean": "티라미수",
+    "description": "진한 커피향과 부드러운 마스카포네 크림이 어우러진 디저트",
+    "price": 6800,
+    "koreanName": "티라미수",
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/tiramisu-cake?option=home",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/new-menu/tiramisu.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "lemon-tart",
+    "badge": "NEW",
+    "name": "Lemon Tart",
+    "korean": "레몬 타르트",
+    "description": "상큼한 레몬 크림과 바삭한 타르트가 어우러진 청량한 디저트",
+    "price": 6500,
+    "koreanName": "레몬 타르트",
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/lemon-tart",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/new-menu/lemon-tart.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "fruit-tart",
+    "badge": "NEW",
+    "name": "Fruit Tart",
+    "korean": "생과일 타르트",
+    "description": "신선한 제철 과일과 부드러운 크림을 가득 올린 상큼한 타르트",
+    "price": 7200,
+    "koreanName": "생과일 타르트",
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/fruit-tart",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/new-menu/fruit-tart.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "salted-caramel-financier",
+    "name": "Salted Caramel Financier",
+    "korean": "솔티드 카라멜 휘낭시에",
+    "description": "고소한 버터 풍미에 달콤한 카라멜과 은은한 소금이 어우러진 휘낭시에",
+    "price": 3800,
+    "koreanName": "솔티드 카라멜 휘낭시에",
+    "category": "bread",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/salted-caramel-financier",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/new-arrivals/salted-caramel-financier.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "earl-grey-scone",
+    "name": "Earl Grey Scone",
+    "korean": "얼그레이 스콘",
+    "description": "향긋한 얼그레이 향과 바삭한 식감이 어우러진 스콘",
+    "price": 3500,
+    "koreanName": "얼그레이 스콘",
+    "category": "bread",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/earl-grey-scone",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/new-arrivals/earl-grey-scone.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "pistachio-cream-croissant",
+    "name": "Pistachio Cream Croissant",
+    "korean": "피스타치오 크림 크루아상",
+    "description": "바삭한 크루아상에 고소한 피스타치오 크림을 가득 채운 디저트",
+    "price": 4800,
+    "koreanName": "피스타치오 크림 크루아상",
+    "category": "bread",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/pistachio-cream-croissant",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/new-arrivals/pistachio-cream-croissant.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "peach-yogurt-mousse",
+    "name": "Peach Yogurt Mousse",
+    "korean": "복숭아 요거트 무스",
+    "description": "상큼한 복숭아와 부드러운 요거트 무스가 어우러진 디저트",
+    "price": 4500,
+    "koreanName": "복숭아 요거트 무스",
+    "category": "cake",
+    "registeredIn": "HOME BEST / NEW MENU / NEW ARRIVALS",
+    "detailHref": "/menu/peach-yogurt-mousse",
+    "protected": false,
+    "art": {
+      "kind": "image",
+      "src": "/src/assets/new-arrivals/peach-yogurt-mousse.png",
+      "source": "home-original"
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-dubai-chocolate-croissant",
+    "category": "bread",
+    "categoryLabel": "빵",
+    "koreanName": "두바이 초콜릿 크루아상",
+    "name": "Dubai Chocolate Croissant",
+    "price": 6800,
+    "description": "바삭한 크루아상에 피스타치오와 초콜릿의 진한 풍미를 담은 디저트",
+    "detailHref": "/new-menu/new-dubai-chocolate-croissant",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/dubai-chocolate-croissant.png",
+    "photoBox": "146 398 294 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "146 388 294 106",
+      "clip": [
+        146,
+        388,
+        294,
+        106
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-strawberry-pistachio-bun",
+    "category": "bread",
+    "categoryLabel": "빵",
+    "koreanName": "딸기 피스타치오 크림빵",
+    "name": "Strawberry Pistachio Cream Bun",
+    "price": 5900,
+    "description": "상큼한 딸기와 고소한 피스타치오 크림이 어우러진 부드러운 빵",
+    "detailHref": "/new-menu/new-strawberry-pistachio-bun",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/strawberry-pistachio-bun.png",
+    "photoBox": "484 398 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "484 388 292 106",
+      "clip": [
+        484,
+        388,
+        292,
+        106
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-lemon-cream-danish",
+    "category": "bread",
+    "categoryLabel": "빵",
+    "koreanName": "레몬 크림 데니시",
+    "name": "Lemon Cream Danish",
+    "price": 5800,
+    "description": "상큼한 레몬 크림이 가득한 바삭하고 촉촉한 데니시",
+    "detailHref": "/new-menu/new-lemon-cream-danish",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/lemon-cream-danish.png",
+    "photoBox": "814 398 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "814 388 292 106",
+      "clip": [
+        814,
+        388,
+        292,
+        106
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-black-sesame-brioche",
+    "category": "bread",
+    "categoryLabel": "빵",
+    "koreanName": "흑임자 크림 브리오슈",
+    "name": "Black Sesame Cream Brioche",
+    "price": 5600,
+    "description": "고소한 흑임자 크림을 듬뿍 담은 부드러운 브리오슈",
+    "detailHref": "/new-menu/new-black-sesame-brioche",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/black-sesame-brioche.png",
+    "photoBox": "1146 398 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "1146 388 292 106",
+      "clip": [
+        1146,
+        388,
+        292,
+        106
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-earl-grey-fig-cake",
+    "category": "cake",
+    "categoryLabel": "케이크",
+    "koreanName": "얼그레이 무화과 케이크",
+    "name": "Earl Grey Fig Cake",
+    "price": 8200,
+    "description": "향긋한 얼그레이 크림과 달콤한 무화과를 함께 즐기는 케이크",
+    "detailHref": "/new-menu/new-earl-grey-fig-cake",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/earl-grey-fig-cake.png",
+    "photoBox": "146 600 294 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "146 586 294 104",
+      "clip": [
+        146,
+        586,
+        294,
+        104
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-yuja-cheese-mousse",
+    "category": "cake",
+    "categoryLabel": "케이크",
+    "koreanName": "유자 치즈 무스 케이크",
+    "name": "Yuja Cheese Mousse Cake",
+    "price": 7800,
+    "description": "유자의 산뜻한 향과 치즈 무스의 부드러움을 담은 케이크",
+    "detailHref": "/new-menu/new-yuja-cheese-mousse",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/yuja-cheese-mousse.png",
+    "photoBox": "484 600 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "484 586 292 104",
+      "clip": [
+        484,
+        586,
+        292,
+        104
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-chocolate-hazelnut-mousse",
+    "category": "cake",
+    "categoryLabel": "케이크",
+    "koreanName": "초코 헤이즐넛 무스 케이크",
+    "name": "Chocolate Hazelnut Mousse Cake",
+    "price": 8500,
+    "description": "진한 초콜릿과 고소한 헤이즐넛이 어우러진 부드러운 무스 케이크",
+    "detailHref": "/new-menu/new-chocolate-hazelnut-mousse",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/chocolate-hazelnut-mousse.png",
+    "photoBox": "814 600 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "814 586 292 104",
+      "clip": [
+        814,
+        586,
+        292,
+        104
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-berry-yogurt-mousse",
+    "category": "cake",
+    "categoryLabel": "케이크",
+    "koreanName": "베리 요거트 무스 케이크",
+    "name": "Berry Yogurt Mousse Cake",
+    "price": 8300,
+    "description": "상큼한 베리와 부드러운 요거트 무스를 담은 가벼운 디저트 케이크",
+    "detailHref": "/new-menu/new-berry-yogurt-mousse",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/berry-yogurt-mousse.png",
+    "photoBox": "1146 600 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "1146 586 292 104",
+      "clip": [
+        1146,
+        586,
+        292,
+        104
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-basil-chicken-focaccia",
+    "category": "sandwich",
+    "categoryLabel": "샌드위치",
+    "koreanName": "바질 치킨 포카치아 샌드위치",
+    "name": "Basil Chicken Focaccia Sandwich",
+    "price": 8900,
+    "description": "향긋한 바질과 치킨을 폭신한 포카치아에 담은 든든한 메뉴",
+    "detailHref": "/new-menu/new-basil-chicken-focaccia",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/basil-chicken-focaccia.png",
+    "photoBox": "146 798 294 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "146 788 294 100",
+      "clip": [
+        146,
+        788,
+        294,
+        100
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-jambon-beurre",
+    "category": "sandwich",
+    "categoryLabel": "샌드위치",
+    "koreanName": "잠봉뵈르 샌드위치",
+    "name": "Jambon Beurre Sandwich",
+    "price": 8500,
+    "description": "바게트에 햄과 버터를 담아 담백하게 즐기는 프렌치 샌드위치",
+    "detailHref": "/new-menu/new-jambon-beurre",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/jambon-beurre.png",
+    "photoBox": "484 798 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "484 788 292 100",
+      "clip": [
+        484,
+        788,
+        292,
+        100
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-strawberry-matcha-cream-latte",
+    "category": "drink",
+    "categoryLabel": "음료",
+    "koreanName": "딸기 말차 크림 라떼",
+    "name": "Strawberry Matcha Cream Latte",
+    "price": 6800,
+    "description": "딸기의 상큼함과 부드러운 말차 크림이 층층이 어우러진 라떼",
+    "detailHref": "/new-menu/new-strawberry-matcha-cream-latte",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/strawberry-matcha-cream-latte.png",
+    "photoBox": "814 798 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "814 788 292 100",
+      "clip": [
+        814,
+        788,
+        292,
+        100
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "new-salted-caramel-milk-tea",
+    "category": "drink",
+    "categoryLabel": "음료",
+    "koreanName": "솔티드 카라멜 밀크티",
+    "name": "Salted Caramel Milk Tea",
+    "price": 6200,
+    "description": "달콤한 카라멜에 은은한 짭짤함을 더한 부드러운 밀크티",
+    "detailHref": "/new-menu/new-salted-caramel-milk-tea",
+    "imageSrc": null,
+    "requestedImagePath": "/images/new-menu/salted-caramel-milk-tea.png",
+    "photoBox": "1146 798 292 65",
+    "registeredIn": "NEW MENU 전용",
+    "protected": false,
+    "art": {
+      "kind": "region",
+      "src": "/images/7d2c9743-f504-4917-b8b9-4124678f332a.png",
+      "width": 1584,
+      "height": 993,
+      "box": "1146 788 292 100",
+      "clip": [
+        1146,
+        788,
+        292,
+        100
+      ],
+      "source": "seasonal-reference-illustration",
+      "incompleteOriginal": true
+    },
+    "missingSlots": [
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+]

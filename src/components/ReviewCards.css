@@ -23,10 +23,16 @@
 }
 @media(max-width:600px) {
   .mellow-home .home-reviews > .home-container { width:calc(100% - 32px); }
-  .mellow-home .home-reviews .home-review-grid { grid-template-columns:minmax(0,1fr); gap:28px; max-width:420px; margin-inline:auto; }
-  .mellow-home .home-reviews .home-review-card { border-radius:28px; }
-  .mellow-home .home-reviews .home-review-body { padding:14px 8px 8px; }
-  .mellow-home .home-reviews .home-review-card h3 { font-size:23px; }
+  .mellow-home .home-reviews .home-review-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; max-width:none; margin-inline:auto; }
+  .mellow-home .home-reviews .home-review-card { border-radius:28px; padding:8px; }
+  .mellow-home .home-reviews .home-review-body { padding:10px 2px 4px; }
+  .mellow-home .home-reviews .home-review-rating { gap:5px; margin-bottom:8px; }
+  .mellow-home .home-reviews .home-review-rating > svg { width:76px; max-width:calc(100% - 26px); height:18px; }
+  .mellow-home .home-reviews .home-review-rating > span { font-size:12px; }
+  .mellow-home .home-reviews .home-review-card h3 { font-size:13px; line-height:1.5; min-height:3em; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
+  .mellow-home .home-reviews .home-review-card p { font-size:12px; line-height:1.6; height:4.8em; margin:8px 0 12px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; }
+  .mellow-home .home-reviews .home-review-meta { flex-direction:column; align-items:flex-start; gap:5px; font-size:10px; padding-top:8px; }
+  .mellow-home .home-reviews .home-review-meta svg { width:13px; height:15px; flex-shrink:0; }
 }
 
 /* Transparent review heading only; preserve the review cards and section background. */

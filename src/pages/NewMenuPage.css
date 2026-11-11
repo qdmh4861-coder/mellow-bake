@@ -30,3 +30,13 @@
 @media(max-width:600px) { .seasonal-menu-main,.seasonal-detail-main { width: calc(100% - 32px); } .seasonal-menu-banner { grid-template-columns: 1fr; } .seasonal-menu-banner svg { min-height: 150px; height: 160px; } .seasonal-menu-banner p { font-size: 15px; } .seasonal-menu-grid { gap: 14px; } .seasonal-menu-heading p { font-size: 13px; } .seasonal-menu-copy { padding-inline: 12px; } .seasonal-menu-copy h3 { font-size: 16px; } }
 @media(max-width:420px) { .seasonal-menu-grid { grid-template-columns: 1fr; } }
 @media(prefers-reduced-motion:reduce) { .seasonal-menu-card { transition: none; } }
+
+@media(max-width:420px){
+ .seasonal-menu-page .seasonal-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .seasonal-menu-page .seasonal-menu-photo{padding:8px}
+ .seasonal-menu-page .seasonal-menu-copy{padding:8px 9px 12px}
+ .seasonal-menu-page .seasonal-menu-copy h3{font-size:13px;line-height:1.4;min-height:2.8em;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .seasonal-menu-page .seasonal-menu-copy p{font-size:12px;line-height:1.5;min-height:4.5em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+ .seasonal-menu-page .seasonal-menu-badge{font-size:11px;padding:3px 8px;left:6px;top:6px}
+ .seasonal-menu-page .seasonal-menu-copy strong{font-size:15px}
+}

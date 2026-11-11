@@ -1,13 +1,15 @@
 import { useId, useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
-import HomeFooter from '../components/HomeFooter'
+import ProductDetailFooter from '../components/ProductDetailFooter'
 import { menuCategories } from './OurMenu'
 import './CinnamonRollDetail.css'
 import ProductHero from '../components/ProductHero'
-import { cartAddMessage } from '../cartStore'
+import { cartAddMessage, buyNow } from '../cartStore'
+import { productHref } from './productLinks'
 
 const reference = '/images/03_시나몬.png'
 const product = menuCategories.find(category => category.id === 'bread').products.find(item => item.id === 'bread-7')
+const recommendations = ['cake-1', 'bread-6', 'bread-2', 'drink-3'].map(id => menuCategories.flatMap(category => category.products).find(item => item.id === id))
 // Source coordinates preserve every pixel of the supplied 1632 × 7521 Figma export.
 const artworkSections = [
   ['cinnamon-introduction', 980, 1350, '핑크색 배경의 시나몬롤 소개와 캐릭터'],
@@ -49,15 +51,16 @@ export default function CinnamonRollDetail() {
       <ProductHero key={product.id} product={product} price={product.price} images={images}
         quantity={quantity} onQuantityChange={setQuantity}
         onCart={() => setNotice(cartAddMessage(product, quantity))}
-        onBuy={() => setNotice('주문·결제 서비스 연결 준비 중입니다. 주문은 생성되지 않았습니다.')}
+        onBuy={() => setNotice(buyNow(product, quantity, product.price))}
         anchors={{ introduction: '#cinnamon-introduction', ingredients: '#cinnamon-ingredients', storage: '#cinnamon-storage', reviews: '#cinnamon-reviews', related: '#cinnamon-related', shipping: '#cinnamon-shipping' }}
       />
       <p className="cinnamon-action-status" role="status">{notice}</p>
-      {artworkSections.map(([id, top, bottom, label]) => <section className="cinnamon-art-section" id={id} key={id} aria-label={label}>
+      {artworkSections.map(([id, top, bottom, label]) => <section className="cinnamon-art-section" id={id} key={id} aria-label={label} style={id === 'cinnamon-related' ? { position: 'relative' } : undefined}>
         {id === 'cinnamon-reviews' ? <a style={{ display: 'block' }} href="/reviews?productId=bread-7" aria-label="시나몬롤 실제 상품 리뷰 보기"><FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} /></a> : <FigmaRegion box={`200 ${top} 1230 ${bottom - top}`} label={label} />}
+        {id === 'cinnamon-related' && recommendations.map((item, index) => <a key={item.id} href={productHref(item.id)} aria-label={`${item.koreanName} 상세보기`} style={{ position: 'absolute', left: `${index * 25}%`, top: '20%', width: '25%', height: '75%' }} />)}
       </section>)}
       <p className="cinnamon-source-note">재료·보관·배송 안내와 리뷰는 제공된 피그마 시안입니다. 실제 판매 정보는 확인 후 적용됩니다. <a href={reference} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
     </main>
-    <HomeFooter />
+    <ProductDetailFooter />
   </div>
 }

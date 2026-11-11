@@ -7,6 +7,10 @@ import { useCart, initializeCartOnce, setCartQuantity, selectCartItem, selectAll
 import './Cart.css'
 import { seasonalProducts } from '../newMenuCatalog'
 import NewMenuProductImage from '../components/NewMenuProductImage'
+import CatalogProductImage from '../components/CatalogProductImage'
+import { artworkFor, protectedProductIds } from '../productArtwork'
+import { createPortfolioOrderPreview } from '../portfolioOrderPreview'
+import { orderDetailHref } from '../orderData'
 
 const products = menuCategories.flatMap(category => category.products)
 const initialItems = [['bread-1', 2], ['bread-7', 1], ['sandwich-5', 1]].map(([id, quantity]) => ({ product: products.find(item => item.id === id), quantity })).filter(item => item.product)
@@ -25,6 +29,7 @@ function CartPhoto({ item }) {
   }, [item.id])
   const registered = products.find(product => product.id === item.id)
   const photo = Object.entries(photos).find(([path]) => path.split('/').at(-1) === `${item.id}.png`)?.[1]
+  if (!protectedProductIds.has(item.id) && artworkFor(item)) return <div className="cart-product-image" ref={photoRef}><CatalogProductImage product={item} /></div>
   return <div className="cart-product-image" ref={photoRef}>{seasonalProducts.some(product => product.id === item.id) ? <NewMenuProductImage product={seasonalProducts.find(product => product.id === item.id)} /> : registered ? <MenuProductImage product={registered} /> : photo ? <img src={photo} alt={item.koreanName} /> : <span className="cart-photo-pending">상품 이미지 준비 중</span>}</div>
 }
 
@@ -61,6 +66,12 @@ export default function Cart() {
     catch { setNotice('변경 내용을 저장하지 못했습니다. 브라우저 저장 공간 설정을 확인해 주세요.') }
   }
 
+  function previewOrder() {
+    if (!selected.length) { setNotice('주문할 상품을 먼저 선택해 주세요.'); return }
+    try { window.location.assign(orderDetailHref(createPortfolioOrderPreview(selected))) }
+    catch { setNotice('시연용 주문 확인을 준비하지 못했습니다. 상품 정보와 브라우저 저장 공간을 확인해 주세요.') }
+  }
+
   return <div className="cart-page">
     <HomeHeader />
     <section className="cart-banner" aria-labelledby="cart-title">
@@ -94,13 +105,13 @@ export default function Cart() {
           <dl className="cart-discounts"><div><dt>쿠폰 할인</dt><dd>준비 중</dd></div><div><dt>적립 예정 포인트</dt><dd>정책 확인 중</dd></div></dl>
           <div className="cart-total"><span>상품 기준 예상 금액</span><strong>{money(subtotal)}</strong></div>
           <p className="cart-policy-note">배송비와 할인은 미포함입니다. 운영 정책 확인 후 최종 결제 금액을 안내합니다.</p>
-          <button className="cart-order" onClick={() => setNotice(selected.length ? `선택한 상품 ${selected.length}종 · ${money(subtotal)}. 주문·결제 페이지 연결 준비 중입니다. 결제는 진행되지 않았습니다.` : '주문할 상품을 먼저 선택해 주세요.')}><span aria-hidden="true">✦</span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M2 5h5l4 17h15l3-12H8M12 22l-1 4h15" /><circle cx="13" cy="29" r="1" /><circle cx="25" cy="29" r="1" /></svg>주문하기 ›<span aria-hidden="true">✦</span></button>
+          <button className="cart-order" onClick={previewOrder}><span aria-hidden="true">✦</span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M2 5h5l4 17h15l3-12H8M12 22l-1 4h15" /><circle cx="13" cy="29" r="1" /><circle cx="25" cy="29" r="1" /></svg>주문하기 ›<span aria-hidden="true">✦</span></button>
           <a className="cart-continue" href="/menu">계속 쇼핑하기</a>
         </aside>
       </div>
       <p className="cart-notice" role="status">{notice}</p>
       <section className="cart-recommendations" aria-labelledby="cart-related-title"><div className="cart-related-heading"><h2 id="cart-related-title">함께 보면 좋은 메뉴</h2><p>멜로우 베이크가 추천하는 달콤한 메뉴를 만나보세요.</p><span aria-hidden="true">♡ ✧</span></div><div className="cart-related-grid">{recommendations.map(item => <a className="cart-related-card" key={item.id} href={productHref(item.id)} data-recommended-id={item.id}><div><CartPhoto item={item} /></div><h3>{item.koreanName}</h3><strong>{money(item.price)}</strong></a>)}</div></section>
-      <section className="cart-events" aria-labelledby="cart-event-title"><div><span>MELLOW BAKE EVENT</span><h2 id="cart-event-title">달콤한 혜택을 담아가세요!</h2><p>쿠폰과 이벤트는 준비 중입니다.</p></div><div className="cart-coupon"><span>WELCOME COUPON</span><strong>COUPON</strong><p>할인 혜택 준비 중</p><small>MELLOW BAKE</small></div><div className="cart-coupon cart-coupon-shipping"><span>DELIVERY EVENT</span><strong>DELIVERY</strong><p>배송 혜택 준비 중</p><small>MELLOW BAKE</small></div></section>
+      <section className="cart-events" aria-labelledby="cart-event-title"><div><span>MELLOW BAKE EVENT</span><h2 id="cart-event-title">달콤한 혜택을 담아가세요!</h2><p>쿠폰과 이벤트는 준비 중입니다.</p></div><div className="cart-coupon"><span>WELCOME COUPON</span><strong>10% OFF</strong><p>첫 구매 할인 쿠폰</p><small>MELLOW BAKE</small></div><div className="cart-coupon cart-coupon-shipping"><span>DELIVERY EVENT</span><strong>FREE</strong><p>무료배송 쿠폰</p><small>MELLOW BAKE</small></div></section>
     </main>
     {deletion && <dialog ref={deleteDialog} className="cart-delete-dialog" aria-labelledby="cart-delete-title" onCancel={() => setDeletion(null)} onClick={event => { const rect=event.currentTarget.getBoundingClientRect(); if (event.target === event.currentTarget && (event.clientX<rect.left || event.clientX>rect.right || event.clientY<rect.top || event.clientY>rect.bottom)) setDeletion(null) }}><CartBow /><h2 id="cart-delete-title">{deletion.all ? '장바구니를 비우시겠습니까?' : '선택한 상품을 삭제하시겠습니까?'}</h2><p>{deletion.all ? '장바구니의 모든 상품이 삭제됩니다.' : `${deletion.ids.length}개의 상품이 삭제됩니다.`}</p><div><button autoFocus onClick={() => setDeletion(null)}>취소</button><button onClick={() => { act(() => deletion.all ? clearCart() : removeCartItems(deletion.ids), deletion.all ? '장바구니를 비웠습니다.' : '선택 상품을 삭제했습니다.'); setDeletion(null) }}>삭제하기</button></div></dialog>}
     <HomeFooter />

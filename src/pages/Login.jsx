@@ -4,7 +4,7 @@ import HomeFooter from '../components/HomeFooter'
 import loginBear from '../images/login-bear.png'
 import loginCat from '../images/login-cat.png'
 import './Login.css'
-import { DEMO_EMAIL, loginDemo } from '../demoAuth'
+import { DEMO_EMAIL, loginDemo, requiresDemoLogin } from '../demoAuth'
 
 const savedEmailKey = 'mellow-bake.saved-email'
 
@@ -63,7 +63,15 @@ export default function Login() {
     try {
       await loginDemo(email, password)
       setPassword('')
-      window.location.assign('/mypage')
+      const next = new URLSearchParams(window.location.search).get('next')
+      let destination = '/mypage'
+      if (next) {
+        try {
+          const target = new URL(next, window.location.origin)
+          if (target.origin === window.location.origin && requiresDemoLogin(target.pathname)) destination = target.pathname + target.search
+        } catch { /* An invalid return address must not prevent a valid login. */ }
+      }
+      window.location.assign(destination)
     } catch (error) {
       setPassword('')
       setMessage(error.message || '데모 로그인에 실패했습니다. 브라우저 설정을 확인해 주세요.')

@@ -1,5 +1,6 @@
 // Figma-only display examples. These are never persisted, paid, or submitted as orders.
 import { getOrders } from './orderData'
+import { getPortfolioOrderPreview } from './portfolioOrderPreview'
 import { paymentExampleOrder } from './paymentData'
 
 const items = [
@@ -23,7 +24,7 @@ export function displayOrders() {
   const realOrders = getOrders()
   return realOrders.length || new URLSearchParams(window.location.search).get('preview') === '0' ? realOrders : previewOrders
 }
-export function displayOrder(id) { return displayOrders().find(order => order.id === id) || (new URLSearchParams(window.location.search).get('preview') !== '0' ? paymentExampleOrder(id) : null) }
+export function displayOrder(id) { return displayOrders().find(order => order.id === id) || (new URLSearchParams(window.location.search).get('preview') !== '0' ? getPortfolioOrderPreview(id) || paymentExampleOrder(id) : null) }
 export function isOrderPreview() { return displayOrders().some(order => order.isPreview) }
 export function orderSummaryItems(order) {
   return order.isPreview && order.items.length > 1

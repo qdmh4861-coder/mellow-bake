@@ -40,7 +40,7 @@ function DemoAccess({ children }) {
   const required = requiresDemoLogin(window.location.pathname.replace(/\/+$/, '') || '/')
   const signedIn = Boolean(user)
   useEffect(() => {
-    if (required && !signedIn) window.location.replace('/login?required=1')
+    if (required && !signedIn) window.location.replace(`/login?required=1&next=${encodeURIComponent(window.location.pathname + window.location.search)}`)
   }, [required, signedIn])
   return required && !signedIn ? null : children
 }

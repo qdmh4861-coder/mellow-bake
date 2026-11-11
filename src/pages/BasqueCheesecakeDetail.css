@@ -3,14 +3,17 @@
 .basque-detail-page{background:#fff8ee;color:#754c3c}
 .basque-detail-page .product-detail-main,.basque-detail-page .product-detail-main *{box-sizing:border-box}
 .basque-detail-page .product-detail-main.catalog-product-main{width:min(1210px,calc(100% - 48px));margin:auto;padding:100px 0 60px}
-.basque-detail-page .catalog-product-header-grid{grid-template-columns:1.5fr 1fr;gap:30px;align-items:start}
-.basque-detail-page .catalog-product-gallery{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;align-items:start}
-.product-detail-page.basque-detail-page[data-product-id='cake-2'] .catalog-product-thumbnails{position:static;width:110px;min-height:0;padding:0;display:grid;grid-template-rows:none;grid-auto-rows:max-content;gap:10px;align-self:start;align-content:start}
-.basque-detail-page .catalog-product-thumbnails button{display:grid;place-items:center;container-type:size;width:100%;height:auto;min-height:0;aspect-ratio:290/262;padding:2px;border:2px solid transparent;border-radius:9px;background:#fff0ed;overflow:visible}
+.basque-detail-page .catalog-product-header-grid{grid-template-columns:1.8fr 1fr;gap:30px;align-items:start}
+.basque-detail-page .catalog-product-gallery{--basque-rail:90px;--basque-gap:14px;container-type:inline-size;display:grid;grid-template-columns:var(--basque-rail) minmax(0,1fr);gap:var(--basque-gap);align-items:start}
+.product-detail-page.basque-detail-page[data-product-id='cake-2'] .catalog-product-thumbnails{position:static;width:90px;min-height:0;padding:40px 0;display:grid;grid-template-rows:repeat(5,minmax(0,1fr));gap:10px;align-self:stretch;align-content:start}
+.basque-detail-page .catalog-product-thumbnails button{display:grid;place-items:center;container-type:size;width:100%;height:100%;min-height:0;aspect-ratio:auto;padding:0;border:2px solid transparent;border-radius:9px;background:#fff0ed;overflow:visible}
 .basque-detail-page .catalog-product-thumbnails button[aria-pressed=true]{border-color:#dd8c6d}
-.basque-detail-page .catalog-product-main-image{display:grid;place-items:center;container-type:size;min-width:0;min-height:0;width:100%;aspect-ratio:650/610;max-height:none;border-radius:16px;background:#fff0ed;overflow:visible}
+.basque-detail-page .catalog-product-main-image{display:grid;place-items:center;container-type:size;min-width:0;min-height:0;width:100%;aspect-ratio:650/600;max-height:none;border-radius:16px;background:#fff0ed;overflow:visible}
+.basque-detail-page .catalog-product-main-image,.product-detail-page.basque-detail-page[data-product-id='cake-2'] .catalog-product-thumbnails{height:calc((100cqw - var(--basque-rail) - var(--basque-gap)) * 600 / 650)}
 .basque-detail-page .basque-art{display:block;min-width:0;width:100%;height:auto;aspect-ratio:var(--basque-art-ratio);margin:0 auto;filter:contrast(1.2) saturate(1.14);mix-blend-mode:multiply}
 .basque-detail-page .basque-art svg{display:block;width:100%;height:100%;max-width:100%;max-height:100%;aspect-ratio:var(--basque-art-ratio);overflow:hidden}
+.basque-detail-page .catalog-product-gallery .basque-art{filter:none;mix-blend-mode:normal}
+.basque-detail-page .basque-art[data-source='basque-v2']{filter:none;mix-blend-mode:multiply}
 .basque-detail-page .catalog-product-main-image .basque-art{width:min(100cqw,calc(100cqh * (var(--basque-art-ratio))));height:auto;max-width:100%;max-height:100%}
 .basque-detail-page .catalog-product-thumbnails .basque-art{width:min(100cqw,calc(100cqh * (var(--basque-art-ratio))));height:auto;max-height:100%}
 .basque-detail-page .catalog-product-summary{padding-top:24px;min-width:0}
@@ -55,9 +58,10 @@
 .basque-detail-page .catalog-story-guide-illustration svg{width:72px;height:72px}
 .basque-detail-page .catalog-story-details>.story-title{margin-bottom:16px}
 .basque-detail-page .catalog-story-detail-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;padding:16px 0;margin:0;min-height:210px}
-.basque-detail-page .catalog-story-detail-row>.catalog-story-photo{order:0;aspect-ratio:2.65}
+.basque-detail-page .catalog-story-detail-row>.catalog-story-photo{order:0;aspect-ratio:1.6}
 .basque-detail-page .catalog-story-detail-row--reverse>.catalog-story-photo{order:2}
 .basque-detail-page .basque-charm-copy{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:12px;align-items:center;min-width:0}
+.basque-detail-page .catalog-story-details .basque-charm-copy{display:block}
 .basque-detail-page .basque-charm-copy h3,.basque-detail-page .basque-charm-copy p{grid-column:1;margin:0;overflow-wrap:anywhere}
 .basque-detail-page .basque-charm-copy h3{font-size:22px;line-height:1.5}
 .basque-detail-page .basque-charm-rabbit{grid-column:2;grid-row:1/3;width:140px;max-width:100%;height:auto}
@@ -85,11 +89,21 @@
 .basque-detail-page .catalog-story-related-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding:22px 18px;border-radius:16px}
 .basque-detail-page .catalog-story-related-photo{display:grid;place-items:center;aspect-ratio:1.4;overflow:visible}
 .basque-detail-page .catalog-story-related-photo>svg{display:block;width:100%;height:100%;max-height:100%;filter:contrast(1.2) saturate(1.14)}
+.basque-detail-page #product-process,.basque-detail-page #product-enjoy{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:center}
+.basque-detail-page #product-process>.catalog-story-three-cards,.basque-detail-page #product-enjoy>.catalog-story-three-cards{margin-top:0;gap:16px}
+.basque-detail-page #product-process .catalog-story-guide-card{background:transparent;padding:0}
+.basque-detail-page #product-process .basque-process-frame{aspect-ratio:71/57}
+.basque-detail-page #product-enjoy .catalog-story-guide-illustration{height:auto;aspect-ratio:61/42;display:block}
+.basque-detail-page #product-enjoy .catalog-story-guide-illustration .basque-art{height:100%;width:100%}
+.basque-detail-page #product-enjoy .catalog-story-guide-illustration .basque-art svg{width:100%;height:100%}
+.basque-detail-page #product-process>.basque-example-note,.basque-detail-page #product-enjoy>.basque-example-note{grid-column:1/-1}
+.basque-detail-page .basque-ingredient-frame .basque-art[data-source='basque-v2']{filter:none}
 @media(max-width:900px){
+ .basque-detail-page #product-process,.basque-detail-page #product-enjoy{grid-template-columns:1fr}
  .basque-detail-page .product-detail-main.catalog-product-main{padding-top:60px}
  .basque-detail-page .catalog-product-header-grid{grid-template-columns:1.25fr 1fr;gap:22px}
- .basque-detail-page .catalog-product-gallery{grid-template-columns:76px minmax(0,1fr)}
- .product-detail-page.basque-detail-page[data-product-id='cake-2'] .catalog-product-thumbnails{width:76px;gap:8px}
+ .basque-detail-page .catalog-product-gallery{--basque-rail:56px}
+ .product-detail-page.basque-detail-page[data-product-id='cake-2'] .catalog-product-thumbnails{width:56px;gap:8px;padding-block:14px}
  .basque-detail-page .catalog-product-summary{padding-top:0}
  .basque-detail-page .catalog-product-summary h1{font-size:28px}
  .basque-detail-page .catalog-product-price{font-size:24px}
@@ -109,8 +123,8 @@
 @media(max-width:600px){
  .basque-detail-page .product-detail-main.catalog-product-main{width:calc(100% - 32px);padding-top:32px}
  .basque-detail-page .catalog-product-header-grid{grid-template-columns:1fr;gap:24px}
- .basque-detail-page .catalog-product-gallery{grid-template-columns:66px minmax(0,1fr);gap:12px}
- .product-detail-page.basque-detail-page[data-product-id='cake-2'] .catalog-product-thumbnails{width:66px;gap:6px}
+ .basque-detail-page .catalog-product-gallery{--basque-rail:54px;--basque-gap:12px}
+ .product-detail-page.basque-detail-page[data-product-id='cake-2'] .catalog-product-thumbnails{width:54px;gap:6px;padding-block:8px}
  .basque-detail-page .catalog-product-summary h1{font-size:30px}
  .basque-detail-page .catalog-product-tabs{gap:8px;margin-top:24px;margin-bottom:24px}
  .basque-detail-page .catalog-story-intro{grid-template-columns:1fr;gap:18px;padding:26px 20px}
@@ -135,4 +149,11 @@
  .basque-detail-page .catalog-story-review-pending{min-height:150px;padding:18px 12px}
  .basque-detail-page .catalog-story-related-grid{padding:16px 12px}
  .basque-detail-page .catalog-story-shipping dl{padding:16px}
+}
+.basque-detail-page .basque-supplied-introduction{margin-block:24px;min-width:0}
+.basque-detail-page .basque-supplied-introduction img{display:block;width:100%;height:auto;object-fit:contain;border-radius:20px}
+.basque-detail-page .basque-story-body .basque-art[data-source='basque-v2']{
+ filter:brightness(1.05) contrast(1.04);mix-blend-mode:multiply;
+ mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent),linear-gradient(transparent,#000 2%,#000 98%,transparent);
+ mask-composite:intersect;
 }

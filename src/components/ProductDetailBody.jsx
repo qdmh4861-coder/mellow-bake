@@ -25,12 +25,12 @@ function GuideIcon({ type }) {
   </svg>
 }
 
-export default function ProductDetailBody({ product, price, products, renderPhoto }) {
+export default function ProductDetailBody({ product, price, products, renderPhoto, containImages = false }) {
   const reviews = getProductReviews(product.id)
   const bodyRef = useRef(null)
   useLayoutEffect(() => {
-    bodyRef.current?.querySelectorAll('.catalog-story-photo svg, .catalog-story-banner-photo svg, .catalog-story-related-photo svg').forEach(svg => svg.setAttribute('preserveAspectRatio', 'xMidYMid slice'))
-  }, [product.id, renderPhoto])
+    bodyRef.current?.querySelectorAll('.catalog-story-photo svg, .catalog-story-banner-photo svg, .catalog-story-related-photo svg').forEach(svg => svg.setAttribute('preserveAspectRatio', containImages ? 'xMidYMid meet' : 'xMidYMid slice'))
+  }, [product.id, renderPhoto, containImages])
   const known = ingredientNames.filter(name => product.description.includes(name)).filter((name, index, all) => !all.some((other, j) => j !== index && other.length > name.length && other.includes(name)))
   const candidates = products.filter(item => productSlug(item.id) !== productSlug(product.id))
   const related = [...candidates.filter(item => item.category === product.category).slice(0, 2), ...candidates.filter(item => item.category !== product.category).slice(0, 2)]

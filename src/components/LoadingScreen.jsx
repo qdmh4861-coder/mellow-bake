@@ -33,12 +33,8 @@ export default function LoadingScreen({ children }) {
     document.body.style.overflow = 'hidden'
     const fadeTimer = window.setTimeout(() => setLeaving(true), 1700)
     const finishTimer = window.setTimeout(() => {
-      // Reset while the overlay still covers HOME, before releasing interaction.
+      // Keep the requested page when dismissing the shared introduction.
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-      if (window.location.pathname !== '/') {
-        window.location.replace('/')
-        return
-      }
       setVisible(false)
     }, 2000)
 

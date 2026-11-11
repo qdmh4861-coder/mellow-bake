@@ -71,6 +71,16 @@ export function cartAddMessage(product, quantity, price = product.price) {
   }
 }
 
+export function buyNow(product, quantity, price = product.price) {
+  try {
+    addToCart(product, quantity, price)
+    window.location.assign('/cart')
+    return ''
+  } catch {
+    return '장바구니를 저장하지 못했습니다. 브라우저 저장 공간 설정을 확인해 주세요.'
+  }
+}
+
 export function setCartQuantity(id, quantity) {
   if (!Number.isSafeInteger(quantity) || quantity < 1) return
   publish(readCart().map(item => item.id === id ? { ...item, quantity } : item))

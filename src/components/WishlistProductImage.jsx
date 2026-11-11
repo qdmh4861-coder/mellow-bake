@@ -1,10 +1,13 @@
 ﻿import { useState } from 'react'
 import { wishlistIllustrationSource } from '../wishlistIllustrations'
+import CatalogProductImage from './CatalogProductImage'
+import { artworkFor, protectedProductIds } from '../productArtwork'
 
 export default function WishlistProductImage({ item }) {
   const source = wishlistIllustrationSource(item)
   const [failed, setFailed] = useState(null)
   const decorate = /^bread-[1-8]$/.test(item.catalogId || item.id) && source && failed !== source
+  if (!protectedProductIds.has(item.catalogId || item.id) && artworkFor(item)) return <div className="wishlist-photo" data-illustration-state="ready"><CatalogProductImage product={item} /></div>
   return <div className={`wishlist-photo${decorate ? ' wishlist-photo--food-accent' : ''}`} data-illustration-state={source && failed !== source ? 'ready' : 'pending'}>
     {source && failed !== source
       ? <img src={source} alt={`${item.koreanName} 일러스트`} onError={() => setFailed(source)} />

@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
-import HomeFooter from '../components/HomeFooter'
+import ProductDetailFooter from '../components/ProductDetailFooter'
 import reference from '../assets/salt-bread-figma-reference.png'
 import './SaltBreadDetail.css'
 import { menuCategories } from './OurMenu'
-import { cartAddMessage } from '../cartStore'
+import { cartAddMessage, buyNow } from '../cartStore'
+import { productHref } from './productLinks'
 
 const product = menuCategories.find(category => category.id === 'bread').products.find(item => item.id === 'bread-1')
+const recommendations = ['cake-1', 'bread-6', 'bread-7', 'drink-3'].map(id => menuCategories.flatMap(category => category.products).find(item => item.id === id))
 
 // Display regions of the supplied 1632 × 7491 Figma export without inventing assets.
 function FigmaRegion({ box, label, className = '' }) {
@@ -47,7 +49,7 @@ export default function SaltBreadDetail() {
           </div>
           <div className="salt-detail-actions">
             <button type="button" onClick={() => setNotice(cartAddMessage(product, quantity))}>장바구니 담기</button>
-            <button type="button" onClick={() => setNotice('주문·결제 서비스 연결 준비 중입니다. 주문은 생성되지 않았습니다.')}>바로 구매하기</button>
+            <button type="button" onClick={() => setNotice(buyNow(product, quantity, product.price))}>바로 구매하기</button>
           </div>
           <p className="salt-detail-status" role="status">{notice}</p>
         </div>
@@ -65,12 +67,13 @@ export default function SaltBreadDetail() {
       <section id="salt-reviews" aria-label="상품 리뷰 디자인 시안">
         <a style={{ display: 'block' }} href="/reviews?productId=bread-1" aria-label="소금빵 실제 상품 리뷰 보기"><FigmaRegion box="210 6240 1210 420" label="피그마 디자인에 포함된 예시 상품 리뷰 카드입니다. 실제 구매 후기를 불러온 것이 아닙니다." /></a>
       </section>
-      <section id="salt-related" aria-label="함께 보면 좋은 상품 디자인 시안">
-        <FigmaRegion box="210 6660 1210 440" label="함께 보면 좋은 상품: 딸기 생크림 케이크, 초코 크림빵, 시나몬롤, 바닐라 크림라떼. 원본 시안 이미지이며 다른 상품 상세페이지는 아직 연결하지 않았습니다." />
+      <section id="salt-related" aria-label="함께 보면 좋은 상품 디자인 시안" style={{ position: 'relative' }}>
+        <FigmaRegion box="210 6660 1210 440" label="함께 보면 좋은 상품: 딸기 생크림 케이크, 초코 크림빵, 시나몬롤, 바닐라 라떼. 제공된 원본 시안 이미지입니다." />
+        {recommendations.map((item, index) => <a key={item.id} href={productHref(item.id)} aria-label={`${item.koreanName} 상세보기`} style={{ position: 'absolute', left: `${index * 25}%`, top: '20%', width: '25%', height: '75%' }} />)}
       </section>
       <p className="salt-detail-source-note">상세 설명과 리뷰는 제공된 피그마 시안 이미지입니다. <a href={reference} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
       <a className="salt-detail-back" href="/menu">OUR MENU로 돌아가기</a>
     </main>
-    <HomeFooter />
+    <ProductDetailFooter />
   </div>
 }

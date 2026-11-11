@@ -103,3 +103,19 @@
   width: 100%;
   height: auto;
 }
+
+@media(max-width:480px){
+ .mellow-home .new-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 12px;max-width:none}
+ .mellow-home .new-menu-card{padding:9px}
+ .mellow-home .new-menu-badge{width:48px;height:48px;top:-20px;left:-3px}
+ .mellow-home .new-menu-badge>span{font-size:10px;margin-top:8px}
+ .mellow-home .new-menu-badge .new-menu-badge-ornament{top:6px;left:15px;width:18px;height:14px}
+ .mellow-home .new-menu-card-copy{padding:12px 0 0}
+ .mellow-home .new-menu-card-copy h3{font-size:13px;line-height:1.4;min-height:2.8em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
+ .mellow-home .new-menu-korean{font-size:12px;line-height:1.5;min-height:3em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .mellow-home .new-menu-description{font-size:12px;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:8px 0 12px}
+ .mellow-home .new-menu-price{font-size:15px}
+ .mellow-home .new-menu-card-bottom{gap:4px}
+ .mellow-home .new-menu-favorite{width:28px;height:28px;padding:3px}
+ .mellow-home .new-menu-favorite svg{width:22px;height:22px}
+}

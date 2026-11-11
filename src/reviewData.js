@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react'
 import { productSlug } from './pages/productLinks'
 import { getDemoUser } from './demoAuth'
+import { getExampleReviews } from './reviewExamples'
 // Browser-only demo records; never authenticated customer reviews or Figma samples.
 // Review: { id, productId, authorId, nickname, rating: 1..5, createdAt,
 //           body, photos: [url], tags: [text], isPublic: true }
@@ -59,6 +60,16 @@ export function deleteDemoReview(id) {
   publish(all.filter(review => review.id !== id))
 }
 export function getProductReviews(productId) { return getPublicReviews().filter(review => productSlug(review.productId) === productSlug(productId)) }
+// Read-only portfolio samples never enter localStorage or a member's own list.
+export function getDisplayProductReviews(productId) {
+  const actual = getProductReviews(productId)
+  return actual.length ? actual : getExampleReviews().filter(review => productSlug(review.productId) === productSlug(productId))
+}
+export function getDisplayPublicReviews() {
+  const actual = getPublicReviews()
+  const populated = new Set(actual.map(review => productSlug(review.productId)))
+  return [...actual, ...getExampleReviews().filter(review => !populated.has(productSlug(review.productId)))]
+}
 export function reviewStats(reviews) {
   const total = reviews.length
   return { total, average: total ? reviews.reduce((sum, review) => sum + review.rating, 0) / total : null, distribution: [5, 4, 3, 2, 1].map(rating => {

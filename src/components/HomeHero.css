@@ -102,3 +102,15 @@
 @media (prefers-reduced-motion: reduce) { .hero-banner__order { transition: none; } }
 
 
+
+/* The supplied mobile composition already contains all copy and artwork. */
+.mellow-home .hero-mobile-banner{display:none}
+@media(max-width:767px){
+ .mellow-home .home-top-banner{padding-top:0}
+ .mellow-home .home-top-banner>.hero-banner{display:none}
+ .mellow-home .hero-mobile-banner{position:relative;display:block;width:100%;line-height:0}
+ .mellow-home .hero-mobile-banner>img{display:block;width:100%;height:auto;aspect-ratio:1064/1478;object-fit:contain}
+ /* Source-image button bounds: x=318, y=757, width=430, height=100. */
+ .mellow-home .hero-mobile-banner__order{position:absolute;left:29.8872%;top:51.2179%;width:40.4135%;height:6.7659%;border-radius:999px}
+ .mellow-home .hero-mobile-banner__order:focus-visible{outline:3px solid #713d35;outline-offset:3px}
+}

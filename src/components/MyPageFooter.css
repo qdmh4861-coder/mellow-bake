@@ -60,3 +60,6 @@
  .mypage-footer-art::before { left: -20px; right: -20px; }
 }
 
+
+/* Preserve SNS row spacing while centering the remaining name. */
+.mypage-footer .mypage-footer-unlinked{min-height:calc(1.6em + 26px)}

@@ -9,15 +9,15 @@ function FeatureIcon({ index }) {
 }
 
 // This component renders product photographs only; the reference screenshot is never rendered.
-export default function ProductHero({ product, images, placeholder, price, quantity, onQuantityChange, onCart, onBuy, notice, options, anchors, emptyThumbnailSlots = false }) {
+export default function ProductHero({ product, images, placeholder, price, quantity, onQuantityChange, onCart, onBuy, notice, options, anchors, emptyThumbnailSlots = false, containImages = false }) {
   const [selected, setSelected] = useState(0)
   const galleryRef = useRef(null)
   const dialogRef = useRef(null)
   const headingId = useId()
   const available = images.filter((item, index, all) => all.findIndex(other => other.id === item.id) === index).slice(0, 5)
   useLayoutEffect(() => {
-    galleryRef.current?.querySelectorAll('svg[viewBox]').forEach(svg => svg.setAttribute('preserveAspectRatio', 'xMidYMid slice'))
-  }, [images, selected])
+    galleryRef.current?.querySelectorAll('svg[viewBox]').forEach(svg => svg.setAttribute('preserveAspectRatio', containImages ? 'xMidYMid meet' : 'xMidYMid slice'))
+  }, [images, selected, containImages])
   const stats = reviewStats(getProductReviews(product.id))
   const rating = stats.total ? stats.average : product.rating
   const reviewCount = stats.total ? stats.total : product.reviewCount
@@ -26,7 +26,7 @@ export default function ProductHero({ product, images, placeholder, price, quant
   return <div className="catalog-product-header">
     <section className="catalog-product-header-grid" aria-labelledby={headingId}>
       <div className="catalog-product-gallery" ref={galleryRef}>
-        <div className="catalog-product-thumbnails" role="group" aria-label={emptyThumbnailSlots ? '상품 이미지 준비 중' : '상품 이미지 선택'}>{emptyThumbnailSlots ? <div className="catalog-empty-thumbnail-slots" aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <span key={index} />)}</div> : available.map((item, index) => <button type="button" key={item.id} aria-label={item.label} aria-pressed={selected === index} onClick={() => setSelected(index)}>{item.image}</button>)}</div>
+        <div className="catalog-product-thumbnails" role="group" aria-label={emptyThumbnailSlots ? '상품 이미지 준비 중' : '상품 이미지 선택'}>{emptyThumbnailSlots ? <div className="catalog-empty-thumbnail-slots" aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <span key={index} />)}</div> : available.map((item, index) => <button type="button" key={item.id} aria-label={item.label} aria-pressed={selected === index} onClick={() => setSelected(index)}>{item.thumbnail || item.image}</button>)}</div>
         <div className="catalog-product-main-image" aria-live="polite">{available[selected]?.image || available[0]?.image || placeholder}</div>
       </div>
       <div className="catalog-product-summary">

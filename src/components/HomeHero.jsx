@@ -39,6 +39,10 @@ function CakeVisual() {
 export default function HomeHero() {
   const cloudPath = 'M66 114C27 57 106 12 162 47c34-52 109-49 143-16 41-47 123-35 143 6 65-27 130 28 112 78 61 21 58 95 3 112 1 67-73 101-125 68-39 42-109 41-150 10-48 39-118 27-143-9-65 24-123-5-121-60-42-36-19-104 42-122Z'
   return <section className="home-section home-top-banner" aria-labelledby="home-hero-title">
+    <div className="hero-mobile-banner">
+      <img src="/images/bread-list-clean/모바일.png" width="1064" height="1478" fetchPriority="high" alt="달콤한 시간이, 오늘을 더 특별하게. MELLOW BAKE — 토끼 셰프와 딸기 케이크, 마카롱, 컵케이크. SWEET MOMENTS, A BETTER DAY" />
+      <a className="hero-mobile-banner__order" href="/menu" aria-label="바로 주문하기 — 메뉴 보기" />
+    </div>
     <div className="hero-banner">
       <p className="hero-banner__note">달콤한 시간이,<br />오늘을 더 특별하게.<svg viewBox="0 0 300 25" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20Q140 1 293 7" stroke="#fff" strokeWidth="9" fill="none" strokeLinecap="round" /><path d="M6 20Q140 1 293 7" stroke="#ff5b9c" strokeWidth="5" fill="none" strokeLinecap="round" /></svg></p>
       <div className="hero-banner__logo-group">

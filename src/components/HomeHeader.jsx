@@ -1,7 +1,8 @@
 ﻿import './HomeHeader.css'
 
-import { useEffect, useId, useRef, useState } from 'react'
+import { useCallback, useEffect, useId, useRef, useState } from 'react'
 import { logoutDemo, useDemoUser } from '../demoAuth'
+import ProductSearch from './ProductSearch'
 
 const mainLinks = [
   ['HOME', '/'],
@@ -26,6 +27,8 @@ function HeaderTrim() {
   return <div className="home-header__trim" aria-hidden="true">{['wide', 'mobile'].map(size => <svg key={size} className={`home-header__wave home-header__wave--${size}`} viewBox={`0 0 ${size === 'mobile' ? 480 : 1440} 38`} preserveAspectRatio="none"><path d={`${wave}V0H0Z`} fill="white" /><path d={wave} fill="none" stroke="#ffd2e1" strokeWidth="8" /><path d={wave} fill="none" stroke="#f990b5" strokeWidth="1.2" strokeDasharray="5 4" /></svg>)}<svg className="home-header__trim-bow" viewBox="0 0 120 48" fill="none"><path d="M57 26C11 42 22-5 47 13l13 13m3 0c46 16 35-31 10-13L60 26" fill="#ffb5cc" stroke="#ed7d9c" strokeWidth="2.5" /><path d="m56 29-14 13m22-13 14 13" stroke="#f39ab6" strokeWidth="6" /><rect x="55" y="21" width="10" height="10" rx="4" fill="#f387ab" /></svg><span className="home-header__trim-hearts home-header__trim-hearts--left">♡ ♡</span><span className="home-header__trim-hearts home-header__trim-hearts--right">♡ ♡</span></div>
 }
 export default function HomeHeader() {
+  const [searchOpen, setSearchOpen] = useState(false)
+  const closeSearch = useCallback(() => setSearchOpen(false), [])
   const user = useDemoUser()
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
   const [hash, setHash] = useState(window.location.hash)
@@ -47,6 +50,13 @@ export default function HomeHeader() {
   const cartRef = useRef(null)
   const cartLink = useRef(null)
   const cartMenuId = useId()
+
+  function toggleAccount(event) {
+    const pointer = event.nativeEvent.pointerType
+    const mouseClick = pointer === 'mouse' || (!pointer && event.detail > 0 && window.matchMedia('(hover: hover)').matches)
+    // Hover already opens the desktop menu; the following click must keep it open.
+    setAccountOpen(open => mouseClick || !open)
+  }
 
   useEffect(() => {
     if (!cartOpen) return
@@ -94,7 +104,7 @@ export default function HomeHeader() {
           {mainLinks.map(([label, href]) => <a key={label} href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>)}
         </nav>
         <div className="home-header__actions">
-          <button className="home-header__icon" type="button" disabled aria-label="검색 (준비 중)" title="검색 기능 준비 중"><HeaderIcon type="search" /></button>
+          <button className="home-header__icon" type="button" aria-label="상품 검색" title="상품 검색" aria-haspopup="dialog" onClick={() => setSearchOpen(true)}><HeaderIcon type="search" /></button>
           <div className="home-header__account" ref={cartRef}
             onPointerEnter={event => { if (event.pointerType === 'mouse') setCartOpen(true) }}
             onPointerLeave={event => { if (event.pointerType === 'mouse' && !event.currentTarget.contains(window.document.activeElement)) setCartOpen(false) }}
@@ -110,7 +120,7 @@ export default function HomeHeader() {
             onPointerEnter={event => { if (event.pointerType === 'mouse') setAccountOpen(true) }}
             onPointerLeave={event => { if (event.pointerType === 'mouse' && !event.currentTarget.contains(window.document.activeElement)) setAccountOpen(false) }}
             onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setAccountOpen(false) }}>
-            <button className="home-header__icon" type="button" ref={accountButton} aria-label="회원 메뉴" title="로그인 및 회원가입" aria-expanded={accountOpen} aria-controls={accountMenuId} onClick={() => setAccountOpen(open => !open)}><HeaderIcon type="user" /></button>
+            <button className="home-header__icon" type="button" ref={accountButton} aria-label="회원 메뉴" title="로그인 및 회원가입" aria-expanded={accountOpen} aria-controls={accountMenuId} onClick={toggleAccount}><HeaderIcon type="user" /></button>
             <nav className="home-header__account-dropdown" id={accountMenuId} aria-label="회원 메뉴" hidden={!accountOpen}>
               {!user && <a href="/login" onClick={() => setAccountOpen(false)}>로그인</a>}
               {!user && <a href="/signup" onClick={() => setAccountOpen(false)}>회원가입</a>}
@@ -129,6 +139,7 @@ export default function HomeHeader() {
         </div>
       </div>
       <HeaderTrim />
+      {searchOpen && <ProductSearch onClose={closeSearch} />}
     </header>
   )
 }

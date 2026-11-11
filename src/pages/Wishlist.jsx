@@ -7,17 +7,14 @@ import wishlistBannerLeft from '../assets/wishlist-banner-left.png'
 import wishlistBannerRight from '../assets/wishlist-banner-right.png'
 import { menuCategories } from './OurMenu'
 import { productHref, productSlug } from './productLinks'
-import { bestProducts } from '../components/BestMenu'
-import { newMenuProducts } from '../components/NewMenu'
-import { newArrivalProducts } from '../components/NewArrivals'
 import { useWishlist, toggleWishlist, removeWishlistItems } from '../wishlistStore'
 import { addToCart } from '../cartStore'
 import './Wishlist.css'
-import { seasonalProducts } from '../newMenuCatalog'
+import { registeredProducts } from '../productCatalog'
 
 const PAGE_SIZE = 12
 const products = menuCategories.flatMap(category => category.products)
-const catalog = [...products, ...bestProducts, ...newMenuProducts, ...newArrivalProducts, ...seasonalProducts]
+const catalog = registeredProducts
 const money = value => `${value.toLocaleString('ko-KR')}원`
 function priceNumber(value) {
   if (typeof value === 'number') return Number.isFinite(value) && value >= 0 ? value : null

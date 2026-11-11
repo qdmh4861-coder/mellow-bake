@@ -1,9 +1,9 @@
 import { useId, useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
-import HomeFooter from '../components/HomeFooter'
+import ProductDetailFooter from '../components/ProductDetailFooter'
 import { menuCategories, MenuProductImage } from './OurMenu'
 import './BulgogiSandwichDetail.css'
-import { cartAddMessage } from '../cartStore'
+import { cartAddMessage, buyNow } from '../cartStore'
 
 const reference = '/images/03_불고기.png'
 const product = menuCategories.find(category => category.id === 'sandwich').products.find(item => item.id === 'sandwich-5')
@@ -56,7 +56,7 @@ export default function BulgogiSandwichDetail() {
         <p className="bulgogi-live-price" aria-label={`판매 가격 ${product.price.toLocaleString('ko-KR')}원`}>{product.price.toLocaleString('ko-KR')}원</p>
         <div className="bulgogi-quantity" role="group" aria-label="상품 수량"><button type="button" aria-label="수량 늘리기" disabled={quantity === 99} onClick={() => setQuantity(value => value + 1)}>+</button><output aria-live="polite">{quantity}</output><button type="button" aria-label="수량 줄이기" disabled={quantity === 1} onClick={() => setQuantity(value => value - 1)}>−</button></div>
         <button className="bulgogi-cart" type="button" onClick={() => setNotice(cartAddMessage(product, quantity))}>장바구니 담기</button>
-        <button className="bulgogi-buy" type="button" onClick={() => setNotice('주문·결제 서비스 연결 준비 중입니다. 주문은 생성되지 않았습니다.')}>바로 구매하기</button>
+        <button className="bulgogi-buy" type="button" onClick={() => setNotice(buyNow(product, quantity, product.price))}>바로 구매하기</button>
         <nav className="bulgogi-tabs" aria-label="불고기 샌드위치 상세 메뉴"><a href="#bulgogi-introduction" aria-label="상품 정보" /><a href="#bulgogi-ingredients" aria-label="원재료 및 영양 정보" /><a href="#bulgogi-reviews" aria-label="피그마 시안 리뷰" /><a href="#bulgogi-shipping" aria-label="상품 및 배송 안내" /></nav>
       </section>
       <p className="bulgogi-action-status" role="status">{notice}</p>
@@ -72,6 +72,6 @@ export default function BulgogiSandwichDetail() {
       </section>
       <p className="bulgogi-source-note">재료·보관·배송 안내와 리뷰는 제공된 피그마 시안입니다. 실제 판매 정보는 확인 후 적용됩니다. <a href={reference} target="_blank" rel="noreferrer">원본 크게 보기</a></p>
     </main>
-    <HomeFooter />
+    <ProductDetailFooter />
   </div>
 }

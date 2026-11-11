@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import HomeFooter from '../components/HomeFooter'
+import ProductDetailFooter from '../components/ProductDetailFooter'
 import { bestProducts } from '../components/BestMenu'
 import { newMenuProducts } from '../components/NewMenu'
 import { newArrivalProducts } from '../components/NewArrivals'
@@ -13,9 +14,11 @@ import '../components/FrameProductHero.css'
 import ProductHeaderTabs, { ProductHeaderRating } from '../components/ProductHeaderControls'
 import '../components/SaltAlignedProductHero.css'
 import ProductHero from '../components/ProductHero'
-import { cartAddMessage } from '../cartStore'
+import { cartAddMessage, buyNow } from '../cartStore'
 import ProductDetailBody from '../components/ProductDetailBody'
 import BasqueCheesecakeDetail from './BasqueCheesecakeDetail'
+import UnifiedProductDetail from '../components/UnifiedProductDetail'
+import { registeredProducts } from '../productCatalog'
 
 const photos = import.meta.glob('../assets/{best-menu,new-menu,new-arrivals}/*.png', { eager: true, query: '?url', import: 'default' })
 const catalog = withHomeCategoryProducts(menuCategories).flatMap(category => category.products.map(product => ({ ...product, category: category.id })))
@@ -99,7 +102,7 @@ export default function ProductDetail({ slug }) {
 
   if (!product) return <div className="product-detail-page"><HomeHeader /><main className="product-detail-main"><h1>상품을 찾을 수 없습니다</h1><a href="/menu">전체 메뉴 보기</a></main><HomeFooter /></div>
 
-  if (product.id === 'cake-2') return <BasqueCheesecakeDetail product={product} products={catalog} renderPhoto={item => <ProductPhoto product={item} />} />
+  if (product.id === 'cake-2') return <BasqueCheesecakeDetail product={{ ...product, description: '진하게 구워낸 카라멜빛 겉면과 부드럽고 꾸덕한 치즈의 풍미가 어우러진 바스크 치즈케이크입니다. 한 입 가득 퍼지는 진한 치즈의 맛을 즐겨보세요.' }} products={catalog} renderPhoto={item => <ProductPhoto product={item} />} />
 
   const category = base.category || 'cake'
   const photoNumber = Number(product.id.split('-').at(-1))
@@ -120,6 +123,9 @@ export default function ProductDetail({ slug }) {
     window.history.replaceState(null, '', url)
   }
 
+  if (!['bread-1', 'bread-7', 'sandwich-5'].includes(product.id)) return <UnifiedProductDetail key={product.id} product={{ ...product, category }} products={registeredProducts.filter(item => !item.id.startsWith('new-'))}
+    options={best && <label>판매 구성<select value={option} onChange={event => selectOption(event.target.value)}><option value="menu">전체 메뉴 · {base.name} · {base.price.toLocaleString('ko-KR')}원</option><option value="best">{homeLabel} · {best.name} · {best.price}</option></select></label>} />
+
   return <div className="product-detail-page" style={{ '--product-background': background }} data-product-id={product.id}>
     <HomeHeader />
     <main className={`product-detail-main${useNativeHero ? ' catalog-product-main' : ''}`}>
@@ -128,7 +134,7 @@ export default function ProductDetail({ slug }) {
         placeholder={<ProductPhoto product={{ ...product, category }} />}
         quantity={quantity} onQuantityChange={setQuantity}
         onCart={() => setNotice(cartAddMessage(product, quantity, price))}
-        onBuy={() => setNotice('주문·결제 서비스 연결 준비 중입니다. 주문은 생성되지 않았습니다.')}
+        onBuy={() => setNotice(buyNow(product, quantity, price))}
         notice={notice}
         options={best && <label>판매 구성<select value={option} onChange={event => selectOption(event.target.value)}><option value="menu">전체 메뉴 · {base.name} · {base.price.toLocaleString('ko-KR')}원</option><option value="best">{homeLabel} · {best.name} · {best.price}</option></select></label>}
         anchors={{ introduction: '#product-introduction', ingredients: '#product-ingredients', storage: '#product-storage', reviews: '#product-reviews', related: '#product-recommendations', shipping: '#product-shipping' }}
@@ -148,7 +154,7 @@ export default function ProductDetail({ slug }) {
             <button type="button" aria-label={useFrame737 ? '수량 줄이기' : '수량 늘리기'} disabled={useFrame737 ? quantity <= 1 : quantity >= 99} onClick={() => setQuantity(value => value + (useFrame737 ? -1 : 1))}>{useFrame737 ? '−' : '+'}</button>
           </div>
           <p className="product-detail-total">합계 <strong>{(price * quantity).toLocaleString('ko-KR')}원</strong></p>
-          <div className="reference-product-actions"><button className="product-detail-cart" type="button" onClick={() => setNotice(cartAddMessage(product, quantity, price))}>장바구니 담기</button><button type="button" onClick={() => setNotice('주문·결제 서비스 연결 준비 중입니다. 주문은 생성되지 않았습니다.')}>바로 구매하기</button></div>
+          <div className="reference-product-actions"><button className="product-detail-cart" type="button" onClick={() => setNotice(cartAddMessage(product, quantity, price))}>장바구니 담기</button><button type="button" onClick={() => setNotice(buyNow(product, quantity, price))}>바로 구매하기</button></div>
           <p className="product-detail-status" role="status">{notice}</p>
           <DetailQuickLinks links={[["#product-introduction", '상품 소개'], ["#product-storage", '보관 안내'], ["#product-recommendations", '추천 상품']]} />
         </div>
@@ -161,6 +167,6 @@ export default function ProductDetail({ slug }) {
       </section>
       <p className="product-detail-info">원재료 전체 목록·알레르기·보관 및 배송 정보는 확인 후 안내 예정입니다.</p></> : <DetailSections product={{ ...product, category }} presentation={presentation} />}
     </main>
-    <HomeFooter />
+    <ProductDetailFooter />
   </div>
 }

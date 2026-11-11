@@ -1,0 +1,62 @@
+.mb-search-overlay{position:fixed;inset:0;z-index:10000;background:#180d1dcc;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;isolation:isolate}
+.mb-search{--search-gold:#e9cb91;position:relative;width:min(960px,100%);max-height:calc(100dvh - 48px);overflow:auto;overscroll-behavior:contain;border:1px solid #b9976080;border-radius:28px;background:#3d263d;color:#fff8e9;box-shadow:0 20px 80px #08020d80,0 0 24px #d7b97618;font-family:'Trebuchet MS','Malgun Gothic',sans-serif;box-sizing:border-box;scrollbar-color:#937083 #301c2b;scrollbar-width:thin}
+.mb-search *{box-sizing:border-box}
+.mb-search button,.mb-search input{font:inherit}
+.mb-search button{cursor:pointer}
+.mb-search :is(button,a,input):focus-visible{outline:2px solid #ffe6a9;outline-offset:4px}
+.mb-search .mb-search-close{position:absolute;right:18px;top:14px;z-index:2;width:38px;height:38px;border:1px solid #d4b87970;border-radius:50%;background:#422638;color:#f7e3bd;font-size:28px;line-height:1}
+.mb-search-top{padding:26px 40px 10px;background:#241322;border-radius:28px 28px 0 0;text-align:center}
+.mb-search-eyebrow{margin:0;text-align:left;font-size:11px;color:#dec49b;letter-spacing:.16em;padding-right:30px}
+.mb-search-heading{position:relative;padding:18px 112px 22px}
+.mb-search-heading h2{position:relative;margin:4px 0 12px;font-family:Georgia,serif;font-size:clamp(30px,4vw,48px);font-weight:600;line-height:1.2;text-shadow:0 0 15px #ffe4a83b}
+.mb-search-heading p{margin:0;font-size:14px;color:#e7d3dc;line-height:1.6}
+.mb-search-crown{color:#f2d89c;font-size:28px;line-height:1}
+.mb-search-heading img{position:absolute;width:100px;height:115px;object-fit:contain;bottom:9px}
+.mb-search-rabbit{left:10px}.mb-search-cupcake{right:10px}
+.mb-search-field{display:flex;align-items:center;gap:12px;width:min(650px,100%);margin:auto;padding:8px 16px;border:1.5px solid #e4c68b;border-radius:50px;background:#fffaf0;color:#674052;box-shadow:0 0 18px #e4c68b26}
+.mb-search-field svg{width:24px;height:24px;flex:none}
+.mb-search-field input{width:100%;min-width:0;height:36px;border:0;outline:none;background:transparent;color:#4f3042;font-size:15px}
+.mb-search-field input::placeholder{color:#927b83}.mb-search-field input::-webkit-search-cancel-button{display:none}
+.mb-search .mb-search-field input:focus-visible{outline:none}
+.mb-search-field:focus-within{box-shadow:0 0 0 2px #e4c68b35,0 0 20px #e4c68b35}
+.mb-search-field button{width:30px;height:30px;flex:none;border:0;border-radius:50%;background:#f2e5d5;color:#6b4658;font-size:23px;line-height:1}
+.mb-search-tagline{margin:18px 0 4px;font-size:12px;color:#d8bd91;letter-spacing:.07em}
+.mb-search-wave{display:block;width:100%;height:34px;background:#241322;fill:#3d263d}
+.mb-search-results{padding:18px 36px 36px}
+.mb-search-result-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.mb-search-result-heading h3{margin:0 0 8px;font-size:22px;color:#fff5dd}.mb-search-result-heading p{margin:0;font-size:13px;color:#dac8d2}
+.mb-search-result-heading>span{font-size:12px;color:#ead29f;white-space:nowrap}
+.mb-search-categories{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+.mb-search-categories button{padding:9px 17px;border:1px solid #b596ad70;border-radius:30px;background:#392137;color:#f2e3eb;font-size:13px}
+.mb-search-categories button[aria-pressed=true]{border-color:#ecd294;color:#fff1bd;box-shadow:0 0 12px #f2cf7933;background:#514047}
+.mb-search-categories button{display:inline-flex;align-items:center;gap:6px}
+.mb-search-categories svg{width:15px;height:15px;flex:none}
+.mb-search-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px}
+.mb-search-card{--card-accent:#eed687;position:relative;display:flex;align-items:center;gap:8px;min-width:0;min-height:190px;padding:22px 16px;border:1.5px solid var(--card-accent);border-radius:24px 34px 24px 34px;background:#fff7e9;color:#543342;text-decoration:none;box-shadow:0 0 10px color-mix(in srgb,var(--card-accent) 22%,transparent);transition:transform .2s,box-shadow .2s}
+.mb-search-card::before,.mb-search-card::after{content:'';position:absolute;left:28px;right:28px;height:7px;border-radius:50%;background:#fff7e9;border:1px solid var(--card-accent);pointer-events:none}
+.mb-search-card::before{top:-4px;border-bottom:0}.mb-search-card::after{bottom:-4px;border-top:0}
+.mb-search-card--cake{--card-accent:#d2b8f3}.mb-search-card--sandwich{--card-accent:#d4e69b}.mb-search-card--drink{--card-accent:#b5e1d9}
+.mb-search-card-copy{position:relative;z-index:1;flex:1;min-width:0}
+.mb-search-card-spark{display:block;color:#a47a45;font-size:13px;margin-bottom:6px}
+.mb-search-card h4{margin:0 0 6px;font-size:17px;line-height:1.4;overflow-wrap:anywhere}
+.mb-search-english{margin:0 0 8px;font-size:11px;line-height:1.5;color:#826170;overflow-wrap:anywhere}
+.mb-search-description{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0 0 14px;font-size:12px;line-height:1.6;color:#826570}
+.mb-search-discover{display:inline-flex;gap:12px;align-items:center;font-size:10px;font-weight:bold;letter-spacing:.1em;color:#694853}.mb-search-discover>span{display:inline-block;transition:transform .2s}
+.mb-search-product-art{width:38%;height:120px;flex:none;pointer-events:none}
+@media(hover:hover){.mb-search-card:hover{transform:translateY(-3px);box-shadow:0 0 20px color-mix(in srgb,var(--card-accent) 40%,transparent)}.mb-search-card:hover .mb-search-discover>span{transform:translateX(4px)}}
+.mb-search-empty{text-align:center;padding:45px 12px;color:#eddae4}.mb-search-empty>span{color:#eed095;font-size:26px}.mb-search-empty h4{font-size:20px}.mb-search-empty p{font-size:14px}.mb-search-empty button{margin-top:15px;padding:12px 20px;border:1px solid #e8c78d;border-radius:30px;color:#ffedc9;background:#513447}
+.mb-search-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:680px){.mb-search-overlay{padding:12px}.mb-search{max-height:calc(100dvh - 24px);border-radius:22px}.mb-search-top{padding:23px 20px 8px;border-radius:22px 22px 0 0}.mb-search-eyebrow{font-size:9px;letter-spacing:.08em}.mb-search-heading{padding:24px 0 20px}.mb-search-heading h2{font-size:34px}.mb-search-heading p{font-size:12px}.mb-search-heading img{width:46px;height:52px;top:4px;bottom:auto}.mb-search-rabbit{left:0}.mb-search-cupcake{right:0}.mb-search-crown{font-size:22px}.mb-search-field{padding:6px 12px;gap:8px}.mb-search-field input{font-size:16px}.mb-search-results{padding:16px 20px 28px}.mb-search-result-heading{align-items:flex-start;gap:8px}.mb-search-result-heading h3{font-size:18px}.mb-search-result-heading p{font-size:11px}.mb-search-result-heading>span{font-size:10px;padding-top:4px}.mb-search-categories{gap:7px}.mb-search-categories button{font-size:12px;padding:8px 12px}.mb-search-grid{grid-template-columns:1fr;gap:22px}.mb-search-card{min-height:180px}.mb-search-product-art{height:125px}.mb-search-tagline{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.mb-search-card,.mb-search-discover>span{transition:none}}
+
+@media(max-width:680px){
+ .mb-search-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px;grid-auto-rows:1fr}
+ .mb-search-grid .mb-search-card{flex-direction:column;align-items:stretch;gap:8px;padding:12px 9px;min-height:0}
+ .mb-search-grid .mb-search-product-art{order:-1;width:100%;height:auto;aspect-ratio:1.2;min-height:0}
+ .mb-search-grid .mb-search-card-copy{display:flex;flex-direction:column;width:100%}
+ .mb-search-grid .mb-search-card h4{font-size:13px;line-height:1.4;min-height:2.8em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .mb-search-grid .mb-search-english{font-size:12px;line-height:1.4;min-height:2.8em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .mb-search-grid .mb-search-description{font-size:12px;-webkit-line-clamp:3;margin-bottom:12px}
+ .mb-search-grid .mb-search-discover{gap:4px;font-size:10px;letter-spacing:.02em;margin-top:auto}
+ .mb-search-grid .mb-search-card::before,.mb-search-grid .mb-search-card::after{left:16px;right:16px}
+}

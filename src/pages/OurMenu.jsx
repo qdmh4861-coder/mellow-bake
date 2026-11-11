@@ -144,6 +144,24 @@ function CategoryWave({ fromColor, toColor }) {
   return <div className="our-menu-wave"><WaveDivider fromColor={fromColor} toColor={toColor} /></div>
 }
 
+// Reuse the existing category artwork at its original ratio, in a separate
+// mobile-only row rather than stretching the desktop backdrop along the cards.
+const mobileCategoryArt = {
+  bread: { src: homeBreadBackground, boxes: ['8 555 160 235', '835 540 185 245'] },
+  cake: { src: homeCakeBackground, boxes: ['12 1110 165 165', '835 630 185 230'] },
+  sandwich: { src: homeSandwichBackground, boxes: ['0 1085 255 255', '775 770 245 310'] },
+  drink: { src: homeDrinkBackground, boxes: ['0 320 180 240', '860 295 164 205'] },
+}
+
+function MobileCategoryDecorations({ category }) {
+  const art = mobileCategoryArt[category]
+  if (!art) return null
+  return <div className={`our-menu-mobile-decorations our-menu-mobile-decorations--${category}`} aria-hidden="true">
+    {art.boxes.map((box, index) => <svg key={box} className={`our-menu-mobile-character our-menu-mobile-character--${index ? 'right' : 'left'}`} viewBox={box} preserveAspectRatio="xMidYMid meet" focusable="false"><image href={art.src} width="1024" height="1536" /></svg>)}
+    <svg className="our-menu-mobile-sparkles" viewBox="0 0 100 40" fill="none" focusable="false"><path d="M18 4c1 10 4 13 13 15-9 2-12 5-13 15-2-10-5-13-14-15C13 17 16 14 18 4Z" fill="#fff8d7" stroke="#f6ba3b" strokeWidth="2" /><path d="M69 32S48 21 53 12c4-7 13-4 16 2 3-6 12-9 16-2 5 9-16 20-16 20Z" fill="#fff7f8" stroke="#f58ab3" strokeWidth="2" /></svg>
+  </div>
+}
+
 // Preserve the four original corners while the plain center expands independently.
 function BreadDecorations() {
   return <div className="our-menu-bread-artwork" aria-hidden="true">
@@ -318,6 +336,7 @@ export default function OurMenu({ categoryId: routeCategoryId } = {}) {
                 : category.id === 'drink'
                   ? <div className="our-menu-drink-heading"><h2 id="menu-drink-title"><img src={drinkHeadingReference} width="1997" height="788" alt="DRINK — 달콤한 디저트와 함께 즐기는 멜로우 베이크의 특별한 음료" /></h2></div>
                   : <div className="our-menu-category-heading"><h2 id={`menu-${category.id}-title`}>{category.title}</h2><p>{category.description}</p></div>}
+          <MobileCategoryDecorations category={category.id} />
           <div className="our-menu-grid">
             {category.products.map(product => <ProductCard key={product.id} product={product} cleanBreadImages={routeCategoryId === 'bread'} cleanCakeImages={routeCategoryId === 'cake'} cleanOtherCategory={['sandwich', 'drink'].includes(routeCategoryId) ? routeCategoryId : ''} detailHref={!routeCategoryId && product.id === 'bread-2' ? '/menu/mont-blanc' : product.detailHref} />)}
             {category.id === 'bread' && <BreadRowDecorations />}
