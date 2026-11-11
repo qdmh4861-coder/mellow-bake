@@ -48,7 +48,8 @@ export async function loginDemo(email, password) {
   sessionStorage.setItem(KEY, JSON.stringify({ email: DEMO_EMAIL, isDemo: true, expiresAt: Date.now() + TTL }))
   window.dispatchEvent(new Event(EVENT))
 }
-export function logoutDemo(destination = '/login?loggedOut=1') {
+
+export function logoutDemo(destination = '/mellow-bake/login?loggedOut=1') {
   sessionStorage.removeItem(KEY)
   // Home navigation mounts with a cleared session; avoid the protected-page guard
   // replacing that destination with /login during this document's teardown.

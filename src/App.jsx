@@ -46,7 +46,9 @@ function DemoAccess({ children }) {
 }
 
 function App() {
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
+  const pathname = window.location.pathname
+  .replace(/^\/mellow-bake(?=\/|$)/, '')
+  .replace(/\/+$/, '') || '/'
   const menuCategory = pathname.match(/^\/menu\/(bread|cake|sandwich|drink|all)$/)?.[1]
   const productSlug = pathname.match(/^\/menu\/([^/]+)$/)?.[1]
   const benefitPage = ({ '/mypage/coupon-events': 'events', '/mypage/coupons': 'coupons', '/mypage/points': 'points', '/mypage/benefits': 'overview' })[pathname]

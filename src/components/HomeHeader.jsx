@@ -5,10 +5,10 @@ import { logoutDemo, useDemoUser } from '../demoAuth'
 import ProductSearch from './ProductSearch'
 
 const mainLinks = [
-  ['HOME', '/'],
-  ['MENU', '/menu'],
-  ['ABOUT', '/about'],
-  ['STORE', '/store'],
+  ['HOME', '/mellow-bake/'],
+  ['MENU', '/mellow-bake/menu'],
+  ['ABOUT', '/mellow-bake/about'],
+  ['STORE', '/mellow-bake/store'],
 ]
 
 function HeaderIcon({ type }) {
@@ -122,10 +122,10 @@ export default function HomeHeader() {
             onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setAccountOpen(false) }}>
             <button className="home-header__icon" type="button" ref={accountButton} aria-label="회원 메뉴" title="로그인 및 회원가입" aria-expanded={accountOpen} aria-controls={accountMenuId} onClick={toggleAccount}><HeaderIcon type="user" /></button>
             <nav className="home-header__account-dropdown" id={accountMenuId} aria-label="회원 메뉴" hidden={!accountOpen}>
-              {!user && <a href="/login" onClick={() => setAccountOpen(false)}>로그인</a>}
-              {!user && <a href="/signup" onClick={() => setAccountOpen(false)}>회원가입</a>}
-              <a href="/mypage" onClick={() => setAccountOpen(false)}>마이페이지</a>
-              {user && <a href="/login?loggedOut=1" onClick={event => { event.preventDefault(); logoutDemo() }}>로그아웃</a>}
+             {!user && <a href="/mellow-bake/login" onClick={() => setAccountOpen(false)}>로그인</a>}
+              {!user && <a href="/mellow-bake/signup" onClick={() => setAccountOpen(false)}>회원가입</a>}
+              <a href="/mellow-bake/mypage" onClick={() => setAccountOpen(false)}>마이페이지</a>
+             {user && <a href="/mellow-bake/login?loggedOut=1" onClick={event => { event.preventDefault(); logoutDemo() }}>로그아웃</a>}
             </nav>
           </div>
           <details className="home-header__menu">

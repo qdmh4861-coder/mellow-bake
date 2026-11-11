@@ -122,7 +122,7 @@ export default function Login() {
           <button className="login-provider login-provider--google" type="button" disabled><span className="login-google-mark" aria-hidden="true">G</span>구글 로그인</button>
         </div>
         <p id="login-social-note" className="login-service-note">간편 로그인은 연동 준비 중입니다.</p>
-        <p className="login-signup">아직 계정이 없으신가요? <button type="button" onClick={() => { window.location.href = '/signup' }}>회원가입</button></p>
+       <p className="login-signup">아직 계정이 없으신가요? <button type="button" onClick={() => { window.location.href = '/mellow-bake/signup' }}>회원가입</button></p>
         <p className="login-status" role="status" aria-live="polite">{message}</p>
       </section>
     </main>
